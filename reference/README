@@ -11,3 +11,8 @@ The index.html of this file has to be manually updated when there is a new
 version coming out. For example, you will have to add an entry for 2.8 when it
 comes out. This is only done twice a year when releases are made. Don't
 complain. If you don't like it, fix it.
+
+Do not edit anything inside the individual doc folders. They are
+machine-generated and are overwritten every time. Persistent changes should be
+made in build.sh (styling in style.css). If merge conflicts arise (very
+likely), don't even bother to fix. Purge everything and build again.
