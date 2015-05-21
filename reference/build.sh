@@ -128,6 +128,7 @@ echo '<!DOCTYPE html>
             <li><a href="muffin/">Muffin</a></li>
           </ul>
         </section>
+      </div>
     </div>
   </body>
 </html>' > index.html
