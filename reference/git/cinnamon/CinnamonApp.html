@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CinnamonApp: Cinnamon Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Reference Manual">
+<link rel="up" href="ch02.html" title="Application tracking">
+<link rel="prev" href="ch02.html" title="Application tracking">
+<link rel="next" href="CinnamonWindowTracker.html" title="CinnamonWindowTracker">
+<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#CinnamonApp.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#CinnamonApp.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#CinnamonApp.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#CinnamonApp.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="CinnamonWindowTracker.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="CinnamonApp"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="CinnamonApp.top_of_page"></a>CinnamonApp</span></h2>
+<p>CinnamonApp — Object representing an application</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="CinnamonApp.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-id" title="cinnamon_app_get_id ()">cinnamon_app_get_id</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GMenuTreeEntry</span> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-tree-entry" title="cinnamon_app_get_tree_entry ()">cinnamon_app_get_tree_entry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/gio/unstable/gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="returnvalue">GDesktopAppInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-app-info" title="cinnamon_app_get_app_info ()">cinnamon_app_get_app_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-create-icon-texture" title="cinnamon_app_create_icon_texture ()">cinnamon_app_create_icon_texture</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-faded-icon" title="cinnamon_app_get_faded_icon ()">cinnamon_app_get_faded_icon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-name" title="cinnamon_app_get_name ()">cinnamon_app_get_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-description" title="cinnamon_app_get_description ()">cinnamon_app_get_description</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-is-window-backed" title="cinnamon_app_is_window_backed ()">cinnamon_app_is_window_backed</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-activate-window" title="cinnamon_app_activate_window ()">cinnamon_app_activate_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-activate" title="cinnamon_app_activate ()">cinnamon_app_activate</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-activate-full" title="cinnamon_app_activate_full ()">cinnamon_app_activate_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-open-new-window" title="cinnamon_app_open_new_window ()">cinnamon_app_open_new_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState"><span class="returnvalue">CinnamonAppState</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-state" title="cinnamon_app_get_state ()">cinnamon_app_get_state</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-request-quit" title="cinnamon_app_request_quit ()">cinnamon_app_request_quit</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-n-windows" title="cinnamon_app_get_n_windows ()">cinnamon_app_get_n_windows</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-windows" title="cinnamon_app_get_windows ()">cinnamon_app_get_windows</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-get-pids" title="cinnamon_app_get_pids ()">cinnamon_app_get_pids</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-is-on-workspace" title="cinnamon_app_is_on_workspace ()">cinnamon_app_is_on_workspace</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-launch" title="cinnamon_app_launch ()">cinnamon_app_launch</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-compare-by-name" title="cinnamon_app_compare_by_name ()">cinnamon_app_compare_by_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonApp.html#cinnamon-app-compare" title="cinnamon_app_compare ()">cinnamon_app_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type"><a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState"><span class="type">CinnamonAppState</span></a></td>
+<td class="property_name"><a class="link" href="CinnamonApp.html#CinnamonApp--state" title="The “state” property">state</a></td>
+<td class="property_flags">Read</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody><tr>
+<td class="signal_type"><span class="returnvalue">void</span></td>
+<td class="signal_name"><a class="link" href="CinnamonApp.html#CinnamonApp-windows-changed" title="The “windows-changed” signal">windows-changed</a></td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState">CinnamonAppState</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GEnum
+    <span class="lineart">╰──</span> CinnamonAppState
+    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> CinnamonApp
+</pre>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.description"></a><h2>Description</h2>
+<p>This object wraps a <span class="type">GMenuTreeEntry</span>, providing methods and signals
+primarily useful for running applications.</p>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="cinnamon-app-get-id"></a><h3>cinnamon_app_get_id ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+cinnamon_app_get_id (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-tree-entry"></a><h3>cinnamon_app_get_tree_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">GMenuTreeEntry</span> *
+cinnamon_app_get_tree_entry (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.3.2.9.3.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.3.5"></a><h4>Returns</h4>
+<p> The <span class="type">GMenuTreeEntry</span> for this app, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if backed by a window. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-app-info"></a><h3>cinnamon_app_get_app_info ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="returnvalue">GDesktopAppInfo</span></a> *
+cinnamon_app_get_app_info (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.3.2.9.4.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.4.5"></a><h4>Returns</h4>
+<p> The <a href="https://developer.gnome.org/gio/unstable/gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> for this app, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if backed by a window. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-create-icon-texture"></a><h3>cinnamon_app_create_icon_texture ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+cinnamon_app_create_icon_texture (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                                  <em class="parameter"><code><span class="type">int</span> size</code></em>);</pre>
+<p>Look up the icon for this application, and create a <a href="https://developer.gnome.org/clutter/unstable/ClutterTexture.html"><span class="type">ClutterTexture</span></a>
+for it at the given size.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.5.5"></a><h4>Returns</h4>
+<p> A floating <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-faded-icon"></a><h3>cinnamon_app_get_faded_icon ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+cinnamon_app_get_faded_icon (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                             <em class="parameter"><code><span class="type">int</span> size</code></em>);</pre>
+<p>Return an actor with a horizontally faded look.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>A <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>size</p></td>
+<td class="parameter_description"><p>Size in pixels</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.6.6"></a><h4>Returns</h4>
+<p> A floating <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no icon. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-name"></a><h3>cinnamon_app_get_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+cinnamon_app_get_name (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-description"></a><h3>cinnamon_app_get_description ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+cinnamon_app_get_description (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-is-window-backed"></a><h3>cinnamon_app_is_window_backed ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+cinnamon_app_is_window_backed (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<p>A window backed application is one which represents just an open
+window, i.e. there's no .desktop file assocation, so we don't know
+how to launch it again.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-activate-window"></a><h3>cinnamon_app_activate_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cinnamon_app_activate_window (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                              <em class="parameter"><code><a href="..//muffin/MetaWindow.html"><span class="type">MetaWindow</span></a> *window</code></em>,
+                              <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> timestamp</code></em>);</pre>
+<p>Bring all windows for the given app to the foreground,
+but ensure that <em class="parameter"><code>window</code></em>
+ is on top.  If <em class="parameter"><code>window</code></em>
+ is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+the window with the most recent user time for the app
+will be used.</p>
+<p>This function has no effect if <em class="parameter"><code>app</code></em>
+ is not currently running.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p> Window to be focused. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>Event timestamp</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-activate"></a><h3>cinnamon_app_activate ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cinnamon_app_activate (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<p>Like <a class="link" href="CinnamonApp.html#cinnamon-app-activate-full" title="cinnamon_app_activate_full ()"><code class="function">cinnamon_app_activate_full()</code></a>, but using the default workspace and
+event timestamp.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-activate-full"></a><h3>cinnamon_app_activate_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cinnamon_app_activate_full (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                            <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> timestamp</code></em>);</pre>
+<p>Perform an appropriate default action for operating on this application,
+dependent on its current state.  For example, if the application is not
+currently running, launch it.  If it is running, activate the most
+recently used NORMAL window (or if that window has a transient, the most
+recently used transient for that window).</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>workspace</p></td>
+<td class="parameter_description"><p>launch on this workspace, or -1 for default. Ignored if
+activating an existing window</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>Event timestamp</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-open-new-window"></a><h3>cinnamon_app_open_new_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cinnamon_app_open_new_window (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                              <em class="parameter"><code><span class="type">int</span> workspace</code></em>);</pre>
+<p>Request that the application create a new window.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>workspace</p></td>
+<td class="parameter_description"><p>open on this workspace, or -1 for default</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-state"></a><h3>cinnamon_app_get_state ()</h3>
+<pre class="programlisting"><a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState"><span class="returnvalue">CinnamonAppState</span></a>
+cinnamon_app_get_state (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.3.2.9.14.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.14.5"></a><h4>Returns</h4>
+<p> State of the application</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-request-quit"></a><h3>cinnamon_app_request_quit ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+cinnamon_app_request_quit (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<p>Initiate an asynchronous request to quit this application.
+The application may interact with the user, and the user
+might cancel the quit request from the application UI.</p>
+<p>This operation may not be supported for all applications.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.15.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>A <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.15.7"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a quit request is supported for this application</p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-n-windows"></a><h3>cinnamon_app_get_n_windows ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+cinnamon_app_get_n_windows (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-windows"></a><h3>cinnamon_app_get_windows ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+cinnamon_app_get_windows (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<p>Get the toplevel, interesting windows which are associated with this
+application.  The returned list will be sorted first by whether
+they're on the active workspace, then by whether they're visible,
+and finally by the time the user last interacted with them.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.17.5"></a><h4>Returns</h4>
+<p> List of windows. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> MetaWindow]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-get-pids"></a><h3>cinnamon_app_get_pids ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *
+cinnamon_app_get_pids (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.3.2.9.18.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>app</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.3.2.9.18.5"></a><h4>Returns</h4>
+<p> An unordered list of process identifers associated with this application. </p>
+<p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> int]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-is-on-workspace"></a><h3>cinnamon_app_is_on_workspace ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+cinnamon_app_is_on_workspace (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                              <em class="parameter"><code><a href="..//muffin/MetaWorkspace.html"><span class="type">MetaWorkspace</span></a> *workspace</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-launch"></a><h3>cinnamon_app_launch ()</h3>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+cinnamon_app_launch (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> timestamp</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *uris</code></em>,
+                     <em class="parameter"><code><span class="type">int</span> workspace</code></em>,
+                     <em class="parameter"><code><span class="type">char</span> **startup_id</code></em>,
+                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.3.2.9.20.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>timestamp</p></td>
+<td class="parameter_description"><p>Event timestamp, or 0 for current event timestamp</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uris</p></td>
+<td class="parameter_description"><p> List of uris to pass to application. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>workspace</p></td>
+<td class="parameter_description"><p>Start on this workspace, or -1 for default</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>startup_id</p></td>
+<td class="parameter_description"><p> Returned startup notification ID, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if none. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-compare-by-name"></a><h3>cinnamon_app_compare_by_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+cinnamon_app_compare_by_name (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                              <em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *other</code></em>);</pre>
+<p>Order two applications by name.</p>
+<div class="refsect3">
+<a name="id-1.3.2.9.21.5"></a><h4>Returns</h4>
+<p> -1, 0, or 1; suitable for use as a comparison function for e.g. <a href="https://developer.gnome.org/glib/unstable/glib-Singly-Linked-Lists.html#g-slist-sort"><code class="function">g_slist_sort()</code></a></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-compare"></a><h3>cinnamon_app_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+cinnamon_app_compare (<em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *app</code></em>,
+                      <em class="parameter"><code><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *other</code></em>);</pre>
+<p>Compare one <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> instance to another, in the following way:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>Running applications sort before not-running applications.</p></li>
+<li class="listitem"><p>If one of them has visible windows and the other does not, the one
+with visible windows is first.</p></li>
+<li class="listitem"><p>Finally, the application which the user interacted with most recently
+compares earlier.</p></li>
+</ul></div>
+<div class="refsect3">
+<a name="id-1.3.2.9.22.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>other</p></td>
+<td class="parameter_description"><p>A <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="CinnamonAppState"></a><h3>enum CinnamonAppState</h3>
+<div class="refsect3">
+<a name="id-1.3.2.10.2.3"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p><a name="CINNAMON-APP-STATE-STOPPED:CAPS"></a>CINNAMON_APP_STATE_STOPPED</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="CINNAMON-APP-STATE-STARTING:CAPS"></a>CINNAMON_APP_STATE_STARTING</p></td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="CINNAMON-APP-STATE-RUNNING:CAPS"></a>CINNAMON_APP_STATE_RUNNING</p></td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="CinnamonApp--state"></a><h3>The <code class="literal">“state”</code> property</h3>
+<pre class="programlisting">  “state”                    <a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState"><span class="type">CinnamonAppState</span></a></pre>
+<p>The high-level state of the application, effectively whether it's
+running or not, or transitioning between those states.</p>
+<p>Flags: Read</p>
+<p>Default value: CINNAMON_APP_STATE_STOPPED</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="CinnamonApp.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="CinnamonApp-windows-changed"></a><h3>The <code class="literal">“windows-changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> *cinnamonapp,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23</div>
+</body>
+</html>

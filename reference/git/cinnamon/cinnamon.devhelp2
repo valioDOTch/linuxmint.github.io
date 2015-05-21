@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="" title="Cinnamon Reference Manual" link="index.html" author="" name="cinnamon" version="2" language="c">
+  <chapters>
+    <sub name="Actors" link="ch01.html">
+      <sub name="CinnamonGenericContainer" link="CinnamonGenericContainer.html"/>
+      <sub name="CinnamonSlicer" link="CinnamonSlicer.html"/>
+      <sub name="CinnamonStack" link="CinnamonStack.html"/>
+    </sub>
+    <sub name="Application tracking" link="ch02.html">
+      <sub name="CinnamonApp" link="CinnamonApp.html"/>
+      <sub name="CinnamonWindowTracker" link="CinnamonWindowTracker.html"/>
+    </sub>
+    <sub name="Search" link="ch03.html">
+      <sub name="CinnamonAppSystem" link="CinnamonAppSystem.html"/>
+    </sub>
+    <sub name="Tray Icons" link="ch04.html">
+      <sub name="CinnamonEmbeddedWindow" link="CinnamonEmbeddedWindow.html"/>
+      <sub name="CinnamonGtkEmbed" link="CinnamonGtkEmbed.html"/>
+      <sub name="CinnamonTrayIcon" link="CinnamonTrayIcon.html"/>
+      <sub name="CinnamonTrayManager" link="CinnamonTrayManager.html"/>
+    </sub>
+    <sub name="Recorder" link="ch05.html">
+      <sub name="cinnamon-recorder" link="cinnamon-cinnamon-recorder.html"/>
+    </sub>
+    <sub name="Integration helpers and utilities" link="ch06.html">
+      <sub name="CinnamonGlobal" link="CinnamonGlobal.html"/>
+      <sub name="CinnamonWM" link="CinnamonWM.html"/>
+      <sub name="cinnamon-util" link="cinnamon-cinnamon-util.html"/>
+      <sub name="CinnamonMountOperation" link="CinnamonMountOperation.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="cinnamon_generic_container_get_n_skip_paint ()" link="CinnamonGenericContainer.html#cinnamon-generic-container-get-n-skip-paint"/>
+    <keyword type="function" name="cinnamon_generic_container_get_skip_paint ()" link="CinnamonGenericContainer.html#cinnamon-generic-container-get-skip-paint"/>
+    <keyword type="function" name="cinnamon_generic_container_set_skip_paint ()" link="CinnamonGenericContainer.html#cinnamon-generic-container-set-skip-paint"/>
+    <keyword type="signal" name="The “allocate” signal" link="CinnamonGenericContainer.html#CinnamonGenericContainer-allocate"/>
+    <keyword type="signal" name="The “get-preferred-height” signal" link="CinnamonGenericContainer.html#CinnamonGenericContainer-get-preferred-height"/>
+    <keyword type="signal" name="The “get-preferred-width” signal" link="CinnamonGenericContainer.html#CinnamonGenericContainer-get-preferred-width"/>
+    <keyword type="function" name="cinnamon_app_get_id ()" link="CinnamonApp.html#cinnamon-app-get-id"/>
+    <keyword type="function" name="cinnamon_app_get_tree_entry ()" link="CinnamonApp.html#cinnamon-app-get-tree-entry"/>
+    <keyword type="function" name="cinnamon_app_get_app_info ()" link="CinnamonApp.html#cinnamon-app-get-app-info"/>
+    <keyword type="function" name="cinnamon_app_create_icon_texture ()" link="CinnamonApp.html#cinnamon-app-create-icon-texture"/>
+    <keyword type="function" name="cinnamon_app_get_faded_icon ()" link="CinnamonApp.html#cinnamon-app-get-faded-icon"/>
+    <keyword type="function" name="cinnamon_app_get_name ()" link="CinnamonApp.html#cinnamon-app-get-name"/>
+    <keyword type="function" name="cinnamon_app_get_description ()" link="CinnamonApp.html#cinnamon-app-get-description"/>
+    <keyword type="function" name="cinnamon_app_is_window_backed ()" link="CinnamonApp.html#cinnamon-app-is-window-backed"/>
+    <keyword type="function" name="cinnamon_app_activate_window ()" link="CinnamonApp.html#cinnamon-app-activate-window"/>
+    <keyword type="function" name="cinnamon_app_activate ()" link="CinnamonApp.html#cinnamon-app-activate"/>
+    <keyword type="function" name="cinnamon_app_activate_full ()" link="CinnamonApp.html#cinnamon-app-activate-full"/>
+    <keyword type="function" name="cinnamon_app_open_new_window ()" link="CinnamonApp.html#cinnamon-app-open-new-window"/>
+    <keyword type="function" name="cinnamon_app_get_state ()" link="CinnamonApp.html#cinnamon-app-get-state"/>
+    <keyword type="function" name="cinnamon_app_request_quit ()" link="CinnamonApp.html#cinnamon-app-request-quit"/>
+    <keyword type="function" name="cinnamon_app_get_n_windows ()" link="CinnamonApp.html#cinnamon-app-get-n-windows"/>
+    <keyword type="function" name="cinnamon_app_get_windows ()" link="CinnamonApp.html#cinnamon-app-get-windows"/>
+    <keyword type="function" name="cinnamon_app_get_pids ()" link="CinnamonApp.html#cinnamon-app-get-pids"/>
+    <keyword type="function" name="cinnamon_app_is_on_workspace ()" link="CinnamonApp.html#cinnamon-app-is-on-workspace"/>
+    <keyword type="function" name="cinnamon_app_launch ()" link="CinnamonApp.html#cinnamon-app-launch"/>
+    <keyword type="function" name="cinnamon_app_compare_by_name ()" link="CinnamonApp.html#cinnamon-app-compare-by-name"/>
+    <keyword type="function" name="cinnamon_app_compare ()" link="CinnamonApp.html#cinnamon-app-compare"/>
+    <keyword type="enum" name="enum CinnamonAppState" link="CinnamonApp.html#CinnamonAppState"/>
+    <keyword type="property" name="The “state” property" link="CinnamonApp.html#CinnamonApp--state"/>
+    <keyword type="signal" name="The “windows-changed” signal" link="CinnamonApp.html#CinnamonApp-windows-changed"/>
+    <keyword type="function" name="cinnamon_window_tracker_get_default ()" link="CinnamonWindowTracker.html#cinnamon-window-tracker-get-default"/>
+    <keyword type="function" name="cinnamon_window_tracker_get_window_app ()" link="CinnamonWindowTracker.html#cinnamon-window-tracker-get-window-app"/>
+    <keyword type="function" name="cinnamon_window_tracker_get_app_from_pid ()" link="CinnamonWindowTracker.html#cinnamon-window-tracker-get-app-from-pid"/>
+    <keyword type="function" name="cinnamon_window_tracker_is_window_interesting ()" link="CinnamonWindowTracker.html#cinnamon-window-tracker-is-window-interesting"/>
+    <keyword type="function" name="cinnamon_window_tracker_get_startup_sequences ()" link="CinnamonWindowTracker.html#cinnamon-window-tracker-get-startup-sequences"/>
+    <keyword type="function" name="cinnamon_startup_sequence_get_id ()" link="CinnamonWindowTracker.html#cinnamon-startup-sequence-get-id"/>
+    <keyword type="function" name="cinnamon_startup_sequence_get_app ()" link="CinnamonWindowTracker.html#cinnamon-startup-sequence-get-app"/>
+    <keyword type="function" name="cinnamon_startup_sequence_get_name ()" link="CinnamonWindowTracker.html#cinnamon-startup-sequence-get-name"/>
+    <keyword type="function" name="cinnamon_startup_sequence_get_completed ()" link="CinnamonWindowTracker.html#cinnamon-startup-sequence-get-completed"/>
+    <keyword type="function" name="cinnamon_startup_sequence_create_icon ()" link="CinnamonWindowTracker.html#cinnamon-startup-sequence-create-icon"/>
+    <keyword type="property" name="The “focus-app” property" link="CinnamonWindowTracker.html#CinnamonWindowTracker--focus-app"/>
+    <keyword type="signal" name="The “startup-sequence-changed” signal" link="CinnamonWindowTracker.html#CinnamonWindowTracker-startup-sequence-changed"/>
+    <keyword type="signal" name="The “tracked-windows-changed” signal" link="CinnamonWindowTracker.html#CinnamonWindowTracker-tracked-windows-changed"/>
+    <keyword type="function" name="cinnamon_app_system_get_default ()" link="CinnamonAppSystem.html#cinnamon-app-system-get-default"/>
+    <keyword type="function" name="cinnamon_app_system_get_tree ()" link="CinnamonAppSystem.html#cinnamon-app-system-get-tree"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_app ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-app"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_settings_app ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-settings-app"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_app_by_tree_entry ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-app-by-tree-entry"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_settings_app_by_tree_entry ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-settings-app-by-tree-entry"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_app_for_path ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-app-for-path"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_heuristic_basename ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-heuristic-basename"/>
+    <keyword type="function" name="cinnamon_app_system_get_all ()" link="CinnamonAppSystem.html#cinnamon-app-system-get-all"/>
+    <keyword type="function" name="cinnamon_app_system_get_running ()" link="CinnamonAppSystem.html#cinnamon-app-system-get-running"/>
+    <keyword type="function" name="cinnamon_app_system_initial_search ()" link="CinnamonAppSystem.html#cinnamon-app-system-initial-search"/>
+    <keyword type="function" name="cinnamon_app_system_subsearch ()" link="CinnamonAppSystem.html#cinnamon-app-system-subsearch"/>
+    <keyword type="function" name="cinnamon_app_system_get_settings_tree ()" link="CinnamonAppSystem.html#cinnamon-app-system-get-settings-tree"/>
+    <keyword type="function" name="cinnamon_app_system_search_settings ()" link="CinnamonAppSystem.html#cinnamon-app-system-search-settings"/>
+    <keyword type="function" name="cinnamon_app_system_lookup_setting ()" link="CinnamonAppSystem.html#cinnamon-app-system-lookup-setting"/>
+    <keyword type="signal" name="The “app-state-changed” signal" link="CinnamonAppSystem.html#CinnamonAppSystem-app-state-changed"/>
+    <keyword type="signal" name="The “installed-changed” signal" link="CinnamonAppSystem.html#CinnamonAppSystem-installed-changed"/>
+    <keyword type="function" name="cinnamon_embedded_window_new ()" link="CinnamonEmbeddedWindow.html#cinnamon-embedded-window-new"/>
+    <keyword type="property" name="The “stage” property" link="CinnamonEmbeddedWindow.html#CinnamonEmbeddedWindow--stage"/>
+    <keyword type="function" name="cinnamon_gtk_embed_new ()" link="CinnamonGtkEmbed.html#cinnamon-gtk-embed-new"/>
+    <keyword type="property" name="The “window” property" link="CinnamonGtkEmbed.html#CinnamonGtkEmbed--window"/>
+    <keyword type="function" name="cinnamon_tray_icon_new ()" link="CinnamonTrayIcon.html#cinnamon-tray-icon-new"/>
+    <keyword type="function" name="cinnamon_tray_icon_click ()" link="CinnamonTrayIcon.html#cinnamon-tray-icon-click"/>
+    <keyword type="property" name="The “pid” property" link="CinnamonTrayIcon.html#CinnamonTrayIcon--pid"/>
+    <keyword type="property" name="The “title” property" link="CinnamonTrayIcon.html#CinnamonTrayIcon--title"/>
+    <keyword type="property" name="The “wm-class” property" link="CinnamonTrayIcon.html#CinnamonTrayIcon--wm-class"/>
+    <keyword type="function" name="cinnamon_tray_manager_new ()" link="CinnamonTrayManager.html#cinnamon-tray-manager-new"/>
+    <keyword type="function" name="cinnamon_tray_manager_manage_stage ()" link="CinnamonTrayManager.html#cinnamon-tray-manager-manage-stage"/>
+    <keyword type="function" name="cinnamon_tray_manager_redisplay ()" link="CinnamonTrayManager.html#cinnamon-tray-manager-redisplay"/>
+    <keyword type="property" name="The “bg-color” property" link="CinnamonTrayManager.html#CinnamonTrayManager--bg-color"/>
+    <keyword type="signal" name="The “tray-icon-added” signal" link="CinnamonTrayManager.html#CinnamonTrayManager-tray-icon-added"/>
+    <keyword type="signal" name="The “tray-icon-removed” signal" link="CinnamonTrayManager.html#CinnamonTrayManager-tray-icon-removed"/>
+    <keyword type="function" name="cinnamon_recorder_new ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-new"/>
+    <keyword type="function" name="cinnamon_recorder_set_framerate ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-set-framerate"/>
+    <keyword type="function" name="cinnamon_recorder_set_filename ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-set-filename"/>
+    <keyword type="function" name="cinnamon_recorder_set_pipeline ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-set-pipeline"/>
+    <keyword type="function" name="cinnamon_recorder_record ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-record"/>
+    <keyword type="function" name="cinnamon_recorder_close ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-close"/>
+    <keyword type="function" name="cinnamon_recorder_pause ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-pause"/>
+    <keyword type="function" name="cinnamon_recorder_is_recording ()" link="cinnamon-cinnamon-recorder.html#cinnamon-recorder-is-recording"/>
+    <keyword type="property" name="The “filename” property" link="cinnamon-cinnamon-recorder.html#CinnamonRecorder--filename"/>
+    <keyword type="property" name="The “framerate” property" link="cinnamon-cinnamon-recorder.html#CinnamonRecorder--framerate"/>
+    <keyword type="property" name="The “pipeline” property" link="cinnamon-cinnamon-recorder.html#CinnamonRecorder--pipeline"/>
+    <keyword type="property" name="The “stage” property" link="cinnamon-cinnamon-recorder.html#CinnamonRecorder--stage"/>
+    <keyword type="function" name="cinnamon_global_get ()" link="CinnamonGlobal.html#cinnamon-global-get"/>
+    <keyword type="function" name="cinnamon_global_get_stage ()" link="CinnamonGlobal.html#cinnamon-global-get-stage"/>
+    <keyword type="function" name="cinnamon_global_get_screen ()" link="CinnamonGlobal.html#cinnamon-global-get-screen"/>
+    <keyword type="function" name="cinnamon_global_get_gdk_screen ()" link="CinnamonGlobal.html#cinnamon-global-get-gdk-screen"/>
+    <keyword type="function" name="cinnamon_global_get_display ()" link="CinnamonGlobal.html#cinnamon-global-get-display"/>
+    <keyword type="function" name="cinnamon_global_get_window_actors ()" link="CinnamonGlobal.html#cinnamon-global-get-window-actors"/>
+    <keyword type="function" name="cinnamon_global_get_settings ()" link="CinnamonGlobal.html#cinnamon-global-get-settings"/>
+    <keyword type="function" name="cinnamon_global_get_current_time ()" link="CinnamonGlobal.html#cinnamon-global-get-current-time"/>
+    <keyword type="function" name="cinnamon_global_get_pid ()" link="CinnamonGlobal.html#cinnamon-global-get-pid"/>
+    <keyword type="function" name="cinnamon_global_get_md5_for_string ()" link="CinnamonGlobal.html#cinnamon-global-get-md5-for-string"/>
+    <keyword type="function" name="cinnamon_global_get_last_gc_end_time ()" link="CinnamonGlobal.html#cinnamon-global-get-last-gc-end-time"/>
+    <keyword type="function" name="cinnamon_global_dump_gjs_stack ()" link="CinnamonGlobal.html#cinnamon-global-dump-gjs-stack"/>
+    <keyword type="function" name="cinnamon_global_begin_modal ()" link="CinnamonGlobal.html#cinnamon-global-begin-modal"/>
+    <keyword type="function" name="cinnamon_global_end_modal ()" link="CinnamonGlobal.html#cinnamon-global-end-modal"/>
+    <keyword type="function" name="cinnamon_global_set_stage_input_mode ()" link="CinnamonGlobal.html#cinnamon-global-set-stage-input-mode"/>
+    <keyword type="function" name="cinnamon_global_set_stage_input_region ()" link="CinnamonGlobal.html#cinnamon-global-set-stage-input-region"/>
+    <keyword type="function" name="cinnamon_global_set_cursor ()" link="CinnamonGlobal.html#cinnamon-global-set-cursor"/>
+    <keyword type="function" name="cinnamon_global_unset_cursor ()" link="CinnamonGlobal.html#cinnamon-global-unset-cursor"/>
+    <keyword type="function" name="cinnamon_global_create_pointer_barrier ()" link="CinnamonGlobal.html#cinnamon-global-create-pointer-barrier"/>
+    <keyword type="function" name="cinnamon_global_destroy_pointer_barrier ()" link="CinnamonGlobal.html#cinnamon-global-destroy-pointer-barrier"/>
+    <keyword type="function" name="cinnamon_global_get_pointer ()" link="CinnamonGlobal.html#cinnamon-global-get-pointer"/>
+    <keyword type="function" name="cinnamon_global_set_pointer ()" link="CinnamonGlobal.html#cinnamon-global-set-pointer"/>
+    <keyword type="function" name="cinnamon_global_get_memory_info ()" link="CinnamonGlobal.html#cinnamon-global-get-memory-info"/>
+    <keyword type="function" name="cinnamon_global_begin_work ()" link="CinnamonGlobal.html#cinnamon-global-begin-work"/>
+    <keyword type="function" name="cinnamon_global_end_work ()" link="CinnamonGlobal.html#cinnamon-global-end-work"/>
+    <keyword type="function" name="CinnamonLeisureFunction ()" link="CinnamonGlobal.html#CinnamonLeisureFunction"/>
+    <keyword type="function" name="cinnamon_global_run_at_leisure ()" link="CinnamonGlobal.html#cinnamon-global-run-at-leisure"/>
+    <keyword type="function" name="cinnamon_global_sync_pointer ()" link="CinnamonGlobal.html#cinnamon-global-sync-pointer"/>
+    <keyword type="function" name="cinnamon_global_create_app_launch_context ()" link="CinnamonGlobal.html#cinnamon-global-create-app-launch-context"/>
+    <keyword type="function" name="cinnamon_global_notify_error ()" link="CinnamonGlobal.html#cinnamon-global-notify-error"/>
+    <keyword type="function" name="cinnamon_global_init_xdnd ()" link="CinnamonGlobal.html#cinnamon-global-init-xdnd"/>
+    <keyword type="function" name="cinnamon_global_reexec_self ()" link="CinnamonGlobal.html#cinnamon-global-reexec-self"/>
+    <keyword type="function" name="cinnamon_global_segfault ()" link="CinnamonGlobal.html#cinnamon-global-segfault"/>
+    <keyword type="enum" name="enum CinnamonStageInputMode" link="CinnamonGlobal.html#CinnamonStageInputMode"/>
+    <keyword type="enum" name="enum CinnamonCursor" link="CinnamonGlobal.html#CinnamonCursor"/>
+    <keyword type="property" name="The “background-actor” property" link="CinnamonGlobal.html#CinnamonGlobal--background-actor"/>
+    <keyword type="property" name="The “bottom-window-group” property" link="CinnamonGlobal.html#CinnamonGlobal--bottom-window-group"/>
+    <keyword type="property" name="The “datadir” property" link="CinnamonGlobal.html#CinnamonGlobal--datadir"/>
+    <keyword type="property" name="The “display” property" link="CinnamonGlobal.html#CinnamonGlobal--display"/>
+    <keyword type="property" name="The “focus-manager” property" link="CinnamonGlobal.html#CinnamonGlobal--focus-manager"/>
+    <keyword type="property" name="The “gdk-screen” property" link="CinnamonGlobal.html#CinnamonGlobal--gdk-screen"/>
+    <keyword type="property" name="The “imagedir” property" link="CinnamonGlobal.html#CinnamonGlobal--imagedir"/>
+    <keyword type="property" name="The “overlay-group” property" link="CinnamonGlobal.html#CinnamonGlobal--overlay-group"/>
+    <keyword type="property" name="The “screen” property" link="CinnamonGlobal.html#CinnamonGlobal--screen"/>
+    <keyword type="property" name="The “screen-height” property" link="CinnamonGlobal.html#CinnamonGlobal--screen-height"/>
+    <keyword type="property" name="The “screen-width” property" link="CinnamonGlobal.html#CinnamonGlobal--screen-width"/>
+    <keyword type="property" name="The “settings” property" link="CinnamonGlobal.html#CinnamonGlobal--settings"/>
+    <keyword type="property" name="The “stage” property" link="CinnamonGlobal.html#CinnamonGlobal--stage"/>
+    <keyword type="property" name="The “stage-input-mode” property" link="CinnamonGlobal.html#CinnamonGlobal--stage-input-mode"/>
+    <keyword type="property" name="The “top-window-group” property" link="CinnamonGlobal.html#CinnamonGlobal--top-window-group"/>
+    <keyword type="property" name="The “ui-scale” property" link="CinnamonGlobal.html#CinnamonGlobal--ui-scale"/>
+    <keyword type="property" name="The “userdatadir” property" link="CinnamonGlobal.html#CinnamonGlobal--userdatadir"/>
+    <keyword type="property" name="The “window-group” property" link="CinnamonGlobal.html#CinnamonGlobal--window-group"/>
+    <keyword type="property" name="The “window-manager” property" link="CinnamonGlobal.html#CinnamonGlobal--window-manager"/>
+    <keyword type="signal" name="The “notify-error” signal" link="CinnamonGlobal.html#CinnamonGlobal-notify-error"/>
+    <keyword type="signal" name="The “scale-changed” signal" link="CinnamonGlobal.html#CinnamonGlobal-scale-changed"/>
+    <keyword type="signal" name="The “xdnd-enter” signal" link="CinnamonGlobal.html#CinnamonGlobal-xdnd-enter"/>
+    <keyword type="signal" name="The “xdnd-leave” signal" link="CinnamonGlobal.html#CinnamonGlobal-xdnd-leave"/>
+    <keyword type="signal" name="The “xdnd-position-changed” signal" link="CinnamonGlobal.html#CinnamonGlobal-xdnd-position-changed"/>
+    <keyword type="function" name="cinnamon_wm_new ()" link="CinnamonWM.html#cinnamon-wm-new"/>
+    <keyword type="function" name="cinnamon_wm_completed_minimize ()" link="CinnamonWM.html#cinnamon-wm-completed-minimize"/>
+    <keyword type="function" name="cinnamon_wm_completed_maximize ()" link="CinnamonWM.html#cinnamon-wm-completed-maximize"/>
+    <keyword type="function" name="cinnamon_wm_completed_tile ()" link="CinnamonWM.html#cinnamon-wm-completed-tile"/>
+    <keyword type="function" name="cinnamon_wm_completed_unmaximize ()" link="CinnamonWM.html#cinnamon-wm-completed-unmaximize"/>
+    <keyword type="function" name="cinnamon_wm_completed_map ()" link="CinnamonWM.html#cinnamon-wm-completed-map"/>
+    <keyword type="function" name="cinnamon_wm_completed_destroy ()" link="CinnamonWM.html#cinnamon-wm-completed-destroy"/>
+    <keyword type="function" name="cinnamon_wm_completed_switch_workspace ()" link="CinnamonWM.html#cinnamon-wm-completed-switch-workspace"/>
+    <keyword type="signal" name="The “destroy” signal" link="CinnamonWM.html#CinnamonWM-destroy"/>
+    <keyword type="signal" name="The “hide-hud-preview” signal" link="CinnamonWM.html#CinnamonWM-hide-hud-preview"/>
+    <keyword type="signal" name="The “hide-tile-preview” signal" link="CinnamonWM.html#CinnamonWM-hide-tile-preview"/>
+    <keyword type="signal" name="The “kill-window-effects” signal" link="CinnamonWM.html#CinnamonWM-kill-window-effects"/>
+    <keyword type="signal" name="The “map” signal" link="CinnamonWM.html#CinnamonWM-map"/>
+    <keyword type="signal" name="The “maximize” signal" link="CinnamonWM.html#CinnamonWM-maximize"/>
+    <keyword type="signal" name="The “minimize” signal" link="CinnamonWM.html#CinnamonWM-minimize"/>
+    <keyword type="signal" name="The “show-hud-preview” signal" link="CinnamonWM.html#CinnamonWM-show-hud-preview"/>
+    <keyword type="signal" name="The “show-tile-preview” signal" link="CinnamonWM.html#CinnamonWM-show-tile-preview"/>
+    <keyword type="signal" name="The “switch-workspace” signal" link="CinnamonWM.html#CinnamonWM-switch-workspace"/>
+    <keyword type="signal" name="The “switch-workspace-complete” signal" link="CinnamonWM.html#CinnamonWM-switch-workspace-complete"/>
+    <keyword type="signal" name="The “tile” signal" link="CinnamonWM.html#CinnamonWM-tile"/>
+    <keyword type="signal" name="The “unmaximize” signal" link="CinnamonWM.html#CinnamonWM-unmaximize"/>
+    <keyword type="function" name="cinnamon_util_get_label_for_uri ()" link="cinnamon-cinnamon-util.html#cinnamon-util-get-label-for-uri"/>
+    <keyword type="function" name="cinnamon_util_get_icon_for_uri ()" link="cinnamon-cinnamon-util.html#cinnamon-util-get-icon-for-uri"/>
+    <keyword type="function" name="cinnamon_util_set_hidden_from_pick ()" link="cinnamon-cinnamon-util.html#cinnamon-util-set-hidden-from-pick"/>
+    <keyword type="function" name="cinnamon_util_get_transformed_allocation ()" link="cinnamon-cinnamon-util.html#cinnamon-util-get-transformed-allocation"/>
+    <keyword type="function" name="cinnamon_util_get_week_start ()" link="cinnamon-cinnamon-util.html#cinnamon-util-get-week-start"/>
+    <keyword type="function" name="cinnamon_util_normalize_and_casefold ()" link="cinnamon-cinnamon-util.html#cinnamon-util-normalize-and-casefold"/>
+    <keyword type="function" name="cinnamon_util_format_date ()" link="cinnamon-cinnamon-util.html#cinnamon-util-format-date"/>
+    <keyword type="function" name="cinnamon_get_event_state ()" link="cinnamon-cinnamon-util.html#cinnamon-get-event-state"/>
+    <keyword type="function" name="cinnamon_write_soup_message_to_stream ()" link="cinnamon-cinnamon-util.html#cinnamon-write-soup-message-to-stream"/>
+    <keyword type="function" name="cinnamon_write_string_to_stream ()" link="cinnamon-cinnamon-util.html#cinnamon-write-string-to-stream"/>
+    <keyword type="function" name="cinnamon_get_file_contents_utf8_sync ()" link="cinnamon-cinnamon-util.html#cinnamon-get-file-contents-utf8-sync"/>
+    <keyword type="function" name="cinnamon_breakpoint ()" link="cinnamon-cinnamon-util.html#cinnamon-breakpoint"/>
+    <keyword type="function" name="cinnamon_parse_search_provider ()" link="cinnamon-cinnamon-util.html#cinnamon-parse-search-provider"/>
+    <keyword type="function" name="cinnamon_shader_effect_set_double_uniform ()" link="cinnamon-cinnamon-util.html#cinnamon-shader-effect-set-double-uniform"/>
+    <keyword type="function" name="cinnamon_mount_operation_new ()" link="CinnamonMountOperation.html#cinnamon-mount-operation-new"/>
+    <keyword type="function" name="cinnamon_mount_operation_get_show_processes_pids ()" link="CinnamonMountOperation.html#cinnamon-mount-operation-get-show-processes-pids"/>
+    <keyword type="function" name="cinnamon_mount_operation_get_show_processes_choices ()" link="CinnamonMountOperation.html#cinnamon-mount-operation-get-show-processes-choices"/>
+    <keyword type="function" name="cinnamon_mount_operation_get_show_processes_message ()" link="CinnamonMountOperation.html#cinnamon-mount-operation-get-show-processes-message"/>
+    <keyword type="signal" name="The “show-processes-2” signal" link="CinnamonMountOperation.html#CinnamonMountOperation-show-processes-2"/>
+    <keyword type="constant" name="CINNAMON_APP_STATE_STOPPED" link="CinnamonApp.html#CINNAMON-APP-STATE-STOPPED:CAPS"/>
+    <keyword type="constant" name="CINNAMON_APP_STATE_STARTING" link="CinnamonApp.html#CINNAMON-APP-STATE-STARTING:CAPS"/>
+    <keyword type="constant" name="CINNAMON_APP_STATE_RUNNING" link="CinnamonApp.html#CINNAMON-APP-STATE-RUNNING:CAPS"/>
+    <keyword type="constant" name="CINNAMON_STAGE_INPUT_MODE_NONREACTIVE" link="CinnamonGlobal.html#CINNAMON-STAGE-INPUT-MODE-NONREACTIVE:CAPS"/>
+    <keyword type="constant" name="CINNAMON_STAGE_INPUT_MODE_NORMAL" link="CinnamonGlobal.html#CINNAMON-STAGE-INPUT-MODE-NORMAL:CAPS"/>
+    <keyword type="constant" name="CINNAMON_STAGE_INPUT_MODE_FOCUSED" link="CinnamonGlobal.html#CINNAMON-STAGE-INPUT-MODE-FOCUSED:CAPS"/>
+    <keyword type="constant" name="CINNAMON_STAGE_INPUT_MODE_FULLSCREEN" link="CinnamonGlobal.html#CINNAMON-STAGE-INPUT-MODE-FULLSCREEN:CAPS"/>
+    <keyword type="constant" name="CINNAMON_CURSOR_DND_IN_DRAG" link="CinnamonGlobal.html#CINNAMON-CURSOR-DND-IN-DRAG:CAPS"/>
+    <keyword type="constant" name="CINNAMON_CURSOR_DND_UNSUPPORTED_TARGET" link="CinnamonGlobal.html#CINNAMON-CURSOR-DND-UNSUPPORTED-TARGET:CAPS"/>
+    <keyword type="constant" name="CINNAMON_CURSOR_DND_MOVE" link="CinnamonGlobal.html#CINNAMON-CURSOR-DND-MOVE:CAPS"/>
+    <keyword type="constant" name="CINNAMON_CURSOR_DND_COPY" link="CinnamonGlobal.html#CINNAMON-CURSOR-DND-COPY:CAPS"/>
+    <keyword type="constant" name="CINNAMON_CURSOR_POINTING_HAND" link="CinnamonGlobal.html#CINNAMON-CURSOR-POINTING-HAND:CAPS"/>
+  </functions>
+</book>

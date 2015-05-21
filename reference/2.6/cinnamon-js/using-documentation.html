@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Using documentation: Cinnamon Javascript Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
+<link rel="up" href="documentation.html" title="Part I. Documentation">
+<link rel="prev" href="documentation.html" title="Part I. Documentation">
+<link rel="next" href="documenting-source.html" title="Writing documentation in source">
+<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="documentation.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="documentation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="documenting-source.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="using-documentation"></a>Using documentation</h2></div></div></div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.2.2"></a>Overview</h3></div></div></div>
+<p>The documentation of Cinnamon is separated into 3 different parts (4 if you count muffin). What you are currently reading is part of the Javascript reference, which describes the Javascript part of Cinnamon. This also includes the general top-level overviews and tutorials you will need for Cinnamon. This is named the "Cinnamon Javascript Reference Manual".</p>
+<p>The first few sections of the JS part are top-level descriptions and overviews, while the last part is a technical reference for the individual functions and objects available in Cinnamon. Note that this documentation is aimed at both applet/extension developers and Cinnamon developers themselves. So depending on who you are, some of the information might be entirely irrelevant.</p>
+<p>The second part of the documentation is for the C part of Cinnamon, which is simply refered to as the "Cinnamon Reference Manual".</p>
+<p>The last part is the documentation for Shell toolkit, or St. This is the graphical toolkit used to draw widgets on the screen (similar to Gtk).</p>
+<p>The modules covered by this documentation are those imported via <code class="code">imports.ui.*</code> and <code class="code">imports.misc.*</code>. The <a href="..//cinnamon/CinnamonGlobal.html"><code class="code">global</code></a> object is documented in the C part of Cinnamon, as well as things accessed through <code class="code">imports.gi.Cinnamon</code>. Things accessed through <code class="code">imports.gi.St</code> are, unsurprisingly, documented in the St part.</p>
+<p><code class="code">imports.gi.Meta</code> refers to Muffin, while others (eg. <code class="code">imports.gi.Gio</code>) are third-party (usually GNOME) libraries that are documented elsewhere.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.2.3"></a>Accessing the documentation</h3></div></div></div>
+<p>There are two ways of accessing this documentation, one of which is what you are currently using. The first method is accessing it online, which will be availble at <a class="ulink" href="http://cinnamon.linuxmint.com" target="_top">http://cinnamon.linuxmint.com</a>.</p>
+<p>The second method is to access it locally. Install the program <code class="code">devhelp</code> and the <code class="code">cinnamon-doc</code> package (might be named differently in different distros or included in the <code class="code">cinnamon</code> package itself). Then run the program <code class="code">devhelp</code> to access all documentations you have installed in your system (not limited to Cinnamon).</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.2.4"></a>Javascript documentation</h3></div></div></div>
+<p>The Javascript documentation is divided into sections according to the files they are from. The title of each section is how you want to import it. For example, if you want to use the <code class="code">IconApplet</code> object from <code class="code">imports.ui.applet</code>, then you type <code class="code">imports.ui.applet.IconApplet</code>. Since that is very cumbersome to type, we usually declare it as a constant first. For example, you will often see</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>This way you can access the <code class="code">IconApplet</code> object via <code class="code">Applet.IconApplet</code> instead. This is how the individual pages are named as well.</p>
+<p>The <code class="code">_init</code> function of each object is the constructor. So if you want to know what happens when you call <code class="code">new Applet.Applet</code>, you look at the <code class="code">_init</code> function of <code class="code">Applet.Applet</code>. There usually isn't much helpful information apart form what each argument does.</p>
+<p>Certain variables and functions are prepended with <code class="code">_</code>, eg. <code class="code">_showPanel</code>. These are private variables and functions which shouldn't be accessed normally, and is there purely for referencial purposes. It is generally not a good idea to use them in applets/desklets. Within Cinnamon itself, you may use them when necessary.</p>
+<p>Note that the <code class="code">_init</code> is also a private function, and you also shouldn't call it directly (unless you are inheriting the object). It is implicitly called when you call the constructor (which technically can be totally unrelated to the <code class="code">_init</code> function.</p>
+<p>Each object comes with an object hierarchy, documented in the Object Hierarchy section. For example, <code class="code">Applet.IconApplet</code> inherits <code class="code">Applet.Applet</code>. The child can, obviously, access the functions and properties of the parent. However, this information is not repeated in every child. So if you cannot find the function you want in the <code class="code">Applet.IconApplet</code> page, you can look at the <code class="code">Applet.Applet</code> page as well. This is also true for the C documentation.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.2.5"></a>C documentation</h3></div></div></div>
+<p>The items described here are common to all C modules imported, not just those relating to Cinnamon.</p>
+<p>Reading the documentation of C modules is tricky, since they are written for C, and we are in Javascript. In particular, C has no concept of objects, while Javascript does. Thus the naming convention of many things are different when used in Cinnamon, and the documentation is not directly applicable. The following sections will describe how to translate C into Javascript.</p>
+<p>Note that most of these apply to Python and other non-C language.</p>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.2.2.5.5"></a>Objects</h4></div></div></div>
+<p>C has no concept of objects, but GObject allows C code to create things that look like objects. For example, <code class="code">St.Bin</code> is something that looks like an object, and acts like an object in Javascript. If you want to look up the documentation of <code class="code">St.Bin</code>, you search for <code class="code">StBin</code> (without the ".") and the documentation will come up.</p>
+<p>The removal of the "." is since, in Javascript, we first import the whole St, and then take the "<code class="code">Bin</code>" object from St. This concept is non-existent in C. In C, it is simply StBin.</p>
+<p>A notable exception is with <code class="code">Gio</code> and <code class="code">GLib</code> objects, in which the <code class="code">G</code> prefix is used in C for both while <code class="code">Gio</code> and <code class="code">GLib</code> is used in Javascript. For example, the C object is <code class="code">GSettings</code> while the Javascript object is <code class="code">Gio.Settings</code>.</p>
+<p>Translating object names is the easiest of all.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.2.2.5.6"></a>Functions</h4></div></div></div>
+<p>If you look at the page of <a href="..//st/StBin.html"><code class="code">StBin</code></a>, you will see that the functions have very long names like <code class="code">st_bin_get_child</code>. Since we are just pretending to have objects via GObjects, and objects do not genuinely exist in C, the functions do not "belong" to the objects. We simply put the name of the object in front of the function name and trust people will actually use it on the proper object.</p>
+<p>In C, objects are imported as if they were objects, and functions <span class="emphasis"><em>do</em></span> belong to the objects. So if <code class="code">actor</code> is an <code class="code">StBin</code>, we do not do <code class="code">st_bin_get_child(actor)</code>, but simply <code class="code">actor.get_child()</code>.</p>
+<p>Note that the C documentation always tells you that the first argument to the function is the object itself. For example, <code class="code">st_bin_get_child</code> takes in an <code class="code">StBin</code> as the argument. We do not need to supply this.</p>
+<p>Note also that not all functions are available for use in Javascript. If some functions are considered to be too C-like to be used in other languages, it will not be availble. There is generally no simple way to figure out whether the functions are available, but usually they are. If they are not, Cinnamon will complain loudly that the function doesn't exist. So the best way to know is to try it.</p>
+<p>Again, <code class="code">Gio</code> and <code class="code">GLib</code> functions use the <code class="code">g_</code> prefix, eg <code class="code">g_settings_set_int</code> instead of <code class="code">gio_settings_get_int</code>.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.2.2.5.7"></a>Properties</h4></div></div></div>
+<p>GObjects have properties. These can generally accessed directly. For example, if <code class="code">actor</code> is an <code class="code">StBin</code> and you want to access the <code class="code">x-fill</code> property, you can use <code class="code">actor.x_fill</code>. Note that we translate <code class="code">-</code> to <code class="code">_</code>.</p>
+<p>Sometimes, for some absurd reason, the properties cannot be accessed directly. In this case, there is still hope. You can access the property via <code class="code">actor.get_property("x-fill")</code> and <code class="code">actor.set_property("x-fill", false)</code>.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.2.2.5.8"></a>Enums</h4></div></div></div>
+<p>Enums are the trickiest of all. An example of an enum you might see is as follows:</p>
+<div class="informalexample"><div class="refsect2">
+<a name="id-1.2.2.5.8.3.1"></a><h3>enum StButtonMask</h3>
+<p>A mask representing which mouse buttons an StButton responds to.</p>
+<div class="refsect3">
+<a name="id-1.2.2.5.8.3.1.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="enum_member_name"><p>ST_BUTTON_ONE</p></td>
+<td class="enum_member_description">
+<p>button 1 (left)</p>
+                    </td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p>ST_BUTTON_TWO</p></td>
+<td class="enum_member_description">
+<p>button 2 (middle)</p>
+                    </td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p>ST_BUTTON_THREE</p></td>
+<td class="enum_member_description">
+<p>button 3 (right)</p>
+                    </td>
+<td class="enum_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div></div>
+<p>The correct way to access these enums is <code class="code">St.ButtonMask.ONE</code>. We first start with the namespace St, then the name of the enums. Note that this does <span class="emphasis"><em>not</em></span> relate to the name of the members of the enum. For example, if the individual enum members are called <code class="code">HELLO_WORLD</code> in C, you still access them by starting with <code class="code">St.ButtonMask</code>.</p>
+<p>What to put after <code class="code">St.ButtonMask</code> is trickier - it is the name of the member, but what should you take? You usually have to strip out some things from the left. In this case, you remove the <code class="code">ST_BUTTON</code> and retain <code class="code">ONE</code>. There is no fixed rule to what to remove. However, it is usually the name of the object (<code class="code">StButton</code> in this case), or the name of the whole group of enum.</p>
+<p>You can save yourself some guessing by typing <code class="code">St.ButtonMask</code> in looking glass. Double-clicking into it will show you what you can access. In this case it shows <code class="code">ONE, TWO, THREE</code>.</p>
+<p>Note that both <code class="code">St</code> and <code class="code">ButtonMask</code> are in CamelCase, but the name of the enum member uses CAPS_WITH_UNDERSCORE.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23</div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applet, desklet and extension settings: Cinnamon Javascript Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
+<link rel="up" href="extension-system.html" title="Part III. Extension system">
+<link rel="prev" href="xlet-versioning.html" title="Supporting multiple versions">
+<link rel="next" href="cinnamon-js-reference.html" title="Part IV. Cinnamon Javascript Reference">
+<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="extension-system.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="xlet-versioning.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="cinnamon-js-reference.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="xlet-settings"></a>Applet, desklet and extension settings</h2></div></div></div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.2"></a>Introduction</h3></div></div></div>
+<p>This document is intended to serve as a guide and reference to the new Cinnamon applet, desklet, and extension settings API, new for Cinnamon 1.8.  The goal of this API was to provide for an easy to implement and use storage system for settings.</p>
+<p>We will start with a broad overview of the system, and then work our way into the details.</p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.3"></a>Overview</h3></div></div></div>
+<p>
+      In a nutshell, your applet will provide a JSON file that defines various setting types and their details, including a key identifier, description, default value, minimum and maximums (in the case of numeric types) and other options pertinent to each type of setting.
+    </p>
+<p>
+      When your applet is added to the panel, you instantiate a settings provider, which looks for this file, parses it, applies default values, and saves an "instance" copy to work with.
+    </p>
+<p>
+      Once that setting provider is initialized, your applet can then bind properties to the various setting keys from that file, and use them to set up how your applet will look, feel, and operate. There are a few types of bindings available, depending on how you want your applet to control or be controlled by these settings.
+    </p>
+<p>
+      That is the "live", applet side of the picture.
+    </p>
+<p>
+      The other side of this, is that same JSON file you created for your applet is also used by Cinnamon Settings (or System Settings as it will be known in 1.8,) to automatically generate a configuration panel to adjust all these settings. There are a number of formatting options, as well as the capability for some settings to be "dependent" on another setting - allowing you to deactivate or "grey out" settings that cannot be used in certain situations. Changes made to this panel are saved immediately, and can be handled by the applet via callbacks that you defined in your applet.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.4"></a>The settings-schema.json file</h3></div></div></div>
+<p>
+      Here’s a basic example of a <code class="code">settings-schema.json</code> file, that can
+      define settings for your applet:
+    </p>
+<pre class="programlisting">
+      {
+          "width": {
+              "type" : "scale",
+              "default" : 10,
+              "min" : 2,
+              "max" : 400,
+              "step" : 1,
+              "description" : "Amount of space in pixels"
+          }
+      }
+    </pre>
+<p>
+      The most important item here to start is the key: <code class="code">"width"</code>. This is what your applet is going to specify when binding a property to the setting provider. Within the <code class="code">width</code> node are the various details specific to that key, and differ depending on what type of setting you’ll be using.
+    </p>
+<p>
+      In this case:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: defines what type of widget you want to use to adjust this value. In general the names of these types will be similar to what GTK uses, but always lowercase, and single word.
+      </li>
+<li class="listitem">
+<code class="code">default</code>: defines what you want your default, or starting value to be for this setting. Since scale defines a numeric type, the default will be a numeral (no quotations). You can use floating point, but you must have a leading 0 for floating numbers less than 1 (i.e. 0.1).
+      </li>
+<li class="listitem">
+<code class="code">min</code>: the lower limit for your setting.
+      </li>
+<li class="listitem">
+<code class="code">max</code>: the upper limit for your setting.
+      </li>
+<li class="listitem">
+<code class="code">step</code>: the step amount for this setting - how much the value changes for each <span class="quote">“<span class="quote">click</span>”</span> or notch of the widget.
+      </li>
+<li class="listitem">
+<code class="code">description</code>: The description you want by your setting in the configuration panel, to explain what the setting controls.
+      </li>
+</ul></div>
+<p>
+      The JSON file must be valid - it must pass any structure tests, not have extra commas, and so forth. There are a number of tools available online where you can paste the contents of your file in, and it will tell you if it it valid or not, and point out problem areas. One such site is <a class="ulink" href="http://jsonlint.com/" target="_top">http://jsonlint.com/</a>.
+    </p>
+<p>
+      So now we’ve got a <code class="code">settings-schema.json</code> file. It goes in your applet directory, alongside the <code class="code">metadata.json</code>, <code class="code">applet.js</code>, and any other files you have.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.5"></a>Preparing your applet:</h3></div></div></div>
+<p>
+      The first thing you need to do is add Settings to your
+      <span class="quote">“<span class="quote">imports</span>”</span> at the top of your applet:
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Settings </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">;</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      You’ll also need to ensure that you’re passing along the
+      <code class="code">instanceId</code> of the applet from the
+      <code class="code">main()</code> function:
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    let myApplet </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> myApplet</span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      and
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
+
+<span class="normal">MyApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
+
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="symbol">....</span>
+<span class="normal">    </span><span class="symbol">....</span>
+<span class="normal">    </span><span class="symbol">....</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      Note: Desklets only need to pass <code class="code">metadata</code> and <code class="code">instanceId</code> through this chain, and extensions have no need of any of this.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.6"></a>Initializing the settings provider</h3></div></div></div>
+<p>
+      Now, to actually initialize your settings provider, usually somewhere in the <code class="code">_init</code> method of <code class="code">MyApplet</code>, you’ll put something like this, which will use your applet’s own instance variables:
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      If you prefer to have your preferences in a separate object, you can do like this, and the object will be populated with your settings variables:
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">_preferences </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{}</span><span class="symbol">;</span>
+<span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">_preferences</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      In other words, the object reference you pass in can be any object. The UUID there can be just hardcoded, or can be drawn from the metadata (<code class="code">metadata["uuid"]</code>), whichever you prefer. You can also leave off the instanceId if you haven’t defined your applet as multiple-instance capable.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.7"></a>Binding your settings</h3></div></div></div>
+<p>
+      Since we only have one setting in our example, this will be very
+      simple:
+    </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="keyword">null</span><span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+      To explain:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">.bindProperty</code>: tells the settings provider you want to bind one of your settings keys to an applet property.
+      </li>
+<li class="listitem">
+<code class="code">Settings.BindingDirection.IN</code>: This tells the setting provider that you want your applet property to be updated by changes in the configuration file. Other flags exist to provide the opposite direction, as well as bidirectional updating. More on those later.
+      </li>
+<li class="listitem"><p>
+          <code class="code">"width"</code>: This is the key value you defined in your settings-schema.json file that you want to match up with.
+        </p></li>
+<li class="listitem"><p>
+          <code class="code">"width"</code>: This is the name of the property you want to store the value in your applet. You’ll refer to it traditionally as <code class="code">this.width</code> from here on out in the applet code.
+        </p></li>
+<li class="listitem"><p>
+          <code class="code">this.on_settings_changed</code>: This is the method you want called when the setting value changes. <span class="emphasis"><em>NOTE: The property (<code class="code">this.width</code>) already contains the new value when this method is called. All you have to do is act on it.</em></span>
+        </p></li>
+<li class="listitem"><p>
+          <code class="code">null</code>: this is optional - it can be left off entirely, or used to pass any extra object to the callback if desired.
+        </p></li>
+</ul></div>
+<p>
+      That’s basically it - your property, <code class="code">this.width</code>, or <code class="code">this._preferences.width</code>, is now managed by the setting provider, and will be automatically updated when the configuration changes, and your callback method automatically called so you can deal with the change.
+    </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.8"></a>Editing your configuration:</h3></div></div></div>
+<p>
+      Once you’ve activated your applet, you can then go in to Cinnamon Settings, Applets, and the option to Configure will be displayed when you select it.
+    </p>
+<p>
+      For our sample, we’d see:
+    </p>
+<img src="settings.png"><p>
+      This has been automatically generated by our JSON file. If we adjust the scale, the JSON config file is rewritten, the settings provider for our applet notices, and reloads the new value into the applet’s <code class="code">this.width</code> property, and <code class="code">this.on_settings_changed()</code> is called.
+    </p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23</div>
+</body>
+</html>

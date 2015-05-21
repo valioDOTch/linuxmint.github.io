@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Object Hierarchy: Cinnamon Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Reference Manual">
+<link rel="up" href="index.html" title="Cinnamon Reference Manual">
+<link rel="prev" href="CinnamonMountOperation.html" title="CinnamonMountOperation">
+<link rel="next" href="api-index-full.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="CinnamonMountOperation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="object-tree"></a>Object Hierarchy</h1></div></div></div>
+<pre class="screen">
+    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">├──</span> <a class="link" href="CinnamonApp.html" title="CinnamonApp">CinnamonApp</a>
+    <span class="lineart">├──</span> <a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem">CinnamonAppSystem</a>
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterTexture.html">ClutterTexture</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterCairoTexture.html">ClutterCairoTexture</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> CinnamonArrow
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/clutter-ClutterX11TexturePixmap.html#ClutterX11TexturePixmap">ClutterX11TexturePixmap</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="CinnamonGtkEmbed.html" title="CinnamonGtkEmbed">CinnamonGtkEmbed</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonTrayIcon.html" title="CinnamonTrayIcon">CinnamonTrayIcon</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="..//st/StWidget.html">StWidget</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">├──</span> StContainer
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer">CinnamonGenericContainer</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonStack.html" title="CinnamonStack">CinnamonStack</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="..//st/StBin.html">StBin</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonSlicer.html" title="CinnamonSlicer">CinnamonSlicer</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWidget.html">GtkWidget</a>
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkContainer.html">GtkContainer</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkBin.html">GtkBin</a>
+    <span class="lineart">│</span>               <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWindow.html">GtkWindow</a>
+    <span class="lineart">│</span>                   <span class="lineart">╰──</span> <a class="link" href="CinnamonEmbeddedWindow.html" title="CinnamonEmbeddedWindow">CinnamonEmbeddedWindow</a>
+    <span class="lineart">├──</span> CinnamonDocSystem
+    <span class="lineart">├──</span> <a class="link" href="CinnamonGlobal.html" title="CinnamonGlobal">CinnamonGlobal</a>
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gio/unstable/GMountOperation.html">GMountOperation</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonMountOperation.html" title="CinnamonMountOperation">CinnamonMountOperation</a>
+    <span class="lineart">├──</span> CinnamonPerfLog
+    <span class="lineart">├──</span> <a class="link" href="cinnamon-cinnamon-recorder.html#CinnamonRecorder">CinnamonRecorder</a>
+    <span class="lineart">├──</span> CinnamonScreenGrabber
+    <span class="lineart">├──</span> CinnamonScreenshot
+    <span class="lineart">├──</span> <a class="link" href="CinnamonTrayManager.html" title="CinnamonTrayManager">CinnamonTrayManager</a>
+    <span class="lineart">├──</span> <a class="link" href="CinnamonWindowTracker.html" title="CinnamonWindowTracker">CinnamonWindowTracker</a>
+    <span class="lineart">├──</span> <a class="link" href="CinnamonWM.html" title="CinnamonWM">CinnamonWM</a>
+    <span class="lineart">╰──</span> CinnamonXFixesCursor
+    GEnum
+    <span class="lineart">├──</span> <a class="link" href="CinnamonApp.html#CinnamonAppState" title="enum CinnamonAppState">CinnamonAppState</a>
+    <span class="lineart">├──</span> <a class="link" href="CinnamonGlobal.html#CinnamonCursor" title="enum CinnamonCursor">CinnamonCursor</a>
+    <span class="lineart">╰──</span> <a class="link" href="CinnamonGlobal.html#CinnamonStageInputMode" title="enum CinnamonStageInputMode">CinnamonStageInputMode</a>
+    GBoxed
+    <span class="lineart">├──</span> <a class="link" href="CinnamonGenericContainer.html#CinnamonGenericContainerAllocation">CinnamonGenericContainerAllocation</a>
+    <span class="lineart">╰──</span> <a class="link" href="CinnamonWindowTracker.html#CinnamonStartupSequence">CinnamonStartupSequence</a>
+</pre>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23</div>
+</body>
+</html>

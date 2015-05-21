@@ -1,0 +1,13 @@
+The build.sh script builds the cinnamon documentation and puts them in the
+right place. If you simply run ./build.sh, the documentation for Cinnamon git
+will be built. You can build specific versions with ./build.sh <version>, eg.
+./build.sh 2.6. Do not supply the point version number, ie. not 2.6.0.
+
+When building, make sure you do not have mutter gtk-docs installed on your
+system, or else gtk-doc will get confused and link everything to mutter instead
+of muffin.
+
+The index.html of this file has to be manually updated when there is a new
+version coming out. For example, you will have to add an entry for 2.8 when it
+comes out. This is only done twice a year when releases are made. Don't
+complain. If you don't like it, fix it.

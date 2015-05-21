@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Writing documentation in source: Cinnamon Javascript Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
+<link rel="up" href="documentation.html" title="Part I. Documentation">
+<link rel="prev" href="using-documentation.html" title="Using documentation">
+<link rel="next" href="documenting-tutorial.html" title="Writing tutorials">
+<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="documentation.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="using-documentation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="documenting-tutorial.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="documenting-source"></a>Writing documentation in source</h2></div></div></div>
+<p>
+    The C part of Cinnamon can be documented using standard gtk-doc format, and there should be plenty of tutorials on that. The JavaScript part of Cinnamon can also be documented using something that resembles gtk-doc format.
+  </p>
+<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>) and functions (including functions of files and functions of objects).  </p>
+<p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below.  </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">Applet</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">()</span>
+<span class="cbracket">}</span>
+
+<span class="normal">Applet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+    The general format of a piece of code documentation is as follows:
+  </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span>
+<span class="comment">* name_of_thing:</span>
+<span class="comment">* </span><span class="type">@short</span><span class="comment">_description: one-line description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">1 (type): description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">2 (type): description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">3 (type): description</span>
+<span class="comment">*</span>
+<span class="comment">* Long description</span>
+<span class="comment">*</span>
+<span class="comment">* Second paragraph of long description</span>
+<span class="comment">*/</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+    A comment block should always start with
+  </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+    Avoid starting comments with this (use <code class="code">/*</code> instead) even though the parser should be smart enough to not parse them, but if they look too like a piece of documentation, the parser might get confused.
+  </p>
+<p> The next line is the name of the thing being documented. Function, object and file documentation are distinguished using this line. They should look, respectively, like this: </p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> function_name</span><span class="symbol">:</span>
+<span class="symbol">*</span><span class="normal"> #ObjectName</span><span class="symbol">:</span>
+<span class="symbol">*</span><span class="normal"> FILE</span><span class="symbol">:</span><span class="normal">filename</span><span class="symbol">.</span><span class="normal">js</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Note that we do not have to include the namespace of an object, ie. it is <code class="code">#ObjectName</code>, not <code class="code">#FileName.ObjectName.</code></p>
+<p>Afterwards is a short description. This is only needed for files and objects, and will be ignored for functions. It is optional, but things look ugly without it. Note that it has to be short, hence the name. It is shown in the contents page in the form</p>
+<div class="informalexample">
+    Object.Name - short description
+  </div>
+<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, and a parameter for a function. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly. If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> </span><span class="keyword">this</span><span class="normal"> is a very long description</span><span class="symbol">.</span><span class="normal"> Oh my gosh I am</span>
+<span class="symbol">*</span><span class="normal"> running out of space</span><span class="symbol">!</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>After the properties, a description of the thing should be given. Use *two* line breaks to signify the end of the properties section, and write as normal. It is okay to separate two properties with two line breaks. For example,</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> world</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>is fine, but two line breaks within a property description is not. eg</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>is bad (line 2 will be treated as a description of the object itself). Instead, if you want the property description to have multiple paragraphs, put a <code class="code">\</code> character in place of the empty line, ie.</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
+<span class="symbol">*</span><span class="normal"> </span><span class="symbol">\</span>
+<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>In the description section, two line breaks will be translated into an actual line break, and single line breaks are ignored.</p>
+<p>At the end, in the case of a function, a return value can be specified in the form</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> description of what is returned</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Despite looking like a property, the description can in fact have multiple paragraphs. The following is valid</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hey </span><span class="keyword">this</span><span class="normal"> </span><span class="keyword">function</span><span class="normal"> returns a really cool thing</span><span class="symbol">!</span>
+<span class="symbol">*</span><span class="normal"> Want to know what it is</span><span class="symbol">?</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> It is a random number</span><span class="symbol">!</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Objects should indicate what they directly inherit in the description, using the form</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> Inherits</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">Applet</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Note that the namespace is required.</p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.2.3.32"></a>Automatic substitutions</h3></div></div></div>
+<p>The current parser is able to perform several substitutions:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+        The type of a property specified will be automatically converted to a link to the documentation of that type, if available.
+      </li>
+<li class="listitem">
+        In the description of itmes, <code class="code">@word</code> will be automatically converted to code format, ie. enclosed within <code class="code">&lt;code&gt;</code> tags.
+      </li>
+<li class="listitem">
+        In the description of items, <code class="code">*text more text*</code> will be shown in italics and <code class="code">**text more text**</code> will be shown in bold. Note that using <code class="code">_underlines to highlight_</code> is not supported since the parser will confuse it with private variables.
+      </li>
+<li class="listitem">
+        Links to other objects can be done with a <code class="code">#Hash</code>. If you are linking to an object within the same file, you may omit the namespace, eg. using <code class="code">#Applet</code> in <code class="code">Applet.AppletContextMenu</code>. However, if it is from a different file, the namespace must be included.
+      </li>
+<li class="listitem">
+<p>
+          Links to functions and properties of other objects with a <code class="code">%percentage sign</code>. If you wish to link to functions of the same object, the following four are acceptable:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><code class="code">this.func</code></li>
+<li class="listitem"><code class="code">this.func()</code></li>
+<li class="listitem"><code class="code">func</code></li>
+<li class="listitem"><code class="code">func()</code></li>
+</ul></div>
+<p>
+          Of course, if it is a property, then you would never want to include the <code class="code">()</code> brackets. To refer to functions of other objects, you have to type the full name of the object. The namespace can be omitted if the object is in the same file. For example, the following are acceptable (assuming you are inside <code class="code">popupMenu.js</code>.
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><code class="code">PopupMenu.PopupBaseMenuItem._init</code></li>
+<li class="listitem"><code class="code">PopupMenu.PopupBaseMenuItem._init()</code></li>
+<li class="listitem"><code class="code">PopupBaseMenuItem._init</code></li>
+<li class="listitem"><code class="code">PopupBaseMenuItem._init()</code></li>
+</ul></div>
+<p>
+          If there are functions and properties that take the same name, the property will be linked to, unless the name ends with <code class="code">()</code>, in which case it will always be a function.
+        </p>
+</li>
+<li class="listitem">
+        Code blocks can be enclosed in descriptions as follows:
+        <div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">```</span>
+<span class="keyword">this</span><span class="symbol">.</span><span class="normal">is </span><span class="symbol">=</span><span class="normal"> some </span><span class="symbol">+</span><span class="normal"> code</span>
+<span class="normal">```</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</li>
+<li class="listitem">
+        Unordered lists can be created as follows:
+        <div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">-</span><span class="normal"> List item </span><span class="number">1</span>
+<span class="symbol">-</span><span class="normal"> List item </span><span class="number">2</span>
+<span class="normal">  </span><span class="symbol">\</span>
+<span class="normal">  Continuing item </span><span class="number">2</span><span class="normal"> </span><span class="keyword">with</span><span class="normal"> `</span><span class="symbol">\</span><span class="normal">`</span>
+
+<span class="normal">No longer an item</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        Lists cannot be nested, but code blocks can appear in lists
+      </li>
+</ul></div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23</div>
+</body>
+</html>
