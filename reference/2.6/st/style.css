@@ -12,12 +12,11 @@ body
 }
 .programlisting
 {
-  /* tango:sky blue 0/1 */
   /* fallback for no rgba support */
   background: #e6f3ff;
   border: solid 1px #729fcf;
-  background: rgba(114, 159, 207, 0.1);
-  border: solid 1px rgba(114, 159, 207, 0.2);
+  background: rgba(172, 72, 0, 0.1);
+  border: solid 1px rgba(172, 72, 0, 0.2);
   padding: 0.5em;
 }
 .variablelist
@@ -102,8 +101,7 @@ div.informaltable table td, div.informaltable table th
   color: #888a85;
 }
 
-.function_type a,
-.function_type a:visited,
+.function_type a, .function_type a:visited,
 .function_type a:hover,
 .property_type a,
 .property_type a:visited,
@@ -145,9 +143,18 @@ div.table table th
   background-color: #d3d7cf;
 }
 
+h2
+{
+  color: #5F2800;
+}
+
+h3
+{
+  color: #863800
+}
 h4
 {
-  color: #555753;
+  color: #AC4800;
   margin-top: 1em;
   margin-bottom: 1em;
 }

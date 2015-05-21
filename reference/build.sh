@@ -81,6 +81,7 @@ for dir in cinnamon cinnamon-js st muffin; do
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
     sed -i 's%/usr/share/gtk-doc//html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
 
+    cp ../../style.css .
     cd ..
 done
 
