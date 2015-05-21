@@ -102,7 +102,7 @@
     <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
         <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
-            <span class="lineart">╰──</span> <a href="..//st/StWidget.html">StWidget</a>
+            <span class="lineart">╰──</span> <a href="../st/StWidget.html">StWidget</a>
                 <span class="lineart">╰──</span> StContainer
                     <span class="lineart">╰──</span> CinnamonGenericContainer
 </pre>
@@ -113,7 +113,7 @@
 lack of GObject subclassing + vfunc overrides in gjs.  We
 implement the container interface, but proxy the virtual functions
 into signals, which gjs can catch.</p>
-<p><a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer"><span class="type">CinnamonGenericContainer</span></a> is an <a href="..//st/StWidget.html"><span class="type">StWidget</span></a>, and automatically takes its
+<p><a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer"><span class="type">CinnamonGenericContainer</span></a> is an <a href="../st/StWidget.html"><span class="type">StWidget</span></a>, and automatically takes its
 borders and padding into account during size request and allocation.</p>
 </div>
 <div class="refsect1">
@@ -237,7 +237,7 @@ allocate method.</p>
 <p>Note that <em class="parameter"><code>box</code></em>
  is <em class="parameter"><code>self</code></em>
 's content box (qv
-<a href="..//st/st-st-theme-node.html#st-theme-node-get-content-box"><code class="function">st_theme_node_get_content_box()</code></a>), NOT its allocation.</p>
+<a href="../st/st-st-theme-node.html#st-theme-node-get-content-box"><code class="function">st_theme_node_get_content_box()</code></a>), NOT its allocation.</p>
 <div class="refsect3">
 <a name="id-1.2.2.10.2.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">

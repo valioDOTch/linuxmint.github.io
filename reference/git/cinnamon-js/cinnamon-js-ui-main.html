@@ -465,7 +465,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="..//cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a>
+    <a href="../cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--recorder" title="The “recorder” property">recorder</a>
@@ -501,7 +501,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="..//cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a>
+    <a href="../cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--uiGroup" title="The “uiGroup” property">uiGroup</a>
@@ -636,7 +636,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="..//cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a>
+    <a href="../cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--tracker" title="The “tracker” property">tracker</a>
@@ -812,7 +812,7 @@ hasDefaultWorkspaceName (<em class="parameter"><code><span class="type">int</spa
 <a name="cinnamon-js-ui-main-moveWindowToNewWorkspace"></a><h3>moveWindowToNewWorkspace ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-moveWindowToNewWorkspace (<em class="parameter"><code><a href="..//muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>,
+moveWindowToNewWorkspace (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>,
                           <em class="parameter"><code><span class="type">boolean</span>       switchToNewWorkspace</code></em>);</pre>
 <p>Moves the window to a new workspace.</p>
 <p>If <code class="code">switchToNewWorkspace</code> is true, it will switch to the new workspace after moving the window</p>
@@ -1276,7 +1276,7 @@ logStackTrace (<em class="parameter"><code><span class="type">string</span>   ms
 <a name="cinnamon-js-ui-main-isWindowActorDisplayedOnWorkspace"></a><h3>isWindowActorDisplayedOnWorkspace ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">boolean</span>
-isWindowActorDisplayedOnWorkspace (<em class="parameter"><code><a href="..//muffin/MetaWindowActor.html"><span class="type">Meta.WindowActor</span></a>   win</code></em>,
+isWindowActorDisplayedOnWorkspace (<em class="parameter"><code><a href="../muffin/MetaWindowActor.html"><span class="type">Meta.WindowActor</span></a>   win</code></em>,
                                    <em class="parameter"><code><span class="type">int</span>                workspaceIndex</code></em>);</pre>
 <p>Determines whether the window actor belongs to a specific workspace</p>
 <div class="refsect3">
@@ -1340,7 +1340,7 @@ getWindowActorsForWorkspace (<em class="parameter"><code><span class="type">int<
 <span class="returnvalue">boolean</span>
 pushModal (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">Clutter.Actor</span></a>       actor</code></em>,
            <em class="parameter"><code><span class="type">int</span>                 timestamp</code></em>,
-           <em class="parameter"><code><a href="..//muffin/MetaPlugin.html#MetaModalOptions"><span class="type">Meta.ModalOptions</span></a>   options</code></em>);</pre>
+           <em class="parameter"><code><a href="../muffin/MetaPlugin.html#MetaModalOptions"><span class="type">Meta.ModalOptions</span></a>   options</code></em>);</pre>
 <p>Ensure we are in a mode where all keyboard and mouse input goes to the stage, and focus <code class="code">actor</code>. Multiple calls to this function act in a stacking fashion; the effect will be undone when an equal number of popModal() invocations have been made.</p>
 <p>Next, record the current Clutter keyboard focus on a stack. If the modal stack returns to this actor, reset the focus to the actor which was focused at the time pushModal() was invoked.</p>
 <p><code class="code">timestamp</code> is optionally used to associate the call with a specific user initiated event.  If not provided then the value of global.get_current_time() is assumed.</p>
@@ -1437,7 +1437,7 @@ getRunDialog ();</pre>
 <a name="cinnamon-js-ui-main-activateWindow"></a><h3>activateWindow ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-activateWindow (<em class="parameter"><code><a href="..//muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   window</code></em>,
+activateWindow (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   window</code></em>,
                 <em class="parameter"><code><span class="type">int</span>           time</code></em>,
                 <em class="parameter"><code><span class="type">int</span>           workspaceNum</code></em>);</pre>
 <p>Activates <code class="code">window</code>, switching to its workspace first if necessary, and switching out of the overview if it's currently active</p>
@@ -1533,7 +1533,7 @@ queueDeferredWork (<em class="parameter"><code><span class="type">string</span> 
 <a name="cinnamon-js-ui-main-isInteresting"></a><h3>isInteresting ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">boolean</span>
-isInteresting (<em class="parameter"><code><a href="..//muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>);</pre>
+isInteresting (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>);</pre>
 <p>Determines whether a window is "interesting", i.e. ones to be displayed in alt-tab, window list etc.</p>
 <div class="refsect3">
 <a name="id-1.5.11.2.6.33.5"></a><h4>Parameters</h4>
@@ -1560,8 +1560,8 @@ isInteresting (<em class="parameter"><code><a href="..//muffin/MetaWindow.html">
 <a name="cinnamon-js-ui-main-getTabList"></a><h3>getTabList ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">array</span>
-getTabList (<em class="parameter"><code><a href="..//muffin/MetaWorkspace.html"><span class="type">Meta.Workspace</span></a>   workspaceOpt</code></em>,
-            <em class="parameter"><code><a href="..//muffin/MetaScreen.html"><span class="type">Meta.Screen</span></a>      screenOpt</code></em>);</pre>
+getTabList (<em class="parameter"><code><a href="../muffin/MetaWorkspace.html"><span class="type">Meta.Workspace</span></a>   workspaceOpt</code></em>,
+            <em class="parameter"><code><a href="../muffin/MetaScreen.html"><span class="type">Meta.Screen</span></a>      screenOpt</code></em>);</pre>
 <p>Return a list of the interesting windows on a workspace (by default, the active workspace). The list will include app-less dialogs.</p>
 <div class="refsect3">
 <a name="id-1.5.11.2.6.34.5"></a><h4>Parameters</h4>
@@ -1649,7 +1649,7 @@ getTabList (<em class="parameter"><code><a href="..//muffin/MetaWorkspace.html">
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--recorder"></a><h3>The “recorder” property</h3>
-<pre class="programlisting">  “recorder”                 <a href="..//cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a></pre>
+<pre class="programlisting">  “recorder”                 <a href="../cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a></pre>
 <p>The recorder</p>
 </div>
 <hr>
@@ -1673,7 +1673,7 @@ getTabList (<em class="parameter"><code><a href="..//muffin/MetaWorkspace.html">
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--uiGroup"></a><h3>The “uiGroup” property</h3>
-<pre class="programlisting">  “uiGroup”                  <a href="..//cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a></pre>
+<pre class="programlisting">  “uiGroup”                  <a href="../cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a></pre>
 <p>The group containing all Cinnamon and Muffin actors</p>
 </div>
 <hr>
@@ -1767,7 +1767,7 @@ getTabList (<em class="parameter"><code><a href="..//muffin/MetaWorkspace.html">
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--tracker"></a><h3>The “tracker” property</h3>
-<pre class="programlisting">  “tracker”                  <a href="..//cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a></pre>
+<pre class="programlisting">  “tracker”                  <a href="../cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a></pre>
 <p>The window tracker</p>
 </div>
 <hr>

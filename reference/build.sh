@@ -1,54 +1,56 @@
 #!/bin/sh
 
+set -e
+
 version="git"
 if [ ! -z "$1" ]; then
     version=$1
 fi
 
-echo "Cleaning up directory"
-rm -rf $version
+echo "Building documentation for Cinnamon and Muffin $version"
+echo ""
 
-echo "Creating target directories"
-mkdir -p $version/muffin/
-mkdir -p $version/cinnamon-js/
-mkdir -p $version/cinnamon/
-mkdir -p $version/st/
-mkdir -p tmp
-
+if [ ! -d tmp ]; then
+    echo "Creating build directory"
+    mkdir -p tmp
+fi
 cd tmp
+
 if [ -d Cinnamon ]; then
     echo "Updating Cinnamon repo"
     cd Cinnamon
-    git checkout master
-    git pull origin master
-    git fetch --tags
+    git checkout -q master
+    git pull -q origin master
+    git fetch -q --tags
     cd ..
 else
     echo "Cloning Cinnamon repo"
-    git clone https://github.com/linuxmint/Cinnamon
+    git clone -q https://github.com/linuxmint/Cinnamon
 fi
 
 if [ -d muffin ]; then
     echo "Updating muffin repo"
     cd muffin
-    git checkout master
-    git pull origin master
-    git fetch --tags
+    git checkout -q master
+    git pull -q origin master
+    git fetch -q --tags
     cd ..
 else
     echo "Cloning muffin repo"
-    git clone https://github.com/linuxmint/muffin
+    git clone -q https://github.com/linuxmint/muffin
 fi
 
 if [ ! -z "$1" ]; then
     cd Cinnamon
     tag=`git tag | grep "^$1" | tail -1`
-    git checkout $tag
+    echo "Checking out Cinnamon $tag"
+    git checkout -q $tag
     cd ..
 
     cd muffin
     tag=`git tag | grep "^$1" | tail -1`
-    git checkout $tag
+    echo "Checking out Muffin $tag"
+    git checkout -q $tag
     cd ..
 fi
 
@@ -60,13 +62,19 @@ cd ..
 
 cd muffin
 echo "Building muffin"
-./autogen.sh --prefix=/usr
+./autogen.sh --prefix=/usr > /dev/null 2>&1
 make -j4
 cd ..
 
 cd ..
 
 echo "Moving output files"
+rm -rf $version
+mkdir -p $version/muffin/
+mkdir -p $version/cinnamon-js/
+mkdir -p $version/cinnamon/
+mkdir -p $version/st/
+
 mv tmp/Cinnamon/docs/reference/cinnamon/html/* $version/cinnamon/
 mv tmp/Cinnamon/docs/reference/cinnamon-js/html/* $version/cinnamon-js/
 mv tmp/Cinnamon/docs/reference/st/html/* $version/st/
@@ -79,7 +87,8 @@ for dir in cinnamon cinnamon-js st muffin; do
     cd $dir
     gtkdoc-rebase --relative --html-dir . --other-dir ../
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
-    sed -i 's%/usr/share/gtk-doc//html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
+    sed -i 's%/usr/share/gtk-doc/*html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
+    sed -i 's%\.\.//%../%g' *.html
 
     cp ../../style.css .
     cd ..
@@ -132,4 +141,4 @@ echo '<!DOCTYPE html>
   </body>
 </html>' > index.html
 
-echo "Done!"
+echo "Success!"
