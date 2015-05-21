@@ -120,7 +120,7 @@ echo '<!DOCTYPE html>
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          You are looking at the documentation for Cinnamon '$version'.
+          This is the documentation for Cinnamon '$version'.
           <ul>
             <li><a href="cinnamon/">Cinnamon Core</a></li>
             <li><a href="cinnamon-js/">Cinnamon JS</a></li>
