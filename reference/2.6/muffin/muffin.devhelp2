@@ -65,8 +65,8 @@
     <keyword type="macro" name="META_DEFAULT_ICON_NAME" link="muffin-Common.html#META-DEFAULT-ICON-NAME:CAPS"/>
     <keyword type="enum" name="enum MetaStackLayer" link="muffin-Common.html#MetaStackLayer"/>
     <keyword type="enum" name="enum MetaPlacementMode" link="muffin-Common.html#MetaPlacementMode"/>
-    <keyword type="struct" name="MetaWindowMenu" link="muffin-Common.html#MetaWindowMenu"/>
     <keyword type="struct" name="MetaResizePopup" link="muffin-Common.html#MetaResizePopup"/>
+    <keyword type="struct" name="MetaWindowMenu" link="muffin-Common.html#MetaWindowMenu"/>
     <keyword type="function" name="MetaPrefsChangedFunc ()" link="muffin-Preferences.html#MetaPrefsChangedFunc"/>
     <keyword type="function" name="meta_prefs_add_listener ()" link="muffin-Preferences.html#meta-prefs-add-listener"/>
     <keyword type="function" name="meta_prefs_remove_listener ()" link="muffin-Preferences.html#meta-prefs-remove-listener"/>

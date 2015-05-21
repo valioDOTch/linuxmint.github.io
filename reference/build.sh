@@ -6,23 +6,39 @@ if [ ! -z "$1" ]; then
 fi
 
 echo "Cleaning up directory"
-rm -rf tmp $version
+rm -rf $version
 
 echo "Creating target directories"
 mkdir -p $version/muffin/
 mkdir -p $version/cinnamon-js/
 mkdir -p $version/cinnamon/
 mkdir -p $version/st/
+mkdir -p tmp
 
-echo "Creating temp build directory"
-mkdir tmp
 cd tmp
+if [ -d Cinnamon ]; then
+    echo "Updating Cinnamon repo"
+    cd Cinnamon
+    git checkout master
+    git pull origin master
+    git fetch --tags
+    cd ..
+else
+    echo "Cloning Cinnamon repo"
+    git clone https://github.com/linuxmint/Cinnamon
+fi
 
-echo "Cloning Cinnamon repo"
-git clone https://github.com/linuxmint/Cinnamon
-
-echo "Cloning Muffin repo"
-git clone https://github.com/linuxmint/muffin
+if [ -d muffin ]; then
+    echo "Updating muffin repo"
+    cd muffin
+    git checkout master
+    git pull origin master
+    git fetch --tags
+    cd ..
+else
+    echo "Cloning muffin repo"
+    git clone https://github.com/linuxmint/muffin
+fi
 
 if [ ! -z "$1" ]; then
     cd Cinnamon
@@ -64,6 +80,9 @@ for dir in cinnamon cinnamon-js st muffin; do
     gtkdoc-rebase --relative --html-dir . --other-dir ../
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
     sed -i 's%/usr/share/gtk-doc//html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
+
+    rm style.css
+    ln -s ../../style.css .
     cd ..
 done
 
@@ -112,9 +131,5 @@ echo '<!DOCTYPE html>
     </div>
   </body>
 </html>' > index.html
-
-echo "Removing tmp dir"
-cd ..
-rm -rf tmp
 
 echo "Done!"

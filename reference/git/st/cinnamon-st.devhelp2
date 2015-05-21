@@ -297,15 +297,15 @@
     <keyword type="enum" name="enum StTextDecoration" link="cinnamon-st-st-theme-node.html#StTextDecoration"/>
     <keyword type="enum" name="enum StTextAlign" link="cinnamon-st-st-theme-node.html#StTextAlign"/>
     <keyword type="enum" name="enum StGradientType" link="cinnamon-st-st-theme-node.html#StGradientType"/>
-    <keyword type="struct" name="StTheme" link="cinnamon-st-st-theme-node.html#StTheme-struct"/>
     <keyword type="struct" name="StThemeContext" link="cinnamon-st-st-theme-node.html#StThemeContext-struct"/>
+    <keyword type="struct" name="StTheme" link="cinnamon-st-st-theme-node.html#StTheme-struct"/>
+    <keyword type="property" name="The “scale-factor” property" link="cinnamon-st-st-theme-node.html#StThemeContext--scale-factor"/>
     <keyword type="property" name="The “application-stylesheet” property" link="cinnamon-st-st-theme-node.html#StTheme--application-stylesheet"/>
     <keyword type="property" name="The “default-stylesheet” property" link="cinnamon-st-st-theme-node.html#StTheme--default-stylesheet"/>
     <keyword type="property" name="The “fallback-stylesheet” property" link="cinnamon-st-st-theme-node.html#StTheme--fallback-stylesheet"/>
     <keyword type="property" name="The “theme-stylesheet” property" link="cinnamon-st-st-theme-node.html#StTheme--theme-stylesheet"/>
-    <keyword type="property" name="The “scale-factor” property" link="cinnamon-st-st-theme-node.html#StThemeContext--scale-factor"/>
-    <keyword type="signal" name="The “custom-stylesheets-changed” signal" link="cinnamon-st-st-theme-node.html#StTheme-custom-stylesheets-changed"/>
     <keyword type="signal" name="The “changed” signal" link="cinnamon-st-st-theme-node.html#StThemeContext-changed"/>
+    <keyword type="signal" name="The “custom-stylesheets-changed” signal" link="cinnamon-st-st-theme-node.html#StTheme-custom-stylesheets-changed"/>
     <keyword type="function" name="st_theme_node_transition_new ()" link="StThemeNodeTransition.html#st-theme-node-transition-new"/>
     <keyword type="function" name="st_theme_node_transition_update ()" link="StThemeNodeTransition.html#st-theme-node-transition-update"/>
     <keyword type="function" name="st_theme_node_transition_paint ()" link="StThemeNodeTransition.html#st-theme-node-transition-paint"/>
