@@ -92,7 +92,7 @@ echo '<!DOCTYPE html>
   <body>
     <header>
       <div class="inner">
-        <h1>Cinnamon Documentation</h1>
+        <h1>Cinnamon '$version' Documentation</h1>
         <h2></h2>
         <a href="https://github.com/linuxmint" class="button"><small>Follow me on</small> GitHub</a>
       </div>
