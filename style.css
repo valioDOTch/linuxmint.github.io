@@ -2,6 +2,7 @@ body
 {
   font-family: cantarell, sans-serif;
 }
+
 .synopsis, .classsynopsis
 {
   /* tango:aluminium 1/2 */
@@ -12,11 +13,12 @@ body
 }
 .programlisting
 {
+  /* tango:sky blue 0/1 */
   /* fallback for no rgba support */
   background: #e6f3ff;
   border: solid 1px #729fcf;
-  background: rgba(172, 72, 0, 0.1);
-  border: solid 1px rgba(172, 72, 0, 0.2);
+  background: rgba(114, 159, 207, 0.1);
+  border: solid 1px rgba(114, 159, 207, 0.2);
   padding: 0.5em;
 }
 .variablelist
@@ -143,18 +145,9 @@ div.table table th
   background-color: #d3d7cf;
 }
 
-h2
-{
-  color: #5F2800;
-}
-
-h3
-{
-  color: #863800
-}
 h4
 {
-  color: #AC4800;
+  color: #555753;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -378,8 +371,6 @@ acronym,abbr
    */
   body
   {
-    padding-top: 2.5em;
-    padding-bottom: 500px;
     max-width: 60em;
   }
   p
@@ -389,14 +380,9 @@ acronym,abbr
   /* style and size the navigation bar */
   table.navigation#top
   {
-    position: fixed;
     background: #e2e2e2;
-    border-bottom: solid 1px #babdb6;
+    border: solid 1px #babdb6;
     border-spacing: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
-    top: 0;
-    left: 0;
     z-index: 10;
   }
   table.navigation#top td
@@ -476,11 +462,13 @@ acronym,abbr
     display: table;
     background: #e2e2e2;
     border: solid 1px #babdb6;
-    margin-top: 0;
-    margin-bottom: 0;
-    top: 0;
-    left: 0;
     height: 3em;
   }
 }
 
+/* General styling */
+h1 {
+  padding-bottom: 0.1em;
+
+  border-bottom: 1px solid #d3d7cf;
+}

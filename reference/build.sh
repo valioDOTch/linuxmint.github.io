@@ -62,7 +62,7 @@ cd ..
 
 cd muffin
 echo "Building muffin"
-./autogen.sh --prefix=/usr > /dev/null 2>&1
+./autogen.sh --prefix=/usr
 make -j4
 cd ..
 
@@ -89,10 +89,11 @@ for dir in cinnamon cinnamon-js st muffin; do
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
     sed -i 's%/usr/share/gtk-doc/*html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
     sed -i 's%\.\.//%../%g' *.html
+    sed -i 's%href="style.css"%href="../../../style.css"%' *.html
 
-    cp ../../style.css .
     cd ..
 done
+rm -f */style.css */index.sgml */*.devhelp2
 
 if [ $version == "git" ]; then
     version="Git"
@@ -104,10 +105,7 @@ echo '<!DOCTYPE html>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../../stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../../stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="../../style">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -118,26 +116,18 @@ echo '<!DOCTYPE html>
 
   <body>
     <header>
-      <div class="inner">
-        <h1>Cinnamon '$version' Documentation</h1>
-        <h2></h2>
-        <a href="https://github.com/linuxmint" class="button"><small>Follow me on</small> GitHub</a>
-      </div>
+      <h1>Cinnamon '$version' Documentation</h1>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          This is the documentation for Cinnamon '$version'.
-          <ul>
-            <li><a href="cinnamon/">Cinnamon Core</a></li>
-            <li><a href="cinnamon-js/">Cinnamon JS</a></li>
-            <li><a href="st/">Cinnamon St</a></li>
-            <li><a href="muffin/">Muffin</a></li>
-          </ul>
-        </section>
-      </div>
-    </div>
+    <section id="main-content">
+      This is the documentation for Cinnamon '$###version'.
+      <ul>
+        <li><a href="cinnamon/">Cinnamon Core</a></li>
+        <li><a href="cinnamon-js/">Cinnamon JS</a></li>
+        <li><a href="st/">Cinnamon St</a></li>
+        <li><a href="muffin/">Muffin</a></li>
+      </ul>
+    </section>
   </body>
 </html>' > index.html
 
