@@ -11,8 +11,7 @@ body
   border: solid 1px rgb(238, 238, 236);
   padding: 0.5em;
 }
-.programlisting
-{
+.programlisting {
   /* tango:sky blue 0/1 */
   /* fallback for no rgba support */
   background: #e6f3ff;
@@ -380,11 +379,7 @@ acronym,abbr
   /* style and size the navigation bar */
   table.navigation#top
   {
-    background: #e2e2e2;
-    border: solid 1px #babdb6;
-    border-spacing: 5px;
     margin-bottom: 10px;
-    z-index: 10;
   }
   table.navigation#top td
   {
@@ -422,7 +417,7 @@ acronym,abbr
 }
 @media screen and (min-width: 60em) {
   /* screen larger than 60em */
-  body { margin: auto; }
+  body { margin: auto;}
 }
 @media screen and (max-width: 60em) {
   /* screen less than 60em */
@@ -470,5 +465,30 @@ acronym,abbr
 /* General styling */
 h1 {
   padding-bottom: 0.1em;
+}
+
+#header {
+  display: table;
+  padding: 10px 0px;
   border-bottom: 1px solid #d3d7cf;
+}
+
+#links {
+  font-size: 110%;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  width: 100%;
+}
+
+#header a {
+  padding: 4px 10px;
+  margin: 0px 10px;
+  color: black;
+  font-weight: bold;
+}
+
+#header a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid black;
 }

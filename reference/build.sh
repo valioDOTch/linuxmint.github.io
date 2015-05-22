@@ -89,7 +89,10 @@ for dir in cinnamon cinnamon-js st muffin; do
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
     sed -i 's%/usr/share/gtk-doc/*html/\([a-zA-Z0-9]*\)/%https://developer.gnome.org/\1/unstable/%g' *.html
     sed -i 's%\.\.//%../%g' *.html
-    sed -i 's%href="style.css"%href="../../../style.css"%' *.html
+    sed -i 's%href="style.css"%href="/style.css"%' *.html
+
+    sed -i 's%^<!DOCTYPE [^>]>%<!DOCTYPE html>%' *.html
+    sed -i 's%^\s*<body[^>]*>\s*$%<body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a><a href="/projects.html">Projects</a><a href="/contributing.html">Contributing</a><a href="/reference/index.html">Documentation</a></div></div>%' *.html
 
     cd ..
 done
@@ -106,12 +109,22 @@ echo '<!DOCTYPE html>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 
     <title>Cinnamon '$version' Documentation</title>
   </head>
 
   <body>
+    <div id="header">
+      <img src="/logo.svg" />
+      <div id="links">
+        <a href="/index.html">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contributing.html">Contributing</a>
+        <a href="/reference/index.html">Documentation</a>
+      </div>
+    </div>
+
     <h1>Cinnamon '$version' Documentation</h1>
 
     This is the documentation for Cinnamon '$version'.
