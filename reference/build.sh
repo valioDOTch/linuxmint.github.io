@@ -108,27 +108,19 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="../../style.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>Cinnamon '$version' Documentation</title>
   </head>
 
   <body>
-    <header>
-      <h1>Cinnamon '$version' Documentation</h1>
-    </header>
+    <h1>Cinnamon '$version' Documentation</h1>
 
-    <section id="main-content">
-      This is the documentation for Cinnamon '$version'.
-      <ul>
-        <li><a href="cinnamon/index.html">Cinnamon Core</a></li>
-        <li><a href="cinnamon-js/index.html">Cinnamon JS</a></li>
-        <li><a href="st/index.html">Cinnamon St</a></li>
-        <li><a href="muffin/index.html">Muffin</a></li>
-      </ul>
-    </section>
+    This is the documentation for Cinnamon '$version'.
+    <ul>
+      <li><a href="cinnamon/index.html">Cinnamon Core</a></li>
+      <li><a href="cinnamon-js/index.html">Cinnamon JS</a></li>
+      <li><a href="st/index.html">Cinnamon St</a></li>
+      <li><a href="muffin/index.html">Muffin</a></li>
+    </ul>
   </body>
 </html>' > index.html
 
