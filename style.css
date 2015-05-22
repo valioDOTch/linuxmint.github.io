@@ -383,6 +383,7 @@ acronym,abbr
     background: #e2e2e2;
     border: solid 1px #babdb6;
     border-spacing: 5px;
+    margin-bottom: 10px;
     z-index: 10;
   }
   table.navigation#top td
@@ -469,6 +470,5 @@ acronym,abbr
 /* General styling */
 h1 {
   padding-bottom: 0.1em;
-
   border-bottom: 1px solid #d3d7cf;
 }
