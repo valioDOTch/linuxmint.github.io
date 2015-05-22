@@ -98,6 +98,7 @@ rm -f */style.css */index.sgml */*.devhelp2
 if [ $version == "git" ]; then
     version="Git"
 fi
+
 echo "Creating index.html"
 echo '<!DOCTYPE html>
 <html>
@@ -105,7 +106,7 @@ echo '<!DOCTYPE html>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../style">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -120,12 +121,12 @@ echo '<!DOCTYPE html>
     </header>
 
     <section id="main-content">
-      This is the documentation for Cinnamon '$###version'.
+      This is the documentation for Cinnamon '$version'.
       <ul>
-        <li><a href="cinnamon/">Cinnamon Core</a></li>
-        <li><a href="cinnamon-js/">Cinnamon JS</a></li>
-        <li><a href="st/">Cinnamon St</a></li>
-        <li><a href="muffin/">Muffin</a></li>
+        <li><a href="cinnamon/index.html">Cinnamon Core</a></li>
+        <li><a href="cinnamon-js/index.html">Cinnamon JS</a></li>
+        <li><a href="st/index.html">Cinnamon St</a></li>
+        <li><a href="muffin/index.html">Muffin</a></li>
       </ul>
     </section>
   </body>
