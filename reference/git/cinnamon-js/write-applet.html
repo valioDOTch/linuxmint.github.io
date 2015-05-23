@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Writing applets: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Writing applets</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="extension-system.html" title="Part III. Extension system">
 <link rel="prev" href="extension-system.html" title="Part III. Extension system">
 <link rel="next" href="xlet-versioning.html" title="Supporting multiple versions">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -64,53 +64,26 @@
 <p>
       Let's open <code class="code">metadata.json</code> and describe our applet. This file defines the UUID, name, description, and icon of your applet and is used by Cinnamon to identify it and display it to the user in Cinnamon Settings.
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
-<span class="normal">    </span><span class="string">"uuid"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-quit@cinnamon.org"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"name"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Force Quit"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"description"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Click on the applet to launch xkill and force any window to quit immediately"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"icon"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-exit"</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        {
+            "uuid": "force-quit@cinnamon.org",
+            "name": "Force Quit",
+            "description": "Click on the applet to launch xkill and force any window to quit immediately",
+            "icon": "force-exit"
+        }
+      </pre></div>
 <p>
       By default, only one instance of every applet can be placed on the user's panel. But if the user has multiple panels, they cannot have one force-quit applet on each panel, which is bad. Hence we should also add a <code class="code">max-instance</code> property. We can specify any number we want (eg <code class="code">3</code>), or we can make it unlimited by making it <code class="code">-1</code>. In this case, our new <code class="code">metadata.json</code> would be
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
-<span class="normal">    </span><span class="string">"uuid"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-quit@cinnamon.org"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"name"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Force Quit"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"description"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Click on the applet to launch xkill and force any window to quit immediately"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"icon"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-exit"</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="string">"max-instances"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"-1"</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        {
+            "uuid": "force-quit@cinnamon.org",
+            "name": "Force Quit",
+            "description": "Click on the applet to launch xkill and force any window to quit immediately",
+            "icon": "force-exit",
+            "max-instances": "-1"
+        }
+      </pre></div>
 <p>
       There are more things we can add to <code class="code">metadata.json</code>, but they will not be covered here.
     </p>
@@ -120,83 +93,41 @@
 <a name="id-1.4.2.5"></a>Writing our applet</h3></div></div></div>
 <p> Here is the code for our applet:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span>
-<span class="keyword">const</span><span class="normal"> Util </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">util</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+        const Applet = imports.ui.applet;
+        const Util = imports.misc.util;
 
-<span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
-<span class="cbracket">}</span>
+        function MyApplet(orientation, panel_height, instance_id) {
+            this._init(orientation, panel_height, instance_id);
+        }
 
-<span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
+        MyApplet.prototype = {
+            __proto__: Applet.IconApplet.prototype,
 
-<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">.</span><span class="normal">_init</span><span class="symbol">.</span><span class="function">call</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+            _init: function(orientation, panel_height, instance_id) {
+                Applet.IconApplet.prototype._init.call(this, orientation, panel_height, instance_id);
 
-<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span>
-<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function"><a href="../muffin/muffin-Utility-functions.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span>
-<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
+                this.set_applet_icon_name("force-exit");
+                this.set_applet_tooltip(_("Click here to kill a window"));
+            },
 
-<span class="normal">    on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="cbracket">}</span><span class="symbol">;</span>
+            on_applet_clicked: function() {
+                Util.spawn('xkill');
+            }
+        };
 
-<span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="keyword">return</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+        function main(metadata, orientation, panel_height, instance_id) {
+            return new MyApplet(orientation, panel_height, instance_id);
+        }
+      </pre></div>
 <p>
       Now we'll go through the code one by one, starting from the bottom.
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="keyword">return</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        function main(metadata, orientation, panel_height, instance_id) {
+            return new MyApplet(orientation, panel_height, instance_id);
+        }
+      </pre></div>
 <p>
       The <code class="code">main</code> function is the only thing Cinnamon understand. To load an applet, Cinnamon calls the <code class="code">main</code> function in the applet's code, and expects to get an Applet object, which it will add to the panel. So here we instantiate an <code class="code">MyApplet</code> object (whose details are defined above, and returns it.
     </p>
@@ -218,40 +149,21 @@
 <p>
       So what exactly happens when we create the applet? We first look at the first two lines:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span>
-<span class="keyword">const</span><span class="normal"> Util </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">util</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        const Applet = imports.ui.applet;
+        const Util = imports.misc.util;
+      </pre></div>
 <p>
       Here we import certain APIs provided by Cinnamon. The most important one is, of course, the <code class="code">Applet</code> API. We will also need <code class="code">Util</code> in order to run an external program (<code class="code">xkill</code>). When we write <code class="code">imports.ui.applet</code>, we are accessing the functions defined in <code class="code">/usr/share/cinnamon/js/ui/applet.js</code>. Similarly, <code class="code">imports.misc.util</code> accesses <code class="code">/usr/share/cinnamon/js/misc/util.js</code>. We then call these things <code class="code">Applet</code> and <code class="code">Util</code> respectively to avoid typing the long bunch of code.
     </p>
 <p>
       Not very interesting. Next!
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        function MyApplet(orientation, panel_height, instance_id) {
+            this._init(orientation, panel_height, instance_id);
+        }
+      </pre></div>
 <p>
       This is the standard constructor of a Javascript Object. When someone calls it, it calls the <code class="code">_init</code> function of the object, and does stuff. Note that here we called our applet <code class="code">MyApplet</code>. You are free to call it whatever you want (and change the <code class="code">main</code> function accordingly, of course), but there really is no reason to do so!.
     </p>
@@ -261,43 +173,22 @@
 <p>
       What we've gone through is mostly boilerplate. Now we get to the meat of the code:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
+<div class="informalexample"><pre class="programlisting">
+        MyApplet.prototype = {
+            __proto__: Applet.IconApplet.prototype,
 
-<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">.</span><span class="normal">_init</span><span class="symbol">.</span><span class="function">call</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+            _init: function(orientation, panel_height, instance_id) {
+                Applet.IconApplet.prototype._init.call(this, orientation, panel_height, instance_id);
 
-<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span>
-<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function"><a href="../muffin/muffin-Utility-functions.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span>
-<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
+                this.set_applet_icon_name("force-exit");
+                this.set_applet_tooltip(_("Click here to kill a window"));
+            },
 
-<span class="normal">    on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+            on_applet_clicked: function() {
+                Util.spawn('xkill');
+            }
+        };
+      </pre></div>
 <p>
       Roughly speaking, the <code class="code">prototype</code> is the list of all functions of the object. Here we have the <code class="code">_init</code> function and the <code class="code">on_applet_clicked</code> function, which is all we need.
     </p>
@@ -307,17 +198,9 @@
 <p>
       Inheritance in JavaScript is slightly weird. We first copy over <code class="code">Applet.IconApplet</code>'s prototype using the
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        __proto__: Applet.IconApplet.prototype,
+      </pre></div>
 <p>
       line. This copies all the functions found in <code class="code">Applet.IconApplet</code> to our applet, which we are going to use.
     </p>
@@ -327,61 +210,36 @@
 <p>
       However, contrary to popular belief, the applet API is not psychic. It has no idea what your applet wants to do (appart from displaying an icon). You hvae to first tell it what icon you want, in the line
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        this.set_applet_icon_name("force-exit");
+      </pre></div>
 <p>
       Note that <code class="code">set_applet_icon_name</code> is a function defined inside <code class="code">Applet.IconApplet</code>, which makes the applet display the corresponding icon. By using the applet API, we have saved ourselves from the hassle of creating icons and putting them in the right place. (<code class="code">force-exit</code> is the name of an icon from the user's icon set. The icons available for use can be found in <code class="code">/usr/share/icons/</code>)
     </p>
 <p>
       The next line is
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function"><a href="../muffin/muffin-Utility-functions.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        this.set_applet_tooltip(_("Click here to kill a window"));
+      </pre></div>
 <p>
       which says that the applet should have a tooltip called <code class="code">_("Click here to kill a window")</code>. By wrapping the string with the <code class="code">_( )</code> function, we are telling Cinnamon to translate the string to the correct language, if translations are available.
     </p>
 <p>
       That is all the code in our <code class="code">_init</code> function. Now we have to wait for the user to click on the applet. The applet API automatically helps you to listen to these events, and when the user presses the applet, the API will call the <code class="code">on_applet_clicked</code> of your applet. Here we have
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        on_applet_clicked: function() {
+            Util.spawn('xkill');
+        }
+      </pre></div>
 <p>
       which calls the <code class="code">spawn</code> function from <code class="code">Util</code>, and launches an external command, <code class="code">xkill</code>.
     </p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

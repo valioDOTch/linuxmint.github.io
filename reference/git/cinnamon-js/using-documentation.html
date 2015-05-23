@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Using documentation: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Using documentation</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="documentation.html" title="Part I. Documentation">
 <link rel="prev" href="documentation.html" title="Part I. Documentation">
 <link rel="next" href="documenting-source.html" title="Writing documentation in source">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -29,7 +29,7 @@
 <p>The first few sections of the JS part are top-level descriptions and overviews, while the last part is a technical reference for the individual functions and objects available in Cinnamon. Note that this documentation is aimed at both applet/extension developers and Cinnamon developers themselves. So depending on who you are, some of the information might be entirely irrelevant.</p>
 <p>The second part of the documentation is for the C part of Cinnamon, which is simply refered to as the "Cinnamon Reference Manual".</p>
 <p>The last part is the documentation for Shell toolkit, or St. This is the graphical toolkit used to draw widgets on the screen (similar to Gtk).</p>
-<p>The modules covered by this documentation are those imported via <code class="code">imports.ui.*</code> and <code class="code">imports.misc.*</code>. The <a href="../cinnamon/CinnamonGlobal.html"><code class="code">global</code></a> object is documented in the C part of Cinnamon, as well as things accessed through <code class="code">imports.gi.Cinnamon</code>. Things accessed through <code class="code">imports.gi.St</code> are, unsurprisingly, documented in the St part.</p>
+<p>The modules covered by this documentation are those imported via <code class="code">imports.ui.*</code> and <code class="code">imports.misc.*</code>. The <code class="code">global</code> object is documented in the C part of Cinnamon, as well as things accessed through <code class="code">imports.gi.Cinnamon</code>. Things accessed through <code class="code">imports.gi.St</code> are, unsurprisingly, documented in the St part.</p>
 <p><code class="code">imports.gi.Meta</code> refers to Muffin, while others (eg. <code class="code">imports.gi.Gio</code>) are third-party (usually GNOME) libraries that are documented elsewhere.</p>
 </div>
 <div class="sect2">
@@ -42,17 +42,9 @@
 <div class="titlepage"><div><div><h3 class="title">
 <a name="id-1.2.2.4"></a>Javascript documentation</h3></div></div></div>
 <p>The Javascript documentation is divided into sections according to the files they are from. The title of each section is how you want to import it. For example, if you want to use the <code class="code">IconApplet</code> object from <code class="code">imports.ui.applet</code>, then you type <code class="code">imports.ui.applet.IconApplet</code>. Since that is very cumbersome to type, we usually declare it as a constant first. For example, you will often see</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        const Applet = imports.ui.applet;
+      </pre></div>
 <p>This way you can access the <code class="code">IconApplet</code> object via <code class="code">Applet.IconApplet</code> instead. This is how the individual pages are named as well.</p>
 <p>The <code class="code">_init</code> function of each object is the constructor. So if you want to know what happens when you call <code class="code">new Applet.Applet</code>, you look at the <code class="code">_init</code> function of <code class="code">Applet.Applet</code>. There usually isn't much helpful information apart form what each argument does.</p>
 <p>Certain variables and functions are prepended with <code class="code">_</code>, eg. <code class="code">_showPanel</code>. These are private variables and functions which shouldn't be accessed normally, and is there purely for referencial purposes. It is generally not a good idea to use them in applets/desklets. Within Cinnamon itself, you may use them when necessary.</p>
@@ -76,7 +68,7 @@
 <div class="sect3">
 <div class="titlepage"><div><div><h4 class="title">
 <a name="id-1.2.2.5.6"></a>Functions</h4></div></div></div>
-<p>If you look at the page of <a href="../st/StBin.html"><code class="code">StBin</code></a>, you will see that the functions have very long names like <code class="code">st_bin_get_child</code>. Since we are just pretending to have objects via GObjects, and objects do not genuinely exist in C, the functions do not "belong" to the objects. We simply put the name of the object in front of the function name and trust people will actually use it on the proper object.</p>
+<p>If you look at the page of <code class="code">StBin</code>, you will see that the functions have very long names like <code class="code">st_bin_get_child</code>. Since we are just pretending to have objects via GObjects, and objects do not genuinely exist in C, the functions do not "belong" to the objects. We simply put the name of the object in front of the function name and trust people will actually use it on the proper object.</p>
 <p>In C, objects are imported as if they were objects, and functions <span class="emphasis"><em>do</em></span> belong to the objects. So if <code class="code">actor</code> is an <code class="code">StBin</code>, we do not do <code class="code">st_bin_get_child(actor)</code>, but simply <code class="code">actor.get_child()</code>.</p>
 <p>Note that the C documentation always tells you that the first argument to the function is the object itself. For example, <code class="code">st_bin_get_child</code> takes in an <code class="code">StBin</code> as the argument. We do not need to supply this.</p>
 <p>Note also that not all functions are available for use in Javascript. If some functions are considered to be too C-like to be used in other languages, it will not be availble. There is generally no simple way to figure out whether the functions are available, but usually they are. If they are not, Cinnamon will complain loudly that the function doesn't exist. So the best way to know is to try it.</p>
@@ -137,6 +129,7 @@
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>StBin: Cinnamon St Reference Manual</title>
+<title>Cinnamon St Reference Manual: StBin</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon St Reference Manual">
 <link rel="up" href="containers.html" title="Containers">
 <link rel="prev" href="containers.html" title="Containers">
 <link rel="next" href="StBoxLayout.html" title="StBoxLayout">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -60,7 +60,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+<span class="returnvalue">ClutterActor</span> *
 </td>
 <td class="function_name">
 <a class="link" href="StBin.html#st-bin-get-child" title="st_bin_get_child ()">st_bin_get_child</a> <span class="c_punctuation">()</span>
@@ -112,7 +112,7 @@
 <tbody>
 <tr>
 <td class="property_type">
-<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *</td>
+<span class="type">ClutterActor</span> *</td>
 <td class="property_name"><a class="link" href="StBin.html#StBin--child" title="The “child” property">child</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -122,7 +122,7 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StBin.html#StBin--x-fill" title="The “x-fill” property">x-fill</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -132,7 +132,7 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StBin.html#StBin--y-fill" title="The “y-fill” property">y-fill</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -160,9 +160,9 @@
 </div>
 <div class="refsect1">
 <a name="StBin.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
+        <span class="lineart">╰──</span> ClutterActor
             <span class="lineart">╰──</span> <a class="link" href="StWidget.html" title="StWidget">StWidget</a>
                 <span class="lineart">╰──</span> StBin
                     <span class="lineart">├──</span> <a class="link" href="StButton.html" title="StButton">StButton</a>
@@ -173,12 +173,12 @@
 <a name="StBin.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 StBin implements
- <a href="https://developer.gnome.org/clutter/unstable/ClutterContainer.html">ClutterContainer</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterScriptable.html">ClutterScriptable</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterAnimatable.html">ClutterAnimatable</a> and  <a href="https://developer.gnome.org/atk/unstable/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a>.</p>
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
 </div>
 <div class="refsect1">
 <a name="StBin.description"></a><h2>Description</h2>
 <p><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> is a simple container capable of having only one
-<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> as a child.</p>
+<span class="type">ClutterActor</span> as a child.</p>
 <p><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> inherits from <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>, so it is fully themable.</p>
 </div>
 <div class="refsect1">
@@ -191,6 +191,7 @@ st_bin_new (<em class="parameter"><code><span class="type">void</span></code></e
 <div class="refsect3">
 <a name="id-1.2.4.2.9.2.5"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> actor</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -198,7 +199,7 @@ st_bin_new (<em class="parameter"><code><span class="type">void</span></code></e
 <a name="st-bin-set-child"></a><h3>st_bin_set_child ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_bin_set_child (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
-                  <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *child</code></em>);</pre>
+                  <em class="parameter"><code><span class="type">ClutterActor</span> *child</code></em>);</pre>
 <p>Sets <em class="parameter"><code>child</code></em>
  as the child of <em class="parameter"><code>bin</code></em>
 .</p>
@@ -220,7 +221,7 @@ st_bin_set_child (<em class="parameter"><code><a class="link" href="StBin.html" 
 </tr>
 <tr>
 <td class="parameter_name"><p>child</p></td>
-<td class="parameter_description"><p> a <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_description"><p> a <span class="type">ClutterActor</span>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -230,7 +231,7 @@ st_bin_set_child (<em class="parameter"><code><a class="link" href="StBin.html" 
 <hr>
 <div class="refsect2">
 <a name="st-bin-get-child"></a><h3>st_bin_get_child ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
+<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *
 st_bin_get_child (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>);</pre>
 <p>Retrieves a pointer to the child of <em class="parameter"><code>bin</code></em>
 .</p>
@@ -251,7 +252,7 @@ st_bin_get_child (<em class="parameter"><code><a class="link" href="StBin.html" 
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.2.9.4.6"></a><h4>Returns</h4>
-<p> a <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
+<p> a <span class="type">ClutterActor</span>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -317,12 +318,12 @@ inside a <a class="link" href="StBin.html" title="StBin"><span class="type">StBi
 </tr>
 <tr>
 <td class="parameter_name"><p>x_align</p></td>
-<td class="parameter_description"><p>return location for the horizontal alignment, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_description"><p>return location for the horizontal alignment, or <code class="literal">NULL</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_align</p></td>
-<td class="parameter_description"><p>return location for the vertical alignment, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
+<td class="parameter_description"><p>return location for the vertical alignment, or <code class="literal">NULL</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -334,8 +335,8 @@ inside a <a class="link" href="StBin.html" title="StBin"><span class="type">StBi
 <a name="st-bin-set-fill"></a><h3>st_bin_set_fill ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_bin_set_fill (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
-                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> x_fill</code></em>,
-                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> y_fill</code></em>);</pre>
+                 <em class="parameter"><code><span class="type">gboolean</span> x_fill</code></em>,
+                 <em class="parameter"><code><span class="type">gboolean</span> y_fill</code></em>);</pre>
 <p>Sets whether the child of <em class="parameter"><code>bin</code></em>
  should fill out the horizontal
 and/or vertical allocation of the parent</p>
@@ -355,13 +356,13 @@ and/or vertical allocation of the parent</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>x_fill</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the child should fill horizontally the <em class="parameter"><code>bin</code></em>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if the child should fill horizontally the <em class="parameter"><code>bin</code></em>
 </p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_fill</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the child should fill vertically the <em class="parameter"><code>bin</code></em>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if the child should fill vertically the <em class="parameter"><code>bin</code></em>
 </p></td>
 <td class="parameter_annotations"> </td>
 </tr>
@@ -374,8 +375,8 @@ and/or vertical allocation of the parent</p>
 <a name="st-bin-get-fill"></a><h3>st_bin_get_fill ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> *bin</code></em>,
-                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *x_fill</code></em>,
-                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> *y_fill</code></em>);</pre>
+                 <em class="parameter"><code><span class="type">gboolean</span> *x_fill</code></em>,
+                 <em class="parameter"><code><span class="type">gboolean</span> *y_fill</code></em>);</pre>
 <p>Retrieves the horizontal and vertical fill settings</p>
 <div class="refsect3">
 <a name="id-1.2.4.2.9.8.5"></a><h4>Parameters</h4>
@@ -393,12 +394,12 @@ st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" t
 </tr>
 <tr>
 <td class="parameter_name"><p>x_fill</p></td>
-<td class="parameter_description"><p> return location for the horizontal fill, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_description"><p> return location for the horizontal fill, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_fill</p></td>
-<td class="parameter_description"><p> return location for the vertical fill, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_description"><p> return location for the vertical fill, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -426,8 +427,8 @@ st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" t
 <a name="StBin.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="StBin--child"></a><h3>The <code class="literal">“child”</code> property</h3>
-<pre class="programlisting">  “child”                    <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *</pre>
-<p>The child <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> of the <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> container.</p>
+<pre class="programlisting">  “child”                    <span class="type">ClutterActor</span> *</pre>
+<p>The child <span class="type">ClutterActor</span> of the <a class="link" href="StBin.html" title="StBin"><span class="type">StBin</span></a> container.</p>
 <p>Flags: Read / Write</p>
 </div>
 <hr>
@@ -441,7 +442,7 @@ st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" t
 <hr>
 <div class="refsect2">
 <a name="StBin--x-fill"></a><h3>The <code class="literal">“x-fill”</code> property</h3>
-<pre class="programlisting">  “x-fill”                   <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “x-fill”                   <span class="type">gboolean</span></pre>
 <p>Whether the child should fill the horizontal allocation</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -457,7 +458,7 @@ st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" t
 <hr>
 <div class="refsect2">
 <a name="StBin--y-fill"></a><h3>The <code class="literal">“y-fill”</code> property</h3>
-<pre class="programlisting">  “y-fill”                   <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “y-fill”                   <span class="type">gboolean</span></pre>
 <p>Whether the child should fill the vertical allocation</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -465,6 +466,7 @@ st_bin_get_fill (<em class="parameter"><code><a class="link" href="StBin.html" t
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Applet, desklet and extension settings: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Applet, desklet and extension settings</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="extension-system.html" title="Part III. Extension system">
 <link rel="prev" href="xlet-versioning.html" title="Supporting multiple versions">
 <link rel="next" href="cinnamon-js-reference.html" title="Part IV. Cinnamon Javascript Reference">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -106,73 +106,36 @@
       The first thing you need to do is add Settings to your
       <span class="quote">“<span class="quote">imports</span>”</span> at the top of your applet:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Settings </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        const Settings = imports.ui.settings;
+      </pre></div>
 <p>
       You’ll also need to ensure that you’re passing along the
       <code class="code">instanceId</code> of the applet from the
       <code class="code">main()</code> function:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="usertype">let</span><span class="normal"> myApplet </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
-<span class="normal">    </span><span class="keyword">return</span><span class="normal"> myApplet</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        function main(metadata, orientation, panel_height, instanceId) {
+            let myApplet = new MyApplet(metadata, orientation, panel_height, instanceId);
+            return myApplet;
+        }
+      </pre></div>
 <p>
       and
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
-<span class="cbracket">}</span>
+<div class="informalexample"><pre class="programlisting">
+        function MyApplet(metadata, orientation, panel_height, instanceId) {
+            this._init(metadata, orientation, panel_height, instanceId);
+        }
 
-<span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
+        MyApplet.prototype = {
+        __proto__: Applet.TextIconApplet.prototype,
 
-<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+            _init: function(metadata, orientation, panel_height, instanceId) {
+            ....
+            ....
+            ....
+      </pre></div>
 <p>
       Note: Desklets only need to pass <code class="code">metadata</code> and <code class="code">instanceId</code> through this chain, and extensions have no need of any of this.
     </p>
@@ -183,33 +146,16 @@
 <p>
       Now, to actually initialize your settings provider, usually somewhere in the <code class="code">_init</code> method of <code class="code">MyApplet</code>, you’ll put something like this, which will use your applet’s own instance variables:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        this.settings = new Settings.AppletSettings(this, "settings-example@cinnamon.org", instanceId);
+      </pre></div>
 <p>
       If you prefer to have your preferences in a separate object, you can do like this, and the object will be populated with your settings variables:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{}</span><span class="symbol">;</span>
-<span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        this._preferences = {};
+        this.settings = new Settings.AppletSettings(this._preferences, "settings-example@cinnamon.org", instanceId);
+      </pre></div>
 <p>
       In other words, the object reference you pass in can be any object. The UUID there can be just hardcoded, or can be drawn from the metadata (<code class="code">metadata["uuid"]</code>), whichever you prefer. You can also leave off the instanceId if you haven’t defined your applet as multiple-instance capable.
     </p>
@@ -221,25 +167,13 @@
       Since we only have one setting in our example, this will be very
       simple:
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
-<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
-<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
-<span class="normal">                           this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
-<span class="normal">                           null</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        this.settings.bindProperty(Settings.BindingDirection.IN,
+                                   "width",
+                                   "width",
+                                   this.on_settings_changed,
+                                   null);
+      </pre></div>
 <p>
       To explain:
     </p>
@@ -282,6 +216,7 @@
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

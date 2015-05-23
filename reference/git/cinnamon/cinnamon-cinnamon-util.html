@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>cinnamon-util: Cinnamon Reference Manual</title>
+<title>Cinnamon Reference Manual: cinnamon-util</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Reference Manual">
 <link rel="up" href="ch06.html" title="Integration helpers and utilities">
 <link rel="prev" href="CinnamonWM.html" title="CinnamonWM">
 <link rel="next" href="CinnamonMountOperation.html" title="CinnamonMountOperation">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/gio/unstable/GIcon.html"><span class="returnvalue">GIcon</span></a> *
+<span class="returnvalue">GIcon</span> *
 </td>
 <td class="function_name">
 <a class="link" href="cinnamon-cinnamon-util.html#cinnamon-util-get-icon-for-uri" title="cinnamon_util_get_icon_for_uri ()">cinnamon_util_get_icon_for_uri</a> <span class="c_punctuation">()</span>
@@ -97,7 +97,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#ClutterModifierType"><span class="returnvalue">ClutterModifierType</span></a>
+<span class="returnvalue">ClutterModifierType</span>
 </td>
 <td class="function_name">
 <a class="link" href="cinnamon-cinnamon-util.html#cinnamon-get-event-state" title="cinnamon_get_event_state ()">cinnamon_get_event_state</a> <span class="c_punctuation">()</span>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="cinnamon-cinnamon-util.html#cinnamon-write-string-to-stream" title="cinnamon_write_string_to_stream ()">cinnamon_write_string_to_stream</a> <span class="c_punctuation">()</span>
@@ -137,7 +137,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="cinnamon-cinnamon-util.html#cinnamon-parse-search-provider" title="cinnamon_parse_search_provider ()">cinnamon_parse_search_provider</a> <span class="c_punctuation">()</span>
@@ -167,7 +167,7 @@ cinnamon_util_get_label_for_uri (<em class="parameter"><code>const <span class="
 <hr>
 <div class="refsect2">
 <a name="cinnamon-util-get-icon-for-uri"></a><h3>cinnamon_util_get_icon_for_uri ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GIcon.html"><span class="returnvalue">GIcon</span></a> *
+<pre class="programlisting"><span class="returnvalue">GIcon</span> *
 cinnamon_util_get_icon_for_uri (<em class="parameter"><code>const <span class="type">char</span> *text_uri</code></em>);</pre>
 <p>Look up the icon that should be associated with a given URI.  Handles
 various special GNOME-internal cases like x-nautilus-search, etc.</p>
@@ -188,7 +188,7 @@ various special GNOME-internal cases like x-nautilus-search, etc.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.7.4.5.3.6"></a><h4>Returns</h4>
-<p> A new <a href="https://developer.gnome.org/gio/unstable/GIcon.html"><span class="type">GIcon</span></a>. </p>
+<p> A new <span class="type">GIcon</span>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -196,13 +196,13 @@ various special GNOME-internal cases like x-nautilus-search, etc.</p>
 <div class="refsect2">
 <a name="cinnamon-util-set-hidden-from-pick"></a><h3>cinnamon_util_set_hidden_from_pick ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-cinnamon_util_set_hidden_from_pick (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *actor</code></em>,
-                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> hidden</code></em>);</pre>
+cinnamon_util_set_hidden_from_pick (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                    <em class="parameter"><code><span class="type">gboolean</span> hidden</code></em>);</pre>
 <p>If <em class="parameter"><code>hidden</code></em>
- is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, hide <em class="parameter"><code>actor</code></em>
+ is <code class="literal">TRUE</code>, hide <em class="parameter"><code>actor</code></em>
  from pick even with a mode of
-<a href="https://developer.gnome.org/clutter/unstable/ClutterStage.html#CLUTTER-PICK-ALL:CAPS"><code class="literal">CLUTTER_PICK_ALL</code></a>; if <em class="parameter"><code>hidden</code></em>
- is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, unhide <em class="parameter"><code>actor</code></em>
+<code class="literal">CLUTTER_PICK_ALL</code>; if <em class="parameter"><code>hidden</code></em>
+ is <code class="literal">FALSE</code>, unhide <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
 <a name="id-1.7.4.5.4.5"></a><h4>Parameters</h4>
@@ -215,7 +215,7 @@ cinnamon_util_set_hidden_from_pick (<em class="parameter"><code><a href="https:/
 <tbody>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p>A <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a></p></td>
+<td class="parameter_description"><p>A <span class="type">ClutterActor</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -233,16 +233,16 @@ should be hidden from pick</p></td>
 <a name="cinnamon-util-get-transformed-allocation"></a><h3>cinnamon_util_get_transformed_allocation ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 cinnamon_util_get_transformed_allocation
-                               (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *actor</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a> *box</code></em>);</pre>
-<p>This function is similar to a combination of <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html#clutter-actor-get-transformed-position"><code class="function">clutter_actor_get_transformed_position()</code></a>,
-and <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html#clutter-actor-get-transformed-size"><code class="function">clutter_actor_get_transformed_size()</code></a>, but unlike
-<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html#clutter-actor-get-transformed-size"><code class="function">clutter_actor_get_transformed_size()</code></a>, it always returns a transform
-of the current allocation, while <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html#clutter-actor-get-transformed-size"><code class="function">clutter_actor_get_transformed_size()</code></a> returns
+                               (<em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                                <em class="parameter"><code><span class="type">ClutterActorBox</span> *box</code></em>);</pre>
+<p>This function is similar to a combination of <code class="function">clutter_actor_get_transformed_position()</code>,
+and <code class="function">clutter_actor_get_transformed_size()</code>, but unlike
+<code class="function">clutter_actor_get_transformed_size()</code>, it always returns a transform
+of the current allocation, while <code class="function">clutter_actor_get_transformed_size()</code> returns
 bad values (the transform of the requested size) if a relayout has been
 queued.</p>
 <p>This function is more convenient to use than
-<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html#clutter-actor-get-abs-allocation-vertices"><code class="function">clutter_actor_get_abs_allocation_vertices()</code></a> if no transformation is in effect
+<code class="function">clutter_actor_get_abs_allocation_vertices()</code> if no transformation is in effect
 and also works around limitations in the GJS binding of arrays.</p>
 <div class="refsect3">
 <a name="id-1.7.4.5.5.6"></a><h4>Parameters</h4>
@@ -255,7 +255,7 @@ and also works around limitations in the GJS binding of arrays.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">ClutterActor</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -279,6 +279,7 @@ Saturday.</p>
 <a name="id-1.7.4.5.6.5"></a><h4>Returns</h4>
 <p> A number representing the first week day for the current
 locale</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -292,7 +293,7 @@ cinnamon_util_normalize_and_casefold (<em class="parameter"><code>const <span cl
 <a name="cinnamon-util-format-date"></a><h3>cinnamon_util_format_date ()</h3>
 <pre class="programlisting"><span class="returnvalue">char</span> *
 cinnamon_util_format_date (<em class="parameter"><code>const <span class="type">char</span> *format</code></em>,
-                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> time_ms</code></em>);</pre>
+                           <em class="parameter"><code><span class="type">gint64</span> time_ms</code></em>);</pre>
 <p>Formats a date for the current locale. This should be
 used instead of the Spidermonkey Date.toLocaleFormat()
 extension because Date.toLocaleFormat() is buggy for
@@ -310,7 +311,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=508783</p>
 <tr>
 <td class="parameter_name"><p>format</p></td>
 <td class="parameter_description"><p>a strftime-style string format, as parsed by
-<a href="https://developer.gnome.org/glib/unstable/glib-GDateTime.html#g-date-time-format"><code class="function">g_date_time_format()</code></a></p></td>
+<code class="function">g_date_time_format()</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -328,16 +329,17 @@ value returned by Date.getTime()</p></td>
 outside of the range of a GDateTime (which contains
 any plausible dates we actually care about), will
 return an empty string.</p>
+<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-get-event-state"></a><h3>cinnamon_get_event_state ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#ClutterModifierType"><span class="returnvalue">ClutterModifierType</span></a>
-cinnamon_get_event_state (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> *event</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">ClutterModifierType</span>
+cinnamon_get_event_state (<em class="parameter"><code><span class="type">ClutterEvent</span> *event</code></em>);</pre>
 <p>Gets the current state of the event (the set of modifier keys that
 are pressed down). Thhis is a wrapper around
-<a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#clutter-event-get-state"><code class="function">clutter_event_get_state()</code></a> that strips out any un-declared modifier
+<code class="function">clutter_event_get_state()</code> that strips out any un-declared modifier
 flags, to make gjs happy; see
 https://bugzilla.gnome.org/show_bug.cgi?id=597292.</p>
 <div class="refsect3">
@@ -350,7 +352,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=597292.</p>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">ClutterEvent</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
@@ -358,15 +360,16 @@ https://bugzilla.gnome.org/show_bug.cgi?id=597292.</p>
 <div class="refsect3">
 <a name="id-1.7.4.5.9.6"></a><h4>Returns</h4>
 <p> the state from the event</p>
+<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-write-soup-message-to-stream"></a><h3>cinnamon_write_soup_message_to_stream ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-cinnamon_write_soup_message_to_stream (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GOutputStream.html"><span class="type">GOutputStream</span></a> *stream</code></em>,
-                                       <em class="parameter"><code><a href="/usr/share/gtk-doc//html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a> *message</code></em>,
-                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+cinnamon_write_soup_message_to_stream (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
+                                       <em class="parameter"><code><span class="type">SoupMessage</span> *message</code></em>,
+                                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Write a string to a GOutputStream as binary data. This is a
 workaround for the lack of proper binary strings in GJS.</p>
 <div class="refsect3">
@@ -380,12 +383,12 @@ workaround for the lack of proper binary strings in GJS.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>stream</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GOutputStream.html"><span class="type">GOutputStream</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">GOutputStream</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>message</p></td>
-<td class="parameter_description"><p>a <a href="/usr/share/gtk-doc//html/libsoup-2.4/SoupMessage.html"><span class="type">SoupMessage</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">SoupMessage</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -400,10 +403,10 @@ workaround for the lack of proper binary strings in GJS.</p>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-write-string-to-stream"></a><h3>cinnamon_write_string_to_stream ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
-cinnamon_write_string_to_stream (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GOutputStream.html"><span class="type">GOutputStream</span></a> *stream</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+cinnamon_write_string_to_stream (<em class="parameter"><code><span class="type">GOutputStream</span> *stream</code></em>,
                                  <em class="parameter"><code>const <span class="type">char</span> *str</code></em>,
-                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Write a string to a GOutputStream as UTF-8. This is a workaround
 for not having binary buffers in GJS.</p>
 <div class="refsect3">
@@ -417,7 +420,7 @@ for not having binary buffers in GJS.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>stream</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GOutputStream.html"><span class="type">GOutputStream</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">GOutputStream</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -436,7 +439,8 @@ for not having binary buffers in GJS.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.7.4.5.11.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if write succeeded</p>
+<p> <code class="literal">TRUE</code> if write succeeded</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -444,7 +448,7 @@ for not having binary buffers in GJS.</p>
 <a name="cinnamon-get-file-contents-utf8-sync"></a><h3>cinnamon_get_file_contents_utf8_sync ()</h3>
 <pre class="programlisting"><span class="returnvalue">char</span> *
 cinnamon_get_file_contents_utf8_sync (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
-                                      <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Synchronously load the contents of a file as a NUL terminated
 string, validating it as UTF-8.  Embedded NUL characters count as
 invalid content.</p>
@@ -464,7 +468,7 @@ invalid content.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">GError</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -481,19 +485,19 @@ invalid content.</p>
 <a name="cinnamon-breakpoint"></a><h3>cinnamon_breakpoint ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 cinnamon_breakpoint (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
-<p>Using <a href="https://developer.gnome.org/glib/unstable/glib-Warnings-and-Assertions.html#G-BREAKPOINT:CAPS"><code class="function">G_BREAKPOINT()</code></a>, interrupt the current process.  This is useful
+<p>Using <code class="function">G_BREAKPOINT()</code>, interrupt the current process.  This is useful
 in conjunction with a debugger such as gdb.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-parse-search-provider"></a><h3>cinnamon_parse_search_provider ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 cinnamon_parse_search_provider (<em class="parameter"><code>const <span class="type">char</span> *data</code></em>,
                                 <em class="parameter"><code><span class="type">char</span> **name</code></em>,
                                 <em class="parameter"><code><span class="type">char</span> **url</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> **langs</code></em>,
+                                <em class="parameter"><code><span class="type">GList</span> **langs</code></em>,
                                 <em class="parameter"><code><span class="type">char</span> **icon_data_uri</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <div class="refsect3">
 <a name="id-1.7.4.5.14.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -538,7 +542,8 @@ cinnamon_parse_search_provider (<em class="parameter"><code>const <span class="t
 </div>
 <div class="refsect3">
 <a name="id-1.7.4.5.14.5"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> on success</p>
+<p> <code class="literal">TRUE</code> on success</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -546,9 +551,9 @@ cinnamon_parse_search_provider (<em class="parameter"><code>const <span class="t
 <a name="cinnamon-shader-effect-set-double-uniform"></a><h3>cinnamon_shader_effect_set_double_uniform ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 cinnamon_shader_effect_set_double_uniform
-                               (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterShaderEffect.html"><span class="type">ClutterShaderEffect</span></a> *effect</code></em>,
-                                <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> value</code></em>);</pre>
+                               (<em class="parameter"><code><span class="type">ClutterShaderEffect</span> *effect</code></em>,
+                                <em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>,
+                                <em class="parameter"><code><span class="type">gdouble</span> value</code></em>);</pre>
 <p>Set a double uniform on a ClutterShaderEffect.</p>
 <p>The problem here is that JavaScript doesn't have more than
 one number type, and gjs tries to automatically guess what
@@ -566,7 +571,7 @@ in GLSL.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>effect</p></td>
-<td class="parameter_description"><p>The <a href="https://developer.gnome.org/clutter/unstable/ClutterShaderEffect.html"><span class="type">ClutterShaderEffect</span></a></p></td>
+<td class="parameter_description"><p>The <span class="type">ClutterShaderEffect</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -589,6 +594,7 @@ in GLSL.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>
