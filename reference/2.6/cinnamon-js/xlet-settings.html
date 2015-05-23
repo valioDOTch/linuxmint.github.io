@@ -130,8 +130,8 @@
 2
 3
 4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    let myApplet </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> myApplet </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
 <span class="normal">    </span><span class="keyword">return</span><span class="normal"> myApplet</span><span class="symbol">;</span>
 <span class="cbracket">}</span></pre></td>
       </tr>
@@ -157,14 +157,14 @@
 9
 10
 11</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="keyword">this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
 <span class="cbracket">}</span>
 
-<span class="normal">MyApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
+<span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
 
-<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">    </span><span class="symbol">....</span>
 <span class="normal">    </span><span class="symbol">....</span>
 <span class="normal">    </span><span class="symbol">....</span></pre></td>
@@ -188,7 +188,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -203,8 +203,8 @@
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">_preferences </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{}</span><span class="symbol">;</span>
-<span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">_preferences</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{}</span><span class="symbol">;</span>
+<span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -230,11 +230,11 @@
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
 <span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
 <span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
-<span class="normal">                           </span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
-<span class="normal">                           </span><span class="keyword">null</span><span class="symbol">);</span></pre></td>
+<span class="normal">                           this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
+<span class="normal">                           null</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
