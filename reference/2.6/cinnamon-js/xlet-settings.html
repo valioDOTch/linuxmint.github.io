@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cinnamon Javascript Reference Manual: Applet, desklet and extension settings</title>
+<title>Applet, desklet and extension settings: Cinnamon Javascript Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="extension-system.html" title="Part III. Extension system">
 <link rel="prev" href="xlet-versioning.html" title="Supporting multiple versions">
 <link rel="next" href="cinnamon-js-reference.html" title="Part IV. Cinnamon Javascript Reference">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -106,36 +106,73 @@
       The first thing you need to do is add Settings to your
       <span class="quote">“<span class="quote">imports</span>”</span> at the top of your applet:
     </p>
-<div class="informalexample"><pre class="programlisting">
-        const Settings = imports.ui.settings;
-      </pre></div>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="type">const</span> Settings = imports.ui.settings;</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       You’ll also need to ensure that you’re passing along the
       <code class="code">instanceId</code> of the applet from the
       <code class="code">main()</code> function:
     </p>
-<div class="informalexample"><pre class="programlisting">
-        function main(metadata, orientation, panel_height, instanceId) {
-            let myApplet = new MyApplet(metadata, orientation, panel_height, instanceId);
-            return myApplet;
-        }
-      </pre></div>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting">function main(metadata, orientation, panel_height, instanceId) {
+            let myApplet = <span class="keyword">new</span> MyApplet(metadata, orientation, panel_height, instanceId);
+            <span class="keyword">return</span> myApplet;
+        }</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       and
     </p>
-<div class="informalexample"><pre class="programlisting">
-        function MyApplet(metadata, orientation, panel_height, instanceId) {
-            this._init(metadata, orientation, panel_height, instanceId);
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td>
+        <td class="listing_code"><pre class="programlisting">function MyApplet(metadata, orientation, panel_height, instanceId) {
+            <span class="keyword">this</span>._init(metadata, orientation, panel_height, instanceId);
         }
 
         MyApplet.prototype = {
-        __proto__: Applet.TextIconApplet.prototype,
+        <span class="keyword">__proto__</span>: Applet.TextIconApplet.prototype,
 
-            _init: function(metadata, orientation, panel_height, instanceId) {
+            <span class="keyword">_init</span>: function(metadata, orientation, panel_height, instanceId) {
             ....
             ....
-            ....
-      </pre></div>
+            ....</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       Note: Desklets only need to pass <code class="code">metadata</code> and <code class="code">instanceId</code> through this chain, and extensions have no need of any of this.
     </p>
@@ -146,16 +183,33 @@
 <p>
       Now, to actually initialize your settings provider, usually somewhere in the <code class="code">_init</code> method of <code class="code">MyApplet</code>, you’ll put something like this, which will use your applet’s own instance variables:
     </p>
-<div class="informalexample"><pre class="programlisting">
-        this.settings = new Settings.AppletSettings(this, "settings-example@cinnamon.org", instanceId);
-      </pre></div>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.settings = <span class="keyword">new</span> Settings.AppletSettings(<span class="keyword">this</span>, <span class="number">&quot;settings-example@cinnamon.org&quot;</span>, instanceId);</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       If you prefer to have your preferences in a separate object, you can do like this, and the object will be populated with your settings variables:
     </p>
-<div class="informalexample"><pre class="programlisting">
-        this._preferences = {};
-        this.settings = new Settings.AppletSettings(this._preferences, "settings-example@cinnamon.org", instanceId);
-      </pre></div>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>._preferences = {};
+        <span class="keyword">this</span>.settings = <span class="keyword">new</span> Settings.AppletSettings(<span class="keyword">this</span>._preferences, <span class="number">&quot;settings-example@cinnamon.org&quot;</span>, instanceId);</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       In other words, the object reference you pass in can be any object. The UUID there can be just hardcoded, or can be drawn from the metadata (<code class="code">metadata["uuid"]</code>), whichever you prefer. You can also leave off the instanceId if you haven’t defined your applet as multiple-instance capable.
     </p>
@@ -167,13 +221,25 @@
       Since we only have one setting in our example, this will be very
       simple:
     </p>
-<div class="informalexample"><pre class="programlisting">
-        this.settings.bindProperty(Settings.BindingDirection.IN,
-                                   "width",
-                                   "width",
-                                   this.on_settings_changed,
-                                   null);
-      </pre></div>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.settings.bindProperty(Settings.BindingDirection.IN,
+                                   <span class="number">&quot;width&quot;</span>,
+                                   <span class="number">&quot;width&quot;</span>,
+                                   <span class="keyword">this</span>.on_settings_changed,
+                                   null);</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
       To explain:
     </p>
@@ -217,6 +283,6 @@
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.21</div>
+          Generated by GTK-Doc V1.22</div>
 </body>
 </html>

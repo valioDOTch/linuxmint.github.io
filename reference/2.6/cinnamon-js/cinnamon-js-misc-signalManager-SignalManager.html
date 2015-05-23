@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cinnamon Javascript Reference Manual: SignalManager.SignalManager</title>
+<title>SignalManager.SignalManager: Cinnamon Javascript Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-misc-signalManager-section.html" title="imports.misc.signalManager">
 <link rel="prev" href="cinnamon-js-misc-signalManager-section.html" title="imports.misc.signalManager">
 <link rel="next" href="cinnamon-js-misc-util-section.html" title="imports.misc.util">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -138,26 +138,51 @@
 <p>However, this is not always needed. If you are connecting to a signal of your actor, the signals are automatically disconnected when you destroy the actor. Using the <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html" title="SignalManager.SignalManager"><code class="code">SignalManager</code></a> to disconnect all signals is only needed when connecting to objects that persists after the object disappears.</p>
 <p>Every Javascript object should have its own <code class="code">SignalManager</code>, and use it to connect signals of all objects it takes care of. For example, the panel will have one <code class="code">SignalManger</code> object, which manages all signals from <code class="code">GSettings</code>, <code class="code">global.screen</code> etc.</p>
 <p>An example usage is as follows:</p>
-<div class="informalexample"><pre class="programlisting">
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td>
+        <td class="listing_code"><pre class="programlisting">MyApplet.prototype = {
+    <span class="keyword">__proto__</span>: Applet.Applet.prototype,
 
-MyApplet.prototype = {
-    __proto__: Applet.Applet.prototype,
+    <span class="keyword">_init</span>: function(orientation, panelHeight, instanceId) {
+        Applet.Applet.prototype._init.call(<span class="keyword">this</span>, orientation, panelHeight, instanceId);
 
-    _init: function(orientation, panelHeight, instanceId) {
-        Applet.Applet.prototype._init.call(this, orientation, panelHeight, instanceId);
-
-        this._signalManager = new SignalManager.SignalManager(this);
-        this._signalManager.connect(global.settings, "changed::foo", this._onChanged);
+        <span class="keyword">this</span>._signalManager = <span class="keyword">new</span> SignalManager.SignalManager(<span class="keyword">this</span>);
+        <span class="keyword">this</span>._signalManager.connect(global.settings, <span class="number">&quot;changed::foo&quot;</span>, <span class="keyword">this</span>._onChanged);
     },
 
-    _onChanged: function() {
-        // Do something
+    <span class="keyword">_onChanged</span>: function() {
+        <span class="comment">// Do something</span>
     },
 
-    on_applet_removed_from_panel: function() {
-        this._signalManager.disconnectAllSignals();
+    <span class="keyword">on_applet_removed_from_panel</span>: function() {
+        <span class="keyword">this</span>._signalManager.disconnectAllSignals();
     }
-}</pre></div>
+}</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </div>
 <div class="refsect1">
 <a name="cinnamon-js-misc-signalManager-SignalManager.functions_details"></a><h2>Functions</h2>
@@ -195,13 +220,29 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
 <p>This listens to the signal <code class="code">sigName</code> from <code class="code">obj</code> and calls <code class="code">callback</code> when the signal is emitted. <code class="code">callback</code> is automatically binded to <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html#cinnamon-js-misc-signalManager-SignalManager--_object" title="The “_object” property"><code class="code">this._object</code></a>, unless the <code class="code">bind</code> argument is set to something else, in which case the function will be binded to <code class="code">bind</code>.</p>
 <p>This checks whether the signal is already connected and will not connect again if it is already connected. This behaviour can be overridden by settings <code class="code">force</code> to be <code class="code">true</code>.</p>
 <p>For example, what you would normally write as</p>
-<div class="informalexample"><pre class="programlisting">
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting">global.settings.connect(<span class="number">&quot;changed::foo&quot;</span>, Lang.bind(<span class="keyword">this</span>, <span class="keyword">this</span>._bar))</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-global.settings.connect("changed::foo", Lang.bind(this, this._bar))</pre></div>
 <p>would become</p>
-<div class="informalexample"><pre class="programlisting">
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>._signalManager.connect(global.settings, <span class="number">&quot;changed::foo&quot;</span>, <span class="keyword">this</span>._bar)</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-this._signalManager.connect(global.settings, "changed::foo", this._bar)</pre></div>
 <p>Note that in this function, the first argument is the object, while the second is the signal name. In all other methods, you first pass the signal name, then the object (since the object is rarely passed in other functions).</p>
 <div class="refsect3">
 <a name="id-1.5.18.2.7.3.11"></a><h4>Parameters</h4>
@@ -346,6 +387,6 @@ disconnectAllSignals ();</pre>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.21</div>
+          Generated by GTK-Doc V1.22</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Muffin Reference Manual: MetaWindow</title>
+<title>MetaWindow: Muffin Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Muffin Reference Manual">
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="MetaScreen.html" title="MetaScreen">
 <link rel="next" href="MetaWorkspace.html" title="MetaWorkspace">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -751,6 +751,7 @@
 <a name="meta-window-get-frame"></a><h3>meta_window_get_frame ()</h3>
 <pre class="programlisting"><span class="returnvalue">MetaFrame</span> *
 meta_window_get_frame (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -784,7 +785,6 @@ dialog attached.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.4.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window should be drawn with a focused frame</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -841,7 +841,6 @@ meta_window_is_skip_taskbar (<em class="parameter"><code><a class="link" href="M
 <div class="refsect3">
 <a name="id-1.4.18.6.7.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the skip bar hint is set.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1018,7 +1017,6 @@ meta_window_get_xwindow (<em class="parameter"><code><a class="link" href="MetaW
 <p> The Window id of the <em class="parameter"><code>window</code></em>
 note - we return unsigned long because Window
 Can't be introspected (but Window *is* a ulong)</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1036,8 +1034,9 @@ meta_window_get_window_type_atom (<em class="parameter"><code><a class="link" hr
 application to set the window type. (Note that this is constrained
 to be some value that Muffin recognizes - a completely unrecognized
 type atom will be returned as None.)</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.6.15.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.15.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1052,9 +1051,8 @@ type atom will be returned as None.)</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.15.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.15.7"></a><h4>Returns</h4>
 <p> the raw X atom for the window type, or None</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1110,7 +1108,6 @@ meta_window_get_monitor (<em class="parameter"><code><a class="link" href="MetaW
 <div class="refsect3">
 <a name="id-1.4.18.6.17.6"></a><h4>Returns</h4>
 <p> The index of the monitor in the screens monitor list</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1213,7 +1210,6 @@ meta_window_showing_on_its_workspace (<em class="parameter"><code><a class="link
 <div class="refsect3">
 <a name="id-1.4.18.6.25.5"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if window would be visible, if its workspace was current</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1707,8 +1703,9 @@ meta_window_configure_notify (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><span class="type">XConfigureEvent</span> *event</code></em>);</pre>
 <p>This is used to notify us of an unrequested configuration
 (only applicable to override redirect windows)</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.6.46.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.46.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1914,7 +1911,6 @@ of the <a class="link" href="MetaWindow.html#META-MAXIMIZE-HORIZONTAL:CAPS"><cod
 <div class="refsect3">
 <a name="id-1.4.18.6.54.5"></a><h4>Returns</h4>
 <p> current maximization state</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1925,7 +1921,6 @@ meta_window_is_fullscreen (<em class="parameter"><code><a class="link" href="Met
 <div class="refsect3">
 <a name="id-1.4.18.6.55.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is currently fullscreen</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1937,7 +1932,6 @@ meta_window_is_monitor_sized (<em class="parameter"><code><a class="link" href="
 <a name="id-1.4.18.6.56.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is occupies an entire monitor or
 the whole screen.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1948,7 +1942,6 @@ meta_window_is_on_primary_monitor (<em class="parameter"><code><a class="link" h
 <div class="refsect3">
 <a name="id-1.4.18.6.57.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is on the primary monitor</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1975,7 +1968,6 @@ meta_window_is_demanding_attention (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="id-1.4.18.6.58.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if wm_state_demands_attention is set.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2002,7 +1994,6 @@ meta_window_is_urgent (<em class="parameter"><code><a class="link" href="MetaWin
 <div class="refsect3">
 <a name="id-1.4.18.6.59.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if wm_hints_urgent is set.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2014,7 +2005,6 @@ meta_window_requested_bypass_compositor
 <div class="refsect3">
 <a name="id-1.4.18.6.60.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window requested to bypass the compositor</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2026,7 +2016,6 @@ meta_window_requested_dont_bypass_compositor
 <div class="refsect3">
 <a name="id-1.4.18.6.61.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window requested to opt out of unredirecting</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2077,7 +2066,6 @@ when a window is shaded.)</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.63.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the toplevel is mapped.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2116,7 +2104,6 @@ call.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.64.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the icon geometry was succesfully retrieved.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2284,7 +2271,6 @@ fashion.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.76.7"></a><h4>Returns</h4>
 <p> Internal sequence number for this window</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2302,7 +2288,6 @@ and when focusing the window.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.77.6"></a><h4>Returns</h4>
 <p> The last time the user interacted with this window.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2387,7 +2372,6 @@ meta_window_is_remote (<em class="parameter"><code><a class="link" href="MetaWin
 <a name="id-1.4.18.6.80.5"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if this window originates from a host
 different from the one running muffin.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2446,7 +2430,6 @@ always return <code class="literal">FALSE</code>.)</p>
 <a name="id-1.4.18.6.82.6"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>window</code></em>
 should be attached to its parent</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2508,7 +2491,6 @@ meta_window_get_frame_type (<em class="parameter"><code><a class="link" href="Me
 <div class="refsect3">
 <a name="id-1.4.18.6.84.6"></a><h4>Returns</h4>
 <p> the frame type</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2582,7 +2564,6 @@ tiling zone</p>
 <a name="id-1.4.18.6.87.6"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>window</code></em>
 can be tiled</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2624,7 +2605,6 @@ meta_window_tile (<em class="parameter"><code><a class="link" href="MetaWindow.h
 <a name="id-1.4.18.6.88.6"></a><h4>Returns</h4>
 <p> whether or not <em class="parameter"><code>window</code></em>
 was successfully tiled</p>
-<p></p>
 </div>
 </div>
 </div>
@@ -2755,6 +2735,6 @@ was successfully tiled</p>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.21</div>
+          Generated by GTK-Doc V1.22</div>
 </body>
 </html>
