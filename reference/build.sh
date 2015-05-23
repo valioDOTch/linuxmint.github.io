@@ -92,7 +92,7 @@ for dir in cinnamon cinnamon-js st muffin; do
     sed -i 's%href="style.css"%href="/style.css"%' *.html
 
     sed -i 's%^<!DOCTYPE [^>]*>%<!DOCTYPE html>%' *.html
-    sed -i 's%^\s*<body[^>]*>\s*$%<body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a><a href="/projects.html">Projects</a><a href="/contributing.html">Contributing</a><a href="/reference/index.html">Documentation</a></div></div>%' *.html
+    sed -i 's%^\s*<body[^>]*>\s*$%<body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a><a href="/projects.html">Projects</a><a href="/contributing.html">Contributing</a><a href="/reference/index.html" class="current">Documentation</a></div></div>%' *.html
 
     cd ..
 done
@@ -121,7 +121,7 @@ echo '<!DOCTYPE html>
         <a href="/index.html">Home</a>
         <a href="/projects.html">Projects</a>
         <a href="/contributing.html">Contributing</a>
-        <a href="/reference/index.html">Documentation</a>
+        <a href="/reference/index.html" class="current">Documentation</a>
       </div>
     </div>
 
