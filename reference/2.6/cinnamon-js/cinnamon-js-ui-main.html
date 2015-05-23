@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Main: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Main</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-main-section.html" title="imports.ui.main">
 <link rel="prev" href="cinnamon-js-ui-main-section.html" title="imports.ui.main">
 <link rel="next" href="cinnamon-js-ui-modalDialog-section.html" title="imports.ui.modalDialog">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -465,7 +465,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="../cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a>
+    <span class="type">Cinnamon.Recorder</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--recorder" title="The “recorder” property">recorder</a>
@@ -501,7 +501,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="../cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a>
+    <span class="type">Cinnamon.GenericContainer</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--uiGroup" title="The “uiGroup” property">uiGroup</a>
@@ -636,7 +636,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="../cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a>
+    <span class="type">Cinnamon.WindowTracker</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--tracker" title="The “tracker” property">tracker</a>
@@ -672,7 +672,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="https://developer.gnome.org/gio/unstable/GFileOutputStream.html"><span class="type">Gio.FileOutputStream</span></a>
+    <span class="type">Gio.FileOutputStream</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-main.html#cinnamon-js-ui-main--lg_log_file" title="The “lg_log_file” property">lg_log_file</a>
@@ -812,7 +812,7 @@ hasDefaultWorkspaceName (<em class="parameter"><code><span class="type">int</spa
 <a name="cinnamon-js-ui-main-moveWindowToNewWorkspace"></a><h3>moveWindowToNewWorkspace ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-moveWindowToNewWorkspace (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>,
+moveWindowToNewWorkspace (<em class="parameter"><code><span class="type">Meta.Window</span>   metaWindow</code></em>,
                           <em class="parameter"><code><span class="type">boolean</span>       switchToNewWorkspace</code></em>);</pre>
 <p>Moves the window to a new workspace.</p>
 <p>If <code class="code">switchToNewWorkspace</code> is true, it will switch to the new workspace after moving the window</p>
@@ -1276,7 +1276,7 @@ logStackTrace (<em class="parameter"><code><span class="type">string</span>   ms
 <a name="cinnamon-js-ui-main-isWindowActorDisplayedOnWorkspace"></a><h3>isWindowActorDisplayedOnWorkspace ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">boolean</span>
-isWindowActorDisplayedOnWorkspace (<em class="parameter"><code><a href="../muffin/MetaWindowActor.html"><span class="type">Meta.WindowActor</span></a>   win</code></em>,
+isWindowActorDisplayedOnWorkspace (<em class="parameter"><code><span class="type">Meta.WindowActor</span>   win</code></em>,
                                    <em class="parameter"><code><span class="type">int</span>                workspaceIndex</code></em>);</pre>
 <p>Determines whether the window actor belongs to a specific workspace</p>
 <div class="refsect3">
@@ -1338,9 +1338,9 @@ getWindowActorsForWorkspace (<em class="parameter"><code><span class="type">int<
 <a name="cinnamon-js-ui-main-pushModal"></a><h3>pushModal ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">boolean</span>
-pushModal (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">Clutter.Actor</span></a>       actor</code></em>,
+pushModal (<em class="parameter"><code><span class="type">Clutter.Actor</span>       actor</code></em>,
            <em class="parameter"><code><span class="type">int</span>                 timestamp</code></em>,
-           <em class="parameter"><code><a href="../muffin/MetaPlugin.html#MetaModalOptions"><span class="type">Meta.ModalOptions</span></a>   options</code></em>);</pre>
+           <em class="parameter"><code><span class="type">Meta.ModalOptions</span>   options</code></em>);</pre>
 <p>Ensure we are in a mode where all keyboard and mouse input goes to the stage, and focus <code class="code">actor</code>. Multiple calls to this function act in a stacking fashion; the effect will be undone when an equal number of popModal() invocations have been made.</p>
 <p>Next, record the current Clutter keyboard focus on a stack. If the modal stack returns to this actor, reset the focus to the actor which was focused at the time pushModal() was invoked.</p>
 <p><code class="code">timestamp</code> is optionally used to associate the call with a specific user initiated event.  If not provided then the value of global.get_current_time() is assumed.</p>
@@ -1381,7 +1381,7 @@ pushModal (<em class="parameter"><code><a href="https://developer.gnome.org/clut
 <a name="cinnamon-js-ui-main-popModal"></a><h3>popModal ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-popModal (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">Clutter.Actor</span></a>   actor</code></em>,
+popModal (<em class="parameter"><code><span class="type">Clutter.Actor</span>   actor</code></em>,
           <em class="parameter"><code><span class="type">int</span>             timestamp</code></em>);</pre>
 <p>Reverse the effect of pushModal().  If this invocation is undoing the topmost invocation, then the focus will be restored to the previous focus at the time when pushModal() was invoked.</p>
 <p><code class="code">timestamp</code> is optionally used to associate the call with a specific user initiated event.  If not provided then the value of global.get_current_time() is assumed.</p>
@@ -1437,7 +1437,7 @@ getRunDialog ();</pre>
 <a name="cinnamon-js-ui-main-activateWindow"></a><h3>activateWindow ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-activateWindow (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   window</code></em>,
+activateWindow (<em class="parameter"><code><span class="type">Meta.Window</span>   window</code></em>,
                 <em class="parameter"><code><span class="type">int</span>           time</code></em>,
                 <em class="parameter"><code><span class="type">int</span>           workspaceNum</code></em>);</pre>
 <p>Activates <code class="code">window</code>, switching to its workspace first if necessary, and switching out of the overview if it's currently active</p>
@@ -1474,7 +1474,7 @@ activateWindow (<em class="parameter"><code><a href="../muffin/MetaWindow.html">
 <a name="cinnamon-js-ui-main-initializeDeferredWork"></a><h3>initializeDeferredWork ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">string</span>
-initializeDeferredWork (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">Clutter.Actor</span></a>   actor</code></em>,
+initializeDeferredWork (<em class="parameter"><code><span class="type">Clutter.Actor</span>   actor</code></em>,
                         <em class="parameter"><code><span class="type">function</span>        callback</code></em>);</pre>
 <p>This function sets up a callback to be invoked when either the given actor is mapped, or after some period of time when the machine is idle.  This is useful if your actor isn't always visible on the screen (for example, all actors in the overview), and you don't want to consume resources updating if the actor isn't actually going to be displaying to the user.</p>
 <p>Note that queueDeferredWork is called by default immediately on initialization as well, under the assumption that new actors will need it.</p>
@@ -1489,7 +1489,7 @@ initializeDeferredWork (<em class="parameter"><code><a href="https://developer.g
 <tbody>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p>A <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><code class="code">ClutterActor</code></a></p></td>
+<td class="parameter_description"><p>A <code class="code">ClutterActor</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -1533,7 +1533,7 @@ queueDeferredWork (<em class="parameter"><code><span class="type">string</span> 
 <a name="cinnamon-js-ui-main-isInteresting"></a><h3>isInteresting ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">boolean</span>
-isInteresting (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><span class="type">Meta.Window</span></a>   metaWindow</code></em>);</pre>
+isInteresting (<em class="parameter"><code><span class="type">Meta.Window</span>   metaWindow</code></em>);</pre>
 <p>Determines whether a window is "interesting", i.e. ones to be displayed in alt-tab, window list etc.</p>
 <div class="refsect3">
 <a name="id-1.5.11.2.6.33.5"></a><h4>Parameters</h4>
@@ -1560,8 +1560,8 @@ isInteresting (<em class="parameter"><code><a href="../muffin/MetaWindow.html"><
 <a name="cinnamon-js-ui-main-getTabList"></a><h3>getTabList ()</h3>
 <pre class="programlisting">
 <span class="returnvalue">array</span>
-getTabList (<em class="parameter"><code><a href="../muffin/MetaWorkspace.html"><span class="type">Meta.Workspace</span></a>   workspaceOpt</code></em>,
-            <em class="parameter"><code><a href="../muffin/MetaScreen.html"><span class="type">Meta.Screen</span></a>      screenOpt</code></em>);</pre>
+getTabList (<em class="parameter"><code><span class="type">Meta.Workspace</span>   workspaceOpt</code></em>,
+            <em class="parameter"><code><span class="type">Meta.Screen</span>      screenOpt</code></em>);</pre>
 <p>Return a list of the interesting windows on a workspace (by default, the active workspace). The list will include app-less dialogs.</p>
 <div class="refsect3">
 <a name="id-1.5.11.2.6.34.5"></a><h4>Parameters</h4>
@@ -1595,227 +1595,228 @@ getTabList (<em class="parameter"><code><a href="../muffin/MetaWorkspace.html"><
 <a name="cinnamon-js-ui-main.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--placesManager"></a><h3>The “placesManager” property</h3>
-<pre class="programlisting">  “placesManager”            <span class="type">PlacesManager.PlacesManager</span></pre>
+<pre class="programlisting">  “placesManager”        <span class="type">PlacesManager.PlacesManager</span></pre>
 <p>The places manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--overview"></a><h3>The “overview” property</h3>
-<pre class="programlisting">  “overview”                 <span class="type">Overview.Overview</span></pre>
+<pre class="programlisting">  “overview”             <span class="type">Overview.Overview</span></pre>
 <p>The "scale" overview</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--expo"></a><h3>The “expo” property</h3>
-<pre class="programlisting">  “expo”                     <span class="type">Expo.Expo</span></pre>
+<pre class="programlisting">  “expo”                 <span class="type">Expo.Expo</span></pre>
 <p>The "expo" overview</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--runDialog"></a><h3>The “runDialog” property</h3>
-<pre class="programlisting">  “runDialog”                <span class="type">RunDialog.RunDialog</span></pre>
+<pre class="programlisting">  “runDialog”            <span class="type">RunDialog.RunDialog</span></pre>
 <p>The run dialog</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--lookingGlass"></a><h3>The “lookingGlass” property</h3>
-<pre class="programlisting">  “lookingGlass”             <span class="type">LookingGlass.Melange</span></pre>
+<pre class="programlisting">  “lookingGlass”         <span class="type">LookingGlass.Melange</span></pre>
 <p>The looking glass object</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--wm"></a><h3>The “wm” property</h3>
-<pre class="programlisting">  “wm”                       <span class="type">WindowManager.WindowManager</span></pre>
+<pre class="programlisting">  “wm”                   <span class="type">WindowManager.WindowManager</span></pre>
 <p>The window manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--messageTray"></a><h3>The “messageTray” property</h3>
-<pre class="programlisting">  “messageTray”              <span class="type">MessageTray.MessageTray</span></pre>
+<pre class="programlisting">  “messageTray”          <span class="type">MessageTray.MessageTray</span></pre>
 <p>The mesesage tray</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--notificationDaemon"></a><h3>The “notificationDaemon” property</h3>
-<pre class="programlisting">  “notificationDaemon”       <span class="type">NotificationDaemon.NotificationDaemon</span></pre>
+<pre class="programlisting">  “notificationDaemon”   <span class="type">NotificationDaemon.NotificationDaemon</span></pre>
 <p>The notification daemon</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--windowAttentionHandler"></a><h3>The “windowAttentionHandler” property</h3>
-<pre class="programlisting">  “windowAttentionHandler”   <span class="type">WindowAttentionHandler.WindowAttentionHandler</span></pre>
+<pre class="programlisting">  “windowAttentionHandler”  <span class="type">WindowAttentionHandler.WindowAttentionHandler</span></pre>
 <p>The window attention handler</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--recorder"></a><h3>The “recorder” property</h3>
-<pre class="programlisting">  “recorder”                 <a href="../cinnamon/cinnamon-cinnamon-recorder.html#CinnamonRecorder"><span class="type">Cinnamon.Recorder</span></a></pre>
+<pre class="programlisting">  “recorder”             <span class="type">Cinnamon.Recorder</span></pre>
 <p>The recorder</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--cinnamonDBusService"></a><h3>The “cinnamonDBusService” property</h3>
-<pre class="programlisting">  “cinnamonDBusService”      <span class="type">CinnamonDBus.Cinnamon</span></pre>
+<pre class="programlisting">  “cinnamonDBusService”  <span class="type">CinnamonDBus.Cinnamon</span></pre>
 <p>The cinnamon dbus object</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--modalCount"></a><h3>The “modalCount” property</h3>
-<pre class="programlisting">  “modalCount”               <span class="type">int</span></pre>
+<pre class="programlisting">  “modalCount”           <span class="type">int</span></pre>
 <p>The number of modals "pushed"</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--modalActorFocusStack"></a><h3>The “modalActorFocusStack” property</h3>
-<pre class="programlisting">  “modalActorFocusStack”     <span class="type">array</span></pre>
+<pre class="programlisting">  “modalActorFocusStack”  <span class="type">array</span></pre>
 <p>Array of pushed modal actors</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--uiGroup"></a><h3>The “uiGroup” property</h3>
-<pre class="programlisting">  “uiGroup”                  <a href="../cinnamon/CinnamonGenericContainer.html"><span class="type">Cinnamon.GenericContainer</span></a></pre>
+<pre class="programlisting">  “uiGroup”              <span class="type">Cinnamon.GenericContainer</span></pre>
 <p>The group containing all Cinnamon and Muffin actors</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--magnifier"></a><h3>The “magnifier” property</h3>
-<pre class="programlisting">  “magnifier”                <span class="type">Magnifier.Magnifier</span></pre>
+<pre class="programlisting">  “magnifier”            <span class="type">Magnifier.Magnifier</span></pre>
 <p>The magnifier</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--xdndHandler"></a><h3>The “xdndHandler” property</h3>
-<pre class="programlisting">  “xdndHandler”              <span class="type">XdndHandler.XdndHandler</span></pre>
+<pre class="programlisting">  “xdndHandler”          <span class="type">XdndHandler.XdndHandler</span></pre>
 <p>The X DND handler</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--statusIconDispatcher"></a><h3>The “statusIconDispatcher” property</h3>
-<pre class="programlisting">  “statusIconDispatcher”     <span class="type">StatusIconDispatcher.StatusIconDispatcher</span></pre>
+<pre class="programlisting">  “statusIconDispatcher”  <span class="type">StatusIconDispatcher.StatusIconDispatcher</span></pre>
 <p>The status icon dispatcher</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--keyboard"></a><h3>The “keyboard” property</h3>
-<pre class="programlisting">  “keyboard”                 <span class="type">Keyboard.Keyboard</span></pre>
+<pre class="programlisting">  “keyboard”             <span class="type">Keyboard.Keyboard</span></pre>
 <p>The keyboard object</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--layoutManager"></a><h3>The “layoutManager” property</h3>
-<pre class="programlisting">  “layoutManager”            <span class="type">Layout.LayoutManager</span></pre>
+<pre class="programlisting">  “layoutManager”        <span class="type">Layout.LayoutManager</span></pre>
 <p>The layout manager.</p>
 <p>All actors that are part of the Cinnamon UI ar handled by the layout manager, which will determine when to show and hide the actors etc.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--panelManager"></a><h3>The “panelManager” property</h3>
-<pre class="programlisting">  “panelManager”             <a class="link" href="cinnamon-js-ui-panel-PanelManager.html" title="Panel.PanelManager"><span class="type">Panel.PanelManager</span></a></pre>
+<pre class="programlisting">  “panelManager”         <a class="link" href="cinnamon-js-ui-panel-PanelManager.html" title="Panel.PanelManager"><span class="type">Panel.PanelManager</span></a></pre>
 <p>The panel manager.</p>
 <p>This is responsible for handling events relating to panels, eg. showing all panels.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--themeManager"></a><h3>The “themeManager” property</h3>
-<pre class="programlisting">  “themeManager”             <span class="type">ThemeManager.ThemeManager</span></pre>
+<pre class="programlisting">  “themeManager”         <span class="type">ThemeManager.ThemeManager</span></pre>
 <p>The theme manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--soundManager"></a><h3>The “soundManager” property</h3>
-<pre class="programlisting">  “soundManager”             <span class="type">SoundManager.SoundManager</span></pre>
+<pre class="programlisting">  “soundManager”         <span class="type">SoundManager.SoundManager</span></pre>
 <p>The sound manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--settingsManager"></a><h3>The “settingsManager” property</h3>
-<pre class="programlisting">  “settingsManager”          <span class="type">Settings.SettingsManager</span></pre>
+<pre class="programlisting">  “settingsManager”      <span class="type">Settings.SettingsManager</span></pre>
 <p>The manager of the xlet Settings API</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--backgroundManager"></a><h3>The “backgroundManager” property</h3>
-<pre class="programlisting">  “backgroundManager”        <span class="type">BackgroundManager.BackgroundManager</span></pre>
+<pre class="programlisting">  “backgroundManager”    <span class="type">BackgroundManager.BackgroundManager</span></pre>
 <p>The background manager.</p>
 <p>This listens to changes in the GNOME background settings and mirrors them to the Cinnamon settings, since many applications have a "Set background" button that modifies the GNOME background settings.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--slideshowManager"></a><h3>The “slideshowManager” property</h3>
-<pre class="programlisting">  “slideshowManager”         <span class="type">SlideshowManager.SlideshowManager</span></pre>
+<pre class="programlisting">  “slideshowManager”     <span class="type">SlideshowManager.SlideshowManager</span></pre>
 <p>The slideshow manager.</p>
 <p>This is responsible for managing the background slideshow, since the background "slideshow" is created by cinnamon changing the active background gsetting every x minutes.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--keybindingManager"></a><h3>The “keybindingManager” property</h3>
-<pre class="programlisting">  “keybindingManager”        <span class="type">KeybindingManager.KeybindingManager</span></pre>
+<pre class="programlisting">  “keybindingManager”    <span class="type">KeybindingManager.KeybindingManager</span></pre>
 <p>The keybinding manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--systrayManager"></a><h3>The “systrayManager” property</h3>
-<pre class="programlisting">  “systrayManager”           <span class="type">Systray.SystrayManager</span></pre>
+<pre class="programlisting">  “systrayManager”       <span class="type">Systray.SystrayManager</span></pre>
 <p>The systray manager</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--osdWindow"></a><h3>The “osdWindow” property</h3>
-<pre class="programlisting">  “osdWindow”                <span class="type">OsdWindow.OsdWindow</span></pre>
+<pre class="programlisting">  “osdWindow”            <span class="type">OsdWindow.OsdWindow</span></pre>
 <p>Osd window that pops up when you use media keys.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--tracker"></a><h3>The “tracker” property</h3>
-<pre class="programlisting">  “tracker”                  <a href="../cinnamon/CinnamonWindowTracker.html"><span class="type">Cinnamon.WindowTracker</span></a></pre>
+<pre class="programlisting">  “tracker”              <span class="type">Cinnamon.WindowTracker</span></pre>
 <p>The window tracker</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--workspace_names"></a><h3>The “workspace_names” property</h3>
-<pre class="programlisting">  “workspace_names”          <span class="type">array</span></pre>
+<pre class="programlisting">  “workspace_names”      <span class="type">array</span></pre>
 <p>Names of workspace</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--deskletContainer"></a><h3>The “deskletContainer” property</h3>
-<pre class="programlisting">  “deskletContainer”         <a class="link" href="cinnamon-js-ui-deskletManager-DeskletContainer.html" title="DeskletManager.DeskletContainer"><span class="type">DeskletManager.DeskletContainer</span></a></pre>
+<pre class="programlisting">  “deskletContainer”     <a class="link" href="cinnamon-js-ui-deskletManager-DeskletContainer.html" title="DeskletManager.DeskletContainer"><span class="type">DeskletManager.DeskletContainer</span></a></pre>
 <p>The desklet container.</p>
 <p>This is a container that contains all the desklets as childs. Its actor is put between <code class="code">global</code>.bottom_window_group and <code class="code">global</code>.uiGroup.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--software_rendering"></a><h3>The “software_rendering” property</h3>
-<pre class="programlisting">  “software_rendering”       <span class="type">boolean</span></pre>
+<pre class="programlisting">  “software_rendering”   <span class="type">boolean</span></pre>
 <p>Whether software rendering is used</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--lg_log_file"></a><h3>The “lg_log_file” property</h3>
-<pre class="programlisting">  “lg_log_file”              <a href="https://developer.gnome.org/gio/unstable/GFileOutputStream.html"><span class="type">Gio.FileOutputStream</span></a></pre>
+<pre class="programlisting">  “lg_log_file”          <span class="type">Gio.FileOutputStream</span></pre>
 <p>The stream used to log looking messages to ~/.cinnamon/glass.log</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--can_log"></a><h3>The “can_log” property</h3>
-<pre class="programlisting">  “can_log”                  <span class="type">boolean</span></pre>
+<pre class="programlisting">  “can_log”              <span class="type">boolean</span></pre>
 <p>Whether looking glass log to file can be used</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--popup_rendering"></a><h3>The “popup_rendering” property</h3>
-<pre class="programlisting">  “popup_rendering”          <span class="type">boolean</span></pre>
+<pre class="programlisting">  “popup_rendering”      <span class="type">boolean</span></pre>
 <p>Whether a popup is in the process of rendering</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-main--xlet_startup_error"></a><h3>The “xlet_startup_error” property</h3>
-<pre class="programlisting">  “xlet_startup_error”       <span class="type">boolean</span></pre>
+<pre class="programlisting">  “xlet_startup_error”   <span class="type">boolean</span></pre>
 <p>Whether there was at least one xlet that did not manage to load</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

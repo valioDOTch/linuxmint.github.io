@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>StBoxLayout: Cinnamon St Reference Manual</title>
+<title>Cinnamon St Reference Manual: StBoxLayout</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon St Reference Manual">
 <link rel="up" href="containers.html" title="Containers">
 <link rel="prev" href="StBin.html" title="StBin">
 <link rel="next" href="StScrollView.html" title="StScrollView">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -60,7 +60,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="StBoxLayout.html#st-box-layout-get-vertical" title="st_box_layout_get_vertical ()">st_box_layout_get_vertical</a> <span class="c_punctuation">()</span>
@@ -76,7 +76,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="StBoxLayout.html#st-box-layout-get-pack-start" title="st_box_layout_get_pack_start ()">st_box_layout_get_pack_start</a> <span class="c_punctuation">()</span>
@@ -92,7 +92,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="StBoxLayout.html#st-box-layout-get-align-end" title="st_box_layout_get_align_end ()">st_box_layout_get_align_end</a> <span class="c_punctuation">()</span>
@@ -127,17 +127,17 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StBoxLayout.html#StBoxLayout--align-end" title="The “align-end” property">align-end</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StBoxLayout.html#StBoxLayout--pack-start" title="The “pack-start” property">pack-start</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StBoxLayout.html#StBoxLayout--vertical" title="The “vertical” property">vertical</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -159,9 +159,9 @@
 </div>
 <div class="refsect1">
 <a name="StBoxLayout.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
+        <span class="lineart">╰──</span> ClutterActor
             <span class="lineart">╰──</span> <a class="link" href="StWidget.html" title="StWidget">StWidget</a>
                 <span class="lineart">╰──</span> StContainer
                     <span class="lineart">╰──</span> StBoxLayout
@@ -171,7 +171,7 @@
 <a name="StBoxLayout.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 StBoxLayout implements
- <a href="https://developer.gnome.org/clutter/unstable/ClutterContainer.html">ClutterContainer</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterScriptable.html">ClutterScriptable</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterAnimatable.html">ClutterAnimatable</a> and  <a href="https://developer.gnome.org/atk/unstable/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a>.</p>
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
 </div>
 <div class="refsect1">
 <a name="StBoxLayout.description"></a><h2>Description</h2>
@@ -192,6 +192,7 @@ st_box_layout_new (<em class="parameter"><code><span class="type">void</span></c
 <div class="refsect3">
 <a name="id-1.2.4.3.9.2.5"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a></p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -199,7 +200,7 @@ st_box_layout_new (<em class="parameter"><code><span class="type">void</span></c
 <a name="st-box-layout-set-vertical"></a><h3>st_box_layout_set_vertical ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_box_layout_set_vertical (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
-                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> vertical</code></em>);</pre>
+                            <em class="parameter"><code><span class="type">gboolean</span> vertical</code></em>);</pre>
 <p>Set the value of the <span class="type">“vertical”</span> property</p>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.3.5"></a><h4>Parameters</h4>
@@ -217,7 +218,7 @@ st_box_layout_set_vertical (<em class="parameter"><code><a class="link" href="St
 </tr>
 <tr>
 <td class="parameter_name"><p>vertical</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the layout should be vertical</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if the layout should be vertical</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -227,7 +228,7 @@ st_box_layout_set_vertical (<em class="parameter"><code><a class="link" href="St
 <hr>
 <div class="refsect2">
 <a name="st-box-layout-get-vertical"></a><h3>st_box_layout_get_vertical ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_box_layout_get_vertical (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);</pre>
 <p>Get the value of the <span class="type">“vertical”</span> property.</p>
 <div class="refsect3">
@@ -247,7 +248,8 @@ st_box_layout_get_vertical (<em class="parameter"><code><a class="link" href="St
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.4.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the layout is vertical</p>
+<p> <code class="literal">TRUE</code> if the layout is vertical</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -255,7 +257,7 @@ st_box_layout_get_vertical (<em class="parameter"><code><a class="link" href="St
 <a name="st-box-layout-set-pack-start"></a><h3>st_box_layout_set_pack_start ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_box_layout_set_pack_start (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
-                              <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> pack_start</code></em>);</pre>
+                              <em class="parameter"><code><span class="type">gboolean</span> pack_start</code></em>);</pre>
 <p>Set the value of the <span class="type">“pack-start”</span> property.</p>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.5.5"></a><h4>Parameters</h4>
@@ -273,7 +275,7 @@ st_box_layout_set_pack_start (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>pack_start</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the layout should use pack-start</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if the layout should use pack-start</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -283,7 +285,7 @@ st_box_layout_set_pack_start (<em class="parameter"><code><a class="link" href="
 <hr>
 <div class="refsect2">
 <a name="st-box-layout-get-pack-start"></a><h3>st_box_layout_get_pack_start ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_box_layout_get_pack_start (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);</pre>
 <p>Get the value of the <span class="type">“pack-start”</span> property.</p>
 <div class="refsect3">
@@ -303,7 +305,8 @@ st_box_layout_get_pack_start (<em class="parameter"><code><a class="link" href="
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.6.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if pack-start is enabled</p>
+<p> <code class="literal">TRUE</code> if pack-start is enabled</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -311,7 +314,7 @@ st_box_layout_get_pack_start (<em class="parameter"><code><a class="link" href="
 <a name="st-box-layout-set-align-end"></a><h3>st_box_layout_set_align_end ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_box_layout_set_align_end (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>,
-                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> align_end</code></em>);</pre>
+                             <em class="parameter"><code><span class="type">gboolean</span> align_end</code></em>);</pre>
 <p>Set the value of the <span class="type">“align-end”</span> property.</p>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.7.5"></a><h4>Parameters</h4>
@@ -329,7 +332,7 @@ st_box_layout_set_align_end (<em class="parameter"><code><a class="link" href="S
 </tr>
 <tr>
 <td class="parameter_name"><p>align_end</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the layout should use align-end</p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> if the layout should use align-end</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -339,7 +342,7 @@ st_box_layout_set_align_end (<em class="parameter"><code><a class="link" href="S
 <hr>
 <div class="refsect2">
 <a name="st-box-layout-get-align-end"></a><h3>st_box_layout_get_align_end ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_box_layout_get_align_end (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *box</code></em>);</pre>
 <p>Get the value of the <span class="type">“align-end”</span> property.</p>
 <div class="refsect3">
@@ -359,7 +362,8 @@ st_box_layout_get_align_end (<em class="parameter"><code><a class="link" href="S
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.3.9.8.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if align-end is enabled</p>
+<p> <code class="literal">TRUE</code> if align-end is enabled</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -367,7 +371,7 @@ st_box_layout_get_align_end (<em class="parameter"><code><a class="link" href="S
 <a name="st-box-layout-insert-actor"></a><h3>st_box_layout_insert_actor ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_box_layout_insert_actor (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *self</code></em>,
-                            <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *actor</code></em>,
+                            <em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
                             <em class="parameter"><code><span class="type">int</span> pos</code></em>);</pre>
 <p>Adds <em class="parameter"><code>actor</code></em>
  to <em class="parameter"><code>self</code></em>
@@ -394,7 +398,7 @@ added.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p>A <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a></p></td>
+<td class="parameter_description"><p>A <span class="type">ClutterActor</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -411,14 +415,14 @@ added.</p>
 <a name="st-box-layout-insert-before"></a><h3>st_box_layout_insert_before ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_box_layout_insert_before (<em class="parameter"><code><a class="link" href="StBoxLayout.html" title="StBoxLayout"><span class="type">StBoxLayout</span></a> *self</code></em>,
-                             <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *actor</code></em>,
-                             <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a> *sibling</code></em>);</pre>
+                             <em class="parameter"><code><span class="type">ClutterActor</span> *actor</code></em>,
+                             <em class="parameter"><code><span class="type">ClutterActor</span> *sibling</code></em>);</pre>
 <p>Adds <em class="parameter"><code>actor</code></em>
  to <em class="parameter"><code>self</code></em>
  at the position before <em class="parameter"><code>sibling</code></em>
 .
 <em class="parameter"><code>sibling</code></em>
- cannot be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and must be already a child
+ cannot be <code class="literal">NULL</code> and must be already a child
 of <em class="parameter"><code>self</code></em>
 .</p>
 <div class="refsect3">
@@ -437,12 +441,12 @@ of <em class="parameter"><code>self</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p>A <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a></p></td>
+<td class="parameter_description"><p>A <span class="type">ClutterActor</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p>A previously added <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a></p></td>
+<td class="parameter_description"><p>A previously added <span class="type">ClutterActor</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -463,7 +467,7 @@ through the public API.</p>
 <a name="StBoxLayout.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="StBoxLayout--align-end"></a><h3>The <code class="literal">“align-end”</code> property</h3>
-<pre class="programlisting">  “align-end”                <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “align-end”                <span class="type">gboolean</span></pre>
 <p>Whether the children should be flushed to the end.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -471,7 +475,7 @@ through the public API.</p>
 <hr>
 <div class="refsect2">
 <a name="StBoxLayout--pack-start"></a><h3>The <code class="literal">“pack-start”</code> property</h3>
-<pre class="programlisting">  “pack-start”               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “pack-start”               <span class="type">gboolean</span></pre>
 <p>Whether to pack items at the start of the box.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -479,7 +483,7 @@ through the public API.</p>
 <hr>
 <div class="refsect2">
 <a name="StBoxLayout--vertical"></a><h3>The <code class="literal">“vertical”</code> property</h3>
-<pre class="programlisting">  “vertical”                 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “vertical”                 <span class="type">gboolean</span></pre>
 <p>Whether the layout should be vertical, ratherthan horizontal.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -487,6 +491,7 @@ through the public API.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

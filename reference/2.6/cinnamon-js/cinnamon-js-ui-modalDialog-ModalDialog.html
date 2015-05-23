@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ModalDialog.ModalDialog: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: ModalDialog.ModalDialog</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-modalDialog-section.html" title="imports.ui.modalDialog">
 <link rel="prev" href="cinnamon-js-ui-modalDialog-section.html" title="imports.ui.modalDialog">
 <link rel="next" href="cinnamon-js-ui-modalDialog-SpicesAboutDialog.html" title="ModalDialog.SpicesAboutDialog">
-<meta name="generator" content="GTK-Doc V1.23 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -144,7 +144,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a>
+    <span class="type">St.BoxLayout</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-modalDialog-ModalDialog.html#cinnamon-js-ui-modalDialog-ModalDialog--contentLayout" title="The “contentLayout” property">contentLayout</a>
@@ -207,39 +207,20 @@ setButtons (<em class="parameter"><code><span class="type">array</span>   button
 <p>Each JSON object <span class="emphasis"><em>must</em></span> contain <code class="code">label</code> and <code class="code">action</code>, which are the text displayed on the button and the callback function to use when the button is clicked respectively.</p>
 <p>Optional arguments include <code class="code">focused</code>, which determines whether the button is initially focused, and <code class="code">key</code>, which is a keybinding associated with the button press such that pressing the keybinding will have the same effect as clicking the button.</p>
 <p>An example usage is</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">dialog</span><span class="symbol">.</span><span class="function">setButtons</span><span class="symbol">([</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">        label</span><span class="symbol">:</span><span class="normal"> </span><span class="function"><a href="../muffin/muffin-Utility-functions.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"Cancel"</span><span class="symbol">),</span>
-<span class="normal">        action</span><span class="symbol">:</span><span class="normal"> Lang</span><span class="symbol">.</span><span class="function">bind</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> this</span><span class="symbol">.</span><span class="normal">callback</span><span class="symbol">),</span>
-<span class="normal">        key</span><span class="symbol">:</span><span class="normal"> Clutter</span><span class="symbol">.</span><span class="normal">Escape</span>
-<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">        label</span><span class="symbol">:</span><span class="normal"> </span><span class="function"><a href="../muffin/muffin-Utility-functions.html#gettext-macro">_</a></span><span class="symbol">(</span><span class="string">"OK"</span><span class="symbol">),</span>
-<span class="normal">        action</span><span class="symbol">:</span><span class="normal"> Lang</span><span class="symbol">.</span><span class="function">bind</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> this</span><span class="symbol">.</span><span class="normal">destroy</span><span class="symbol">),</span>
-<span class="normal">        key</span><span class="symbol">:</span><span class="normal"> Clutter</span><span class="symbol">.</span><span class="normal">Return</span>
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="symbol">]);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="informalexample"><pre class="programlisting">
 
+dialog.setButtons([
+    {
+        label: _("Cancel"),
+        action: Lang.bind(this, this.callback),
+        key: Clutter.Escape
+    },
+    {
+        label: _("OK"),
+        action: Lang.bind(this, this.destroy),
+        key: Clutter.Return
+    }
+]);</pre></div>
 <div class="refsect3">
 <a name="id-1.5.12.2.7.4.9"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -378,18 +359,19 @@ _fadeOutDialog (<em class="parameter"><code><span class="type">int</span>   time
 <a name="cinnamon-js-ui-modalDialog-ModalDialog.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="cinnamon-js-ui-modalDialog-ModalDialog--state"></a><h3>The “state” property</h3>
-<pre class="programlisting">  “state”                    <span class="type">ModalDialog.State</span></pre>
+<pre class="programlisting">  “state”                <span class="type">ModalDialog.State</span></pre>
 <p>The state of the modal dialog, which may be <code class="code">ModalDialog.State.OPENED</code>, <code class="code">CLOSED</code>, <code class="code">OPENING</code>, <code class="code">CLOSING</code> or <code class="code">FADED_OUT</code>.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-modalDialog-ModalDialog--contentLayout"></a><h3>The “contentLayout” property</h3>
-<pre class="programlisting">  “contentLayout”            <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a></pre>
+<pre class="programlisting">  “contentLayout”        <span class="type">St.BoxLayout</span></pre>
 <p>The box containing the contents of the modal dialog (excluding the buttons)</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>
