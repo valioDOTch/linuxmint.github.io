@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cinnamon St Reference Manual: StWidget</title>
+<title>StWidget: Cinnamon St Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon St Reference Manual">
 <link rel="up" href="base.html" title="Abstract classes and Interfaces">
 <link rel="prev" href="base.html" title="Abstract classes and Interfaces">
 <link rel="next" href="StWidgetAccessible.html" title="StWidgetAccessible">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -773,7 +773,6 @@ want to test for the presence of a specific pseudo class, use
 <a name="id-1.2.2.2.10.6.7"></a><h4>Returns</h4>
 <p> the pseudo class list string. The string is owned by the
 <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and should not be modified or freed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -813,7 +812,6 @@ st_widget_has_style_pseudo_class (<em class="parameter"><code><a class="link" hr
 's pseudo class list includes
 <em class="parameter"><code>pseudo_class</code></em>
 .</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -941,7 +939,6 @@ st_widget_get_style_class_name (<em class="parameter"><code><a class="link" href
 <a name="id-1.2.2.2.10.11.6"></a><h4>Returns</h4>
 <p> the class name string. The string is owned by the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and
 should not be modified or freed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -981,7 +978,6 @@ st_widget_has_style_class_name (<em class="parameter"><code><a class="link" href
 's style class list includes
 <em class="parameter"><code>style_class</code></em>
 .</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1041,7 +1037,6 @@ st_widget_get_style (<em class="parameter"><code><a class="link" href="StWidget.
 <a name="id-1.2.2.2.10.14.6"></a><h4>Returns</h4>
 <p> The inline style string, or <code class="literal">NULL</code>. The string is owned by the
 <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> and should not be modified or freed.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1162,7 +1157,6 @@ st_widget_get_has_tooltip (<em class="parameter"><code><a class="link" href="StW
 <a name="id-1.2.2.2.10.18.6"></a><h4>Returns</h4>
 <p> current value of has-tooltip on <em class="parameter"><code>widget</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1220,7 +1214,6 @@ st_widget_get_tooltip_text (<em class="parameter"><code><a class="link" href="St
 <div class="refsect3">
 <a name="id-1.2.2.2.10.20.6"></a><h4>Returns</h4>
 <p> The current tooltip string, owned by the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1337,7 +1330,6 @@ st_widget_get_track_hover (<em class="parameter"><code><a class="link" href="StW
 <a name="id-1.2.2.2.10.24.6"></a><h4>Returns</h4>
 <p> current value of track-hover on <em class="parameter"><code>widget</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1427,7 +1419,6 @@ is currently over the widget.</p>
 <a name="id-1.2.2.2.10.27.6"></a><h4>Returns</h4>
 <p> current value of hover on <em class="parameter"><code>widget</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1537,7 +1528,6 @@ st_widget_get_can_focus (<em class="parameter"><code><a class="link" href="StWid
 <a name="id-1.2.2.2.10.34.6"></a><h4>Returns</h4>
 <p> current value of can-focus on <em class="parameter"><code>widget</code></em>
 </p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1617,7 +1607,6 @@ to the first available widget in the given direction.</p>
 <a name="id-1.2.2.2.10.35.10"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if <code class="function">clutter_actor_grab_key_focus()</code> has been
 called on an actor. <code class="literal">FALSE</code> if not.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1787,7 +1776,6 @@ is an <a class="link" href="StWidget.html" title="StWidget"><span class="type">S
 <div class="refsect3">
 <a name="id-1.2.2.2.10.41.6"></a><h4>Returns</h4>
 <p> the debug name.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1820,7 +1808,6 @@ st_get_slow_down_factor (<em class="parameter"><code><span class="type">void</sp
 <div class="refsect3">
 <a name="id-1.2.2.2.10.43.4"></a><h4>Returns</h4>
 <p> the global factor applied to all animation durations</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1956,7 +1943,6 @@ st_widget_get_accessible_role (<em class="parameter"><code><a class="link" href=
 <div class="refsect3">
 <a name="id-1.2.2.2.10.47.6"></a><h4>Returns</h4>
 <p> accessible <span class="type">AtkRole</span> for this widget</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -2101,7 +2087,6 @@ st_widget_get_accessible_name (<em class="parameter"><code><a class="link" href=
 <a name="id-1.2.2.2.10.51.6"></a><h4>Returns</h4>
 <p> a character string representing the accessible name
 of the widget.</p>
-<p></p>
 </div>
 </div>
 </div>
@@ -2346,6 +2331,6 @@ theme changes</p>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.21</div>
+          Generated by GTK-Doc V1.22</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Muffin Reference Manual: MetaDisplay</title>
+<title>MetaDisplay: Muffin Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Muffin Reference Manual">
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="muffin-MetaCompositor.html" title="MetaCompositor">
 <link rel="next" href="muffin-MetaGroup.html" title="MetaGroup">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -386,12 +386,14 @@ meta_display_get_compositor_version (<em class="parameter"><code><a class="link"
 <a name="meta-display-get-xdisplay"></a><h3>meta_display_get_xdisplay ()</h3>
 <pre class="programlisting"><span class="returnvalue">Display</span> *
 meta_display_get_xdisplay (<em class="parameter"><code><a class="link" href="MetaDisplay.html" title="MetaDisplay"><span class="type">MetaDisplay</span></a> *display</code></em>);</pre>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="meta-display-get-compositor"></a><h3>meta_display_get_compositor ()</h3>
 <pre class="programlisting"><span class="returnvalue">MetaCompositor</span> *
 meta_display_get_compositor (<em class="parameter"><code><a class="link" href="MetaDisplay.html" title="MetaDisplay"><span class="type">MetaDisplay</span></a> *display</code></em>);</pre>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -574,10 +576,10 @@ meta_display_get_shape_event_base (<em class="parameter"><code><a class="link" h
 meta_display_get_atom (<em class="parameter"><code><a class="link" href="MetaDisplay.html" title="MetaDisplay"><span class="type">MetaDisplay</span></a> *display</code></em>,
                        <em class="parameter"><code><a class="link" href="MetaDisplay.html#MetaAtom" title="enum MetaAtom"><span class="type">MetaAtom</span></a> meta_atom</code></em>);</pre>
 <p>Gets up an X atom that Muffin prefetched at startup.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.10.6.14.5"></a><h4>Returns</h4>
+<a name="id-1.4.10.6.14.6"></a><h4>Returns</h4>
 <p> the X atom corresponding to the given atom enumeration</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -647,7 +649,6 @@ meta_display_get_last_user_time (<em class="parameter"><code><a class="link" hre
 <div class="refsect3">
 <a name="id-1.4.10.6.16.5"></a><h4>Returns</h4>
 <p> Timestamp of the last user interaction event with a window</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -688,7 +689,6 @@ meta_display_get_ignored_modifier_mask
 <a name="id-1.4.10.6.19.5"></a><h4>Returns</h4>
 <p> a mask of modifiers that should be ignored
 when matching keybindings to events</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -880,7 +880,6 @@ meta_display_get_grab_op (<em class="parameter"><code><a class="link" href="Meta
 Muffin doesn't currently have a grab. <a class="link" href="muffin-Common.html#META-GRAB-OP-COMPOSITOR:CAPS"><code class="literal">META_GRAB_OP_COMPOSITOR</code></a> will
 be returned if a compositor-plugin modal operation is in effect
 (See <code class="function">muffin_begin_modal_for_plugin()</code>)</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -964,7 +963,6 @@ is stored</p></td>
 <a name="id-1.4.10.6.26.7"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the keybinding was added successfully,
 otherwise <code class="literal">FALSE</code></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1003,7 +1001,6 @@ keybinding or has not been added with <a class="link" href="MetaDisplay.html#met
 <a name="id-1.4.10.6.27.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the binding has been removed sucessfully,
 otherwise <code class="literal">FALSE</code></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1071,7 +1068,6 @@ meta_display_add_custom_keybinding (<em class="parameter"><code><a class="link" 
 <a name="id-1.4.10.6.29.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the keybinding was added successfully,
 otherwise <code class="literal">FALSE</code></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1110,7 +1106,6 @@ keybinding or has not been added with <a class="link" href="MetaDisplay.html#met
 <a name="id-1.4.10.6.30.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the binding has been removed sucessfully,
 otherwise <code class="literal">FALSE</code></p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1155,7 +1150,6 @@ the function will always return <a class="link" href="muffin-Preferences.html#ME
 <a name="id-1.4.10.6.31.6"></a><h4>Returns</h4>
 <p> The action that should be taken for the given key, or
 <a class="link" href="muffin-Preferences.html#META-KEYBINDING-ACTION-NONE:CAPS"><code class="literal">META_KEYBINDING_ACTION_NONE</code></a>.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -1412,6 +1406,6 @@ meta_display_keybinding_action_invoke_by_code
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.21</div>
+          Generated by GTK-Doc V1.22</div>
 </body>
 </html>
