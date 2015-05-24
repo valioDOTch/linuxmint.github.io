@@ -72,18 +72,20 @@ echo "Moving output files"
 rm -rf $version
 mkdir -p $version/muffin/
 mkdir -p $version/cinnamon-js/
+mkdir -p $version/cinnamon-tutorials/
 mkdir -p $version/cinnamon/
 mkdir -p $version/st/
 
 mv tmp/Cinnamon/docs/reference/cinnamon/html/* $version/cinnamon/
 mv tmp/Cinnamon/docs/reference/cinnamon-js/html/* $version/cinnamon-js/
+mv tmp/Cinnamon/docs/reference/cinnamon-tutorials/html/* $version/cinnamon-tutorials/
 mv tmp/Cinnamon/docs/reference/st/html/* $version/st/
 mv tmp/muffin/doc/reference/html/* $version/muffin/
 
 echo "Fixing links"
 cd $version
 
-for dir in cinnamon cinnamon-js st muffin; do
+for dir in cinnamon cinnamon-js cinnamon-tutorials st muffin; do
     cd $dir
     gtkdoc-rebase --relative --html-dir . --other-dir ../
     gtkdoc-rebase --online --html-dir . --other-dir /usr/share/gtk-doc/
@@ -129,10 +131,11 @@ echo '<!DOCTYPE html>
 
     This is the documentation for Cinnamon '$version'.
     <ul>
-      <li><a href="cinnamon/index.html">Cinnamon Core</a></li>
-      <li><a href="cinnamon-js/index.html">Cinnamon JS</a></li>
-      <li><a href="st/index.html">Cinnamon St</a></li>
-      <li><a href="muffin/index.html">Muffin</a></li>
+      <li><a href="cinnamon-tutorials/index.html">Cinnamon Tutorials</a></li>
+      <li><a href="cinnamon/index.html">Cinnamon Core Reference</a></li>
+      <li><a href="cinnamon-js/index.html">Cinnamon JS Reference</a></li>
+      <li><a href="st/index.html">Cinnamon St Reference</a></li>
+      <li><a href="muffin/index.html">Muffin Reference</a></li>
     </ul>
   </body>
 </html>' > index.html
