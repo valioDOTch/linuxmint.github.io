@@ -1,6 +1,7 @@
 body
 {
   font-family: cantarell, sans-serif;
+  margin-top: 0px;
 }
 
 .synopsis, .classsynopsis
@@ -469,7 +470,7 @@ h1 {
 
 #header {
   display: table;
-  padding: 10px 0px;
+  padding: 0px;
   border-bottom: 1px solid #d3d7cf;
 }
 
