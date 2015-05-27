@@ -8,7 +8,7 @@
 <link rel="up" href="styling.html" title="Styling">
 <link rel="prev" href="cinnamon-st-st-theme-context.html" title="st-theme-context">
 <link rel="next" href="StThemeNodeTransition.html" title="StThemeNodeTransition">
-<meta name="generator" content="GTK-Doc V1.22 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -499,11 +499,6 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="property_type"><span class="type">gint</span></td>
-<td class="property_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext--scale-factor" title="The “scale-factor” property">scale-factor</a></td>
-<td class="property_flags">Read / Write</td>
-</tr>
-<tr>
 <td class="property_type">
 <span class="type">gchar</span> *</td>
 <td class="property_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme--application-stylesheet" title="The “application-stylesheet” property">application-stylesheet</a></td>
@@ -527,6 +522,11 @@
 <td class="property_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme--theme-stylesheet" title="The “theme-stylesheet” property">theme-stylesheet</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
+<tr>
+<td class="property_type"><span class="type">gint</span></td>
+<td class="property_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext--scale-factor" title="The “scale-factor” property">scale-factor</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -541,18 +541,18 @@
 <tbody>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
-<td class="signal_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext-changed" title="The “changed” signal">changed</a></td>
+<td class="signal_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme-custom-stylesheets-changed" title="The “custom-stylesheets-changed” signal">custom-stylesheets-changed</a></td>
 <td class="signal_flags">Run Last</td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
-<td class="signal_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme-custom-stylesheets-changed" title="The “custom-stylesheets-changed” signal">custom-stylesheets-changed</a></td>
+<td class="signal_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext-changed" title="The “changed” signal">changed</a></td>
 <td class="signal_flags">Run Last</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<a name="StThemeContext"></a><a name="StTheme"></a><a name="StThemeNode"></a><div class="refsect1">
+<a name="StTheme"></a><a name="StThemeContext"></a><a name="StThemeNode"></a><div class="refsect1">
 <a name="cinnamon-st-st-theme-node.other"></a><h2>Types and Values</h2>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
@@ -582,11 +582,11 @@
 </tr>
 <tr>
 <td class="datatype_keyword"> </td>
-<td class="function_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext-struct" title="StThemeContext">StThemeContext</a></td>
+<td class="function_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme-struct" title="StTheme">StTheme</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword"> </td>
-<td class="function_name"><a class="link" href="cinnamon-st-st-theme-node.html#StTheme-struct" title="StTheme">StTheme</a></td>
+<td class="function_name"><a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext-struct" title="StThemeContext">StThemeContext</a></td>
 </tr>
 </tbody>
 </table></div>
@@ -2311,26 +2311,17 @@ if st_theme_node_paint_equal (node, other) returns <code class="literal">TRUE</c
 </div>
 <hr>
 <div class="refsect2">
-<a name="StThemeContext-struct"></a><h3>StThemeContext</h3>
-<pre class="programlisting">typedef struct _StThemeContext StThemeContext;</pre>
+<a name="StTheme-struct"></a><h3>StTheme</h3>
+<pre class="programlisting">typedef struct _StTheme StTheme;</pre>
 </div>
 <hr>
 <div class="refsect2">
-<a name="StTheme-struct"></a><h3>StTheme</h3>
-<pre class="programlisting">typedef struct _StTheme StTheme;</pre>
+<a name="StThemeContext-struct"></a><h3>StThemeContext</h3>
+<pre class="programlisting">typedef struct _StThemeContext StThemeContext;</pre>
 </div>
 </div>
 <div class="refsect1">
 <a name="cinnamon-st-st-theme-node.property-details"></a><h2>Property Details</h2>
-<div class="refsect2">
-<a name="StThemeContext--scale-factor"></a><h3>The <code class="literal">“scale-factor”</code> property</h3>
-<pre class="programlisting">  “scale-factor”             <span class="type">gint</span></pre>
-<p>The scaling factor used or high dpi scaling.</p>
-<p>Flags: Read / Write</p>
-<p>Allowed values: &gt;= 0</p>
-<p>Default value: 1</p>
-</div>
-<hr>
 <div class="refsect2">
 <a name="StTheme--application-stylesheet"></a><h3>The <code class="literal">“application-stylesheet”</code> property</h3>
 <pre class="programlisting">  “application-stylesheet”   <span class="type">gchar</span> *</pre>
@@ -2366,17 +2357,18 @@ this is associated with the CSS "user" stylesheet.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="StThemeContext--scale-factor"></a><h3>The <code class="literal">“scale-factor”</code> property</h3>
+<pre class="programlisting">  “scale-factor”             <span class="type">gint</span></pre>
+<p>The scaling factor used or high dpi scaling.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 1</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="cinnamon-st-st-theme-node.signal-details"></a><h2>Signal Details</h2>
-<div class="refsect2">
-<a name="StThemeContext-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-user_function (<a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a> *stthemecontext,
-               <span class="type">gpointer</span>        user_data)</pre>
-<p>Flags: Run Last</p>
-</div>
-<hr>
 <div class="refsect2">
 <a name="StTheme-custom-stylesheets-changed"></a><h3>The <code class="literal">“custom-stylesheets-changed”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
@@ -2384,10 +2376,17 @@ user_function (<a class="link" href="cinnamon-st-st-theme-node.html#StTheme"><sp
                <span class="type">gpointer</span> user_data)</pre>
 <p>Flags: Run Last</p>
 </div>
+<hr>
+<div class="refsect2">
+<a name="StThemeContext-changed"></a><h3>The <code class="literal">“changed”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+user_function (<a class="link" href="cinnamon-st-st-theme-node.html#StThemeContext"><span class="type">StThemeContext</span></a> *stthemecontext,
+               <span class="type">gpointer</span>        user_data)</pre>
+<p>Flags: Run Last</p>
+</div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.22</div>
+<hr>Generated by GTK-Doc V1.23.1</div>
 </body>
 </html>
