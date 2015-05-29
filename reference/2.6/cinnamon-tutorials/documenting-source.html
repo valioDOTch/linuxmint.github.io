@@ -25,7 +25,7 @@
 <p>
     The C part of Cinnamon can be documented using standard gtk-doc format, and there should be plenty of tutorials on that. The JavaScript part of Cinnamon can also be documented using something that resembles gtk-doc format.
   </p>
-<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>) and functions (including functions of files and functions of objects).  </p>
+<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>), functions (including functions of files and functions of objects) and enums.  </p>
 <p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below.  </p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
@@ -40,15 +40,15 @@
 7
 8
 9</pre></td>
-        <td class="listing_code"><pre class="programlisting">function Applet() {
-          <span class="keyword">this</span>._init()
-      }
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">Applet</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">()</span>
+<span class="cbracket">}</span>
 
-      Applet.prototype = {
-          <span class="keyword">_init</span>: function() {
+<span class="normal">Applet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 
-          }
-      }</pre></td>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -72,17 +72,17 @@
 9
 10
 11</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">/*</span><span class="comment">*</span>
-<span class="comment">      * name_of_thing:</span>
-<span class="comment">      * @short_description: one-line description</span>
-<span class="comment">      * @prop1 (type): description</span>
-<span class="comment">      * @prop2 (type): description</span>
-<span class="comment">      * @prop3 (type): description</span>
-<span class="comment">      *</span>
-<span class="comment">      * Long description</span>
-<span class="comment">      *</span>
-<span class="comment">      * Second paragraph of long description</span>
-<span class="comment">      </span><span class="comment">*/</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span>
+<span class="comment">* name_of_thing:</span>
+<span class="comment">* </span><span class="type">@short</span><span class="comment">_description: one-line description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">1 (type): description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">2 (type): description</span>
+<span class="comment">* </span><span class="type">@prop</span><span class="comment">3 (type): description</span>
+<span class="comment">*</span>
+<span class="comment">* Long description</span>
+<span class="comment">*</span>
+<span class="comment">* Second paragraph of long description</span>
+<span class="comment">*/</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -96,7 +96,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">/*</span><span class="comment">*</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -105,17 +105,19 @@
 <p>
     Avoid starting comments with this (use <code class="code">/*</code> instead) even though the parser should be smart enough to not parse them, but if they look too like a piece of documentation, the parser might get confused.
   </p>
-<p> The next line is the name of the thing being documented. Function, object and file documentation are distinguished using this line. They should look, respectively, like this: </p>
+<p> The next line is the name of the thing being documented. Function, object, file and enum documentations are distinguished using this line. They should look, respectively, like this: </p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting">* function_name:
-      * #ObjectName:
-      * <span class="type">FILE</span>:filename.js</pre></td>
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> function_name</span><span class="symbol">:</span>
+<span class="symbol">*</span><span class="normal"> #ObjectName</span><span class="symbol">:</span>
+<span class="symbol">*</span><span class="normal"> FILE</span><span class="symbol">:</span><span class="normal">filename</span><span class="symbol">.</span><span class="normal">js</span>
+<span class="symbol">*</span><span class="normal"> ENUM</span><span class="symbol">:</span><span class="normal">EnumName</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -126,15 +128,15 @@
 <div class="informalexample">
     Object.Name - short description
   </div>
-<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, and a parameter for a function. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly. If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
+<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, a parameter for a function, or an elemenet of the enum for an enum. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly (except for enums, where types should not appear). If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2</pre></td>
-        <td class="listing_code"><pre class="programlisting">* @prop (type): <span class="keyword">this</span> is a very <span class="type">long</span> description. Oh my gosh I am
-      * running out of space!</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> this is a very </span><span class="usertype">long</span><span class="normal"> description</span><span class="symbol">.</span><span class="normal"> Oh my gosh I am</span>
+<span class="symbol">*</span><span class="normal"> running out </span><span class="usertype">of</span><span class="normal"> space</span><span class="symbol">!</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -148,9 +150,9 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting">* @prop1 (type): hello
-      *
-      * @prop2 (type): world</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> world</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -165,10 +167,10 @@
 2
 3
 4</pre></td>
-        <td class="listing_code"><pre class="programlisting">* @prop1 (type): line <span class="number">1</span>
-      *
-      * line <span class="number">2</span>
-      * @prop2 (type): hello world</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -183,10 +185,10 @@
 2
 3
 4</pre></td>
-        <td class="listing_code"><pre class="programlisting">* @prop1 (type): line <span class="number">1</span>
-      * \
-      * line <span class="number">2</span>
-      * @prop2 (type): hello world</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
+<span class="symbol">*</span><span class="normal"> </span><span class="symbol">\</span>
+<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
+<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -199,7 +201,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting">* Returns (type): description of what is returned</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> description of what is returned</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -214,10 +216,10 @@
 2
 3
 4</pre></td>
-        <td class="listing_code"><pre class="programlisting">* Returns (type): hey <span class="keyword">this</span> function returns a really cool thing!
-      * Want to know what it is?
-      *
-      * It is a random number!</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hey this function returns a really </span><span class="usertype">cool</span><span class="normal"> thing</span><span class="symbol">!</span>
+<span class="symbol">*</span><span class="normal"> Want to know what </span><span class="usertype">it</span><span class="normal"> is</span><span class="symbol">?</span>
+<span class="symbol">*</span>
+<span class="symbol">*</span><span class="normal"> It is a </span><span class="usertype">random</span><span class="normal"> number</span><span class="symbol">!</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -229,7 +231,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting">* Inherits: Applet.Applet</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> Inherits</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">Applet</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -255,7 +257,7 @@
       </li>
 <li class="listitem">
 <p>
-          Links to functions and properties of other objects with a <code class="code">%percentage sign</code>. If you wish to link to functions of the same object, the following four are acceptable:
+          Links to functions, properties or enums of other objects with a <code class="code">%percentage sign</code>. If you wish to link to functions of the same object, the following four are acceptable:
         </p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
 <li class="listitem"><code class="code">this.func</code></li>
@@ -273,7 +275,7 @@
 <li class="listitem"><code class="code">PopupBaseMenuItem._init()</code></li>
 </ul></div>
 <p>
-          If there are functions and properties that take the same name, the property will be linked to, unless the name ends with <code class="code">()</code>, in which case it will always be a function.
+          If there are functions, properties and enums that take the same name, the property will be linked to, unless the name ends with <code class="code">()</code>, in which case it will always be a function. If a function and an enum have the same name, the whole thing will explode into pieces and don't do that. It is a bad idea to have things with the same name anyway.
         </p>
 </li>
 <li class="listitem">
@@ -285,9 +287,9 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting">```
-<span class="keyword">this</span>.is = some + code
-```</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">```</span>
+<span class="normal">this</span><span class="symbol">.</span><span class="normal">is </span><span class="symbol">=</span><span class="normal"> some </span><span class="symbol">+</span><span class="normal"> code</span>
+<span class="normal">```</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -306,12 +308,12 @@
 4
 5
 6</pre></td>
-        <td class="listing_code"><pre class="programlisting">- List item <span class="number">1</span>
-- List item <span class="number">2</span>
-  \
-  Continuing item <span class="number">2</span> with `\`
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">-</span><span class="normal"> List item </span><span class="number">1</span>
+<span class="symbol">-</span><span class="normal"> List item </span><span class="number">2</span>
+<span class="normal">  </span><span class="symbol">\</span>
+<span class="normal">  Continuing item </span><span class="number">2</span><span class="normal"> with `</span><span class="symbol">\</span><span class="normal">`</span>
 
-No longer an item</pre></td>
+<span class="normal">No longer an item</span></pre></td>
       </tr>
     </tbody>
   </table>

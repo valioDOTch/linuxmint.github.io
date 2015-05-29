@@ -68,16 +68,16 @@
 8
 9
 10</pre></td>
-        <td class="listing_code"><pre class="programlisting">{
-            <span class="number">&quot;width&quot;</span>: {
-                <span class="number">&quot;type&quot;</span> : <span class="number">&quot;scale&quot;</span>,
-                <span class="number">&quot;default&quot;</span> : <span class="number">10</span>,
-                <span class="number">&quot;min&quot;</span> : <span class="number">2</span>,
-                <span class="number">&quot;max&quot;</span> : <span class="number">400</span>,
-                <span class="number">&quot;step&quot;</span> : <span class="number">1</span>,
-                <span class="number">&quot;description&quot;</span> : <span class="number">&quot;Amount of space in pixels&quot;</span>
-            }
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">    </span><span class="string">"width"</span><span class="symbol">:</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="string">"type"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"scale"</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"default"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="number">10</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"min"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="number">2</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"max"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="number">400</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"step"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span>
+<span class="normal">        </span><span class="string">"description"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Amount of space in pixels"</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -128,7 +128,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="type">const</span> Settings = imports.ui.settings;</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Settings </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">;</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -147,10 +147,10 @@
 2
 3
 4</pre></td>
-        <td class="listing_code"><pre class="programlisting">function main(metadata, orientation, panel_height, instanceId) {
-            let myApplet = <span class="keyword">new</span> MyApplet(metadata, orientation, panel_height, instanceId);
-            <span class="keyword">return</span> myApplet;
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> myApplet </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> myApplet</span><span class="symbol">;</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -174,17 +174,17 @@
 9
 10
 11</pre></td>
-        <td class="listing_code"><pre class="programlisting">function MyApplet(metadata, orientation, panel_height, instanceId) {
-            <span class="keyword">this</span>._init(metadata, orientation, panel_height, instanceId);
-        }
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-        MyApplet.prototype = {
-        <span class="keyword">__proto__</span>: Applet.TextIconApplet.prototype,
+<span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
 
-            <span class="keyword">_init</span>: function(metadata, orientation, panel_height, instanceId) {
-            ....
-            ....
-            ....</pre></td>
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="symbol">....</span>
+<span class="normal">    </span><span class="symbol">....</span>
+<span class="normal">    </span><span class="symbol">....</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -205,7 +205,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.settings = <span class="keyword">new</span> Settings.AppletSettings(<span class="keyword">this</span>, <span class="number">&quot;settings-example@cinnamon.org&quot;</span>, instanceId);</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -220,8 +220,8 @@
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>._preferences = {};
-        <span class="keyword">this</span>.settings = <span class="keyword">new</span> Settings.AppletSettings(<span class="keyword">this</span>._preferences, <span class="number">&quot;settings-example@cinnamon.org&quot;</span>, instanceId);</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{}</span><span class="symbol">;</span>
+<span class="normal">this</span><span class="symbol">.</span><span class="normal">settings </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> Settings</span><span class="symbol">.</span><span class="function">AppletSettings</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">.</span><span class="normal">_preferences</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"settings-example@cinnamon.org"</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -250,11 +250,11 @@
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.settings.bindProperty(Settings.BindingDirection.IN,
-                                   <span class="number">&quot;width&quot;</span>,
-                                   <span class="number">&quot;width&quot;</span>,
-                                   <span class="keyword">this</span>.on_settings_changed,
-                                   null);</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
+<span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
+<span class="normal">                           this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
+<span class="normal">                           null</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>

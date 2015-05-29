@@ -160,24 +160,24 @@
 16
 17
 18</pre></td>
-        <td class="listing_code"><pre class="programlisting">MyApplet.prototype = {
-    <span class="keyword">__proto__</span>: Applet.Applet.prototype,
+        <td class="listing_code"><pre class="programlisting"><span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">Applet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
 
-    <span class="keyword">_init</span>: function(orientation, panelHeight, instanceId) {
-        Applet.Applet.prototype._init.call(<span class="keyword">this</span>, orientation, panelHeight, instanceId);
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panelHeight</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        Applet</span><span class="symbol">.</span><span class="normal">Applet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">.</span><span class="normal">_init</span><span class="symbol">.</span><span class="function">call</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panelHeight</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">);</span>
 
-        <span class="keyword">this</span>._signalManager = <span class="keyword">new</span> SignalManager.SignalManager(<span class="keyword">this</span>);
-        <span class="keyword">this</span>._signalManager.connect(global.settings, <span class="number">&quot;changed::foo&quot;</span>, <span class="keyword">this</span>._onChanged);
-    },
+<span class="normal">        this</span><span class="symbol">.</span><span class="normal">_signalManager </span><span class="symbol">=</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> SignalManager</span><span class="symbol">.</span><span class="function">SignalManager</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">);</span>
+<span class="normal">        this</span><span class="symbol">.</span><span class="normal">_signalManager</span><span class="symbol">.</span><span class="function">connect</span><span class="symbol">(</span><span class="normal">global</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"changed::foo"</span><span class="symbol">,</span><span class="normal"> this</span><span class="symbol">.</span><span class="normal">_onChanged</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
 
-    <span class="keyword">_onChanged</span>: function() {
-        <span class="comment">// Do something</span>
-    },
+<span class="normal">    _onChanged</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="comment">// Do something</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
 
-    <span class="keyword">on_applet_removed_from_panel</span>: function() {
-        <span class="keyword">this</span>._signalManager.disconnectAllSignals();
-    }
-}</pre></td>
+<span class="normal">    on_applet_removed_from_panel</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        this</span><span class="symbol">.</span><span class="normal">_signalManager</span><span class="symbol">.</span><span class="function">disconnectAllSignals</span><span class="symbol">();</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -225,7 +225,7 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting">global.settings.connect(<span class="number">&quot;changed::foo&quot;</span>, Lang.bind(<span class="keyword">this</span>, <span class="keyword">this</span>._bar))</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">global</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">connect</span><span class="symbol">(</span><span class="string">"changed::foo"</span><span class="symbol">,</span><span class="normal"> Lang</span><span class="symbol">.</span><span class="function">bind</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> this</span><span class="symbol">.</span><span class="normal">_bar</span><span class="symbol">))</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -237,7 +237,7 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>._signalManager.connect(global.settings, <span class="number">&quot;changed::foo&quot;</span>, <span class="keyword">this</span>._bar)</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="normal">_signalManager</span><span class="symbol">.</span><span class="function">connect</span><span class="symbol">(</span><span class="normal">global</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"changed::foo"</span><span class="symbol">,</span><span class="normal"> this</span><span class="symbol">.</span><span class="normal">_bar</span><span class="symbol">)</span></pre></td>
       </tr>
     </tbody>
   </table>

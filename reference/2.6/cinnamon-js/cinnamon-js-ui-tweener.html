@@ -150,11 +150,11 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting">{
-    ...
-    x: <span class="number">7</span>
-    ...
-}</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="normal">    x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">7</span>
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -180,12 +180,12 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 4
 5
 6</pre></td>
-        <td class="listing_code"><pre class="programlisting">let myFunc = function(t, b, c, d) {
-    let ts = (t/=d)*t;
-    let tc = ts*t;
-    <span class="keyword">return</span> b+c*(-<span class="number">97.1975</span>*tc*ts + <span class="number">257.5975</span>*ts*ts + -<span class="number">234.4</span>*tc + <span class="number">80</span>*ts + -<span class="number">5</span>*t);
-};
-Tweener.addTween(<span class="keyword">this</span>.actor, {x: <span class="number">200</span>, time: <span class="number">1</span>, transition: myFunc});</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">let</span><span class="normal"> myFunc </span><span class="symbol">=</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">,</span><span class="normal"> b</span><span class="symbol">,</span><span class="normal"> c</span><span class="symbol">,</span><span class="normal"> d</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> ts </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">/=</span><span class="normal">d</span><span class="symbol">)*</span><span class="normal">t</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> tc </span><span class="symbol">=</span><span class="normal"> ts</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> b</span><span class="symbol">+</span><span class="normal">c</span><span class="symbol">*(-</span><span class="number">97.1975</span><span class="symbol">*</span><span class="normal">tc</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="number">257.5975</span><span class="symbol">*</span><span class="normal">ts</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">234.4</span><span class="symbol">*</span><span class="normal">tc </span><span class="symbol">+</span><span class="normal"> </span><span class="number">80</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">5</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">);</span>
+<span class="cbracket">}</span><span class="symbol">;</span>
+<span class="normal">Tweener</span><span class="symbol">.</span><span class="function">addTween</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">.</span><span class="normal">actor</span><span class="symbol">,</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal">x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">200</span><span class="symbol">,</span><span class="normal"> time</span><span class="symbol">:</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> transition</span><span class="symbol">:</span><span class="normal"> myFunc</span><span class="cbracket">}</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -212,7 +212,7 @@ Tweener.addTween(<span class="keyword">this</span>.actor, {x: <span class="numbe
 <li class="listitem"><p><code class="code">onErrorScope</code> (object): The object in which the onError function will be executed. This is needed if you have some specialized code inside the event function; in that case, references to this. inside the function will reference to the object defined by this parameter. If omitted, the tweened object is the scope used instead.</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.17.2.5.3.10"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.3.10"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -242,7 +242,7 @@ Tweener.addTween(<span class="keyword">this</span>.actor, {x: <span class="numbe
 getTweenCount (<em class="parameter"><code><span class="type">Object</span>   scope</code></em>);</pre>
 <p>Returns the number of tweens <code class="code">scope</code> currently has.</p>
 <div class="refsect3">
-<a name="id-1.17.2.5.4.5"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -265,7 +265,7 @@ getTweenCount (<em class="parameter"><code><span class="type">Object</span>   sc
 isTweening (<em class="parameter"><code><span class="type">Object</span>   scope</code></em>);</pre>
 <p>Returns whether <code class="code">scope</code> is animating</p>
 <div class="refsect3">
-<a name="id-1.17.2.5.5.5"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -289,7 +289,7 @@ removeTween (<em class="parameter"><code><span class="type">Object</span>   scop
 <p>Removes all tweens running on the object.</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.17.2.5.6.6"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.6.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -313,7 +313,7 @@ pauseTweens (<em class="parameter"><code><span class="type">Object</span>   scop
 <p>Pauses all the tweens running on the object. Can be resumed with Tweener.resumeTweens</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.17.2.5.7.6"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.7.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -337,7 +337,7 @@ resumeTweens (<em class="parameter"><code><span class="type">Object</span>   sco
 <p>Resumes all the tweens running on the object paused by Tweener.pauseTweens</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.17.2.5.8.6"></a><h4>Parameters</h4>
+<a name="id-1.18.2.5.8.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">

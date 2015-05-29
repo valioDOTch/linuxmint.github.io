@@ -74,12 +74,12 @@
 4
 5
 6</pre></td>
-        <td class="listing_code"><pre class="programlisting">{
-            <span class="number">&quot;uuid&quot;</span>: <span class="number">&quot;force-quit@cinnamon.org&quot;</span>,
-            <span class="number">&quot;name&quot;</span>: <span class="number">&quot;Force Quit&quot;</span>,
-            <span class="number">&quot;description&quot;</span>: <span class="number">&quot;Click on the applet to launch xkill and force any window to quit immediately&quot;</span>,
-            <span class="number">&quot;icon&quot;</span>: <span class="number">&quot;force-exit&quot;</span>
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">    </span><span class="string">"uuid"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-quit@cinnamon.org"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"name"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Force Quit"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"description"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Click on the applet to launch xkill and force any window to quit immediately"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"icon"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-exit"</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -99,13 +99,13 @@
 5
 6
 7</pre></td>
-        <td class="listing_code"><pre class="programlisting">{
-            <span class="number">&quot;uuid&quot;</span>: <span class="number">&quot;force-quit@cinnamon.org&quot;</span>,
-            <span class="number">&quot;name&quot;</span>: <span class="number">&quot;Force Quit&quot;</span>,
-            <span class="number">&quot;description&quot;</span>: <span class="number">&quot;Click on the applet to launch xkill and force any window to quit immediately&quot;</span>,
-            <span class="number">&quot;icon&quot;</span>: <span class="number">&quot;force-exit&quot;</span>,
-            <span class="number">&quot;max-instances&quot;</span>: <span class="number">&quot;-1&quot;</span>
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">    </span><span class="string">"uuid"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-quit@cinnamon.org"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"name"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Force Quit"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"description"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Click on the applet to launch xkill and force any window to quit immediately"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"icon"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"force-exit"</span><span class="symbol">,</span>
+<span class="normal">    </span><span class="string">"max-instances"</span><span class="symbol">:</span><span class="normal"> </span><span class="string">"-1"</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -149,31 +149,31 @@
 23
 24
 25</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="type">const</span> Applet = imports.ui.applet;
-        <span class="type">const</span> Util = imports.misc.util;
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span>
+<span class="keyword">const</span><span class="normal"> Util </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">util</span><span class="symbol">;</span>
 
-        function MyApplet(orientation, panel_height, instance_id) {
-            <span class="keyword">this</span>._init(orientation, panel_height, instance_id);
-        }
+<span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+<span class="cbracket">}</span>
 
-        MyApplet.prototype = {
-            <span class="keyword">__proto__</span>: Applet.IconApplet.prototype,
+<span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
 
-            <span class="keyword">_init</span>: function(orientation, panel_height, instance_id) {
-                Applet.IconApplet.prototype._init.call(<span class="keyword">this</span>, orientation, panel_height, instance_id);
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">.</span><span class="normal">_init</span><span class="symbol">.</span><span class="function">call</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
 
-                <span class="keyword">this</span>.set_applet_icon_name(<span class="number">&quot;force-exit&quot;</span>);
-                <span class="keyword">this</span>.set_applet_tooltip(_(<span class="number">&quot;Click here to kill a window&quot;</span>));
-            },
+<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span>
+<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function">_</span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
 
-            <span class="keyword">on_applet_clicked</span>: function() {
-                Util.spawn('xkill');
-            }
-        };
+<span class="normal">    on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span><span class="symbol">;</span>
 
-        function main(metadata, orientation, panel_height, instance_id) {
-            <span class="keyword">return</span> <span class="keyword">new</span> MyApplet(orientation, panel_height, instance_id);
-        }</pre></td>
+<span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -189,9 +189,9 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting">function main(metadata, orientation, panel_height, instance_id) {
-            <span class="keyword">return</span> <span class="keyword">new</span> MyApplet(orientation, panel_height, instance_id);
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">main</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> </span><span class="usertype">new</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -224,8 +224,8 @@
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="type">const</span> Applet = imports.ui.applet;
-        <span class="type">const</span> Util = imports.misc.util;</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span>
+<span class="keyword">const</span><span class="normal"> Util </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">util</span><span class="symbol">;</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -244,9 +244,9 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting">function MyApplet(orientation, panel_height, instance_id) {
-            <span class="keyword">this</span>._init(orientation, panel_height, instance_id);
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">function</span><span class="normal"> </span><span class="function">MyApplet</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -279,20 +279,20 @@
 12
 13
 14</pre></td>
-        <td class="listing_code"><pre class="programlisting">MyApplet.prototype = {
-            <span class="keyword">__proto__</span>: Applet.IconApplet.prototype,
+        <td class="listing_code"><pre class="programlisting"><span class="normal">MyApplet</span><span class="symbol">.</span><span class="normal">prototype </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span>
 
-            <span class="keyword">_init</span>: function(orientation, panel_height, instance_id) {
-                Applet.IconApplet.prototype._init.call(<span class="keyword">this</span>, orientation, panel_height, instance_id);
+<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">.</span><span class="normal">_init</span><span class="symbol">.</span><span class="function">call</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instance_id</span><span class="symbol">);</span>
 
-                <span class="keyword">this</span>.set_applet_icon_name(<span class="number">&quot;force-exit&quot;</span>);
-                <span class="keyword">this</span>.set_applet_tooltip(_(<span class="number">&quot;Click here to kill a window&quot;</span>));
-            },
+<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span>
+<span class="normal">        this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function">_</span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span>
+<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
 
-            <span class="keyword">on_applet_clicked</span>: function() {
-                Util.spawn('xkill');
-            }
-        };</pre></td>
+<span class="normal">    on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span><span class="symbol">;</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -312,7 +312,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">__proto__</span>: Applet.IconApplet.prototype,</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">IconApplet</span><span class="symbol">.</span><span class="normal">prototype</span><span class="symbol">,</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -332,7 +332,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.set_applet_icon_name(<span class="number">&quot;force-exit&quot;</span>);</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="function">set_applet_icon_name</span><span class="symbol">(</span><span class="string">"force-exit"</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -349,7 +349,7 @@
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span>.set_applet_tooltip(_(<span class="number">&quot;Click here to kill a window&quot;</span>));</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">this</span><span class="symbol">.</span><span class="function">set_applet_tooltip</span><span class="symbol">(</span><span class="function">_</span><span class="symbol">(</span><span class="string">"Click here to kill a window"</span><span class="symbol">));</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -368,9 +368,9 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">on_applet_clicked</span>: function() {
-            Util.spawn('xkill');
-        }</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">on_applet_clicked</span><span class="symbol">:</span><span class="normal"> </span><span class="function">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    Util</span><span class="symbol">.</span><span class="function">spawn</span><span class="symbol">(</span><span class="string">'xkill'</span><span class="symbol">);</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>

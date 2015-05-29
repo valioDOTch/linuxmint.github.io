@@ -150,11 +150,11 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting">{
-    ...
-    x: <span class="number">7</span>
-    ...
-}</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="normal">    x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">7</span>
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -180,12 +180,12 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 4
 5
 6</pre></td>
-        <td class="listing_code"><pre class="programlisting">let myFunc = function(t, b, c, d) {
-    let ts = (t/=d)*t;
-    let tc = ts*t;
-    <span class="keyword">return</span> b+c*(-<span class="number">97.1975</span>*tc*ts + <span class="number">257.5975</span>*ts*ts + -<span class="number">234.4</span>*tc + <span class="number">80</span>*ts + -<span class="number">5</span>*t);
-};
-Tweener.addTween(<span class="keyword">this</span>.actor, {x: <span class="number">200</span>, time: <span class="number">1</span>, transition: myFunc});</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="usertype">let</span><span class="normal"> myFunc </span><span class="symbol">=</span><span class="normal"> </span><span class="function">function</span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">,</span><span class="normal"> b</span><span class="symbol">,</span><span class="normal"> c</span><span class="symbol">,</span><span class="normal"> d</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> ts </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">/=</span><span class="normal">d</span><span class="symbol">)*</span><span class="normal">t</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="usertype">let</span><span class="normal"> tc </span><span class="symbol">=</span><span class="normal"> ts</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="keyword">return</span><span class="normal"> b</span><span class="symbol">+</span><span class="normal">c</span><span class="symbol">*(-</span><span class="number">97.1975</span><span class="symbol">*</span><span class="normal">tc</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="number">257.5975</span><span class="symbol">*</span><span class="normal">ts</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">234.4</span><span class="symbol">*</span><span class="normal">tc </span><span class="symbol">+</span><span class="normal"> </span><span class="number">80</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">5</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">);</span>
+<span class="cbracket">}</span><span class="symbol">;</span>
+<span class="normal">Tweener</span><span class="symbol">.</span><span class="function">addTween</span><span class="symbol">(</span><span class="normal">this</span><span class="symbol">.</span><span class="normal">actor</span><span class="symbol">,</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal">x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">200</span><span class="symbol">,</span><span class="normal"> time</span><span class="symbol">:</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> transition</span><span class="symbol">:</span><span class="normal"> myFunc</span><span class="cbracket">}</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
