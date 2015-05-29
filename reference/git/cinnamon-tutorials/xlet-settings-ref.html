@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applet, desklet and extension settings reference: Cinnamon Tutorials</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Cinnamon Tutorials">
+<link rel="up" href="extension-system.html" title="Part III. Extension system">
+<link rel="prev" href="xlet-settings.html" title="Applet, desklet and extension settings">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="extension-system.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="xlet-settings.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><img src="right-insensitive.png" width="16" height="16" border="0"></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="xlet-settings-ref"></a>Applet, desklet and extension settings reference</h2></div></div></div>
+<p>This is the reference for the settings API.</p>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.5.3"></a>Widget types and required fields</h3></div></div></div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.2"></a>checkbox</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">checkbox</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: <code class="code">true</code> or <code class="code">false</code> (no quotes)</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>A simple checkbox that controls a <code class="code">boolean</code> type value</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.3"></a>entry</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">entry</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default string value</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>A text entry field that stores a <code class="code">string</code></p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.4"></a>colorchooser</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">colorchooser</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default color string - can be <code class="code">"red"</code> or <code class="code">"rgba(x,x,x,x)"</code>, etc...</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>A Color button that lets you choose a RGBA color code as a <code class="code">string</code></p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.5"></a>keybinding</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">keybinding</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default keybinding string - i.e. <code class="code">&lt;Control&gt;F8</code> or other string parseable by gtk_accelerator_parse.</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>An input that allows you to select a keybinding for an action.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.6"></a>radiogroup</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">radiogroup</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default value from the list of options, or it can be a custom value if <code class="code">custom</code> is defined</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+<li class="listitem">
+<code class="code">options</code>: node of desc:val pair options, where desc is the displayed option name, val is the stored value</li>
+</ul></div>
+<p>A group of radio buttons whose description and values are defined by <code class="code">options</code> in <code class="code">description:value</code> pairs.  Values may be <code class="code">string</code> or <code class="code">number</code>.  also have a value of <code class="code">custom</code>, and a text entry will be provided next to that option, to allow entering a custom value.</p>
+<p>Options might be:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="number">&quot;options&quot;</span> : {
+              <span class="number">&quot;Option 1&quot;</span> : <span class="number">&quot;this value&quot;</span>,
+              <span class="number">&quot;Option 2&quot;</span> : <span class="number">&quot;that value&quot;</span>,
+              <span class="number">&quot;Option 3&quot;</span> : <span class="number">&quot;other value&quot;</span>
+          }</pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.7"></a>filechooser</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">filechooser</code>
+</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+<li class="listitem">
+<code class="code">default</code>: Default filename to use</li>
+<li class="listitem">
+<code class="code">select-dir</code>:  (optional) true or false, or leave off entirely. Forces directory selection.</li>
+</ul></div>
+<p>Opens a file picker dialog to allow you to choose a filename.  If <code class="code">select-dir</code> is <code class="code">true</code>, it will only allow directories to be selected.  Stores as a <code class="code">string</code>.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.8"></a>iconfilechooser</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">iconfilechooser</code>
+</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+<li class="listitem">
+<code class="code">default</code>: default icon path or icon name to use</li>
+</ul></div>
+<p>Provides a preview button and text entry field.  You can open a file dialog to pick an image-type file, or enter a registered icon name in the text field.  Stores as a <code class="code">string</code>.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.9"></a>combobox</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">combobox</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default value to set</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+<li class="listitem">
+<code class="code">options</code>: node of desc:val pair options, where desc is the displayed option name, val is the stored value</li>
+</ul></div>
+<p>Provides a dropdown list from which you can select from <code class="code">description:value</code> pairs defined by <code class="code">options</code>.  The values can be <code class="code">string</code>, <code class="code">number</code>, or <code class="code">boolean</code>.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.10"></a>spinbutton</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">spinbutton</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default value to use - int or leading</li>
+<li class="listitem">
+<code class="code">min</code>: minimum value</li>
+<li class="listitem">
+<code class="code">max</code>: maximum value</li>
+<li class="listitem">
+<code class="code">units</code>: String describing what the number is a unit of (pixels, bytes, etc..)</li>
+<li class="listitem">
+<code class="code">step</code>: adjustment amount</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>Provides a spin button and entry for changing setting a <code class="code">number</code> value.  This can be integer or floating point format.  For floating point, all values must have leading 0's.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.11"></a>scale</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">scale</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default value to use - int or leading</li>
+<li class="listitem">
+<code class="code">min</code>: minimum value</li>
+<li class="listitem">
+<code class="code">max</code>: maximum value</li>
+<li class="listitem">
+<code class="code">step</code>: adjustment amount</li>
+<li class="listitem">
+<code class="code">description</code>: String describing the setting</li>
+</ul></div>
+<p>Provides a scale widget to allow you to pick a <code class="code">number</code> value between min and max, by step amount.  Integer or floating point numbers can be used.  For floating point, all values must have leading 0's.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.12"></a>generic</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">generic</code>
+</li>
+<li class="listitem">
+<code class="code">default</code>: default value</li>
+</ul></div>
+<p>A generic storage object for any type of value.  This is generally intended for internal settings that won't be adjusted by the user.  For example, a history, or most recent command.  There is no corresponding widget for it in Cinnamon Settings.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.13"></a>header</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">header</code>
+</li>
+<li class="listitem">
+<code class="code">description</code>: String to display as a bold header</li>
+</ul></div>
+<p>A <span class="emphasis"><em>non-setting</em></span> widget, this provides a bold-faced label for assisting in organizing your settings</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.14"></a>separator</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+<code class="code">type</code>: should be <code class="code">separator</code>
+</li></ul></div>
+<p>A <span class="emphasis"><em>non-setting</em></span> widget, this draws a horizontal separator for assisting in organizing your settings</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.15"></a>button</h4></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">type</code>: should be <code class="code">button</code>
+</li>
+<li class="listitem">
+<code class="code">description</code>: Label for the button</li>
+<li class="listitem">
+<code class="code">callback</code>: string of callback method name (no "this", just "myFunc")</li>
+</ul></div>
+<p>A <span class="emphasis"><em>non-setting</em></span> widget, this provides a button, which, when clicked, activates the <code class="code">callback</code> method in your applet. Note: the callback value should be a string of the method name only.  For instance, to call <code class="code">this.myCallback()</code>, you would put <code class="code">myCallback</code> for the callback value.</p>
+</div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.3.16"></a>Additional Setting Options</h4></div></div></div>
+      These fields can be added to any widget:
+
+      <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">indent: true</code>: Indent the widget in the settings page to help with organizing your layout.</li>
+<li class="listitem">
+<code class="code">dependency: &lt;key&gt;</code>: where <code class="code">key</code> is the name of a <code class="code">checkbox</code> setting. If that checkbox setting is un-checked, this setting will be made insensitive (greyed out). The checkbox must occur <span class="emphasis"><em>before</em></span> the setting that depends on it.</li>
+<li class="listitem">
+<code class="code">tooltip</code>: Adds a popup tooltip to the widget</li>
+</ul></div>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.5.4"></a>Signals</h3></div></div></div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.4.2"></a><code class="code">settings-changed</code>
+</h4></div></div></div>
+      Signal when the underlying config file has changed and the in-memory values have been updated.
+    </div>
+<div class="sect3">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="id-1.4.5.4.3"></a><code class="code">changed::&lt;key&gt;</code>
+</h4></div></div></div>
+<p>Signals when <code class="code">key</code> has changed in the configuration file.  Use this in conjunction with <code class="code">getValue</code> if you want to handle your own updating in a more traditional way (like gsettings).</p>
+<p>The callback function will be called with three paramenters: <code class="code">settingProvider, oldval, newval</code>, which are, respectively, the settings object (which you usually don't need), the original value and the updated value.</p>
+</div>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.5.5"></a>Additional options in metadata.json</h3></div></div></div>
+    You can add the following items to <code class="code">metadata.json</code> to affect how the settings are presented to the user:
+    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<code class="code">hide-configuration</code>: Hides the configure button in Cinnamon Settings. Set to <code class="code">true</code> if you are using only <code class="code">generic</code>-type settings that should be hidden from the user.  This is not a mandatory key.  Omitting it will allow the configuration button to hide or display depending on whether you are utilizing the settings API or not.</li>
+<li class="listitem">
+<code class="code">external-configuration-app</code>: Allows you to define an external settings app to use instead of the built-in settings GUI. This should be a <code class="code">string</code> with the name of your executable settings app (path relative to the applet's install directory). Note, this key can be overridden by the <code class="code">hide-configuration</code> key. This is not a mandatory key. Omitting it will allow the configuration button to hide or display depending on whether you are utilizing the settings API or not.</li>
+</ul></div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.23.1</div>
+</body>
+</html>

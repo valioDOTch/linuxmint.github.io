@@ -25,7 +25,7 @@
 <p>
     The C part of Cinnamon can be documented using standard gtk-doc format, and there should be plenty of tutorials on that. The JavaScript part of Cinnamon can also be documented using something that resembles gtk-doc format.
   </p>
-<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>) and functions (including functions of files and functions of objects).  </p>
+<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>), functions (including functions of files and functions of objects) and enums.  </p>
 <p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below.  </p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
@@ -105,17 +105,19 @@
 <p>
     Avoid starting comments with this (use <code class="code">/*</code> instead) even though the parser should be smart enough to not parse them, but if they look too like a piece of documentation, the parser might get confused.
   </p>
-<p> The next line is the name of the thing being documented. Function, object and file documentation are distinguished using this line. They should look, respectively, like this: </p>
+<p> The next line is the name of the thing being documented. Function, object, file and enum documentations are distinguished using this line. They should look, respectively, like this: </p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1
 2
-3</pre></td>
+3
+4</pre></td>
         <td class="listing_code"><pre class="programlisting">* function_name:
       * #ObjectName:
-      * <span class="type">FILE</span>:filename.js</pre></td>
+      * <span class="type">FILE</span>:filename.js
+      * ENUM:EnumName</pre></td>
       </tr>
     </tbody>
   </table>
@@ -126,7 +128,7 @@
 <div class="informalexample">
     Object.Name - short description
   </div>
-<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, and a parameter for a function. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly. If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
+<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, a parameter for a function, or an elemenet of the enum for an enum. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly (except for enums, where types should not appear). If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -255,7 +257,7 @@
       </li>
 <li class="listitem">
 <p>
-          Links to functions and properties of other objects with a <code class="code">%percentage sign</code>. If you wish to link to functions of the same object, the following four are acceptable:
+          Links to functions, properties or enums of other objects with a <code class="code">%percentage sign</code>. If you wish to link to functions of the same object, the following four are acceptable:
         </p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
 <li class="listitem"><code class="code">this.func</code></li>
@@ -273,7 +275,7 @@
 <li class="listitem"><code class="code">PopupBaseMenuItem._init()</code></li>
 </ul></div>
 <p>
-          If there are functions and properties that take the same name, the property will be linked to, unless the name ends with <code class="code">()</code>, in which case it will always be a function.
+          If there are functions, properties and enums that take the same name, the property will be linked to, unless the name ends with <code class="code">()</code>, in which case it will always be a function. If a function and an enum have the same name, the whole thing will explode into pieces and don't do that. It is a bad idea to have things with the same name anyway.
         </p>
 </li>
 <li class="listitem">

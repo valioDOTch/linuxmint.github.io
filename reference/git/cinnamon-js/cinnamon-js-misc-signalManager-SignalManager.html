@@ -192,7 +192,7 @@
 <span class="returnvalue"></span>
 _init (<em class="parameter"><code><span class="type">Object</span>   object</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.18.2.7.2.4"></a><h4>Parameters</h4>
+<a name="id-1.19.2.7.2.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -245,7 +245,7 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
 
 <p>Note that in this function, the first argument is the object, while the second is the signal name. In all other methods, you first pass the signal name, then the object (since the object is rarely passed in other functions).</p>
 <div class="refsect3">
-<a name="id-1.18.2.7.3.11"></a><h4>Parameters</h4>
+<a name="id-1.19.2.7.3.11"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -292,7 +292,7 @@ isConnected (<em class="parameter"><code><span class="type">string</span>     si
              <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
 <p>This checks whether the signal <code class="code">sigName</code> is connected. The optional arguments <code class="code">obj</code> and <code class="code">callback</code> can be used to specify what signals in particular we want to know. Note that when you supply <code class="code">callBack</code>, you usually want to supply <code class="code">obj</code> as well, since two different objects can connect to the same signal with the same callback.</p>
 <div class="refsect3">
-<a name="id-1.18.2.7.4.5"></a><h4>Parameters</h4>
+<a name="id-1.19.2.7.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -319,7 +319,7 @@ isConnected (<em class="parameter"><code><span class="type">string</span>     si
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.18.2.7.4.6"></a><h4>Returns</h4>
+<a name="id-1.19.2.7.4.6"></a><h4>Returns</h4>
 <p>Whether the signal is connected</p>
 </div>
 </div>
@@ -334,7 +334,7 @@ disconnect (<em class="parameter"><code><span class="type">string</span>     sig
 <p>This disconnects all <span class="emphasis"><em>signals</em></span> named <code class="code">sigName</code>. By default, it disconnects the signal on all objects, but can be fine-tuned with the optional <code class="code">obj</code> and <code class="code">callback</code> arguments.</p>
 <p>This function will do nothing if no such signal is connected, the object no longer exists, or the signal is somehow already disconnected. So checks need not be performed before calling this function.</p>
 <div class="refsect3">
-<a name="id-1.18.2.7.5.6"></a><h4>Parameters</h4>
+<a name="id-1.19.2.7.5.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
