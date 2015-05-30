@@ -179,12 +179,12 @@
 <span class="cbracket">}</span>
 
 <span class="normal">MyApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
+<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
 
 <span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span></pre></td>
+<span class="normal">        </span><span class="symbol">....</span>
+<span class="normal">        </span><span class="symbol">....</span>
+<span class="normal">        </span><span class="symbol">....</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -302,6 +302,11 @@
 <p>
       Alternatively, this can be launched by running the command <code class="code">cinnamon-settings applets *uuid*</code> (with obvious modifications for desklets and extensions).
     </p>
+</div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.9"></a>More information</h3></div></div></div>
+<p>The available settings items and widgets can be found an the <a class="xref" href="xlet-settings-ref.html" title="Applet, desklet and extension settings reference"><i>Applet, desklet and extension settings reference</i></a>, alongside with some extra options. The settings objects themselves are <code class="code">Settings.AppletSettings</code>, <code class="code">Settings.DeskletSettings</code> and <code class="code">Settings.ExtensionSettings</code>, which all inherit <code class="code">Settings._provider</code>. Most useful functions will be found inside the <code class="code">_provider</code> object.</p>
 </div>
 </div>
 <div class="footer">
