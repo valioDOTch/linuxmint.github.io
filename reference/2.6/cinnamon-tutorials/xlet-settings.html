@@ -8,7 +8,7 @@
 <link rel="up" href="extension-system.html" title="Part III. Extension system">
 <link rel="prev" href="xlet-versioning.html" title="Supporting multiple versions">
 <link rel="next" href="xlet-settings-ref.html" title="Applet, desklet and extension settings reference">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -179,12 +179,12 @@
 <span class="cbracket">}</span>
 
 <span class="normal">MyApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">__proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
+<span class="normal">    __proto__</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">TextIconApplet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="symbol">,</span>
 
 <span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">(</span><span class="normal">metadata</span><span class="symbol">,</span><span class="normal"> orientation</span><span class="symbol">,</span><span class="normal"> panel_height</span><span class="symbol">,</span><span class="normal"> instanceId</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span>
-<span class="normal">    </span><span class="symbol">....</span></pre></td>
+<span class="normal">        </span><span class="symbol">....</span>
+<span class="normal">        </span><span class="symbol">....</span>
+<span class="normal">        </span><span class="symbol">....</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -250,7 +250,7 @@
 3
 4
 5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal">IN</span><span class="symbol">,</span>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">this</span><span class="symbol">.</span><span class="normal">settings</span><span class="symbol">.</span><span class="function">bindProperty</span><span class="symbol">(</span><span class="normal">Settings</span><span class="symbol">.</span><span class="normal">BindingDirection</span><span class="symbol">.</span><span class="normal"><a href="../cinnamon-js/cinnamon-js-ui-settings.html#IN:CAPS">IN</a></span><span class="symbol">,</span>
 <span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
 <span class="normal">                           </span><span class="string">"width"</span><span class="symbol">,</span>
 <span class="normal">                           </span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">on_settings_changed</span><span class="symbol">,</span>
@@ -303,8 +303,13 @@
       Alternatively, this can be launched by running the command <code class="code">cinnamon-settings applets *uuid*</code> (with obvious modifications for desklets and extensions).
     </p>
 </div>
+<div class="sect2">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id-1.4.4.9"></a>More information</h3></div></div></div>
+<p>The available settings items and widgets can be found an the <a class="xref" href="xlet-settings-ref.html" title="Applet, desklet and extension settings reference"><i>Applet, desklet and extension settings reference</i></a>, alongside with some extra options. The settings objects themselves are <a href="../cinnamon-js/cinnamon-js-ui-settings-AppletSettings.html"><code class="code">Settings.AppletSettings</code></a>, <a href="../cinnamon-js/cinnamon-js-ui-settings-DeskletSettings.html"><code class="code">Settings.DeskletSettings</code></a> and <a href="../cinnamon-js/cinnamon-js-ui-settings-ExtensionSettings.html"><code class="code">Settings.ExtensionSettings</code></a>, which all inherit <a href="../cinnamon-js/cinnamon-js-ui-settings-_provider.html"><code class="code">Settings._provider</code></a>. Most useful functions will be found inside the <code class="code">_provider</code> object.</p>
+</div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

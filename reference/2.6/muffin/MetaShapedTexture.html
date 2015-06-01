@@ -8,7 +8,7 @@
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="MetaShadowFactory.html" title="MetaShadowFactory">
 <link rel="next" href="MetaWindowActor.html" title="MetaWindowActor">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -42,7 +42,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<span class="returnvalue">ClutterActor</span> *
+<a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="MetaShapedTexture.html#meta-shaped-texture-new" title="meta_shaped_texture_new ()">meta_shaped_texture_new</a> <span class="c_punctuation">()</span>
@@ -106,7 +106,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">cairo_surface_t</span> *
+<a href="https://developer.gnome.org/cairo/unstable/cairo-cairo-surface-t.html#cairo-surface-t"><span class="returnvalue">cairo_surface_t</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="MetaShapedTexture.html#meta-shaped-texture-get-image" title="meta_shaped_texture_get_image ()">meta_shaped_texture_get_image</a> <span class="c_punctuation">()</span>
@@ -117,9 +117,9 @@
 </div>
 <div class="refsect1">
 <a name="MetaShapedTexture.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
-    <span class="lineart">╰──</span> GInitiallyUnowned
-        <span class="lineart">╰──</span> ClutterActor
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
             <span class="lineart">╰──</span> MetaShapedTexture
 </pre>
 </div>
@@ -130,7 +130,7 @@
 <a name="MetaShapedTexture.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="meta-shaped-texture-new"></a><h3>meta_shaped_texture_new ()</h3>
-<pre class="programlisting"><span class="returnvalue">ClutterActor</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="returnvalue">ClutterActor</span></a> *
 meta_shaped_texture_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 </div>
 <hr>
@@ -139,7 +139,7 @@ meta_shaped_texture_new (<em class="parameter"><code><span class="type">void</sp
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_shaped_texture_set_create_mipmaps
                                (<em class="parameter"><code><a class="link" href="MetaShapedTexture.html" title="MetaShapedTexture"><span class="type">MetaShapedTexture</span></a> *stex</code></em>,
-                                <em class="parameter"><code><span class="type">gboolean</span> create_mipmaps</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> create_mipmaps</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -211,15 +211,15 @@ meta_shaped_texture_get_texture (<em class="parameter"><code><a class="link" hre
 <a name="meta-shaped-texture-set-shape-region"></a><h3>meta_shaped_texture_set_shape_region ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_shaped_texture_set_shape_region (<em class="parameter"><code><a class="link" href="MetaShapedTexture.html" title="MetaShapedTexture"><span class="type">MetaShapedTexture</span></a> *stex</code></em>,
-                                      <em class="parameter"><code><span class="type">cairo_region_t</span> *region</code></em>);</pre>
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/cairo/unstable/cairo-Regions.html#cairo-region-t"><span class="type">cairo_region_t</span></a> *region</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
 <a name="meta-shaped-texture-set-overlay-path"></a><h3>meta_shaped_texture_set_overlay_path ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_shaped_texture_set_overlay_path (<em class="parameter"><code><a class="link" href="MetaShapedTexture.html" title="MetaShapedTexture"><span class="type">MetaShapedTexture</span></a> *stex</code></em>,
-                                      <em class="parameter"><code><span class="type">cairo_region_t</span> *overlay_region</code></em>,
-                                      <em class="parameter"><code><span class="type">cairo_path_t</span> *overlay_path</code></em>);</pre>
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/cairo/unstable/cairo-Regions.html#cairo-region-t"><span class="type">cairo_region_t</span></a> *overlay_region</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/cairo/unstable/cairo-Paths.html#cairo-path-t"><span class="type">cairo_path_t</span></a> *overlay_path</code></em>);</pre>
 <div class="refsect3">
 <a name="id-1.4.15.6.8.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -245,7 +245,7 @@ and the overlay path is clipped to this region.</p></td>
 <td class="parameter_name"><p>overlay_path</p></td>
 <td class="parameter_description"><p> This path will be painted onto the mask
 texture with a fully opaque source. Due to the lack of refcounting
-in <span class="type">cairo_path_t</span>, ownership of the path is assumed. </p></td>
+in <a href="https://developer.gnome.org/cairo/unstable/cairo-Paths.html#cairo-path-t"><span class="type">cairo_path_t</span></a>, ownership of the path is assumed. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -257,7 +257,7 @@ in <span class="type">cairo_path_t</span>, ownership of the path is assumed. </p
 <a name="meta-shaped-texture-set-clip-region"></a><h3>meta_shaped_texture_set_clip_region ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_shaped_texture_set_clip_region (<em class="parameter"><code><a class="link" href="MetaShapedTexture.html" title="MetaShapedTexture"><span class="type">MetaShapedTexture</span></a> *stex</code></em>,
-                                     <em class="parameter"><code><span class="type">cairo_region_t</span> *clip_region</code></em>);</pre>
+                                     <em class="parameter"><code><a href="https://developer.gnome.org/cairo/unstable/cairo-Regions.html#cairo-region-t"><span class="type">cairo_region_t</span></a> *clip_region</code></em>);</pre>
 <p>Provides a hint to the texture about what areas of the texture
 are not completely obscured and thus need to be painted. This
 is an optimization and is not supposed to have any effect on
@@ -291,9 +291,9 @@ is visible and should be painted. </p></td>
 <hr>
 <div class="refsect2">
 <a name="meta-shaped-texture-get-image"></a><h3>meta_shaped_texture_get_image ()</h3>
-<pre class="programlisting"><span class="returnvalue">cairo_surface_t</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/cairo/unstable/cairo-cairo-surface-t.html#cairo-surface-t"><span class="returnvalue">cairo_surface_t</span></a> *
 meta_shaped_texture_get_image (<em class="parameter"><code><a class="link" href="MetaShapedTexture.html" title="MetaShapedTexture"><span class="type">MetaShapedTexture</span></a> *stex</code></em>,
-                               <em class="parameter"><code><span class="type">cairo_rectangle_int_t</span> *clip</code></em>);</pre>
+                               <em class="parameter"><code><a href="https://developer.gnome.org/cairo/unstable/cairo-Types.html#cairo-rectangle-int-t"><span class="type">cairo_rectangle_int_t</span></a> *clip</code></em>);</pre>
 <p>Flattens the two layers of the shaped texture into one ARGB32
 image by alpha blending the two images, and returns the flattened
 image.</p>
@@ -324,7 +324,7 @@ outside the bounds of the texture, the rectangle will be clipped.</p></td>
 <div class="refsect3">
 <a name="id-1.4.15.6.10.6"></a><h4>Returns</h4>
 <p> a new cairo surface to be freed with
-<code class="function">cairo_surface_destroy()</code>. </p>
+<a href="https://developer.gnome.org/cairo/unstable/cairo-cairo-surface-t.html#cairo-surface-destroy"><code class="function">cairo_surface_destroy()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -334,6 +334,6 @@ outside the bounds of the texture, the rectangle will be clipped.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

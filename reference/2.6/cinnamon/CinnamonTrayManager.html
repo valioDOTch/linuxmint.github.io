@@ -8,7 +8,7 @@
 <link rel="up" href="ch04.html" title="Tray Icons">
 <link rel="prev" href="CinnamonTrayIcon.html" title="CinnamonTrayIcon">
 <link rel="next" href="ch05.html" title="Recorder">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -79,7 +79,7 @@
 </colgroup>
 <tbody><tr>
 <td class="property_type">
-<span class="type">ClutterColor</span> *</td>
+<a href="https://developer.gnome.org/clutter/unstable/clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> *</td>
 <td class="property_name"><a class="link" href="CinnamonTrayManager.html#CinnamonTrayManager--bg-color" title="The “bg-color” property">bg-color</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr></tbody>
@@ -97,19 +97,19 @@
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="CinnamonTrayManager.html#CinnamonTrayManager-tray-icon-added" title="The “tray-icon-added” signal">tray-icon-added</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="CinnamonTrayManager.html#CinnamonTrayManager-tray-icon-removed" title="The “tray-icon-removed” signal">tray-icon-removed</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="CinnamonTrayManager.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> CinnamonTrayManager
 </pre>
 </div>
@@ -128,8 +128,8 @@ cinnamon_tray_manager_new (<em class="parameter"><code><span class="type">void</
 <a name="cinnamon-tray-manager-manage-stage"></a><h3>cinnamon_tray_manager_manage_stage ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 cinnamon_tray_manager_manage_stage (<em class="parameter"><code><a class="link" href="CinnamonTrayManager.html" title="CinnamonTrayManager"><span class="type">CinnamonTrayManager</span></a> *manager</code></em>,
-                                    <em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>,
-                                    <em class="parameter"><code><span class="type">StWidget</span> *theme_widget</code></em>);</pre>
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/ClutterStage.html"><span class="type">ClutterStage</span></a> *stage</code></em>,
+                                    <em class="parameter"><code><a href="../st/StWidget.html"><span class="type">StWidget</span></a> *theme_widget</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -145,7 +145,7 @@ cinnamon_tray_manager_redisplay (<em class="parameter"><code><a class="link" hre
 <a name="CinnamonTrayManager.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="CinnamonTrayManager--bg-color"></a><h3>The <code class="literal">“bg-color”</code> property</h3>
-<pre class="programlisting">  “bg-color”                 <span class="type">ClutterColor</span> *</pre>
+<pre class="programlisting">  “bg-color”                 <a href="https://developer.gnome.org/clutter/unstable/clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> *</pre>
 <p>Background color (only if we don't have transparency).</p>
 <p>Flags: Read / Write / Construct Only</p>
 </div>
@@ -156,22 +156,22 @@ cinnamon_tray_manager_redisplay (<em class="parameter"><code><a class="link" hre
 <a name="CinnamonTrayManager-tray-icon-added"></a><h3>The <code class="literal">“tray-icon-added”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="CinnamonTrayManager.html" title="CinnamonTrayManager"><span class="type">CinnamonTrayManager</span></a> *cinnamontraymanager,
-               <span class="type">ClutterActor</span>        *arg1,
-               <span class="type">gpointer</span>             user_data)</pre>
-<p>Flags: Run Last</p>
+               <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>        *arg1,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>             user_data)</pre>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="CinnamonTrayManager-tray-icon-removed"></a><h3>The <code class="literal">“tray-icon-removed”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="CinnamonTrayManager.html" title="CinnamonTrayManager"><span class="type">CinnamonTrayManager</span></a> *cinnamontraymanager,
-               <span class="type">ClutterActor</span>        *arg1,
-               <span class="type">gpointer</span>             user_data)</pre>
-<p>Flags: Run Last</p>
+               <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html"><span class="type">ClutterActor</span></a>        *arg1,
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>             user_data)</pre>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>
