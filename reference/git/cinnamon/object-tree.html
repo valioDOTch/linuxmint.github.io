@@ -8,7 +8,7 @@
 <link rel="up" href="index.html" title="Cinnamon Reference Manual">
 <link rel="prev" href="CinnamonMountOperation.html" title="CinnamonMountOperation">
 <link rel="next" href="api-index-full.html" title="API Index">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -23,31 +23,31 @@
 <div class="titlepage"><div><div><h1 class="title">
 <a name="object-tree"></a>Object Hierarchy</h1></div></div></div>
 <pre class="screen">
-    GObject
+    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">├──</span> <a class="link" href="CinnamonApp.html" title="CinnamonApp">CinnamonApp</a>
     <span class="lineart">├──</span> <a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem">CinnamonAppSystem</a>
-    <span class="lineart">├──</span> GInitiallyUnowned
-    <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterActor
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterTexture
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterCairoTexture
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterTexture.html">ClutterTexture</a>
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterCairoTexture.html">ClutterCairoTexture</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> CinnamonArrow
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> ClutterX11TexturePixmap
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/clutter-ClutterX11TexturePixmap.html#ClutterX11TexturePixmap">ClutterX11TexturePixmap</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="CinnamonGtkEmbed.html" title="CinnamonGtkEmbed">CinnamonGtkEmbed</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonTrayIcon.html" title="CinnamonTrayIcon">CinnamonTrayIcon</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> StWidget
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="../st/StWidget.html">StWidget</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">├──</span> StContainer
     <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer">CinnamonGenericContainer</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonStack.html" title="CinnamonStack">CinnamonStack</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> StBin
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="../st/StBin.html">StBin</a>
     <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonSlicer.html" title="CinnamonSlicer">CinnamonSlicer</a>
-    <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
-    <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
-    <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkBin
-    <span class="lineart">│</span>               <span class="lineart">╰──</span> GtkWindow
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWidget.html">GtkWidget</a>
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkContainer.html">GtkContainer</a>
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkBin.html">GtkBin</a>
+    <span class="lineart">│</span>               <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gtk2/GtkWindow.html">GtkWindow</a>
     <span class="lineart">│</span>                   <span class="lineart">╰──</span> <a class="link" href="CinnamonEmbeddedWindow.html" title="CinnamonEmbeddedWindow">CinnamonEmbeddedWindow</a>
     <span class="lineart">├──</span> CinnamonDocSystem
     <span class="lineart">├──</span> <a class="link" href="CinnamonGlobal.html" title="CinnamonGlobal">CinnamonGlobal</a>
-    <span class="lineart">├──</span> GMountOperation
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gio/unstable/GMountOperation.html">GMountOperation</a>
     <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonMountOperation.html" title="CinnamonMountOperation">CinnamonMountOperation</a>
     <span class="lineart">├──</span> CinnamonPerfLog
     <span class="lineart">├──</span> <a class="link" href="cinnamon-cinnamon-recorder.html#CinnamonRecorder">CinnamonRecorder</a>
@@ -67,6 +67,6 @@
 </pre>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>
