@@ -5,7 +5,7 @@
 <title>Applet, desklet and extension settings: Cinnamon Tutorials</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Tutorials">
-<link rel="up" href="extension-system.html" title="Part III. Extension system">
+<link rel="up" href="extension-system.html" title="Part IV. Extension system">
 <link rel="prev" href="xlet-versioning.html" title="Supporting multiple versions">
 <link rel="next" href="xlet-settings-ref.html" title="Applet, desklet and extension settings reference">
 <meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
@@ -24,13 +24,13 @@
 <a name="xlet-settings"></a>Applet, desklet and extension settings</h2></div></div></div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.2"></a>Introduction</h3></div></div></div>
+<a name="id-1.5.4.2"></a>Introduction</h3></div></div></div>
 <p>This document is intended to serve as a guide and reference to the new Cinnamon applet, desklet, and extension settings API, new for Cinnamon 1.8.  The goal of this API was to provide for an easy to implement and use storage system for settings.</p>
 <p>We will start with a broad overview of the system, and then work our way into the details.</p>
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.3"></a>Overview</h3></div></div></div>
+<a name="id-1.5.4.3"></a>Overview</h3></div></div></div>
 <p>
       In a nutshell, your applet will provide a JSON file that defines various setting types and their details, including a key identifier, description, default value, minimum and maximums (in the case of numeric types) and other options pertinent to each type of setting.
     </p>
@@ -49,7 +49,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.4"></a>The settings-schema.json file</h3></div></div></div>
+<a name="id-1.5.4.4"></a>The settings-schema.json file</h3></div></div></div>
 <p>
       Here’s a basic example of a <code class="code">settings-schema.json</code> file, that can
       define settings for your applet:
@@ -118,7 +118,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.5"></a>Preparing your applet:</h3></div></div></div>
+<a name="id-1.5.4.5"></a>Preparing your applet:</h3></div></div></div>
 <p>
       The first thing you need to do is add Settings to your
       <span class="quote">“<span class="quote">imports</span>”</span> at the top of your applet:
@@ -196,7 +196,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.6"></a>Initializing the settings provider</h3></div></div></div>
+<a name="id-1.5.4.6"></a>Initializing the settings provider</h3></div></div></div>
 <p>
       Now, to actually initialize your settings provider, usually somewhere in the <code class="code">_init</code> method of <code class="code">MyApplet</code>, you’ll put something like this, which will use your applet’s own instance variables:
     </p>
@@ -236,7 +236,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.7"></a>Binding your settings</h3></div></div></div>
+<a name="id-1.5.4.7"></a>Binding your settings</h3></div></div></div>
 <p>
       Since we only have one setting in our example, this will be very
       simple:
@@ -289,7 +289,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.8"></a>Editing your configuration:</h3></div></div></div>
+<a name="id-1.5.4.8"></a>Editing your configuration:</h3></div></div></div>
 <p>
       Once you’ve activated your applet, you can then go in to Cinnamon Settings, Applets, and the option to Configure will be displayed when you select it.
     </p>
@@ -305,7 +305,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.4.9"></a>More information</h3></div></div></div>
+<a name="id-1.5.4.9"></a>More information</h3></div></div></div>
 <p>The available settings items and widgets can be found an the <a class="xref" href="xlet-settings-ref.html" title="Applet, desklet and extension settings reference"><i>Applet, desklet and extension settings reference</i></a>, alongside with some extra options. The settings objects themselves are <code class="code">Settings.AppletSettings</code>, <code class="code">Settings.DeskletSettings</code> and <code class="code">Settings.ExtensionSettings</code>, which all inherit <code class="code">Settings._provider</code>. Most useful functions will be found inside the <code class="code">_provider</code> object.</p>
 </div>
 </div>
