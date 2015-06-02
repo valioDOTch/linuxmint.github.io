@@ -5,8 +5,8 @@
 <title>Writing applets: Cinnamon Tutorials</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Tutorials">
-<link rel="up" href="extension-system.html" title="Part III. Extension system">
-<link rel="prev" href="extension-system.html" title="Part III. Extension system">
+<link rel="up" href="extension-system.html" title="Part IV. Extension system">
+<link rel="prev" href="extension-system.html" title="Part IV. Extension system">
 <link rel="next" href="xlet-versioning.html" title="Supporting multiple versions">
 <meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
@@ -24,7 +24,7 @@
 <a name="write-applet"></a>Writing applets</h2></div></div></div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.2"></a>Introduction</h3></div></div></div>
+<a name="id-1.5.2.2"></a>Introduction</h3></div></div></div>
 <p>In this tutorial, we will go through the process of creating a simple applet to learn about the Applet API. Here we will create a Force Quit applet.</p>
 <p>
       For those who are unfamiliar with “force-quitting”: When a window becomes unresponsive and doesn’t want to close, the most efficient way to force it to close is to kill its process. You could use the “<code class="code">ps</code>” command to find its process ID and kill it with the “<code class="code">kill</code>” command. Or alternatively you could run the “<code class="code">xkill</code>” command, and simply click on the window you want to kill. And that’s exactly what our “Force Quit” applet is going to do... after you click on it, your mouse cursor will change into a window killer, which you’ll target at the window you want to get rid of :)
@@ -32,7 +32,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.3"></a>Creating the basic structure of the applet</h3></div></div></div>
+<a name="id-1.5.2.3"></a>Creating the basic structure of the applet</h3></div></div></div>
 <p>
       An applet has to be given a unique ID (uuid). In this tutorial we will name it "force-quit@cinnamon.org". Of course, you should give your applets your own UUIDs, using either your name or your domain name behind the @ sign.
     </p>
@@ -60,7 +60,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.4"></a>Defining the applet metadata</h3></div></div></div>
+<a name="id-1.5.2.4"></a>Defining the applet metadata</h3></div></div></div>
 <p>
       Let's open <code class="code">metadata.json</code> and describe our applet. This file defines the UUID, name, description, and icon of your applet and is used by Cinnamon to identify it and display it to the user in Cinnamon Settings.
     </p>
@@ -117,7 +117,7 @@
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.5"></a>Writing our applet</h3></div></div></div>
+<a name="id-1.5.2.5"></a>Writing our applet</h3></div></div></div>
 <p> Here is the code for our applet:
     </p>
 <div class="informalexample">
