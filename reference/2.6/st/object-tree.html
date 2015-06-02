@@ -8,7 +8,7 @@
 <link rel="up" href="index.html" title="Cinnamon St Reference Manual">
 <link rel="prev" href="StTextureCache.html" title="StTextureCache">
 <link rel="next" href="api-index-full.html" title="API Index">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -23,15 +23,15 @@
 <div class="titlepage"><div><div><h1 class="title">
 <a name="object-tree"></a>Object Hierarchy</h1></div></div></div>
 <pre class="screen">
-    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    GObject
     <span class="lineart">├──</span> StAdjustment
-    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-    <span class="lineart">│</span>   <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActorMeta.html">ClutterActorMeta</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterEffect.html">ClutterEffect</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterOffscreenEffect.html">ClutterOffscreenEffect</a>
+    <span class="lineart">├──</span> GInitiallyUnowned
+    <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterActorMeta
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> ClutterEffect
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> ClutterOffscreenEffect
     <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">├──</span> StBackgroundEffect
     <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> StScrollViewFade
-    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> ClutterActor
     <span class="lineart">│</span>       <span class="lineart">├──</span> <a class="link" href="StWidget.html" title="StWidget">StWidget</a>
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="StBin.html" title="StBin">StBin</a>
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="StButton.html" title="StButton">StButton</a>
@@ -47,11 +47,11 @@
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="StLabel.html" title="StLabel">StLabel</a>
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> StScrollBar
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> StTooltip
-    <span class="lineart">│</span>       <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterText.html">ClutterText</a>
+    <span class="lineart">│</span>       <span class="lineart">├──</span> ClutterText
     <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> StIMText
     <span class="lineart">│</span>       <span class="lineart">╰──</span> StPolygon
     <span class="lineart">├──</span> StBorderImage
-    <span class="lineart">├──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterChildMeta.html">ClutterChildMeta</a>
+    <span class="lineart">├──</span> ClutterChildMeta
     <span class="lineart">│</span>   <span class="lineart">├──</span> StBoxLayoutChild
     <span class="lineart">│</span>   <span class="lineart">╰──</span> StTableChild
     <span class="lineart">├──</span> StClipboard
@@ -61,9 +61,9 @@
     <span class="lineart">├──</span> <a class="link" href="cinnamon-st-st-theme-node.html#StTheme">StTheme</a>
     <span class="lineart">├──</span> <a class="link" href="cinnamon-st-st-theme-node.html#StThemeNode">StThemeNode</a>
     <span class="lineart">├──</span> <a class="link" href="StThemeNodeTransition.html" title="StThemeNodeTransition">StThemeNodeTransition</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/atk/unstable/AtkObject.html">AtkObject</a>
-        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/atk/unstable/AtkGObjectAccessible.html">AtkGObjectAccessible</a>
-            <span class="lineart">╰──</span> <a href="https://developer.gnome.org/cally/unstable/CallyActor.html">CallyActor</a>
+    <span class="lineart">╰──</span> AtkObject
+        <span class="lineart">╰──</span> AtkGObjectAccessible
+            <span class="lineart">╰──</span> CallyActor
                 <span class="lineart">╰──</span> <a class="link" href="StWidgetAccessible.html" title="StWidgetAccessible">StWidgetAccessible</a>
     GInterface
     <span class="lineart">╰──</span> <a class="link" href="StScrollable.html" title="StScrollable">StScrollable</a>
@@ -73,6 +73,6 @@
 </pre>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.23.1</div>
 </body>
 </html>

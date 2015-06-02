@@ -8,7 +8,7 @@
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="muffin-Errors.html" title="Errors">
 <link rel="next" href="MetaRectangle.html" title="MetaRectangle">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -43,7 +43,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="MetaPlugin.html#meta-plugin-running" title="meta_plugin_running ()">meta_plugin_running</a> <span class="c_punctuation">()</span>
@@ -51,7 +51,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="MetaPlugin.html#meta-plugin-debug-mode" title="meta_plugin_debug_mode ()">meta_plugin_debug_mode</a> <span class="c_punctuation">()</span>
@@ -128,7 +128,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="MetaPlugin.html#meta-plugin-begin-modal" title="meta_plugin_begin_modal ()">meta_plugin_begin_modal</a> <span class="c_punctuation">()</span>
@@ -171,7 +171,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="MetaPlugin.html#MetaPlugin--debug-mode" title="The “debug-mode” property">debug-mode</a></td>
 <td class="property_flags">Read</td>
 </tr>
@@ -217,7 +217,7 @@
 </div>
 <div class="refsect1">
 <a name="MetaPlugin.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+<pre class="screen">    GObject
     <span class="lineart">╰──</span> MetaPlugin
 </pre>
 </div>
@@ -228,13 +228,13 @@
 <a name="MetaPlugin.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="meta-plugin-running"></a><h3>meta_plugin_running ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 meta_plugin_running (<em class="parameter"><code><a class="link" href="MetaPlugin.html" title="MetaPlugin"><span class="type">MetaPlugin</span></a> *plugin</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
 <a name="meta-plugin-debug-mode"></a><h3>meta_plugin_debug_mode ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 meta_plugin_debug_mode (<em class="parameter"><code><a class="link" href="MetaPlugin.html" title="MetaPlugin"><span class="type">MetaPlugin</span></a> *plugin</code></em>);</pre>
 </div>
 <hr>
@@ -300,12 +300,12 @@ meta_plugin_destroy_completed (<em class="parameter"><code><a class="link" href=
 <hr>
 <div class="refsect2">
 <a name="meta-plugin-begin-modal"></a><h3>meta_plugin_begin_modal ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 meta_plugin_begin_modal (<em class="parameter"><code><a class="link" href="MetaPlugin.html" title="MetaPlugin"><span class="type">MetaPlugin</span></a> *plugin</code></em>,
                          <em class="parameter"><code><span class="type">Window</span> grab_window</code></em>,
                          <em class="parameter"><code><span class="type">Cursor</span> cursor</code></em>,
                          <em class="parameter"><code><a class="link" href="MetaPlugin.html#MetaModalOptions" title="enum MetaModalOptions"><span class="type">MetaModalOptions</span></a> options</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> timestamp</code></em>);</pre>
+                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);</pre>
 <p>This function is used to grab the keyboard and mouse for the exclusive
 use of the plugin. Correct operation requires that both the keyboard
 and mouse are grabbed, or thing will break. (In particular, other
@@ -367,7 +367,7 @@ mouse and made the plugin modal.</p>
 <a name="meta-plugin-end-modal"></a><h3>meta_plugin_end_modal ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_plugin_end_modal (<em class="parameter"><code><a class="link" href="MetaPlugin.html" title="MetaPlugin"><span class="type">MetaPlugin</span></a> *plugin</code></em>,
-                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> timestamp</code></em>);</pre>
+                       <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>);</pre>
 <p>Ends the modal operation begun with <a class="link" href="MetaPlugin.html#meta-plugin-begin-modal" title="meta_plugin_begin_modal ()"><code class="function">meta_plugin_begin_modal()</code></a>. This
 ungrabs both the mouse and keyboard even when
 <a class="link" href="MetaPlugin.html#META-MODAL-POINTER-ALREADY-GRABBED:CAPS"><code class="literal">META_MODAL_POINTER_ALREADY_GRABBED</code></a> or
@@ -429,7 +429,7 @@ multiple screens, multiple plugin instances will be created.</p>
 <div class="refsect2">
 <a name="meta-plugin-manager-set-plugin-type"></a><h3>meta_plugin_manager_set_plugin_type ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-meta_plugin_manager_set_plugin_type (<em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> gtype</code></em>);</pre>
+meta_plugin_manager_set_plugin_type (<em class="parameter"><code><span class="type">GType</span> gtype</code></em>);</pre>
 </div>
 </div>
 <div class="refsect1">
@@ -585,7 +585,7 @@ meta_plugin_manager_set_plugin_type (<em class="parameter"><code><a href="https:
 <a name="MetaPlugin.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="MetaPlugin--debug-mode"></a><h3>The <code class="literal">“debug-mode”</code> property</h3>
-<pre class="programlisting">  “debug-mode”               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “debug-mode”               <span class="type">gboolean</span></pre>
 <p>Debug Mode.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -600,6 +600,6 @@ meta_plugin_manager_set_plugin_type (<em class="parameter"><code><a href="https:
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.23.1</div>
 </body>
 </html>

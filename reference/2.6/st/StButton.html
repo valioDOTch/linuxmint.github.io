@@ -8,7 +8,7 @@
 <link rel="up" href="widgets.html" title="Widgets">
 <link rel="prev" href="widgets.html" title="Widgets">
 <link rel="next" href="StDrawingArea.html" title="StDrawingArea">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -60,7 +60,7 @@
 </td>
 </tr>
 <tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<td class="function_type">const <span class="returnvalue">gchar</span> *
 </td>
 <td class="function_name">
 <a class="link" href="StButton.html#st-button-get-label" title="st_button_get_label ()">st_button_get_label</a> <span class="c_punctuation">()</span>
@@ -84,7 +84,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="StButton.html#st-button-get-toggle-mode" title="st_button_get_toggle_mode ()">st_button_get_toggle_mode</a> <span class="c_punctuation">()</span>
@@ -100,7 +100,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="StButton.html#st-button-get-checked" title="st_button_get_checked ()">st_button_get_checked</a> <span class="c_punctuation">()</span>
@@ -148,23 +148,23 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StButton.html#StButton--checked" title="The “checked” property">checked</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
 <td class="property_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<span class="type">gchar</span> *</td>
 <td class="property_name"><a class="link" href="StButton.html#StButton--label" title="The “label” property">label</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StButton.html#StButton--pressed" title="The “pressed” property">pressed</a></td>
 <td class="property_flags">Read</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StButton.html#StButton--toggle-mode" title="The “toggle-mode” property">toggle-mode</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -182,7 +182,7 @@
 <tbody><tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="StButton.html#StButton-clicked" title="The “clicked” signal">clicked</a></td>
-<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+<td class="signal_flags">Run Last</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -207,9 +207,9 @@
 </div>
 <div class="refsect1">
 <a name="StButton.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
-        <span class="lineart">╰──</span> <a href="https://developer.gnome.org/clutter/unstable/ClutterActor.html">ClutterActor</a>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
+        <span class="lineart">╰──</span> ClutterActor
             <span class="lineart">╰──</span> <a class="link" href="StWidget.html" title="StWidget">StWidget</a>
                 <span class="lineart">╰──</span> <a class="link" href="StBin.html" title="StBin">StBin</a>
                     <span class="lineart">╰──</span> StButton
@@ -219,7 +219,7 @@
 <a name="StButton.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 StButton implements
- <a href="https://developer.gnome.org/clutter/unstable/ClutterContainer.html">ClutterContainer</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterScriptable.html">ClutterScriptable</a>,  <a href="https://developer.gnome.org/clutter/unstable/ClutterAnimatable.html">ClutterAnimatable</a> and  <a href="https://developer.gnome.org/atk/unstable/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a>.</p>
+ ClutterContainer,  ClutterScriptable,  ClutterAnimatable and  AtkImplementorIface.</p>
 </div>
 <div class="refsect1">
 <a name="StButton.description"></a><h2>Description</h2>
@@ -242,7 +242,7 @@ st_button_new (<em class="parameter"><code><span class="type">void</span></code>
 <div class="refsect2">
 <a name="st-button-new-with-label"></a><h3>st_button_new_with_label ()</h3>
 <pre class="programlisting"><a class="link" href="StWidget.html" title="StWidget"><span class="returnvalue">StWidget</span></a> *
-st_button_new_with_label (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *text</code></em>);</pre>
+st_button_new_with_label (<em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
 <p>Create a new <a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> with the specified label</p>
 <div class="refsect3">
 <a name="id-1.2.3.2.10.3.5"></a><h4>Parameters</h4>
@@ -267,7 +267,7 @@ st_button_new_with_label (<em class="parameter"><code>const <a href="https://dev
 <hr>
 <div class="refsect2">
 <a name="st-button-get-label"></a><h3>st_button_get_label ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
 st_button_get_label (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
 <p>Get the text displayed on the button</p>
 <div class="refsect3">
@@ -295,7 +295,7 @@ st_button_get_label (<em class="parameter"><code><a class="link" href="StButton.
 <a name="st-button-set-label"></a><h3>st_button_set_label ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_button_set_label (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
-                     <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *text</code></em>);</pre>
+                     <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
 <p>Sets the text displayed on the button</p>
 <div class="refsect3">
 <a name="id-1.2.3.2.10.5.5"></a><h4>Parameters</h4>
@@ -325,7 +325,7 @@ st_button_set_label (<em class="parameter"><code><a class="link" href="StButton.
 <a name="st-button-set-toggle-mode"></a><h3>st_button_set_toggle_mode ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_button_set_toggle_mode (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
-                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> toggle</code></em>);</pre>
+                           <em class="parameter"><code><span class="type">gboolean</span> toggle</code></em>);</pre>
 <p>Enables or disables toggle mode for the button. In toggle mode, the active
 state will be "toggled" when the user clicks the button.</p>
 <div class="refsect3">
@@ -344,7 +344,7 @@ state will be "toggled" when the user clicks the button.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>toggle</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> or <code class="literal">FALSE</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -354,7 +354,7 @@ state will be "toggled" when the user clicks the button.</p>
 <hr>
 <div class="refsect2">
 <a name="st-button-get-toggle-mode"></a><h3>st_button_get_toggle_mode ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_button_get_toggle_mode (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
 <p>Get the toggle mode status of the button.</p>
 <div class="refsect3">
@@ -374,7 +374,7 @@ st_button_get_toggle_mode (<em class="parameter"><code><a class="link" href="StB
 </div>
 <div class="refsect3">
 <a name="id-1.2.3.2.10.7.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if toggle mode is set, otherwise <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p>
+<p> <code class="literal">TRUE</code> if toggle mode is set, otherwise <code class="literal">FALSE</code></p>
 </div>
 </div>
 <hr>
@@ -382,9 +382,9 @@ st_button_get_toggle_mode (<em class="parameter"><code><a class="link" href="StB
 <a name="st-button-set-checked"></a><h3>st_button_set_checked ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_button_set_checked (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>,
-                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> checked</code></em>);</pre>
+                       <em class="parameter"><code><span class="type">gboolean</span> checked</code></em>);</pre>
 <p>Sets the pressed state of the button. This is only really useful if the
-button has <span class="type">toggle-mode</span> mode set to <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
+button has <span class="type">toggle-mode</span> mode set to <code class="literal">TRUE</code>.</p>
 <div class="refsect3">
 <a name="id-1.2.3.2.10.8.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -401,7 +401,7 @@ button has <span class="type">toggle-mode</span> mode set to <a href="https://de
 </tr>
 <tr>
 <td class="parameter_name"><p>checked</p></td>
-<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a></p></td>
+<td class="parameter_description"><p><code class="literal">TRUE</code> or <code class="literal">FALSE</code></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -411,7 +411,7 @@ button has <span class="type">toggle-mode</span> mode set to <a href="https://de
 <hr>
 <div class="refsect2">
 <a name="st-button-get-checked"></a><h3>st_button_get_checked ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_button_get_checked (<em class="parameter"><code><a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button</code></em>);</pre>
 <p>Get the state of the button that is in toggle mode.</p>
 <div class="refsect3">
@@ -431,7 +431,7 @@ st_button_get_checked (<em class="parameter"><code><a class="link" href="StButto
 </div>
 <div class="refsect3">
 <a name="id-1.2.3.2.10.9.6"></a><h4>Returns</h4>
-<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the button is checked, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if not</p>
+<p> <code class="literal">TRUE</code> if the button is checked, or <code class="literal">FALSE</code> if not</p>
 </div>
 </div>
 <hr>
@@ -584,7 +584,7 @@ the provided API.</p>
 <hr>
 <div class="refsect2">
 <a name="StButton--checked"></a><h3>The <code class="literal">“checked”</code> property</h3>
-<pre class="programlisting">  “checked”                  <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “checked”                  <span class="type">gboolean</span></pre>
 <p>Indicates if a toggle button is "on" or "off".</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -592,7 +592,7 @@ the provided API.</p>
 <hr>
 <div class="refsect2">
 <a name="StButton--label"></a><h3>The <code class="literal">“label”</code> property</h3>
-<pre class="programlisting">  “label”                    <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<pre class="programlisting">  “label”                    <span class="type">gchar</span> *</pre>
 <p>Label of the button.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: NULL</p>
@@ -600,7 +600,7 @@ the provided API.</p>
 <hr>
 <div class="refsect2">
 <a name="StButton--pressed"></a><h3>The <code class="literal">“pressed”</code> property</h3>
-<pre class="programlisting">  “pressed”                  <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “pressed”                  <span class="type">gboolean</span></pre>
 <p>Indicates if the button is pressed in.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -608,7 +608,7 @@ the provided API.</p>
 <hr>
 <div class="refsect2">
 <a name="StButton--toggle-mode"></a><h3>The <code class="literal">“toggle-mode”</code> property</h3>
-<pre class="programlisting">  “toggle-mode”              <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “toggle-mode”              <span class="type">gboolean</span></pre>
 <p>Enable or disable toggling.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: FALSE</p>
@@ -620,8 +620,8 @@ the provided API.</p>
 <a name="StButton-clicked"></a><h3>The <code class="literal">“clicked”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="StButton.html" title="StButton"><span class="type">StButton</span></a> *button,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a>      clicked_button,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>  user_data)</pre>
+               <span class="type">gint</span>      clicked_button,
+               <span class="type">gpointer</span>  user_data)</pre>
 <p>Emitted when the user activates the button, either with a mouse press and
 release or with the keyboard.</p>
 <div class="refsect3">
@@ -651,11 +651,11 @@ release or with the keyboard.</p>
 </tbody>
 </table></div>
 </div>
-<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p>Flags: Run Last</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.23.1</div>
 </body>
 </html>

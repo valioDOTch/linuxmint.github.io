@@ -8,7 +8,7 @@
 <link rel="up" href="cinnamon-js-ui-applet-section.html" title="imports.ui.applet">
 <link rel="prev" href="cinnamon-js-ui-applet-AppletPopupMenu.html" title="Applet.AppletPopupMenu">
 <link rel="next" href="cinnamon-js-ui-applet-IconApplet.html" title="Applet.IconApplet">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -165,7 +165,7 @@
 <tbody>
 <tr>
 <td class="property_type">
-    <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a>
+    <span class="type">St.BoxLayout</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-applet-Applet.html#cinnamon-js-ui-applet-Applet--actor" title="The “actor” property">actor</a>
@@ -192,7 +192,7 @@
 </tr>
 <tr>
 <td class="property_type">
-    <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a>
+    <span class="type">St.BoxLayout</span>
   </td>
 <td class="property_name">
     <a class="link" href="cinnamon-js-ui-applet-Applet.html#cinnamon-js-ui-applet-Applet--_panelLocation" title="The “_panelLocation” property">_panelLocation</a>
@@ -300,7 +300,7 @@
 <a name="cinnamon-js-ui-applet-Applet-_init"></a><h3>_init ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-_init (<em class="parameter"><code><a href="../st/st-st-theme-node.html#StSide"><span class="type">St.Side</span></a>   orientation</code></em>,
+_init (<em class="parameter"><code><span class="type">St.Side</span>   orientation</code></em>,
        <em class="parameter"><code><span class="type">int</span>       panelHeight</code></em>,
        <em class="parameter"><code><span class="type">int</span>       instance_id</code></em>);</pre>
 <div class="refsect3">
@@ -382,7 +382,7 @@ set_applet_enabled (<em class="parameter"><code><span class="type">boolean</span
 <a name="cinnamon-js-ui-applet-Applet-on_applet_clicked"></a><h3>on_applet_clicked ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-on_applet_clicked (<em class="parameter"><code><a href="https://developer.gnome.org/clutter/unstable/clutter-Events.html#ClutterEvent"><span class="type">Clutter.Event</span></a>   event</code></em>);</pre>
+on_applet_clicked (<em class="parameter"><code><span class="type">Clutter.Event</span>   event</code></em>);</pre>
 <p>This function is called when the applet is clicked.</p>
 <p>This is meant to be overriden in individual applets.</p>
 <div class="refsect3">
@@ -433,7 +433,7 @@ on_applet_removed_from_panel ();</pre>
 <a name="cinnamon-js-ui-applet-Applet-setOrientation"></a><h3>setOrientation ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-setOrientation (<em class="parameter"><code><a href="../st/st-st-theme-node.html#StSide"><span class="type">St.Side</span></a>   orientation</code></em>);</pre>
+setOrientation (<em class="parameter"><code><span class="type">St.Side</span>   orientation</code></em>);</pre>
 <p>Sets the orientation of the applet.</p>
 <p>This function should only be called by appletManager</p>
 <div class="refsect3">
@@ -457,7 +457,7 @@ setOrientation (<em class="parameter"><code><a href="../st/st-st-theme-node.html
 <a name="cinnamon-js-ui-applet-Applet-on_orientation_changed"></a><h3>on_orientation_changed ()</h3>
 <pre class="programlisting">
 <span class="returnvalue"></span>
-on_orientation_changed (<em class="parameter"><code><a href="../st/st-st-theme-node.html#StSide"><span class="type">St.Side</span></a>   orientation</code></em>);</pre>
+on_orientation_changed (<em class="parameter"><code><span class="type">St.Side</span>   orientation</code></em>);</pre>
 <p>This function is called when the applet is changes orientation.</p>
 <p>This is meant to be overridden in individual applets.</p>
 <div class="refsect3">
@@ -513,84 +513,84 @@ on_panel_height_changed ();</pre>
 <a name="cinnamon-js-ui-applet-Applet.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--actor"></a><h3>The “actor” property</h3>
-<pre class="programlisting">  “actor”                    <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a></pre>
+<pre class="programlisting">  “actor”                <span class="type">St.BoxLayout</span></pre>
 <p>Actor of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--instance_id"></a><h3>The “instance_id” property</h3>
-<pre class="programlisting">  “instance_id”              <span class="type">int</span></pre>
+<pre class="programlisting">  “instance_id”          <span class="type">int</span></pre>
 <p>Instance id of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_uuid"></a><h3>The “_uuid” property</h3>
-<pre class="programlisting">  “_uuid”                    <span class="type">string</span></pre>
+<pre class="programlisting">  “_uuid”                <span class="type">string</span></pre>
 <p>UUID of the applet. This is set by appletManager <span class="emphasis"><em>after</em></span> the applet is loaded.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_panelLocation"></a><h3>The “_panelLocation” property</h3>
-<pre class="programlisting">  “_panelLocation”           <a href="../st/StBoxLayout.html"><span class="type">St.BoxLayout</span></a></pre>
+<pre class="programlisting">  “_panelLocation”       <span class="type">St.BoxLayout</span></pre>
 <p>Panel sector containing the applet. This is set by appletManager <span class="emphasis"><em>after</em></span> the applet is loaded.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--panel"></a><h3>The “panel” property</h3>
-<pre class="programlisting">  “panel”                    <a class="link" href="cinnamon-js-ui-panel-Panel.html" title="Panel.Panel"><span class="type">Panel.Panel</span></a></pre>
+<pre class="programlisting">  “panel”                <a class="link" href="cinnamon-js-ui-panel-Panel.html" title="Panel.Panel"><span class="type">Panel.Panel</span></a></pre>
 <p>The panel object containing the applet. This is set by appletManager <span class="emphasis"><em>after</em></span> the applet is loaded.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_meta"></a><h3>The “_meta” property</h3>
-<pre class="programlisting">  “_meta”                    <span class="type">JSON</span></pre>
+<pre class="programlisting">  “_meta”                <span class="type">JSON</span></pre>
 <p>The metadata of the applet. This is set by appletManager <span class="emphasis"><em>after</em></span> the applet is loaded.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_order"></a><h3>The “_order” property</h3>
-<pre class="programlisting">  “_order”                   <span class="type">int</span></pre>
+<pre class="programlisting">  “_order”               <span class="type">int</span></pre>
 <p>The order of the applet within a panel location This is set by appletManager <span class="emphasis"><em>after</em></span> the applet is loaded.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_draggable"></a><h3>The “_draggable” property</h3>
-<pre class="programlisting">  “_draggable”               <span class="type">Dnd._Draggable</span></pre>
+<pre class="programlisting">  “_draggable”           <span class="type">Dnd._Draggable</span></pre>
 <p>The draggable object of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_scaleMode"></a><h3>The “_scaleMode” property</h3>
-<pre class="programlisting">  “_scaleMode”               <span class="type">boolean</span></pre>
+<pre class="programlisting">  “_scaleMode”           <span class="type">boolean</span></pre>
 <p>Whether the applet scales according to the panel size</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_applet_tooltip"></a><h3>The “_applet_tooltip” property</h3>
-<pre class="programlisting">  “_applet_tooltip”          <span class="type">Tooltips.PanelItemTooltip</span></pre>
+<pre class="programlisting">  “_applet_tooltip”      <span class="type">Tooltips.PanelItemTooltip</span></pre>
 <p>The tooltip of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_menuManager"></a><h3>The “_menuManager” property</h3>
-<pre class="programlisting">  “_menuManager”             <span class="type">PopupMenu.PopupMenuManager</span></pre>
+<pre class="programlisting">  “_menuManager”         <span class="type">PopupMenu.PopupMenuManager</span></pre>
 <p>The menu manager of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_applet_context_menu"></a><h3>The “_applet_context_menu” property</h3>
-<pre class="programlisting">  “_applet_context_menu”     <a class="link" href="cinnamon-js-ui-applet-AppletContextMenu.html" title="Applet.AppletContextMenu"><span class="type">Applet.AppletContextMenu</span></a></pre>
+<pre class="programlisting">  “_applet_context_menu”  <a class="link" href="cinnamon-js-ui-applet-AppletContextMenu.html" title="Applet.AppletContextMenu"><span class="type">Applet.AppletContextMenu</span></a></pre>
 <p>The context menu of the applet</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-applet-Applet--_applet_tooltip_text"></a><h3>The “_applet_tooltip_text” property</h3>
-<pre class="programlisting">  “_applet_tooltip_text”     <span class="type">string</span></pre>
+<pre class="programlisting">  “_applet_tooltip_text”  <span class="type">string</span></pre>
 <p>Text of the tooltip</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.23.1</div>
 </body>
 </html>
