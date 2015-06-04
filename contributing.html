@@ -40,5 +40,28 @@
 
     <h2>Coding</h2>
     <p>Mint and Cinnamon projects are found on <a href="https://github.com/linuxmint/">GitHub</a>. The languages used are mainly C, Javascript and Python. It is a good idea to talk to us on the IRC before starting any coding work. Do not email developers directly. Everything shall be discussed on the IRC (see above for how not to get ignored on the IRC. If you are ignored, you are doing it wrong).</p>
+
+    <h2>Reporting an issue</h2>
+    <p>So. You have a problem with Cinnamon. Something's not working. What should you do about it?</p>
+
+    <p>First have a look at the bug tracker of <a href="https://github.com/linuxmint/Cinnamon/issues">Cinnamon</a> or whatever project you find the bug in. There is a search button, and see if someone has reported the issue already. GitHub unhelpfully defaults to searching open issues only, but <strong>search in both open and closed issues</strong>. Issues are closed whenever the problem is fixed in the development version of Cinnamon, and it is likely that you are not running the development version. This remains true even if you are running a stable version released a few days ago. There is no point in reporting a bug that is already fixed.</p>
+
+    <p>If possible, try to install the latest development version of Cinnamon. Bugs come and go quickly, and might be fixed without someone opening an issue at all. If you are running Mint or Ubuntu, you may want to use the <a href="https://launchpad.net/~gwendal-lebihan-dev/+archive/ubuntu/cinnamon-nightly">nightly ppa</a> to run the latest version. Many other distros also have similar packages (eg. AUR for Arch users).</p>
+
+    <p>If the bug hasn't been reported, and it is reproducable on Cinnamon git, congratulations! You have found a new bug. Go ahead and create a new issue. Don't hijack existing issues if they are not the same issue, even if they are similar. If it is a separate issue, make a separate issue. They are free.</p>
+
+    <p>When opening your issue, be as descriptive as possible. If possible, tell us</p>
+    <ul>
+      <li>what linux distro you are running (plus version number if applicable)</li>
+      <li>the version of Cinnamon you are running (output of <code>cinnamon --version</code> from the terminal, or git/nightlies)</li>
+      <li>how exactly we can reproduce the error</li>
+      <li>what you expected to happen</li>
+      <li>what <em>actually</em> happened</li>
+    </ul>
+    <p>Note that you <em>don't</em> have to include all these information all the time. For example, if your issue is about Cinnamon crashing under certain circumstances, you don't have to say "I expect Cinnamon to not crash" - we all know that and it sounds silly.</p>
+
+    <p>By opening a new issue, you will be automatically subscribed to that issue, and receive notifications of any updates to it by the development team or other users. Don't hesitate to add more information if you discover something else - every little bit can help towards solving a problem.</p>
+
+    <p>After creating the issue, hopefully, very shortly, your issue will be confirmed as a bug. Do not open more issues on it! All we can ask is that you remain patient while the issue is sorted out. Some issues may only take a few minutes to fix, while others can vex us for days or even weeks before finding a solution. Note that we usually don't reply unless we have found a fix/workaround or need more information. This does not mean that we are not looking into the issue. We just don't reply if we cannot add anything of value.</p>
   </body>
 </html>

@@ -710,8 +710,11 @@ var func = function () {
 };
 
 string = "";
+done = false;
 window.onload = function() {
     document.body.onkeypress =  function(event) {
+        if (done) return;
+
         if (!event) {
             event = window.event;
         }
@@ -721,8 +724,9 @@ window.onload = function() {
         else
           string = string + String.fromCharCode(event.charCode);
 
-        if (string.toLowerCase().indexOf('conway') > -1)
+        if (string.toLowerCase().indexOf('conway') > -1) {
+            done = true;
             func();
+        }
     };
-
 };
