@@ -54,7 +54,7 @@
 <pre class="programlisting">
 <span class="returnvalue"></span>
 Lightbox (<em class="parameter"><code><span class="type"></span>container</code></em>,
-          <em class="parameter"><code><span class="type"></span>params</code></em>);</pre>
+               <em class="parameter"><code><span class="type"></span>params</code></em>);</pre>
 <p>Lightbox creates a dark translucent "shade" actor to hide the contents of <code class="code">container</code>, and allows you to specify particular actors in <code class="code">container</code> to highlight by bringing them above the shade. It tracks added and removed actors in <code class="code">container</code> while the lightboxing is active, and ensures that all actors are returned to their original stacking order when the lightboxing is removed. (However, if actors are restacked by outside code while the lightboxing is active, the lightbox may later revert them back to their original order.)</p>
 <p>By default, the shade window will have the height and width of <code class="code">container</code> and will track any changes in its size. You can override this by passing an explicit width and height in <code class="code">params</code>.</p>
 <div class="refsect3">

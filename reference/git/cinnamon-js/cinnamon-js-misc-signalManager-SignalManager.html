@@ -192,7 +192,7 @@
 <span class="returnvalue"></span>
 _init (<em class="parameter"><code><span class="type">Object</span>   object</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.19.2.7.2.4"></a><h4>Parameters</h4>
+<a name="id-1.20.2.7.2.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -213,10 +213,10 @@ _init (<em class="parameter"><code><span class="type">Object</span>   object</co
 <pre class="programlisting">
 <span class="returnvalue"></span>
 connect (<em class="parameter"><code><span class="type">Object</span>     obj</code></em>,
-         <em class="parameter"><code><span class="type">string</span>     sigName</code></em>,
-         <em class="parameter"><code><span class="type">function</span>   callback</code></em>,
-         <em class="parameter"><code><span class="type">Object</span>     bind</code></em>,
-         <em class="parameter"><code><span class="type">boolean</span>    force</code></em>);</pre>
+               <em class="parameter"><code><span class="type">string</span>     sigName</code></em>,
+               <em class="parameter"><code><span class="type">function</span>   callback</code></em>,
+               <em class="parameter"><code><span class="type">Object</span>     bind</code></em>,
+               <em class="parameter"><code><span class="type">boolean</span>    force</code></em>);</pre>
 <p>This listens to the signal <code class="code">sigName</code> from <code class="code">obj</code> and calls <code class="code">callback</code> when the signal is emitted. <code class="code">callback</code> is automatically binded to <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html#cinnamon-js-misc-signalManager-SignalManager--_object" title="The “_object” property"><code class="code">this._object</code></a>, unless the <code class="code">bind</code> argument is set to something else, in which case the function will be binded to <code class="code">bind</code>.</p>
 <p>This checks whether the signal is already connected and will not connect again if it is already connected. This behaviour can be overridden by settings <code class="code">force</code> to be <code class="code">true</code>.</p>
 <p>For example, what you would normally write as</p>
@@ -245,7 +245,7 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
 
 <p>Note that in this function, the first argument is the object, while the second is the signal name. In all other methods, you first pass the signal name, then the object (since the object is rarely passed in other functions).</p>
 <div class="refsect3">
-<a name="id-1.19.2.7.3.11"></a><h4>Parameters</h4>
+<a name="id-1.20.2.7.3.11"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -288,11 +288,11 @@ connect (<em class="parameter"><code><span class="type">Object</span>     obj</c
 <pre class="programlisting">
 <span class="returnvalue"></span>
 isConnected (<em class="parameter"><code><span class="type">string</span>     sigName</code></em>,
-             <em class="parameter"><code><span class="type">Object</span>     obj</code></em>,
-             <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
+               <em class="parameter"><code><span class="type">Object</span>     obj</code></em>,
+               <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
 <p>This checks whether the signal <code class="code">sigName</code> is connected. The optional arguments <code class="code">obj</code> and <code class="code">callback</code> can be used to specify what signals in particular we want to know. Note that when you supply <code class="code">callBack</code>, you usually want to supply <code class="code">obj</code> as well, since two different objects can connect to the same signal with the same callback.</p>
 <div class="refsect3">
-<a name="id-1.19.2.7.4.5"></a><h4>Parameters</h4>
+<a name="id-1.20.2.7.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -319,7 +319,7 @@ isConnected (<em class="parameter"><code><span class="type">string</span>     si
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.19.2.7.4.6"></a><h4>Returns</h4>
+<a name="id-1.20.2.7.4.6"></a><h4>Returns</h4>
 <p>Whether the signal is connected</p>
 </div>
 </div>
@@ -329,12 +329,12 @@ isConnected (<em class="parameter"><code><span class="type">string</span>     si
 <pre class="programlisting">
 <span class="returnvalue"></span>
 disconnect (<em class="parameter"><code><span class="type">string</span>     sigName</code></em>,
-            <em class="parameter"><code><span class="type">Object</span>     obj</code></em>,
-            <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
+               <em class="parameter"><code><span class="type">Object</span>     obj</code></em>,
+               <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
 <p>This disconnects all <span class="emphasis"><em>signals</em></span> named <code class="code">sigName</code>. By default, it disconnects the signal on all objects, but can be fine-tuned with the optional <code class="code">obj</code> and <code class="code">callback</code> arguments.</p>
 <p>This function will do nothing if no such signal is connected, the object no longer exists, or the signal is somehow already disconnected. So checks need not be performed before calling this function.</p>
 <div class="refsect3">
-<a name="id-1.19.2.7.5.6"></a><h4>Parameters</h4>
+<a name="id-1.20.2.7.5.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -373,13 +373,13 @@ disconnectAllSignals ();</pre>
 <div class="refsect1">
 <a name="cinnamon-js-misc-signalManager-SignalManager.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
-<a name="cinnamon-js-misc-signalManager-SignalManager--_object"></a><h3>The “_object” property</h3>
+<a name="cinnamon-js-misc-signalManager-SignalManager--_object"></a><h3>The <code class="literal">“_object”</code> property</h3>
 <pre class="programlisting">  “_object”              <span class="type">Object</span></pre>
 <p>The object owning the SignalManager. All callbacks are binded to <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html#cinnamon-js-misc-signalManager-SignalManager--_object" title="The “_object” property"><code class="code">_object</code></a> unless otherwise specified.</p>
 </div>
 <hr>
 <div class="refsect2">
-<a name="cinnamon-js-misc-signalManager-SignalManager--_storage"></a><h3>The “_storage” property</h3>
+<a name="cinnamon-js-misc-signalManager-SignalManager--_storage"></a><h3>The <code class="literal">“_storage”</code> property</h3>
 <pre class="programlisting">  “_storage”             <span class="type">Map</span></pre>
 <p>A map that stores all the connected signals. <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html#cinnamon-js-misc-signalManager-SignalManager--_storage" title="The “_storage” property"><code class="code">_storage</code></a> is indexed by the name of the signal, and each item in <a class="link" href="cinnamon-js-misc-signalManager-SignalManager.html#cinnamon-js-misc-signalManager-SignalManager--_storage" title="The “_storage” property"><code class="code">_storage</code></a> is an array of signals connected, and each signal is represented by an <code class="code">[object, signalId, callback]</code> triplet.</p>
 </div>

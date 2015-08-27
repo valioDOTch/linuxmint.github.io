@@ -165,53 +165,6 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
-<a class="link" href="StWidget.html#st-widget-set-has-tooltip" title="st_widget_set_has_tooltip ()">st_widget_set_has_tooltip</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">gboolean</span>
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-widget-get-has-tooltip" title="st_widget_get_has_tooltip ()">st_widget_get_has_tooltip</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-widget-set-tooltip-text" title="st_widget_set_tooltip_text ()">st_widget_set_tooltip_text</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">const <span class="returnvalue">gchar</span> *
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-widget-get-tooltip-text" title="st_widget_get_tooltip_text ()">st_widget_get_tooltip_text</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-widget-show-tooltip" title="st_widget_show_tooltip ()">st_widget_show_tooltip</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-widget-hide-tooltip" title="st_widget_hide_tooltip ()">st_widget_hide_tooltip</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
 <a class="link" href="StWidget.html#st-widget-set-track-hover" title="st_widget_set_track_hover ()">st_widget_set_track_hover</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -380,22 +333,6 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
-<a class="link" href="StWidget.html#st-set-ui-root" title="st_set_ui_root ()">st_set_ui_root</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">ClutterContainer</span> *
-</td>
-<td class="function_name">
-<a class="link" href="StWidget.html#st-get-ui-root" title="st_get_ui_root ()">st_get_ui_root</a> <span class="c_punctuation">()</span>
-</td>
-</tr>
-<tr>
-<td class="function_type">
-<span class="returnvalue">void</span>
-</td>
-<td class="function_name">
 <a class="link" href="StWidget.html#st-widget-set-accessible-role" title="st_widget_set_accessible_role ()">st_widget_set_accessible_role</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -468,11 +405,6 @@
 </tr>
 <tr>
 <td class="property_type"><span class="type">gboolean</span></td>
-<td class="property_name"><a class="link" href="StWidget.html#StWidget--has-tooltip" title="The “has-tooltip” property">has-tooltip</a></td>
-<td class="property_flags">Read / Write</td>
-</tr>
-<tr>
-<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="StWidget.html#StWidget--hover" title="The “hover” property">hover</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -514,12 +446,6 @@
 <td class="property_type">
 <a class="link" href="cinnamon-st-st-theme-node.html#StTheme"><span class="type">StTheme</span></a> *</td>
 <td class="property_name"><a class="link" href="StWidget.html#StWidget--theme" title="The “theme” property">theme</a></td>
-<td class="property_flags">Read / Write</td>
-</tr>
-<tr>
-<td class="property_type">
-<span class="type">gchar</span> *</td>
-<td class="property_name"><a class="link" href="StWidget.html#StWidget--tooltip-text" title="The “tooltip-text” property">tooltip-text</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
@@ -587,8 +513,7 @@
                 <span class="lineart">├──</span> <a class="link" href="StEntry.html" title="StEntry">StEntry</a>
                 <span class="lineart">├──</span> <a class="link" href="StIcon.html" title="StIcon">StIcon</a>
                 <span class="lineart">├──</span> <a class="link" href="StLabel.html" title="StLabel">StLabel</a>
-                <span class="lineart">├──</span> StScrollBar
-                <span class="lineart">╰──</span> StTooltip
+                <span class="lineart">╰──</span> StScrollBar
 </pre>
 </div>
 <div class="refsect1">
@@ -1099,171 +1024,6 @@ st_widget_get_theme (<em class="parameter"><code><a class="link" href="StWidget.
 </div>
 <hr>
 <div class="refsect2">
-<a name="st-widget-set-has-tooltip"></a><h3>st_widget_set_has_tooltip ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-st_widget_set_has_tooltip (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
-                           <em class="parameter"><code><span class="type">gboolean</span> has_tooltip</code></em>);</pre>
-<p>Enables tooltip support on the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>.</p>
-<p>Note that setting has-tooltip to <code class="literal">TRUE</code> will cause
-<span class="type">“reactive”</span> and <a class="link" href="StWidget.html#StWidget--track-hover" title="The “track-hover” property"><span class="type">“track-hover”</span></a> to be set <code class="literal">TRUE</code> as
-well, but you must clear these flags yourself (if appropriate) when
-setting it <code class="literal">FALSE</code>.</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.17.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>has_tooltip</p></td>
-<td class="parameter_description"><p><code class="literal">TRUE</code> if the widget should display a tooltip</p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-widget-get-has-tooltip"></a><h3>st_widget_get_has_tooltip ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
-st_widget_get_has_tooltip (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
-<p>Returns the current value of the has-tooltip property. See
-<code class="function">st_tooltip_set_has_tooltip()</code> for more information.</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.18.6"></a><h4>Returns</h4>
-<p> current value of has-tooltip on <em class="parameter"><code>widget</code></em>
-</p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-widget-set-tooltip-text"></a><h3>st_widget_set_tooltip_text ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-st_widget_set_tooltip_text (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
-                            <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
-<p>Set the tooltip text of the widget. This will set StWidget::has-tooltip to
-<code class="literal">TRUE</code>. A value of <code class="literal">NULL</code> will unset the tooltip and set has-tooltip to <code class="literal">FALSE</code>.</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>text</p></td>
-<td class="parameter_description"><p>text to set as the tooltip</p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-widget-get-tooltip-text"></a><h3>st_widget_get_tooltip_text ()</h3>
-<pre class="programlisting">const <span class="returnvalue">gchar</span> *
-st_widget_get_tooltip_text (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
-<p>Get the current tooltip string</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.20.6"></a><h4>Returns</h4>
-<p> The current tooltip string, owned by the <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-widget-show-tooltip"></a><h3>st_widget_show_tooltip ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-st_widget_show_tooltip (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
-<p>Force the tooltip for <em class="parameter"><code>widget</code></em>
- to be shown</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-widget-hide-tooltip"></a><h3>st_widget_hide_tooltip ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-st_widget_hide_tooltip (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
-<p>Hide the tooltip for <em class="parameter"><code>widget</code></em>
-</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>widget</p></td>
-<td class="parameter_description"><p>A <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
 <a name="st-widget-set-track-hover"></a><h3>st_widget_set_track_hover ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 st_widget_set_track_hover (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>,
@@ -1282,7 +1042,7 @@ state when another actor has a pointer grab. You can use
 <a class="link" href="StWidget.html#st-widget-sync-hover" title="st_widget_sync_hover ()"><code class="function">st_widget_sync_hover()</code></a> to update the property manually in this
 case.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.23.7"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.17.7"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1310,9 +1070,9 @@ case.</p>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 st_widget_get_track_hover (<em class="parameter"><code><a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a> *widget</code></em>);</pre>
 <p>Returns the current value of the track-hover property. See
-<code class="function">st_tooltip_set_track_hover()</code> for more information.</p>
+<a class="link" href="StWidget.html#st-widget-set-track-hover" title="st_widget_set_track_hover ()"><code class="function">st_widget_set_track_hover()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.24.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.18.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1327,7 +1087,7 @@ st_widget_get_track_hover (<em class="parameter"><code><a class="link" href="StW
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.24.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.18.6"></a><h4>Returns</h4>
 <p> current value of track-hover on <em class="parameter"><code>widget</code></em>
 </p>
 </div>
@@ -1340,13 +1100,12 @@ st_widget_set_hover (<em class="parameter"><code><a class="link" href="StWidget.
                      <em class="parameter"><code><span class="type">gboolean</span> hover</code></em>);</pre>
 <p>Sets <em class="parameter"><code>widget</code></em>
 's hover property and adds or removes "hover" from its
-pseudo class accordingly. If <a class="link" href="StWidget.html#StWidget--has-tooltip" title="The “has-tooltip” property"><span class="type">“has-tooltip”</span></a> is <code class="literal">TRUE</code>, this
-will also show or hide the tooltip, as appropriate.</p>
+pseudo class accordingly</p>
 <p>If you have set <a class="link" href="StWidget.html#StWidget--track-hover" title="The “track-hover” property"><span class="type">“track-hover”</span></a>, you should not need to call
 this directly. You can call <a class="link" href="StWidget.html#st-widget-sync-hover" title="st_widget_sync_hover ()"><code class="function">st_widget_sync_hover()</code></a> if the hover
 state might be out of sync due to another actor's pointer grab.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.25.6"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.19.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1378,7 +1137,7 @@ st_widget_sync_hover (<em class="parameter"><code><a class="link" href="StWidget
 position. This can be used to ensure that it is correct after
 (or during) a pointer grab.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.26.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.20.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1401,7 +1160,7 @@ st_widget_get_hover (<em class="parameter"><code><a class="link" href="StWidget.
 <p>If <a class="link" href="StWidget.html#StWidget--track-hover" title="The “track-hover” property"><span class="type">“track-hover”</span></a> is set, this returns whether the pointer
 is currently over the widget.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.27.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.21.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1416,7 +1175,7 @@ is currently over the widget.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.27.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.21.6"></a><h4>Returns</h4>
 <p> current value of hover on <em class="parameter"><code>widget</code></em>
 </p>
 </div>
@@ -1429,7 +1188,7 @@ st_widget_ensure_style (<em class="parameter"><code><a class="link" href="StWidg
 <p>Ensures that <em class="parameter"><code>widget</code></em>
  has read its style information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.28.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.22.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1479,7 +1238,7 @@ st_widget_set_can_focus (<em class="parameter"><code><a class="link" href="StWid
  as being able to receive keyboard focus via
 keyboard navigation.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.33.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.27.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1510,7 +1269,7 @@ st_widget_get_can_focus (<em class="parameter"><code><a class="link" href="StWid
 <p>Returns the current value of the can-focus property. See
 <a class="link" href="StWidget.html#st-widget-set-can-focus" title="st_widget_set_can_focus ()"><code class="function">st_widget_set_can_focus()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.34.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.28.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1525,7 +1284,7 @@ st_widget_get_can_focus (<em class="parameter"><code><a class="link" href="StWid
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.34.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.28.6"></a><h4>Returns</h4>
 <p> current value of can-focus on <em class="parameter"><code>widget</code></em>
 </p>
 </div>
@@ -1572,7 +1331,7 @@ time, using a <code class="literal">NULL</code> <em class="parameter"><code>from
 , which should cause it to reset the focus
 to the first available widget in the given direction.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.35.9"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.29.9"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1604,7 +1363,7 @@ to the first available widget in the given direction.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.35.10"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.29.10"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if <code class="function">clutter_actor_grab_key_focus()</code> has been
 called on an actor. <code class="literal">FALSE</code> if not.</p>
 </div>
@@ -1617,7 +1376,7 @@ st_widget_get_label_actor (<em class="parameter"><code><a class="link" href="StW
 <p>Gets the label that identifies <em class="parameter"><code>widget</code></em>
  if it is defined</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.36.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.30.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1632,7 +1391,7 @@ st_widget_get_label_actor (<em class="parameter"><code><a class="link" href="StW
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.36.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.30.6"></a><h4>Returns</h4>
 <p> the label that identifies the widget. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1651,7 +1410,7 @@ st_widget_set_label_actor (<em class="parameter"><code><a class="link" href="StW
  is not
 labelled any more</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.37.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.31.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1690,7 +1449,7 @@ properties of the widget.</p>
 <p>Note: this should only be called on a widget that has been
 added to the stage</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.39.6"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.33.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1705,7 +1464,7 @@ added to the stage</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.39.7"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.33.7"></a><h4>Returns</h4>
 <p> the theme node for the widget.
 This is owned by the widget. When attributes of the widget
 or the environment that affect the styling change (for example
@@ -1724,7 +1483,7 @@ computed, <code class="literal">NULL</code> if the widget hasn't been added to a
 node hasn't been computed. If <code class="literal">NULL</code> is returned, then ::style-changed
 will be reliably emitted before the widget is allocated or painted.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.40.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.34.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1739,7 +1498,7 @@ will be reliably emitted before the widget is allocated or painted.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.40.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.34.6"></a><h4>Returns</h4>
 <p> the theme node for the widget.
 This is owned by the widget. When attributes of the widget
 or the environment that affect the styling change (for example
@@ -1759,7 +1518,7 @@ includes the class name and actor name (if any), plus if <em class="parameter"><
 
 is an <a class="link" href="StWidget.html" title="StWidget"><span class="type">StWidget</span></a>, its style class and pseudo class names.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.41.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.35.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1774,7 +1533,7 @@ is an <a class="link" href="StWidget.html" title="StWidget"><span class="type">S
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.41.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.35.6"></a><h4>Returns</h4>
 <p> the debug name.</p>
 </div>
 </div>
@@ -1785,7 +1544,7 @@ is an <a class="link" href="StWidget.html" title="StWidget"><span class="type">S
 st_set_slow_down_factor (<em class="parameter"><code><span class="type">gfloat</span> factor</code></em>);</pre>
 <p>Set a global factor applied to all animation durations</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.42.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.36.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1806,68 +1565,8 @@ st_set_slow_down_factor (<em class="parameter"><code><span class="type">gfloat</
 <pre class="programlisting"><span class="returnvalue">gfloat</span>
 st_get_slow_down_factor (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.43.4"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.37.4"></a><h4>Returns</h4>
 <p> the global factor applied to all animation durations</p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-set-ui-root"></a><h3>st_set_ui_root ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>
-st_set_ui_root (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>,
-                <em class="parameter"><code><span class="type">ClutterContainer</span> *container</code></em>);</pre>
-<p>Sets a <span class="type">ClutterContainer</span> to be the parent of all UI in the program.
-This container is used when St needs to add new content outside the
-widget hierarchy, for example, when it shows a tooltip over a widget.</p>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.44.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody>
-<tr>
-<td class="parameter_name"><p>stage</p></td>
-<td class="parameter_description"><p>a <span class="type">ClutterStage</span></p></td>
-<td class="parameter_annotations"> </td>
-</tr>
-<tr>
-<td class="parameter_name"><p>container</p></td>
-<td class="parameter_description"><p> the new UI root. </p></td>
-<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="st-get-ui-root"></a><h3>st_get_ui_root ()</h3>
-<pre class="programlisting"><span class="returnvalue">ClutterContainer</span> *
-st_get_ui_root (<em class="parameter"><code><span class="type">ClutterStage</span> *stage</code></em>);</pre>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.45.4"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>stage</p></td>
-<td class="parameter_description"><p>a <span class="type">ClutterStage</span></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.2.2.2.10.45.5"></a><h4>Returns</h4>
-<p> the container which should be the parent of all user interface,
-which can be set with <a class="link" href="StWidget.html#st-set-ui-root" title="st_set_ui_root ()"><code class="function">st_set_ui_root()</code></a>. If not set, returns <em class="parameter"><code>stage</code></em>
-. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
@@ -1896,7 +1595,7 @@ item).</p>
  is <span class="type">ATK_ROLE_INVALID</span>, the role will not be changed
 and the accessible's default role will be used instead.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.46.7"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.38.7"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1926,7 +1625,7 @@ st_widget_get_accessible_role (<em class="parameter"><code><a class="link" href=
 <p>Gets the <span class="type">AtkRole</span> for this widget. See
 <a class="link" href="StWidget.html#st-widget-set-accessible-role" title="st_widget_set_accessible_role ()"><code class="function">st_widget_set_accessible_role()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.47.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.39.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1941,7 +1640,7 @@ st_widget_get_accessible_role (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.47.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.39.6"></a><h4>Returns</h4>
 <p> accessible <span class="type">AtkRole</span> for this widget</p>
 </div>
 </div>
@@ -1967,7 +1666,7 @@ information automatically from the object itself (i.e.: a generic
 container used as a toggle menu item will not automatically include
 the toggled state).</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.48.6"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.40.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2000,7 +1699,7 @@ st_widget_remove_accessible_state (<em class="parameter"><code><a class="link" h
 <em class="parameter"><code>widget</code></em>
 . See <a class="link" href="StWidget.html#st-widget-add-accessible-state" title="st_widget_add_accessible_state ()"><code class="function">st_widget_add_accessible_state()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.49.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.41.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2039,7 +1738,7 @@ elements. So in general it is better to just use
 need to set an accessible name and there is no available label
 object.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.50.6"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.42.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2069,7 +1768,7 @@ st_widget_get_accessible_name (<em class="parameter"><code><a class="link" href=
 <p>Gets the accessible name for this widget. See
 <a class="link" href="StWidget.html#st-widget-set-accessible-name" title="st_widget_set_accessible_name ()"><code class="function">st_widget_set_accessible_name()</code></a> for more information.</p>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.51.5"></a><h4>Parameters</h4>
+<a name="id-1.2.2.2.10.43.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2084,7 +1783,7 @@ st_widget_get_accessible_name (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.2.2.10.51.6"></a><h4>Returns</h4>
+<a name="id-1.2.2.2.10.43.6"></a><h4>Returns</h4>
 <p> a character string representing the accessible name
 of the widget.</p>
 </div>
@@ -2166,16 +1865,6 @@ public API.</p>
 </div>
 <hr>
 <div class="refsect2">
-<a name="StWidget--has-tooltip"></a><h3>The <code class="literal">“has-tooltip”</code> property</h3>
-<pre class="programlisting">  “has-tooltip”              <span class="type">gboolean</span></pre>
-<p>Determines whether the widget has a tooltip. If set to <code class="literal">TRUE</code>, causes the
-widget to monitor hover state (i.e. sets <span class="type">“reactive”</span> and
-<a class="link" href="StWidget.html#StWidget--track-hover" title="The “track-hover” property"><span class="type">“track-hover”</span></a>).</p>
-<p>Flags: Read / Write</p>
-<p>Default value: FALSE</p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="StWidget--hover"></a><h3>The <code class="literal">“hover”</code> property</h3>
 <pre class="programlisting">  “hover”                    <span class="type">gboolean</span></pre>
 <p>Whether or not the pointer is currently hovering over the widget. This is
@@ -2240,14 +1929,6 @@ CSS properties.</p>
 <p>A theme set on this actor overriding the global theming for this actor
 and its descendants</p>
 <p>Flags: Read / Write</p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="StWidget--tooltip-text"></a><h3>The <code class="literal">“tooltip-text”</code> property</h3>
-<pre class="programlisting">  “tooltip-text”             <span class="type">gchar</span> *</pre>
-<p>text displayed on the tooltip</p>
-<p>Flags: Read / Write</p>
-<p>Default value: ""</p>
 </div>
 <hr>
 <div class="refsect2">

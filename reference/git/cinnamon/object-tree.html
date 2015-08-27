@@ -26,26 +26,24 @@
     GObject
     <span class="lineart">├──</span> <a class="link" href="CinnamonApp.html" title="CinnamonApp">CinnamonApp</a>
     <span class="lineart">├──</span> <a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem">CinnamonAppSystem</a>
-    <span class="lineart">├──</span> GInitiallyUnowned
-    <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterActor
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterTexture
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> ClutterCairoTexture
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> CinnamonArrow
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> ClutterX11TexturePixmap
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="CinnamonGtkEmbed.html" title="CinnamonGtkEmbed">CinnamonGtkEmbed</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonTrayIcon.html" title="CinnamonTrayIcon">CinnamonTrayIcon</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> StWidget
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">├──</span> StContainer
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer">CinnamonGenericContainer</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonStack.html" title="CinnamonStack">CinnamonStack</a>
-    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> StBin
-    <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> <a class="link" href="CinnamonSlicer.html" title="CinnamonSlicer">CinnamonSlicer</a>
-    <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
-    <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
-    <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkBin
-    <span class="lineart">│</span>               <span class="lineart">╰──</span> GtkWindow
-    <span class="lineart">│</span>                   <span class="lineart">╰──</span> <a class="link" href="CinnamonEmbeddedWindow.html" title="CinnamonEmbeddedWindow">CinnamonEmbeddedWindow</a>
     <span class="lineart">├──</span> CinnamonDocSystem
+    <span class="lineart">├──</span> GInitiallyUnowned
+    <span class="lineart">│</span>   <span class="lineart">├──</span> GtkWidget
+    <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkContainer
+    <span class="lineart">│</span>   <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkBin
+    <span class="lineart">│</span>   <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkWindow
+    <span class="lineart">│</span>   <span class="lineart">│</span>               <span class="lineart">╰──</span> <a class="link" href="CinnamonEmbeddedWindow.html" title="CinnamonEmbeddedWindow">CinnamonEmbeddedWindow</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> ClutterActor
+    <span class="lineart">│</span>       <span class="lineart">├──</span> StWidget
+    <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">├──</span> StContainer
+    <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="CinnamonGenericContainer.html" title="CinnamonGenericContainer">CinnamonGenericContainer</a>
+    <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonStack.html" title="CinnamonStack">CinnamonStack</a>
+    <span class="lineart">│</span>       <span class="lineart">│</span>   <span class="lineart">╰──</span> StBin
+    <span class="lineart">│</span>       <span class="lineart">│</span>       <span class="lineart">╰──</span> <a class="link" href="CinnamonSlicer.html" title="CinnamonSlicer">CinnamonSlicer</a>
+    <span class="lineart">│</span>       <span class="lineart">╰──</span> ClutterTexture
+    <span class="lineart">│</span>           <span class="lineart">╰──</span> ClutterX11TexturePixmap
+    <span class="lineart">│</span>               <span class="lineart">╰──</span> <a class="link" href="CinnamonGtkEmbed.html" title="CinnamonGtkEmbed">CinnamonGtkEmbed</a>
+    <span class="lineart">│</span>                   <span class="lineart">╰──</span> <a class="link" href="CinnamonTrayIcon.html" title="CinnamonTrayIcon">CinnamonTrayIcon</a>
     <span class="lineart">├──</span> <a class="link" href="CinnamonGlobal.html" title="CinnamonGlobal">CinnamonGlobal</a>
     <span class="lineart">├──</span> GMountOperation
     <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="CinnamonMountOperation.html" title="CinnamonMountOperation">CinnamonMountOperation</a>

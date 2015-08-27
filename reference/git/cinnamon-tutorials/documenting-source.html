@@ -25,8 +25,8 @@
 <p>
     The C part of Cinnamon can be documented using standard gtk-doc format, and there should be plenty of tutorials on that. The JavaScript part of Cinnamon can also be documented using something that resembles gtk-doc format.
   </p>
-<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>), functions (including functions of files and functions of objects) and enums.  </p>
-<p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below.  </p>
+<p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>), functions (including functions of files and functions of objects), signals and enums.  </p>
+<p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below. The documentation of signal can be placed anywhere within the prototype scope since there is no proper declaration of signals in javascript.</p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -105,7 +105,7 @@
 <p>
     Avoid starting comments with this (use <code class="code">/*</code> instead) even though the parser should be smart enough to not parse them, but if they look too like a piece of documentation, the parser might get confused.
   </p>
-<p> The next line is the name of the thing being documented. Function, object, file and enum documentations are distinguished using this line. They should look, respectively, like this: </p>
+<p> The next line is the name of the thing being documented. Function, object, signal, file and enum documentations are distinguished using this line. They should look, respectively, like this: </p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -113,11 +113,13 @@
         <td class="listing_lines" align="right"><pre>1
 2
 3
-4</pre></td>
+4
+5</pre></td>
         <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> function_name</span><span class="symbol">:</span>
 <span class="symbol">*</span><span class="normal"> #ObjectName</span><span class="symbol">:</span>
 <span class="symbol">*</span><span class="normal"> FILE</span><span class="symbol">:</span><span class="normal">filename</span><span class="symbol">.</span><span class="normal">js</span>
-<span class="symbol">*</span><span class="normal"> ENUM</span><span class="symbol">:</span><span class="normal">EnumName</span></pre></td>
+<span class="symbol">*</span><span class="normal"> ENUM</span><span class="symbol">:</span><span class="normal">EnumName</span>
+<span class="symbol">*</span><span class="normal"> SIGNAL</span><span class="symbol">:</span><span class="normal">signal</span><span class="symbol">-</span><span class="normal">name</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -128,7 +130,7 @@
 <div class="informalexample">
     Object.Name - short description
   </div>
-<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, a parameter for a function, or an element of the enum for an enum. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly (except for enums, where types should not appear). If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
+<p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, a parameter for a function, an argument passed in the case of a signal, or an element of the enum for an enum. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly (except for enums, where types should not appear). If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
 <div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
