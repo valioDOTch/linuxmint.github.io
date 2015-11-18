@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Panel.PanelManager: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Panel.PanelManager</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-panel-section.html" title="imports.ui.panel">
 <link rel="prev" href="cinnamon-js-ui-panel.html" title="Panel">
 <link rel="next" href="cinnamon-js-ui-panel-PanelDummy.html" title="Panel.PanelDummy">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -219,7 +219,7 @@ enablePanels ();</pre>
 setPanelsOpacity (<em class="parameter"><code><span class="type">int</span>   opacity</code></em>);</pre>
 <p>Sets the opacity of all hideable panels to <code class="code">opacity</code></p>
 <div class="refsect3">
-<a name="id-1.13.3.6.4.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -242,7 +242,7 @@ setPanelsOpacity (<em class="parameter"><code><span class="type">int</span>   op
 removePanel (<em class="parameter"><code><span class="type">int</span>   panelId</code></em>);</pre>
 <p>Remove the panel from the list panels-enabled</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.5.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -263,10 +263,10 @@ removePanel (<em class="parameter"><code><span class="type">int</span>   panelId
 <pre class="programlisting">
 <span class="returnvalue"></span>
 addPanel (<em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>,
-               <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
+          <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
 <p>Adds a new panel to the specified position</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.6.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.6.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -294,10 +294,10 @@ addPanel (<em class="parameter"><code><span class="type">integer</span>   monito
 <pre class="programlisting">
 <span class="returnvalue"></span>
 movePanel (<em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>,
-               <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
+           <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
 <p>Moves the panel of id this.moveId to the specified position</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.7.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.7.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -335,7 +335,7 @@ _destroyDummyPanels ();</pre>
 getPanelInMonitor (<em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>);</pre>
 <p>Retrieves all the panels in the monitor of index <code class="code">monitorIndex</code></p>
 <div class="refsect3">
-<a name="id-1.13.3.6.9.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.9.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -350,7 +350,7 @@ getPanelInMonitor (<em class="parameter"><code><span class="type">integer</span>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.13.3.6.9.6"></a><h4>Returns</h4>
+<a name="id-1.15.3.6.9.6"></a><h4>Returns</h4>
 <p>an array of panels</p>
 </div>
 </div>
@@ -362,7 +362,7 @@ getPanelInMonitor (<em class="parameter"><code><span class="type">integer</span>
 getPanels ();</pre>
 <p>Retrieves all panels</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.10.5"></a><h4>Returns</h4>
+<a name="id-1.15.3.6.10.5"></a><h4>Returns</h4>
 <p>an array of panels</p>
 </div>
 </div>
@@ -372,10 +372,10 @@ getPanels ();</pre>
 <pre class="programlisting">
 <span class="returnvalue"></span>
 getPanel (<em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>,
-               <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
+          <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>);</pre>
 <p>Gets a specific panel in monitor <code class="code">monitorIndex</code> (bottom panel if <code class="code">bottomPosition</code> is true)</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.11.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.11.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -397,7 +397,7 @@ getPanel (<em class="parameter"><code><span class="type">integer</span>   monito
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.13.3.6.11.6"></a><h4>Returns</h4>
+<a name="id-1.15.3.6.11.6"></a><h4>Returns</h4>
 <p>the panel required (null if panel not found)</p>
 </div>
 </div>
@@ -415,13 +415,13 @@ updatePanelsVisibility ();</pre>
 <pre class="programlisting">
 <a class="link" href="cinnamon-js-ui-panel-Panel.html" title="Panel.Panel"><span class="returnvalue">Panel.Panel</span></a>
 _loadPanel (<em class="parameter"><code><span class="type">integer</span>   ID</code></em>,
-               <em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>,
-               <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>,
-               <em class="parameter"><code><span class="type">array</span>     panelList</code></em>,
-               <em class="parameter"><code><span class="type">array</span>     metaList</code></em>);</pre>
+            <em class="parameter"><code><span class="type">integer</span>   monitorIndex</code></em>,
+            <em class="parameter"><code><span class="type">boolean</span>   bottomPosition</code></em>,
+            <em class="parameter"><code><span class="type">array</span>     panelList</code></em>,
+            <em class="parameter"><code><span class="type">array</span>     metaList</code></em>);</pre>
 <p>Loads a panel with the given properties and appends it to <code class="code">panelList</code>. <code class="code">panelList</code> is usually this.panels but is a different array when used by _onPanelsEnabledChanged.</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.13.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.13.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -458,7 +458,7 @@ _loadPanel (<em class="parameter"><code><span class="type">integer</span>   ID</
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.13.3.6.13.6"></a><h4>Returns</h4>
+<a name="id-1.15.3.6.13.6"></a><h4>Returns</h4>
 <p>Panel created</p>
 </div>
 </div>
@@ -478,7 +478,7 @@ addPanelQuery ();</pre>
 movePanelQuery (<em class="parameter"><code><span class="type">integer</span>   id</code></em>);</pre>
 <p>Prompts user where to move the panel</p>
 <div class="refsect3">
-<a name="id-1.13.3.6.15.5"></a><h4>Parameters</h4>
+<a name="id-1.15.3.6.15.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -496,6 +496,7 @@ movePanelQuery (<em class="parameter"><code><span class="type">integer</span>   
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

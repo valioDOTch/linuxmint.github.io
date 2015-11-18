@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The Importer: Cinnamon Tutorials</title>
+<title>Cinnamon Tutorials: The Importer</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Tutorials">
 <link rel="up" href="cjs.html" title="Part III. Cjs">
 <link rel="prev" href="cjs.html" title="Part III. Cjs">
 <link rel="next" href="extension-system.html" title="Part IV. Extension system">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -27,23 +27,12 @@
     In cjs in combination of Cinnamon you can use following statements to import statements:
 
     </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">imports</span><span class="symbol">.*</span>
-<span class="normal">imports</span><span class="symbol">.</span><span class="normal">gi</span><span class="symbol">.*</span>
-<span class="normal">imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.*</span>
-<span class="normal">imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.*</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+        imports.*
+        imports.gi.*
+        imports.ui.*
+        imports.misc.*
+      </pre></div>
 <p>
   </p>
 <div class="sect2">
@@ -58,67 +47,33 @@
 <p>
       To clearify, an example:
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">//Direct access to file a.js</span>
-<span class="keyword">const</span><span class="normal"> A </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">a</span><span class="symbol">;</span>
-<span class="comment">//Directories must be also typed in, in order to get file c.js in directory b</span>
-<span class="keyword">const</span><span class="normal"> C </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">b</span><span class="symbol">.</span><span class="normal">c</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+          //Direct access to file a.js
+          const A = imports.a;
+          //Directories must be also typed in, in order to get file c.js in directory b
+          const C = imports.b.c;
 
-<span class="function">log</span><span class="symbol">(</span><span class="normal">A</span><span class="symbol">.</span><span class="normal">foo</span><span class="symbol">);</span><span class="normal"> </span><span class="comment">//"Property foo"</span>
-<span class="function">log</span><span class="symbol">(</span><span class="normal">A</span><span class="symbol">.</span><span class="function">bar</span><span class="symbol">());</span><span class="normal"> </span><span class="comment">//"Method bar"</span>
-<span class="function">log</span><span class="symbol">(</span><span class="normal">C</span><span class="symbol">.</span><span class="normal">baz</span><span class="symbol">);</span><span class="normal"> </span><span class="comment">//"Property baz"</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+          log(A.foo); //"Property foo"
+          log(A.bar()); //"Method bar"
+          log(C.baz); //"Property baz"
 
+        </pre></div>
 <p>
       <code class="code">a.js</code>
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">let foo </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"Property foo"</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+          let foo = "Property foo";
 
-<span class="keyword">function</span><span class="normal"> </span><span class="function">bar</span><span class="symbol">()</span><span class="cbracket">{</span>
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> </span><span class="string">"Method bar"</span><span class="symbol">;</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+          function bar(){
+            return "Method bar";
+          }
+      </pre></div>
 <p>
       <code class="code">c.js</code> in a directory named b
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">let baz </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"Property baz"</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          let baz = "Property baz";
+        </pre></div>
 <p>
     </p>
 <p>
@@ -128,23 +83,12 @@
 <p>
       Examples are:
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Cairo </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">cairo</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Cairo graphics</span>
-<span class="keyword">const</span><span class="normal"> Lang </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">lang</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//useful JavaScript functions for extensing the language</span>
-<span class="keyword">const</span><span class="normal"> Gettext </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">gettext</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Gettext translation</span>
-<span class="keyword">const</span><span class="normal"> TweenEquations </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">tweener</span><span class="symbol">.</span><span class="normal">equations</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Tween equations for animations</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          const Cairo = imports.cairo; //Cairo graphics
+          const Lang = imports.lang; //useful JavaScript functions for extensing the language
+          const Gettext = imports.gettext; //Gettext translation
+          const TweenEquations = imports.tweener.equations; //Tween equations for animations
+        </pre></div>
 <p>
     </p>
 <p>As you can see, it is common to assign the import to a constant in UpperCamelCase which looks like the imported module.</p>
@@ -162,19 +106,10 @@
 <p>
       C libraries are included like this:
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> St </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">gi</span><span class="symbol">.</span><span class="normal">St</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Shell Toolkit, the normal way to display widgets on the Cinnamon screen</span>
-<span class="keyword">const</span><span class="normal"> Cinnamon </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">gi</span><span class="symbol">.</span><span class="normal">Cinnamon</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Cinnamon C libraries, e.g. AppSystem</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          const St = imports.gi.St; //Shell Toolkit, the normal way to display widgets on the Cinnamon screen
+          const Cinnamon = imports.gi.Cinnamon; //Cinnamon C libraries, e.g. AppSystem
+        </pre></div>
 <p>
     </p>
 <p>Note: Not like normal <code class="code">imports.*</code>, <code class="code">imports.gi.*</code> imports needs to have the first letter after <code class="code">gi.</code> be in upper case.</p>
@@ -187,19 +122,10 @@
 <p>
       Some important modules:
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> PopupMenu </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">popupMenu</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//High-level classes for building menus for applets or context menus</span>
-<span class="keyword">const</span><span class="normal"> Applet </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">applet</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//Base applet classes</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          const PopupMenu = imports.ui.popupMenu; //High-level classes for building menus for applets or context menus
+          const Applet = imports.ui.applet; //Base applet classes
+        </pre></div>
 <p>
     </p>
 <p>The source is in <code class="code">/usr/share/cinnamon/js/ui/</code></p>
@@ -211,19 +137,10 @@
 <p>Those imports under <code class="code">imports.misc.*</code> are belonging to Cinnamon, but aren't tied to it that much like <code class="code">imports.ui.*</code>.</p>
 <p>
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Util </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">util</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//useful functions</span>
-<span class="keyword">const</span><span class="normal"> Interfaces </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">misc</span><span class="symbol">.</span><span class="normal">interfaces</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//DBus stuff</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          const Util = imports.misc.util; //useful functions
+          const Interfaces = imports.misc.interfaces; //DBus stuff
+        </pre></div>
 <p>
     </p>
 <p>The source is in <code class="code">/usr/share/cinnamon/js/misc/</code></p>
@@ -233,88 +150,22 @@
 <a name="id-1.4.2.8"></a>Importing xlet modules</h3></div></div></div>
 <p>
       When you want to split a big xlet code into smaller files, you'll need to import them.
-      A simple way is using <code class="code">AppletManager.applets[uuid]</code>:
+      A simple way is using <code class="code">imports.xlet</code>, wher <code class="code">xlet</code> is your xlet type
+      (<code class="code">applet</code>, <code class="code">desklet</code>, <code class="code">extension</code>, <code class="code">search_provider</code>)
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> uuid </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"xlet@uuid"</span><span class="symbol">;</span>
-<span class="keyword">const</span><span class="normal"> dir </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">appletManager</span><span class="symbol">.</span><span class="normal">applets</span><span class="symbol">[</span><span class="normal">uuid</span><span class="symbol">];</span><span class="normal"> </span><span class="comment">//get the directory for the uuid</span>
-
-<span class="comment">//do imports with dir.*</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          imports.applet.foo // get foo.js in your applet directory
+        </pre></div>
 <p>
-
-      The disadvantage on this method is that the constant dir is only valid for this file.
-      You'll need a lot of copy&amp;paste in order to import thing from every module.
     </p>
 </div>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.9"></a>The <code class="code">imports.searchPath</code>
+<a name="id-1.4.2.9"></a><code class="code">__init__.js</code>
 </h3></div></div></div>
 <p>
-      Now some advanced stuff: the <code class="code">imports.searchPath</code>.
-      It is an array defaulting to <code class="code">["resource:////gnome/gjs/modules", "/usr/share/cinnamon/js/"]</code>.
-      Those two values are neccesary to let you the access to the modules mentioned above.
-    </p>
-<p>
-      If you modify it (pushing a directory string to it), cjs also looks there.
-      This is also very useful for big xlets which are split up in many modules.
-    </p>
-<p>
-      </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> uuid </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"xlet@uuid"</span><span class="symbol">;</span>
-<span class="keyword">const</span><span class="normal"> path </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">ui</span><span class="symbol">.</span><span class="normal">appletManager</span><span class="symbol">.</span><span class="normal">appletMeta</span><span class="symbol">[</span><span class="normal">uuid</span><span class="symbol">].</span><span class="normal">path</span><span class="symbol">;</span><span class="normal"> </span><span class="comment">//get the path for the uuid</span>
-
-<span class="keyword">if</span><span class="symbol">(</span><span class="normal">imports</span><span class="symbol">.</span><span class="normal">searchath</span><span class="symbol">.</span><span class="function">indexOf</span><span class="symbol">(</span><span class="normal">path</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">===</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">)</span>
-<span class="normal">  imports</span><span class="symbol">.</span><span class="normal">searchPath</span><span class="symbol">.</span><span class="function">push</span><span class="symbol">(</span><span class="normal">path</span><span class="symbol">);</span>
-
-<span class="comment">//do imports</span>
-
-<span class="normal">imports</span><span class="symbol">.</span><span class="normal">searchPath</span><span class="symbol">.</span><span class="function">splice</span><span class="symbol">(</span><span class="normal">imports</span><span class="symbol">.</span><span class="normal">searchath</span><span class="symbol">.</span><span class="function">indexOf</span><span class="symbol">(</span><span class="normal">path</span><span class="symbol">),</span><span class="normal"> </span><span class="number">1</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p>
-
-      The advantage of this method is that you can use just <code class="code">imports.*</code> for all of your files and not only for one file.
-    </p>
-<p>
-      It is very recommed to check that only one instance of the searchPath exists (see the if clause before push) and to remove this one (splice method).
-      Otherwise, possible confusement of other parts of the Cinnamon enviroment can occurence.
-    </p>
-</div>
-<div class="sect2">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.10"></a><code class="code">__init__.js</code>
-</h3></div></div></div>
-<p>
-      When you import stuff by modifying the <code class="code">imports.searchPath</code> you can also use <code class="code">__init__.js</code>.
+      When writing xlets, it is common that you have some functions or constants that you need in many files.
+      For that, there is <code class="code">__init__.js</code>.
       It is a normal JavaScript file, but every function or variable can be accessed directly via <code class="code">import.*</code>.
     </p>
 <p>
@@ -323,74 +174,36 @@
 <p>
       <code class="code">__init__.js</code>
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> Gettext </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">gettext</span><span class="symbol">;</span>
+<div class="informalexample"><pre class="programlisting">
+          const Gettext = imports.gettext;
 
-<span class="keyword">const</span><span class="normal"> uuid </span><span class="symbol">=</span><span class="normal"> </span><span class="string">"xlet@uuid"</span><span class="symbol">;</span>
+          const uuid = "xlet@uuid";
 
-<span class="normal">Gettext</span><span class="symbol">.</span><span class="function">bindtextdomain</span><span class="symbol">(</span><span class="normal">uuid</span><span class="symbol">,</span><span class="normal"> GLib</span><span class="symbol">.</span><span class="function">get_home_dir</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> </span><span class="string">"/.local/share/locale"</span><span class="symbol">);</span>
+          Gettext.bindtextdomain(uuid, GLib.get_home_dir() + "/.local/share/locale");
 
-<span class="keyword">function</span><span class="normal"> </span><span class="function">_</span><span class="symbol">(</span><span class="normal">str</span><span class="symbol">)</span><span class="cbracket">{</span>
-<span class="normal">  </span><span class="keyword">return</span><span class="normal"> Gettext</span><span class="symbol">.</span><span class="function">dgettext</span><span class="symbol">(</span><span class="normal">uuid</span><span class="symbol">,</span><span class="normal"> str</span><span class="symbol">);</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+          function _(str){
+            return Gettext.dgettext(uuid, str);
+          }
+        </pre></div>
 <p>
       In your other files:
       </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">const</span><span class="normal"> uuid </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">uuid</span><span class="symbol">;</span>
-<span class="keyword">const</span><span class="normal"> _ </span><span class="symbol">=</span><span class="normal"> imports</span><span class="symbol">.</span><span class="normal">_</span><span class="symbol">;</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+          const uuid = imports.xlet.uuid;
+          const _ = imports.xlet._;
+        </pre></div>
 <p>
     </p>
 <p>
-      This is just a little need extension to the <code class="code">imports.searchPath</code> modification.
-      There is no harm renaming <code class="code">__init__.js</code> to something other (like <code class="code">util.js</code>) and using <code class="code">imports.util.*</code>.
+      Remember: replace <code class="code">xlet</code> in <code class="code">imports.xlet</code> to your xlet type.
     </p>
-</div>
-<div class="sect2">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="id-1.4.2.11"></a>Order of imprting</h3></div></div></div>
 <p>
-      The importer goes through the elements of <code class="code">imports.searchPath</code>.
-      On each element, the following order is used to import stuff:
-      </p>
-<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem">value in <code class="code">__init__.js</code>
-</li>
-<li class="listitem">a file</li>
-<li class="listitem">a directory</li>
-</ul></div>
-<p>
+      There is no harm renaming <code class="code">__init__.js</code> to something other (like <code class="code">util.js</code>) and using <code class="code">imports.xlet.util.*</code>.
     </p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

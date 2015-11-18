@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ModalDialog.ModalDialog: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: ModalDialog.ModalDialog</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-modalDialog-section.html" title="imports.ui.modalDialog">
 <link rel="prev" href="cinnamon-js-ui-modalDialog-section.html" title="imports.ui.modalDialog">
 <link rel="next" href="cinnamon-js-ui-modalDialog-SpicesAboutDialog.html" title="ModalDialog.SpicesAboutDialog">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -174,7 +174,7 @@
 <span class="returnvalue"></span>
 _init (<em class="parameter"><code><span class="type">JSON</span>   params</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.12.2.7.2.4"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.2.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -207,41 +207,22 @@ setButtons (<em class="parameter"><code><span class="type">array</span>   button
 <p>Each JSON object <span class="emphasis"><em>must</em></span> contain <code class="code">label</code> and <code class="code">action</code>, which are the text displayed on the button and the callback function to use when the button is clicked respectively.</p>
 <p>Optional arguments include <code class="code">focused</code>, which determines whether the button is initially focused, and <code class="code">key</code>, which is a keybinding associated with the button press such that pressing the keybinding will have the same effect as clicking the button.</p>
 <p>An example usage is</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">dialog</span><span class="symbol">.</span><span class="function">setButtons</span><span class="symbol">([</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">        label</span><span class="symbol">:</span><span class="normal"> </span><span class="function">_</span><span class="symbol">(</span><span class="string">"Cancel"</span><span class="symbol">),</span>
-<span class="normal">        action</span><span class="symbol">:</span><span class="normal"> Lang</span><span class="symbol">.</span><span class="function">bind</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">,</span><span class="normal"> </span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">callback</span><span class="symbol">),</span>
-<span class="normal">        key</span><span class="symbol">:</span><span class="normal"> Clutter</span><span class="symbol">.</span><span class="normal">Escape</span>
-<span class="normal">    </span><span class="cbracket">}</span><span class="symbol">,</span>
-<span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">        label</span><span class="symbol">:</span><span class="normal"> </span><span class="function">_</span><span class="symbol">(</span><span class="string">"OK"</span><span class="symbol">),</span>
-<span class="normal">        action</span><span class="symbol">:</span><span class="normal"> Lang</span><span class="symbol">.</span><span class="function">bind</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">,</span><span class="normal"> </span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">destroy</span><span class="symbol">),</span>
-<span class="normal">        key</span><span class="symbol">:</span><span class="normal"> Clutter</span><span class="symbol">.</span><span class="normal">Return</span>
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="symbol">]);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="informalexample"><pre class="programlisting">
 
+dialog.setButtons([
+    {
+        label: _("Cancel"),
+        action: Lang.bind(this, this.callback),
+        key: Clutter.Escape
+    },
+    {
+        label: _("OK"),
+        action: Lang.bind(this, this.destroy),
+        key: Clutter.Return
+    }
+]);</pre></div>
 <div class="refsect3">
-<a name="id-1.12.2.7.4.9"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.4.9"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -264,7 +245,7 @@ setButtons (<em class="parameter"><code><span class="type">array</span>   button
 open (<em class="parameter"><code><span class="type">int</span>   timestamp</code></em>);</pre>
 <p>Opens and displays the modal dialog.</p>
 <div class="refsect3">
-<a name="id-1.12.2.7.5.5"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -287,7 +268,7 @@ open (<em class="parameter"><code><span class="type">int</span>   timestamp</cod
 close (<em class="parameter"><code><span class="type">int</span>   timestamp</code></em>);</pre>
 <p>Closes the modal dialog.</p>
 <div class="refsect3">
-<a name="id-1.12.2.7.6.5"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.6.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -310,7 +291,7 @@ close (<em class="parameter"><code><span class="type">int</span>   timestamp</co
 popModal (<em class="parameter"><code><span class="type">int</span>   timestamp</code></em>);</pre>
 <p>Drop modal status without closing the dialog; this makes the dialog insensitive as well, so it needs to be followed shortly by either a <a class="link" href="cinnamon-js-ui-modalDialog-ModalDialog.html#cinnamon-js-ui-modalDialog-ModalDialog-close" title="close ()"><code class="code">close()</code></a> or a <a class="link" href="cinnamon-js-ui-modalDialog-ModalDialog.html#cinnamon-js-ui-modalDialog-ModalDialog-pushModal" title="pushModal ()"><code class="code">pushModal()</code></a></p>
 <div class="refsect3">
-<a name="id-1.12.2.7.7.5"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.7.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -333,7 +314,7 @@ popModal (<em class="parameter"><code><span class="type">int</span>   timestamp<
 pushModal (<em class="parameter"><code><span class="type">int</span>   timestamp</code></em>);</pre>
 <p>Pushes the modal to the modal stack so that it grabs the required inputs.</p>
 <div class="refsect3">
-<a name="id-1.12.2.7.8.5"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.8.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -358,7 +339,7 @@ _fadeOutDialog (<em class="parameter"><code><span class="type">int</span>   time
 <p>The main point of this method is to give some indication to the user that the dialog reponse has been acknowledged but will take a few moments before being processed.</p>
 <p>e.g., if a user clicked "Log Out" then the dialog should go away imediately, but the lightbox should remain until the logout is complete.</p>
 <div class="refsect3">
-<a name="id-1.12.2.7.9.7"></a><h4>Parameters</h4>
+<a name="id-1.14.2.7.9.7"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -390,6 +371,7 @@ _fadeOutDialog (<em class="parameter"><code><span class="type">int</span>   time
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

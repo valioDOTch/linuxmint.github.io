@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>PopupMenu.PopupMenuBase: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: PopupMenu.PopupMenuBase</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-popupMenu-section.html" title="imports.ui.popupMenu">
-<link rel="prev" href="cinnamon-js-ui-popupMenu-PopupIconMenuItem.html" title="PopupMenu.PopupIconMenuItem">
+<link rel="prev" href="cinnamon-js-ui-popupMenu-PopupMenuAbstractItem.html" title="PopupMenu.PopupMenuAbstractItem">
 <link rel="next" href="cinnamon-js-ui-popupMenu-PopupMenu.html" title="PopupMenu.PopupMenu">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -22,7 +22,7 @@
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="cinnamon-js-ui-popupMenu-section.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
-<td><a accesskey="p" href="cinnamon-js-ui-popupMenu-PopupIconMenuItem.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="cinnamon-js-ui-popupMenu-PopupMenuAbstractItem.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
 <td><a accesskey="n" href="cinnamon-js-ui-popupMenu-PopupMenu.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
@@ -330,9 +330,9 @@
 <pre class="programlisting">
 <span class="returnvalue"></span>
 _init (<em class="parameter"><code><span class="type">St.Widget</span>   sourceActor</code></em>,
-               <em class="parameter"><code><span class="type">string</span>      styleClass</code></em>);</pre>
+       <em class="parameter"><code><span class="type">string</span>      styleClass</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.14.3.8.2.4"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.2.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -360,10 +360,10 @@ _init (<em class="parameter"><code><span class="type">St.Widget</span>   sourceA
 <pre class="programlisting">
 <span class="returnvalue">PopupMenu.PopupMenuItem</span>
 addAction (<em class="parameter"><code><span class="type">string</span>     title</code></em>,
-               <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
+           <em class="parameter"><code><span class="type">function</span>   callback</code></em>);</pre>
 <p>Adds a <code class="code">PopupMenuItem</code> with label <code class="code">title</code> to the menu. When the item is clicked, <code class="code">callback</code> will be called.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.3.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.3.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -385,7 +385,7 @@ addAction (<em class="parameter"><code><span class="type">string</span>     titl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.14.3.8.3.6"></a><h4>Returns</h4>
+<a name="id-1.16.5.8.3.6"></a><h4>Returns</h4>
 <p>the menu item created.</p>
 </div>
 </div>
@@ -395,10 +395,10 @@ addAction (<em class="parameter"><code><span class="type">string</span>     titl
 <pre class="programlisting">
 <span class="returnvalue">PopupMenu.PopupMenuItem</span>
 addSettingsAction (<em class="parameter"><code><span class="type">string</span>   title</code></em>,
-               <em class="parameter"><code><span class="type">string</span>   module</code></em>);</pre>
+                   <em class="parameter"><code><span class="type">string</span>   module</code></em>);</pre>
 <p>Adds a <code class="code">PopupMenuItem</code> with label <code class="code">title</code> to the menu. When the item is clicked, Cinnamon Settings will be launched with the module <code class="code">module</code> activated.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.4.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -420,7 +420,7 @@ addSettingsAction (<em class="parameter"><code><span class="type">string</span> 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.14.3.8.4.6"></a><h4>Returns</h4>
+<a name="id-1.16.5.8.4.6"></a><h4>Returns</h4>
 <p>the menu item created.</p>
 </div>
 </div>
@@ -430,10 +430,10 @@ addSettingsAction (<em class="parameter"><code><span class="type">string</span> 
 <pre class="programlisting">
 <span class="returnvalue">PopupMenu.PopupMenuItem</span>
 addCommandLineAction (<em class="parameter"><code><span class="type">string</span>   title</code></em>,
-               <em class="parameter"><code><span class="type">string</span>   cmd</code></em>);</pre>
+                      <em class="parameter"><code><span class="type">string</span>   cmd</code></em>);</pre>
 <p>Adds a <code class="code">PopupMenuItem</code> with label <code class="code">title</code> to the menu. When the item is clicked, the command <code class="code">cmd</code> will be executed.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.5.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -455,7 +455,7 @@ addCommandLineAction (<em class="parameter"><code><span class="type">string</spa
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.14.3.8.5.6"></a><h4>Returns</h4>
+<a name="id-1.16.5.8.5.6"></a><h4>Returns</h4>
 <p>the menu item created.</p>
 </div>
 </div>
@@ -466,7 +466,7 @@ addCommandLineAction (<em class="parameter"><code><span class="type">string</spa
 <span class="returnvalue"></span>
 isChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-popupMenu-PopupMenuBase.html" title="PopupMenu.PopupMenuBase"><span class="type">PopupMenu.PopupMenuBase</span></a>   menu</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.14.3.8.6.4"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.6.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -481,7 +481,7 @@ isChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-po
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.14.3.8.6.5"></a><h4>Returns</h4>
+<a name="id-1.16.5.8.6.5"></a><h4>Returns</h4>
 <p>whether <code class="code">menu</code> is a submenu of this menu.</p>
 </div>
 </div>
@@ -493,7 +493,7 @@ isChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-po
 addChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-popupMenu-PopupMenuBase.html" title="PopupMenu.PopupMenuBase"><span class="type">PopupMenu.PopupMenuBase</span></a>   menu</code></em>);</pre>
 <p>Makes <code class="code">menu</code> a submenu of this menu.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.7.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.7.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -516,7 +516,7 @@ addChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-p
 removeChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-popupMenu-PopupMenuBase.html" title="PopupMenu.PopupMenuBase"><span class="type">PopupMenuBase</span></a>   menu</code></em>);</pre>
 <p>Removes <code class="code">menu</code> from the current menu if it is a child.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.8.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.8.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -537,10 +537,10 @@ removeChildMenu (<em class="parameter"><code><a class="link" href="cinnamon-js-u
 <pre class="programlisting">
 <span class="returnvalue"></span>
 addMenuItem (<em class="parameter"><code><span class="type">PopupMenu.PopupBaseMenuItem</span>   menuItem</code></em>,
-               <em class="parameter"><code><span class="type">int</span>                           position</code></em>);</pre>
+             <em class="parameter"><code><span class="type">int</span>                           position</code></em>);</pre>
 <p>Adds the <code class="code">menuItem</code> to the menu.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.9.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.9.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -578,7 +578,7 @@ getColumnWidths ();</pre>
 setColumnWidths (<em class="parameter"><code><span class="type">array</span>   widths</code></em>);</pre>
 <p>Sets the widths of each column according to <code class="code">widths</code> so that things can align.</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.11.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.11.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -615,10 +615,10 @@ toggle ();</pre>
 <pre class="programlisting">
 <span class="returnvalue"></span>
 toggle_with_options (<em class="parameter"><code><span class="type">boolean</span>    animate</code></em>,
-               <em class="parameter"><code><span class="type">function</span>   onComplete</code></em>);</pre>
+                     <em class="parameter"><code><span class="type">function</span>   onComplete</code></em>);</pre>
 <p>Toggles the open/close state of the menu with extra parameters</p>
 <div class="refsect3">
-<a name="id-1.14.3.8.14.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.8.14.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -701,7 +701,7 @@ destroy ();</pre>
 user_function (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-popupMenu-PopupMenuBase.html" title="PopupMenu.PopupMenuBase"><span class="type">PopupMenu.PopupMenuBase</span></a>   menu</code></em>);</pre>
 <p>Emitted when an menu is added as a submenu.</p>
 <div class="refsect3">
-<a name="id-1.14.3.10.2.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.10.2.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -723,7 +723,7 @@ user_function (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-
 user_function (<em class="parameter"><code><a class="link" href="cinnamon-js-ui-popupMenu-PopupMenuBase.html" title="PopupMenu.PopupMenuBase"><span class="type">PopupMenu.PopupMenuBase</span></a>   menu</code></em>);</pre>
 <p>Emitted when an submenu is removed.</p>
 <div class="refsect3">
-<a name="id-1.14.3.10.3.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.10.3.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -746,7 +746,7 @@ user_function (<em class="parameter"><code><span class="type">PopupBaseMenuItem<
           <em class="parameter"><code><span class="type">boolean</span>             keepMenu</code></em>);</pre>
 <p>Emitted when an item of the menu is activated.</p>
 <div class="refsect3">
-<a name="id-1.14.3.10.4.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.10.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -775,7 +775,7 @@ user_function (<em class="parameter"><code><span class="type">PopupBaseMenuItem<
 user_function (<em class="parameter"><code><span class="type">PopupBaseMenuItem</span>   menuItem</code></em>);</pre>
 <p>Emitted when the active item of menu is changed.</p>
 <div class="refsect3">
-<a name="id-1.14.3.10.5.5"></a><h4>Parameters</h4>
+<a name="id-1.16.5.10.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -800,6 +800,7 @@ user_function ();</pre>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MetaWindow: Muffin Reference Manual</title>
+<title>Muffin Reference Manual: MetaWindow</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Muffin Reference Manual">
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="MetaScreen.html" title="MetaScreen">
 <link rel="next" href="MetaWorkspace.html" title="MetaWorkspace">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -536,6 +536,14 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
+<a class="link" href="MetaWindow.html#meta-window-set-icon-geometry" title="meta_window_set_icon_geometry ()">meta_window_set_icon_geometry</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
 <a class="link" href="MetaWindow.html#meta-window-maximize" title="meta_window_maximize ()">meta_window_maximize</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
@@ -751,7 +759,6 @@
 <a name="meta-window-get-frame"></a><h3>meta_window_get_frame ()</h3>
 <pre class="programlisting"><span class="returnvalue">MetaFrame</span> *
 meta_window_get_frame (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
-<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -785,6 +792,7 @@ dialog attached.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.4.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window should be drawn with a focused frame</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -841,6 +849,7 @@ meta_window_is_skip_taskbar (<em class="parameter"><code><a class="link" href="M
 <div class="refsect3">
 <a name="id-1.4.18.6.7.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the skip bar hint is set.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1017,6 +1026,7 @@ meta_window_get_xwindow (<em class="parameter"><code><a class="link" href="MetaW
 <p> The Window id of the <em class="parameter"><code>window</code></em>
 note - we return unsigned long because Window
 Can't be introspected (but Window *is* a ulong)</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1034,9 +1044,8 @@ meta_window_get_window_type_atom (<em class="parameter"><code><a class="link" hr
 application to set the window type. (Note that this is constrained
 to be some value that Muffin recognizes - a completely unrecognized
 type atom will be returned as None.)</p>
-<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.6.15.6"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.15.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1051,8 +1060,9 @@ type atom will be returned as None.)</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.15.7"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.15.6"></a><h4>Returns</h4>
 <p> the raw X atom for the window type, or None</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1108,6 +1118,7 @@ meta_window_get_monitor (<em class="parameter"><code><a class="link" href="MetaW
 <div class="refsect3">
 <a name="id-1.4.18.6.17.6"></a><h4>Returns</h4>
 <p> The index of the monitor in the screens monitor list</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1210,6 +1221,7 @@ meta_window_showing_on_its_workspace (<em class="parameter"><code><a class="link
 <div class="refsect3">
 <a name="id-1.4.18.6.25.5"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if window would be visible, if its workspace was current</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1703,9 +1715,8 @@ meta_window_configure_notify (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><span class="type">XConfigureEvent</span> *event</code></em>);</pre>
 <p>This is used to notify us of an unrequested configuration
 (only applicable to override redirect windows)</p>
-<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.18.6.46.6"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.46.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -1805,8 +1816,8 @@ or reaches an ancestor that is not transient.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.4.18.6.50.6"></a><h4>Returns</h4>
-<p> <code class="literal">TRUE</code> if window is an ancestor of transient. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p> <code class="literal">TRUE</code> if window is an ancestor of transient.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1911,6 +1922,7 @@ of the <a class="link" href="MetaWindow.html#META-MAXIMIZE-HORIZONTAL:CAPS"><cod
 <div class="refsect3">
 <a name="id-1.4.18.6.54.5"></a><h4>Returns</h4>
 <p> current maximization state</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1921,6 +1933,7 @@ meta_window_is_fullscreen (<em class="parameter"><code><a class="link" href="Met
 <div class="refsect3">
 <a name="id-1.4.18.6.55.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is currently fullscreen</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1932,6 +1945,7 @@ meta_window_is_monitor_sized (<em class="parameter"><code><a class="link" href="
 <a name="id-1.4.18.6.56.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is occupies an entire monitor or
 the whole screen.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1942,6 +1956,7 @@ meta_window_is_on_primary_monitor (<em class="parameter"><code><a class="link" h
 <div class="refsect3">
 <a name="id-1.4.18.6.57.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window is on the primary monitor</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1968,6 +1983,7 @@ meta_window_is_demanding_attention (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="id-1.4.18.6.58.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if wm_state_demands_attention is set.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -1994,6 +2010,7 @@ meta_window_is_urgent (<em class="parameter"><code><a class="link" href="MetaWin
 <div class="refsect3">
 <a name="id-1.4.18.6.59.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if wm_hints_urgent is set.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2005,6 +2022,7 @@ meta_window_requested_bypass_compositor
 <div class="refsect3">
 <a name="id-1.4.18.6.60.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window requested to bypass the compositor</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2016,6 +2034,7 @@ meta_window_requested_dont_bypass_compositor
 <div class="refsect3">
 <a name="id-1.4.18.6.61.4"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the window requested to opt out of unredirecting</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2066,6 +2085,7 @@ when a window is shaded.)</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.63.6"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the toplevel is mapped.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2074,13 +2094,18 @@ when a window is shaded.)</p>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 meta_window_get_icon_geometry (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
                                <em class="parameter"><code><a class="link" href="MetaRectangle.html" title="MetaRectangle"><span class="type">MetaRectangle</span></a> *rect</code></em>);</pre>
-<p>Gets the location of the icon corresponding to the window. The location
-will be provided set by the task bar or other user interface element
-displaying the icon, and is relative to the root window. This currently
-retrieves the icon geometry from the X server as a round trip on every
-call.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="meta-window-set-icon-geometry"></a><h3>meta_window_set_icon_geometry ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+meta_window_set_icon_geometry (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
+                               <em class="parameter"><code><a class="link" href="MetaRectangle.html" title="MetaRectangle"><span class="type">MetaRectangle</span></a> *rect</code></em>);</pre>
+<p>Sets or unsets the location of the icon corresponding to the window. If
+set, the location should correspond to a dock, task bar or other user
+interface element displaying the icon, and is relative to the root window.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.64.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.65.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2095,15 +2120,11 @@ call.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>rect</p></td>
-<td class="parameter_description"><p>rectangle into which to store the returned geometry.</p></td>
-<td class="parameter_annotations"> </td>
+<td class="parameter_description"><p> rectangle with the desired geometry or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.4.18.6.64.6"></a><h4>Returns</h4>
-<p> <code class="literal">TRUE</code> if the icon geometry was succesfully retrieved.</p>
 </div>
 </div>
 <hr>
@@ -2157,7 +2178,7 @@ meta_window_reset_opacity (<em class="parameter"><code><a class="link" href="Met
 meta_window_get_title (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <p>Returns the current title of the window.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.72.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.73.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2183,39 +2204,6 @@ or <code class="function">XSetTransientForHint()</code>). Metacity keeps transie
 parents. A typical usage of this hint is for a dialog that wants to stay
 above its associated window.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.73.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.4.18.6.73.6"></a><h4>Returns</h4>
-<p> the window this window is transient for, or
-<code class="literal">NULL</code> if the WM_TRANSIENT_FOR hint is unset or does not point to a toplevel
-window that Metacity knows about. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="meta-window-get-transient-for-as-xid"></a><h3>meta_window_get_transient_for_as_xid ()</h3>
-<pre class="programlisting"><span class="returnvalue">Window</span>
-meta_window_get_transient_for_as_xid (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
-<p>Returns the XID of the window that is pointed to by the
-WM_TRANSIENT_FOR hint on this window (see <code class="function">XGetTransientForHint()</code>
-or <code class="function">XSetTransientForHint()</code>). Metacity keeps transient windows above their
-parents. A typical usage of this hint is for a dialog that wants to stay
-above its associated window.</p>
-<div class="refsect3">
 <a name="id-1.4.18.6.74.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
@@ -2233,8 +2221,41 @@ above its associated window.</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.74.6"></a><h4>Returns</h4>
 <p> the window this window is transient for, or
-None if the WM_TRANSIENT_FOR hint is unset. </p>
+<code class="literal">NULL</code> if the WM_TRANSIENT_FOR hint is unset or does not point to a toplevel
+window that Metacity knows about. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="meta-window-get-transient-for-as-xid"></a><h3>meta_window_get_transient_for_as_xid ()</h3>
+<pre class="programlisting"><span class="returnvalue">Window</span>
+meta_window_get_transient_for_as_xid (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
+<p>Returns the XID of the window that is pointed to by the
+WM_TRANSIENT_FOR hint on this window (see <code class="function">XGetTransientForHint()</code>
+or <code class="function">XSetTransientForHint()</code>). Metacity keeps transient windows above their
+parents. A typical usage of this hint is for a dialog that wants to stay
+above its associated window.</p>
+<div class="refsect3">
+<a name="id-1.4.18.6.75.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.18.6.75.6"></a><h4>Returns</h4>
+<p> the window this window is transient for, or
+None if the WM_TRANSIENT_FOR hint is unset.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2254,7 +2275,7 @@ unique integer assigned to each <a class="link" href="MetaWindow.html" title="Me
 <p>This number can be useful for sorting windows in a stable
 fashion.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.76.6"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.77.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2269,8 +2290,9 @@ fashion.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.76.7"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.77.7"></a><h4>Returns</h4>
 <p> Internal sequence number for this window</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2286,8 +2308,9 @@ and updated thereafter on input events (key and button presses) seen by Muffin,
 client updates to the _NET_WM_USER_TIME property (if later than the current time)
 and when focusing the window.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.77.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.78.6"></a><h4>Returns</h4>
 <p> The last time the user interacted with this window.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2297,34 +2320,6 @@ and when focusing the window.</p>
 meta_window_get_pid (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <p>Returns pid of the process that created this window, if known (obtained from
 the _NET_WM_PID property).</p>
-<div class="refsect3">
-<a name="id-1.4.18.6.78.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.4.18.6.78.6"></a><h4>Returns</h4>
-<p> the pid, or -1 if not known. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="meta-window-get-client-machine"></a><h3>meta_window_get_client_machine ()</h3>
-<pre class="programlisting">const <span class="returnvalue">char</span> *
-meta_window_get_client_machine (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
-<p>Returns name of the client machine from which this windows was created,
-if known (obtained from the WM_CLIENT_MACHINE property).</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.79.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -2342,6 +2337,34 @@ if known (obtained from the WM_CLIENT_MACHINE property).</p>
 </div>
 <div class="refsect3">
 <a name="id-1.4.18.6.79.6"></a><h4>Returns</h4>
+<p> the pid, or -1 if not known.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="meta-window-get-client-machine"></a><h3>meta_window_get_client_machine ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+meta_window_get_client_machine (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
+<p>Returns name of the client machine from which this windows was created,
+if known (obtained from the WM_CLIENT_MACHINE property).</p>
+<div class="refsect3">
+<a name="id-1.4.18.6.80.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.18.6.80.6"></a><h4>Returns</h4>
 <p> the machine name, or NULL; the string is
 owned by the window manager and should not be freed or modified by the
 caller. </p>
@@ -2354,7 +2377,7 @@ caller. </p>
 <pre class="programlisting"><span class="returnvalue">gboolean</span>
 meta_window_is_remote (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.4.18.6.80.4"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.81.4"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2369,9 +2392,10 @@ meta_window_is_remote (<em class="parameter"><code><a class="link" href="MetaWin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.80.5"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.81.5"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if this window originates from a host
 different from the one running muffin.</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2381,36 +2405,6 @@ different from the one running muffin.</p>
 meta_window_is_modal (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <p>Queries whether the window is in a modal state as described by the
 _NET_WM_STATE protocol.</p>
-<div class="refsect3">
-<a name="id-1.4.18.6.81.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
-<colgroup>
-<col width="150px" class="parameters_name">
-<col class="parameters_description">
-<col width="200px" class="parameters_annotations">
-</colgroup>
-<tbody><tr>
-<td class="parameter_name"><p>window</p></td>
-<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
-<td class="parameter_annotations"> </td>
-</tr></tbody>
-</table></div>
-</div>
-<div class="refsect3">
-<a name="id-1.4.18.6.81.6"></a><h4>Returns</h4>
-<p> TRUE if the window is in modal state. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
-</div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="meta-window-is-attached-dialog"></a><h3>meta_window_is_attached_dialog ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
-meta_window_is_attached_dialog (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
-<p>Tests if <em class="parameter"><code>window</code></em>
- is should be attached to its parent window.
-(If the "attach_modal_dialogs" option is not enabled, this will
-always return <code class="literal">FALSE</code>.)</p>
 <div class="refsect3">
 <a name="id-1.4.18.6.82.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -2428,8 +2422,39 @@ always return <code class="literal">FALSE</code>.)</p>
 </div>
 <div class="refsect3">
 <a name="id-1.4.18.6.82.6"></a><h4>Returns</h4>
+<p> TRUE if the window is in modal state.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="meta-window-is-attached-dialog"></a><h3>meta_window_is_attached_dialog ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+meta_window_is_attached_dialog (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
+<p>Tests if <em class="parameter"><code>window</code></em>
+ is should be attached to its parent window.
+(If the "attach_modal_dialogs" option is not enabled, this will
+always return <code class="literal">FALSE</code>.)</p>
+<div class="refsect3">
+<a name="id-1.4.18.6.83.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>a <a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.18.6.83.6"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>window</code></em>
 should be attached to its parent</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2446,7 +2471,7 @@ any plugin-specific hints must be suitably namespaced to allow for shared
 use; 'muffin-' key prefix is reserved for internal use, and must not be used
 by plugins.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.83.7"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.84.7"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2461,7 +2486,7 @@ by plugins.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.83.8"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.84.8"></a><h4>Returns</h4>
 <p> the _MUFFIN_HINTS string, or <code class="literal">NULL</code> if no hints
 are set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -2474,7 +2499,7 @@ are set. </p>
 meta_window_get_frame_type (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <p>Gets the type of window decorations that should be used for this window.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.84.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.85.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2489,8 +2514,9 @@ meta_window_get_frame_type (<em class="parameter"><code><a class="link" href="Me
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.84.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.85.6"></a><h4>Returns</h4>
 <p> the frame type</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2500,7 +2526,7 @@ meta_window_get_frame_type (<em class="parameter"><code><a class="link" href="Me
 meta_window_get_frame_bounds (<em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
 <p>Gets a region representing the outer bounds of the window's frame.</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.85.5"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.86.5"></a><h4>Returns</h4>
 <p> a <span class="type">cairo_region_t</span>
 holding the outer bounds of the window, or <code class="literal">NULL</code> if the window
 doesn't have a frame. </p>
@@ -2523,7 +2549,7 @@ the topmost tiled window in a complementary tile mode that is:</p>
 partially visible in the common edge.</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.4.18.6.86.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.87.6"></a><h4>Returns</h4>
 <p> the matching tiled window or
 <code class="literal">NULL</code> if it doesn't exist. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
@@ -2539,7 +2565,7 @@ meta_window_can_tile (<em class="parameter"><code><a class="link" href="MetaWind
  can be tiled or snapped in the supplied
 tiling zone</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.87.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.88.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2561,9 +2587,10 @@ tiling zone</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.87.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.88.6"></a><h4>Returns</h4>
 <p> whether <em class="parameter"><code>window</code></em>
 can be tiled</p>
+<p></p>
 </div>
 </div>
 <hr>
@@ -2575,7 +2602,7 @@ meta_window_tile (<em class="parameter"><code><a class="link" href="MetaWindow.h
                   <em class="parameter"><code><span class="type">gboolean</span> snap</code></em>);</pre>
 <p>Tiles or snaps the window in the requested configuration</p>
 <div class="refsect3">
-<a name="id-1.4.18.6.88.5"></a><h4>Parameters</h4>
+<a name="id-1.4.18.6.89.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -2602,9 +2629,10 @@ meta_window_tile (<em class="parameter"><code><a class="link" href="MetaWindow.h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.18.6.88.6"></a><h4>Returns</h4>
+<a name="id-1.4.18.6.89.6"></a><h4>Returns</h4>
 <p> whether or not <em class="parameter"><code>window</code></em>
 was successfully tiled</p>
+<p></p>
 </div>
 </div>
 </div>
@@ -2734,6 +2762,7 @@ was successfully tiled</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

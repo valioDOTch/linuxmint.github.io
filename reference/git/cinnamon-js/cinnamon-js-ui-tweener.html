@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Tweener: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Tweener</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-tweener-section.html" title="imports.ui.tweener">
 <link rel="prev" href="cinnamon-js-ui-tweener-section.html" title="imports.ui.tweener">
 <link rel="next" href="cinnamon-js-ui-tweener-ClutterFrameTicker.html" title="Tweener.ClutterFrameTicker">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -138,28 +138,16 @@ init ();</pre>
 <pre class="programlisting">
 <span class="returnvalue"></span>
 addTween (<em class="parameter"><code><span class="type">Object</span>   target</code></em>,
-               <em class="parameter"><code><span class="type">param</span>    tweeningParameters</code></em>);</pre>
+          <em class="parameter"><code><span class="type">param</span>    tweeningParameters</code></em>);</pre>
 <p>This makes <code class="code">target</code> tween according to the parameters of <code class="code">tweeningParameters</code>.</p>
 <p><code class="code">tweeningParameters</code> contains certain tweening parameters that describe the tween, and the actual things to tween. Everything that is not a tweening parameter is processed as follows: If you have</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
-<span class="normal">    </span><span class="symbol">...</span>
-<span class="normal">    x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">7</span>
-<span class="normal">    </span><span class="symbol">...</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="informalexample"><pre class="programlisting">
 
+{
+    ...
+    x: 7
+    ...
+}</pre></div>
 <p>In your parameters, then the property <code class="code">x</code> of the <code class="code">target</code> object will be animated to the value of <code class="code">7</code>.</p>
 <p>The tweening parameters are (shamelessly stolen from the actual Tweener documentation):</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
@@ -170,27 +158,14 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 <p><code class="code">transition</code> (string/function): The type of transition to use. Different equations can be used, producing different tweening updates based on time spent. You can specify this parameter by their internal string names (which you can find by seeing what's offered in the cinnamon-settings effects page), or use any custom function to have a customized easing (see below for examples and a more in-depth description). The default transition is "easeOutExpo".</p>
 <p>If you want to use a custom function as the transition, the function must receive four parameters: current time on the transition, starting tweening value, change needed in that value, and total easing duration (plus an optional object, which will contain any parameter passed as the transitionParams property of new tweenings). During each tweening, the transition function will be continuously called, with the first parameter increasing until it reaches the total duration; it must return the new expected value.</p>
 <p>An example of a custom transition is as follows:</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">let myFunc </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">,</span><span class="normal"> b</span><span class="symbol">,</span><span class="normal"> c</span><span class="symbol">,</span><span class="normal"> d</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    let ts </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">t</span><span class="symbol">/=</span><span class="normal">d</span><span class="symbol">)*</span><span class="normal">t</span><span class="symbol">;</span>
-<span class="normal">    let tc </span><span class="symbol">=</span><span class="normal"> ts</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">;</span>
-<span class="normal">    </span><span class="keyword">return</span><span class="normal"> b</span><span class="symbol">+</span><span class="normal">c</span><span class="symbol">*(-</span><span class="number">97.1975</span><span class="symbol">*</span><span class="normal">tc</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="number">257.5975</span><span class="symbol">*</span><span class="normal">ts</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">234.4</span><span class="symbol">*</span><span class="normal">tc </span><span class="symbol">+</span><span class="normal"> </span><span class="number">80</span><span class="symbol">*</span><span class="normal">ts </span><span class="symbol">+</span><span class="normal"> </span><span class="symbol">-</span><span class="number">5</span><span class="symbol">*</span><span class="normal">t</span><span class="symbol">);</span>
-<span class="cbracket">}</span><span class="symbol">;</span>
-<span class="normal">Tweener</span><span class="symbol">.</span><span class="function">addTween</span><span class="symbol">(</span><span class="keyword">this</span><span class="symbol">.</span><span class="normal">actor</span><span class="symbol">,</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal">x</span><span class="symbol">:</span><span class="normal"> </span><span class="number">200</span><span class="symbol">,</span><span class="normal"> time</span><span class="symbol">:</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> transition</span><span class="symbol">:</span><span class="normal"> myFunc</span><span class="cbracket">}</span><span class="symbol">);</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="informalexample"><pre class="programlisting">
 
+let myFunc = function(t, b, c, d) {
+    let ts = (t/=d)*t;
+    let tc = ts*t;
+    return b+c*(-97.1975*tc*ts + 257.5975*ts*ts + -234.4*tc + 80*ts + -5*t);
+};
+Tweener.addTween(this.actor, {x: 200, time: 1, transition: myFunc});</pre></div>
 </li>
 <li class="listitem"><p><code class="code">transitionParams</code> (array): extra parameters to pass to the custom transition function</p></li>
 <li class="listitem"><p><code class="code">onStart</code> (function): A function that is called immediately before a tweening starts. It is called once regardless of the number of properties involved on the tweening. The function scope (in which the event is executed) is the target object itself, unless specified by the onStartScope parameter.</p></li>
@@ -212,7 +187,7 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 <li class="listitem"><p><code class="code">onErrorScope</code> (object): The object in which the onError function will be executed. This is needed if you have some specialized code inside the event function; in that case, references to this. inside the function will reference to the object defined by this parameter. If omitted, the tweened object is the scope used instead.</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.19.2.5.3.10"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.3.10"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -242,7 +217,7 @@ addTween (<em class="parameter"><code><span class="type">Object</span>   target<
 getTweenCount (<em class="parameter"><code><span class="type">Object</span>   scope</code></em>);</pre>
 <p>Returns the number of tweens <code class="code">scope</code> currently has.</p>
 <div class="refsect3">
-<a name="id-1.19.2.5.4.5"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -265,7 +240,7 @@ getTweenCount (<em class="parameter"><code><span class="type">Object</span>   sc
 isTweening (<em class="parameter"><code><span class="type">Object</span>   scope</code></em>);</pre>
 <p>Returns whether <code class="code">scope</code> is animating</p>
 <div class="refsect3">
-<a name="id-1.19.2.5.5.5"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.5.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -289,7 +264,7 @@ removeTween (<em class="parameter"><code><span class="type">Object</span>   scop
 <p>Removes all tweens running on the object.</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.19.2.5.6.6"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.6.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -313,7 +288,7 @@ pauseTweens (<em class="parameter"><code><span class="type">Object</span>   scop
 <p>Pauses all the tweens running on the object. Can be resumed with Tweener.resumeTweens</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.19.2.5.7.6"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.7.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -337,7 +312,7 @@ resumeTweens (<em class="parameter"><code><span class="type">Object</span>   sco
 <p>Resumes all the tweens running on the object paused by Tweener.pauseTweens</p>
 <p>FIXME: removeTweens should be much more powerful, but I have no idea how it works</p>
 <div class="refsect3">
-<a name="id-1.19.2.5.8.6"></a><h4>Parameters</h4>
+<a name="id-1.22.2.5.8.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -355,6 +330,7 @@ resumeTweens (<em class="parameter"><code><span class="type">Object</span>   sco
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MetaCompositor: Muffin Reference Manual</title>
+<title>Muffin Reference Manual: MetaCompositor</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Muffin Reference Manual">
 <link rel="up" href="core-reference.html" title="Part III. Muffin Core Reference">
 <link rel="prev" href="MetaRectangle.html" title="MetaRectangle">
 <link rel="next" href="MetaDisplay.html" title="MetaDisplay">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -172,7 +172,15 @@
 <span class="returnvalue">void</span>
 </td>
 <td class="function_name">
-<a class="link" href="muffin-MetaCompositor.html#meta-compositor-set-updates" title="meta_compositor_set_updates ()">meta_compositor_set_updates</a> <span class="c_punctuation">()</span>
+<a class="link" href="muffin-MetaCompositor.html#meta-compositor-set-updates-frozen" title="meta_compositor_set_updates_frozen ()">meta_compositor_set_updates_frozen</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="muffin-MetaCompositor.html#meta-compositor-queue-frame-drawn" title="meta_compositor_queue_frame_drawn ()">meta_compositor_queue_frame_drawn</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -310,7 +318,6 @@ top window group.</p>
 <a name="meta-compositor-new"></a><h3>meta_compositor_new ()</h3>
 <pre class="programlisting"><span class="returnvalue">MetaCompositor</span> *
 meta_compositor_new (<em class="parameter"><code><a class="link" href="MetaDisplay.html" title="MetaDisplay"><span class="type">MetaDisplay</span></a> *display</code></em>);</pre>
-<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -346,7 +353,6 @@ meta_compositor_window_shape_changed (<em class="parameter"><code><span class="t
 meta_compositor_process_event (<em class="parameter"><code><span class="type">MetaCompositor</span> *compositor</code></em>,
                                <em class="parameter"><code><span class="type">XEvent</span> *event</code></em>,
                                <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
-<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -425,15 +431,24 @@ meta_compositor_window_unmapped (<em class="parameter"><code><span class="type">
 <a name="meta-compositor-sync-window-geometry"></a><h3>meta_compositor_sync_window_geometry ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 meta_compositor_sync_window_geometry (<em class="parameter"><code><span class="type">MetaCompositor</span> *compositor</code></em>,
-                                      <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>);</pre>
+                                      <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
+                                      <em class="parameter"><code><span class="type">gboolean</span> did_placement</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
-<a name="meta-compositor-set-updates"></a><h3>meta_compositor_set_updates ()</h3>
+<a name="meta-compositor-set-updates-frozen"></a><h3>meta_compositor_set_updates_frozen ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-meta_compositor_set_updates (<em class="parameter"><code><span class="type">MetaCompositor</span> *compositor</code></em>,
-                             <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
-                             <em class="parameter"><code><span class="type">gboolean</span> updates</code></em>);</pre>
+meta_compositor_set_updates_frozen (<em class="parameter"><code><span class="type">MetaCompositor</span> *compositor</code></em>,
+                                    <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
+                                    <em class="parameter"><code><span class="type">gboolean</span> updates_frozen</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="meta-compositor-queue-frame-drawn"></a><h3>meta_compositor_queue_frame_drawn ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+meta_compositor_queue_frame_drawn (<em class="parameter"><code><span class="type">MetaCompositor</span> *compositor</code></em>,
+                                   <em class="parameter"><code><a class="link" href="MetaWindow.html" title="MetaWindow"><span class="type">MetaWindow</span></a> *window</code></em>,
+                                   <em class="parameter"><code><span class="type">gboolean</span> no_delay_frame</code></em>);</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -567,6 +582,7 @@ meta_compositor_hide_hud_preview (<em class="parameter"><code><span class="type"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

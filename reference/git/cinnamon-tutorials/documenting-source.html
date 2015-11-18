@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Writing documentation in source: Cinnamon Tutorials</title>
+<title>Cinnamon Tutorials: Writing documentation in source</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Tutorials">
 <link rel="up" href="documentation.html" title="Part I. Documentation">
 <link rel="prev" href="using-documentation.html" title="Using documentation">
 <link rel="next" href="documenting-tutorial.html" title="Writing tutorials">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -27,218 +27,96 @@
   </p>
 <p> Currently, we support documenting files (eg. <code class="code">main.js</code>), objects (eg. <code class="code">Applet.Applet</code>), functions (including functions of files and functions of objects), signals and enums.  </p>
 <p> The documentation appears as a comment <span class="emphasis"><em>right before</em></span> the thing it describes. In the case of a file, it should appear at the very beginning of the file. If a object is declared using <code class="code">prototype</code>, then it can appear right before either the function declaration or the prototype declaration, ie. before line 1 or line 5 in the example below. The documentation of signal can be placed anywhere within the prototype scope since there is no proper declaration of signals in javascript.</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="keyword">function</span><span class="normal"> </span><span class="function">Applet</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    </span><span class="keyword">this</span><span class="symbol">.</span><span class="function">_init</span><span class="symbol">()</span>
-<span class="cbracket">}</span>
+<div class="informalexample"><pre class="programlisting">
+      function Applet() {
+          this._init()
+      }
 
-<span class="normal">Applet</span><span class="symbol">.</span><span class="keyword">prototype</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">    _init</span><span class="symbol">:</span><span class="normal"> </span><span class="keyword">function</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
+      Applet.prototype = {
+          _init: function() {
 
-<span class="normal">    </span><span class="cbracket">}</span>
-<span class="cbracket">}</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+          }
+      }
+  </pre></div>
 <p>
     The general format of a piece of code documentation is as follows:
   </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span>
-<span class="comment">* name_of_thing:</span>
-<span class="comment">* </span><span class="type">@short</span><span class="comment">_description: one-line description</span>
-<span class="comment">* </span><span class="type">@prop</span><span class="comment">1 (type): description</span>
-<span class="comment">* </span><span class="type">@prop</span><span class="comment">2 (type): description</span>
-<span class="comment">* </span><span class="type">@prop</span><span class="comment">3 (type): description</span>
-<span class="comment">*</span>
-<span class="comment">* Long description</span>
-<span class="comment">*</span>
-<span class="comment">* Second paragraph of long description</span>
-<span class="comment">*/</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      /**
+      * name_of_thing:
+      * @short_description: one-line description
+      * @prop1 (type): description
+      * @prop2 (type): description
+      * @prop3 (type): description
+      *
+      * Long description
+      *
+      * Second paragraph of long description
+      */
+    </pre></div>
 <p>
     A comment block should always start with
   </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="comment">/**</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      /**
+    </pre></div>
 <p>
     Avoid starting comments with this (use <code class="code">/*</code> instead) even though the parser should be smart enough to not parse them, but if they look too like a piece of documentation, the parser might get confused.
   </p>
 <p> The next line is the name of the thing being documented. Function, object, signal, file and enum documentations are distinguished using this line. They should look, respectively, like this: </p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> function_name</span><span class="symbol">:</span>
-<span class="symbol">*</span><span class="normal"> #ObjectName</span><span class="symbol">:</span>
-<span class="symbol">*</span><span class="normal"> FILE</span><span class="symbol">:</span><span class="normal">filename</span><span class="symbol">.</span><span class="normal">js</span>
-<span class="symbol">*</span><span class="normal"> ENUM</span><span class="symbol">:</span><span class="normal">EnumName</span>
-<span class="symbol">*</span><span class="normal"> SIGNAL</span><span class="symbol">:</span><span class="normal">signal</span><span class="symbol">-</span><span class="normal">name</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * function_name:
+      * #ObjectName:
+      * FILE:filename.js
+      * ENUM:EnumName
+      * SIGNAL:signal-name
+    </pre></div>
 <p>Note that we do not have to include the namespace of an object, ie. it is <code class="code">#ObjectName</code>, not <code class="code">#FileName.ObjectName.</code></p>
 <p>Afterwards is a short description. This is only needed for files and objects, and will be ignored for functions. It is optional, but things look ugly without it. Note that it has to be short, hence the name. It is shown in the contents page in the form</p>
 <div class="informalexample">
     Object.Name - short description
   </div>
 <p>Afterwards, all the properties of the thing should be listed. A "property" is a globally accessible variable in the case of a file, a genuine property in the case of an object, a parameter for a function, an argument passed in the case of a signal, or an element of the enum for an enum. The type of the property is optional, but leaving it out makes the documentation less helpful and also more ugly (except for enums, where types should not appear). If the description is too long to fit in one line, break it into two rows using a *single* line break. Single line breaks are always ignored when parsing. For example,</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> </span><span class="keyword">this</span><span class="normal"> is a very long description</span><span class="symbol">.</span><span class="normal"> Oh my gosh I am</span>
-<span class="symbol">*</span><span class="normal"> running out of space</span><span class="symbol">!</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * @prop (type): this is a very long description. Oh my gosh I am
+      * running out of space!
+    </pre></div>
 <p>After the properties, a description of the thing should be given. Use *two* line breaks to signify the end of the properties section, and write as normal. It is okay to separate two properties with two line breaks. For example,</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello</span>
-<span class="symbol">*</span>
-<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> world</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * @prop1 (type): hello
+      *
+      * @prop2 (type): world
+    </pre></div>
 <p>is fine, but two line breaks within a property description is not. eg</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
-<span class="symbol">*</span>
-<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
-<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * @prop1 (type): line 1
+      *
+      * line 2
+      * @prop2 (type): hello world
+    </pre></div>
 <p>is bad (line 2 will be treated as a description of the object itself). Instead, if you want the property description to have multiple paragraphs, put a <code class="code">\</code> character in place of the empty line, ie.</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> @</span><span class="function">prop1</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> line </span><span class="number">1</span>
-<span class="symbol">*</span><span class="normal"> </span><span class="symbol">\</span>
-<span class="symbol">*</span><span class="normal"> line </span><span class="number">2</span>
-<span class="symbol">*</span><span class="normal"> @</span><span class="function">prop2</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hello world</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * @prop1 (type): line 1
+      * \
+      * line 2
+      * @prop2 (type): hello world
+    </pre></div>
 <p>In the description section, two line breaks will be translated into an actual line break, and single line breaks are ignored.</p>
 <p>At the end, in the case of a function, a return value can be specified in the form</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> description of what is returned</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * Returns (type): description of what is returned
+    </pre></div>
 <p>Despite looking like a property, the description can in fact have multiple paragraphs. The following is valid</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> </span><span class="function">Returns</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">type</span><span class="symbol">):</span><span class="normal"> hey </span><span class="keyword">this</span><span class="normal"> </span><span class="keyword">function</span><span class="normal"> returns a really cool thing</span><span class="symbol">!</span>
-<span class="symbol">*</span><span class="normal"> Want to know what it is</span><span class="symbol">?</span>
-<span class="symbol">*</span>
-<span class="symbol">*</span><span class="normal"> It is a random number</span><span class="symbol">!</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * Returns (type): hey this function returns a really cool thing!
+      * Want to know what it is?
+      *
+      * It is a random number!
+    </pre></div>
 <p>Objects should indicate what they directly inherit in the description, using the form</p>
-<div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">*</span><span class="normal"> Inherits</span><span class="symbol">:</span><span class="normal"> Applet</span><span class="symbol">.</span><span class="normal">Applet</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+<div class="informalexample"><pre class="programlisting">
+      * Inherits: Applet.Applet
+    </pre></div>
 <p>Note that the namespace is required.</p>
 <div class="sect2">
 <div class="titlepage"><div><div><h3 class="title">
@@ -282,51 +160,29 @@
 </li>
 <li class="listitem">
         Code blocks can be enclosed in descriptions as follows:
-        <div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="normal">```</span>
-<span class="keyword">this</span><span class="symbol">.</span><span class="normal">is </span><span class="symbol">=</span><span class="normal"> some </span><span class="symbol">+</span><span class="normal"> code</span>
-<span class="normal">```</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+        <div class="informalexample"><pre class="programlisting">
+```
+this.is = some + code
+```
+          </pre></div>
 </li>
 <li class="listitem">
         Unordered lists can be created as follows:
-        <div class="informalexample">
-  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td class="listing_lines" align="right"><pre>1
-2
-3
-4
-5
-6</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="symbol">-</span><span class="normal"> List item </span><span class="number">1</span>
-<span class="symbol">-</span><span class="normal"> List item </span><span class="number">2</span>
-<span class="normal">  </span><span class="symbol">\</span>
-<span class="normal">  Continuing item </span><span class="number">2</span><span class="normal"> </span><span class="keyword">with</span><span class="normal"> `</span><span class="symbol">\</span><span class="normal">`</span>
+        <div class="informalexample"><pre class="programlisting">
+- List item 1
+- List item 2
+  \
+  Continuing item 2 with `\`
 
-<span class="normal">No longer an item</span></pre></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+No longer an item
+          </pre></div>
         Lists cannot be nested, but code blocks can appear in lists
       </li>
 </ul></div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

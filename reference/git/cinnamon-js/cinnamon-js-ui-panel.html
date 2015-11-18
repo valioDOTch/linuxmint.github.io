@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Panel: Cinnamon Javascript Reference Manual</title>
+<title>Cinnamon Javascript Reference Manual: Panel</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="up" href="cinnamon-js-ui-panel-section.html" title="imports.ui.panel">
 <link rel="prev" href="cinnamon-js-ui-panel-section.html" title="imports.ui.panel">
 <link rel="next" href="cinnamon-js-ui-panel-PanelManager.html" title="Panel.PanelManager">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -38,7 +38,18 @@
 <col width="150px" class="functions_return">
 <col class="functions_name">
 </colgroup>
-<tbody><tr>
+<tbody>
+<tr>
+<td class="function_type">
+    <GTKDOCLINK HREF="array">
+      <span class="returnvalue">array</span>
+    </GTKDOCLINK>
+  </td>
+<td class="function_name">
+    <a class="link" href="cinnamon-js-ui-panel.html#cinnamon-js-ui-panel-calculateAllocation" title="calculateAllocation ()">calculateAllocation</a> <span class="c_punctuation">()</span>
+  </td>
+</tr>
+<tr>
 <td class="function_type">
     <GTKDOCLINK HREF="void">
       <span class="returnvalue"></span>
@@ -47,7 +58,8 @@
 <td class="function_name">
     <a class="link" href="cinnamon-js-ui-panel.html#cinnamon-js-ui-panel-checkPanelUpgrade" title="checkPanelUpgrade ()">checkPanelUpgrade</a> <span class="c_punctuation">()</span>
   </td>
-</tr></tbody>
+</tr>
+</tbody>
 </table></div>
 </div>
 <div class="refsect1">
@@ -56,6 +68,84 @@
 </div>
 <div class="refsect1">
 <a name="cinnamon-js-ui-panel.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="cinnamon-js-ui-panel-calculateAllocation"></a><h3>calculateAllocation ()</h3>
+<pre class="programlisting">
+<span class="returnvalue">array</span>
+calculateAllocation (<em class="parameter"><code><span class="type">real</span>      leftMin</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      leftNatural</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      centerMin</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      centerNatural</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      rightMin</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      rightNatural</code></em>,
+                     <em class="parameter"><code><span class="type">real</span>      alloc</code></em>,
+                     <em class="parameter"><code><span class="type">boolean</span>   centerOccupied</code></em>);</pre>
+<p>Given the minimum and natural width requested by each box, this function calculates how much width should actually allocated to each box. The function returns two variables [<code class="code">left</code>, <code class="code">right</code>], which is the expected width of each side.</p>
+<p>The expected outcome of the code is as follows:</p>
+<p>Assuming that the centerBox is filled, the primary objective is to center the centerBox whenever possible. This will be done all the time unless doing so requires some box's width to go under its minimum width.</p>
+<p>If we are centering the centerBox, there are two possible scenarios. Firstly, if the centerBox can be perfectly centered while everything takes their natural size, then everything will be allocated at least their natural size such that the centerBox is centered, leftBox is left aligned, rightBox is right aligned.</p>
+<p>Otherwise, we first allocate the minWidth to every box, and then distribute the remaining space proportional to how much more space each box wants. This is done in a way that ensures the leftWidth and rightWidth are equal.</p>
+<p>If it is not possible to center the centerBox, but there is enough space to just allocate the boxes, the centerBox will be made as centered as possible without making things go under their minWidth. This is achieved by making the shorter box go to their min width, and distributing the remaining space among the two other boxes.</p>
+<p>Finally, if there isn't even enough space to just put the things, the width allocated is just proportional to the minimum width.</p>
+<p>In the cases where the centerBox is not occupied, a similar mechanism is employed. If there is enough space for everything to get their natural width, this will happen. Otherwise, we first allocate the minimum width and then distribute the remaining space proportional to how much more space each box wants. In the scenario where the isn't enough space to just allocate the minimum width, we just allocate proportional to the minimum width.</p>
+<div class="refsect3">
+<a name="id-1.15.2.5.2.12"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>leftMin</p></td>
+<td class="parameter_description"><p>minimum width of left box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>leftNatural</p></td>
+<td class="parameter_description"><p>natural width of left box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>centerMin</p></td>
+<td class="parameter_description"><p>minimum width of center box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>centerNatural</p></td>
+<td class="parameter_description"><p>natural width of center box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>rightMin</p></td>
+<td class="parameter_description"><p>minimum width of right box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>rightNatural</p></td>
+<td class="parameter_description"><p>natural width of right box</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>alloc</p></td>
+<td class="parameter_description"><p>total available width to allocate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>centerOccupied</p></td>
+<td class="parameter_description"><p>whether the center box is occupied.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.15.2.5.2.13"></a><h4>Returns</h4>
+<p>The left and right widths to be allocated.</p>
+</div>
+</div>
+<hr>
 <div class="refsect2">
 <a name="cinnamon-js-ui-panel-checkPanelUpgrade"></a><h3>checkPanelUpgrade ()</h3>
 <pre class="programlisting">
@@ -66,6 +156,7 @@ checkPanelUpgrade ();</pre>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

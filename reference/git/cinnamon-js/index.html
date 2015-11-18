@@ -6,7 +6,7 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Javascript Reference Manual">
 <link rel="next" href="cinnamon-js-ui-applet-section.html" title="imports.ui.applet">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -15,7 +15,7 @@
 <div>
 <div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">Cinnamon Javascript Reference Manual</p></th></tr></table></div>
 <div><p class="releaseinfo">
-      This document is for Cinnamon 2.6.13.
+      This document is for Cinnamon 2.8.4.
 
       The latest version of this documentation can be found online at <a class="ulink" href="../cinnamon-js/" target="_top">http://developer.linuxmint.com/reference/git/cinnamon-js/</a>.
     </p></div>
@@ -26,7 +26,7 @@
 <dt><span class="chapter"><a href="cinnamon-js-ui-applet-section.html">imports.ui.applet</a></span></dt>
 <dd><dl>
 <dt>
-<span class="refentrytitle"><a href="cinnamon-js-ui-applet-MenuItem.html">Applet.MenuItem</a></span><span class="refpurpose"> — Deprecated. Use <code class="code">PopupMenu.PopupIconMenuItem</code> instead.</span>
+<span class="refentrytitle"><a href="cinnamon-js-ui-applet-MenuItem.html">Applet.MenuItem</a></span><span class="refpurpose">Deprecated. Use <code class="code">PopupMenu.PopupIconMenuItem</code> instead.</span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-applet-AppletContextMenu.html">Applet.AppletContextMenu</a></span><span class="refpurpose"> — Applet right-click menu</span>
@@ -55,6 +55,18 @@
 <dd><dl><dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-boxpointer.html">Boxpointer</a></span><span class="refpurpose"></span>
 </dt></dl></dd>
+<dt><span class="chapter"><a href="cinnamon-js-ui-dbusMenu-section.html">imports.ui.dbusMenu</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-dbusMenu-PropertyStore.html">DbusMenu.PropertyStore</a></span><span class="refpurpose"> — A Class to saves menu property values and handles type checking and defaults.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-dbusMenu-DbusMenuItem.html">DbusMenu.DbusMenuItem</a></span><span class="refpurpose"> — Represents a single Dbus menu item.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-dbusMenu-DBusClient.html">DbusMenu.DBusClient</a></span><span class="refpurpose"> — The client does the heavy lifting of actually reading layouts and distributing events.</span>
+</dt>
+</dl></dd>
 <dt><span class="chapter"><a href="cinnamon-js-ui-desklet-section.html">imports.ui.desklet</a></span></dt>
 <dd><dl><dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-desklet-Desklet.html">Desklet.Desklet</a></span><span class="refpurpose"> — Base desklet class to be inherited</span>
@@ -76,6 +88,21 @@
 <dd><dl><dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-extension.html">Extension</a></span><span class="refpurpose"></span>
 </dt></dl></dd>
+<dt><span class="chapter"><a href="cinnamon-js-ui-indicatorManager-section.html">imports.ui.indicatorManager</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-indicatorManager-AppIndicator.html">IndicatorManager.AppIndicator</a></span><span class="refpurpose"> — This is a generic container for indicator information and common functions.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-indicatorManager-XmlLessDBusProxy.html">IndicatorManager.XmlLessDBusProxy</a></span><span class="refpurpose"> — This is a proxy for org.freedesktop.DBus.Properties and org.kde.StatusNotifierItem.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-indicatorManager-IconActor.html">IndicatorManager.IconActor</a></span><span class="refpurpose"> — This is a container for the indicator icon with some advaced features.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-indicatorManager-IconCache.html">IndicatorManager.IconCache</a></span><span class="refpurpose"> — The class caches icon objects in case they're reused shortly aftwerwards.</span>
+</dt>
+</dl></dd>
 <dt><span class="chapter"><a href="cinnamon-js-ui-lightbox-section.html">imports.ui.lightbox</a></span></dt>
 <dd><dl><dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-lightbox.html">Lightbox</a></span><span class="refpurpose"></span>
@@ -127,6 +154,12 @@
 <span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupIconMenuItem.html">PopupMenu.PopupIconMenuItem</a></span><span class="refpurpose"> — A menu item with an icon and a text.</span>
 </dt>
 <dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupIndicatorMenuItem.html">PopupMenu.PopupIndicatorMenuItem</a></span><span class="refpurpose"> — A menu item with text, ornaments and accel.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupMenuAbstractItem.html">PopupMenu.PopupMenuAbstractItem</a></span><span class="refpurpose"> — A class to represent any abstract menu item.</span>
+</dt>
+<dt>
 <span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupMenuBase.html">PopupMenu.PopupMenuBase</a></span><span class="refpurpose"> — The base class of all popup menus</span>
 </dt>
 <dt>
@@ -136,7 +169,10 @@
 <span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupSubMenu.html">PopupMenu.PopupSubMenu</a></span><span class="refpurpose"> — A submenu that can show and hide</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupMenuSection.html">PopupMenu.PopupMenuSection</a></span><span class="refpurpose"> — A section of a <code class="code">PopupMenu</code> that is transparent to user</span>
+<span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupMenuSection.html">PopupMenu.PopupMenuSection</a></span><span class="refpurpose">A section of a <code class="code">PopupMenu</code> that is transparent to user</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-popupMenu-PopupMenuFactory.html">PopupMenu.PopupMenuFactory</a></span><span class="refpurpose"> — A class to build a cinnamon menu using some abstract menu items.</span>
 </dt>
 </dl></dd>
 <dt><span class="chapter"><a href="cinnamon-js-ui-runDialog-section.html">imports.ui.runDialog</a></span></dt>
@@ -169,6 +205,18 @@
 <span class="refentrytitle"><a href="cinnamon-js-ui-settings-ExtensionSettings.html">Settings.ExtensionSettings</a></span><span class="refpurpose"> — Settings object for extensions.</span>
 </dt>
 </dl></dd>
+<dt><span class="chapter"><a href="cinnamon-js-ui-tooltips-section.html">imports.ui.tooltips</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-tooltips-TooltipBase.html">Tooltips.TooltipBase</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-tooltips-Tooltip.html">Tooltips.Tooltip</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="cinnamon-js-ui-tooltips-PanelItemTooltip.html">Tooltips.PanelItemTooltip</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
 <dt><span class="chapter"><a href="cinnamon-js-ui-tweener-section.html">imports.ui.tweener</a></span></dt>
 <dd><dl>
 <dt>
@@ -189,6 +237,7 @@
 </dl></div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>

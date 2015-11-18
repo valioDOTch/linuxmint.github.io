@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CinnamonAppSystem: Cinnamon Reference Manual</title>
+<title>Cinnamon Reference Manual: CinnamonAppSystem</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Cinnamon Reference Manual">
 <link rel="up" href="ch03.html" title="Search">
 <link rel="prev" href="ch03.html" title="Search">
 <link rel="next" href="ch04.html" title="Tray Icons">
-<meta name="generator" content="GTK-Doc V1.23.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
 <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 <body><div id="header"><img src="/logo.svg" /><div id="links"><a href="/index.html">Home</a> <a href="/projects.html">Projects</a> <a href="/contributing.html">Contributing</a> <a href="/reference/index.html" class="current">Documentation</a></div></div>
@@ -103,6 +103,22 @@
 </td>
 <td class="function_name">
 <a class="link" href="CinnamonAppSystem.html#cinnamon-app-system-lookup-heuristic-basename" title="cinnamon_app_system_lookup_heuristic_basename ()">cinnamon_app_system_lookup_heuristic_basename</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="returnvalue">CinnamonApp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonAppSystem.html#cinnamon-app-system-lookup-startup-wmclass" title="cinnamon_app_system_lookup_startup_wmclass ()">cinnamon_app_system_lookup_startup_wmclass</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="returnvalue">CinnamonApp</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="CinnamonAppSystem.html#cinnamon-app-system-lookup-desktop-wmclass" title="cinnamon_app_system_lookup_desktop_wmclass ()">cinnamon_app_system_lookup_desktop_wmclass</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -378,11 +394,89 @@ string, or <code class="literal">NULL</code> if none.</p>
 </div>
 <hr>
 <div class="refsect2">
+<a name="cinnamon-app-system-lookup-startup-wmclass"></a><h3>cinnamon_app_system_lookup_startup_wmclass ()</h3>
+<pre class="programlisting"><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="returnvalue">CinnamonApp</span></a> *
+cinnamon_app_system_lookup_startup_wmclass
+                               (<em class="parameter"><code><a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a> *system</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *wmclass</code></em>);</pre>
+<p>Find a valid application whose .desktop file contains a
+StartupWMClass entry matching <em class="parameter"><code>wmclass</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.4.2.7.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>system</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wmclass</p></td>
+<td class="parameter_description"><p> A WM_CLASS value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.2.7.10.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> for <em class="parameter"><code>wmclass</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cinnamon-app-system-lookup-desktop-wmclass"></a><h3>cinnamon_app_system_lookup_desktop_wmclass ()</h3>
+<pre class="programlisting"><a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="returnvalue">CinnamonApp</span></a> *
+cinnamon_app_system_lookup_desktop_wmclass
+                               (<em class="parameter"><code><a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a> *system</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *wmclass</code></em>);</pre>
+<p>Find a valid application whose .desktop file, without the extension
+and properly canonicalized, matches <em class="parameter"><code>wmclass</code></em>
+.</p>
+<div class="refsect3">
+<a name="id-1.4.2.7.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>system</p></td>
+<td class="parameter_description"><p>a <a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>wmclass</p></td>
+<td class="parameter_description"><p> A WM_CLASS value. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.4.2.7.11.6"></a><h4>Returns</h4>
+<p> A <a class="link" href="CinnamonApp.html" title="CinnamonApp"><span class="type">CinnamonApp</span></a> for <em class="parameter"><code>wmclass</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
 <a name="cinnamon-app-system-get-all"></a><h3>cinnamon_app_system_get_all ()</h3>
 <pre class="programlisting"><span class="returnvalue">GSList</span> *
 cinnamon_app_system_get_all (<em class="parameter"><code><a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a> *system</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.4.2.7.10.4"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.12.4"></a><h4>Returns</h4>
 <p> All installed applications. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> CinnamonApp]</span></p>
 </div>
@@ -396,7 +490,7 @@ cinnamon_app_system_get_running (<em class="parameter"><code><a class="link" hre
 open window in the given context.  The returned list will be sorted
 by <a class="link" href="CinnamonApp.html#cinnamon-app-compare" title="cinnamon_app_compare ()"><code class="function">cinnamon_app_compare()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.11.5"></a><h4>Parameters</h4>
+<a name="id-1.4.2.7.13.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -411,7 +505,7 @@ by <a class="link" href="CinnamonApp.html#cinnamon-app-compare" title="cinnamon_
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.11.6"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.13.6"></a><h4>Returns</h4>
 <p> Active applications. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> CinnamonApp][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
 </div>
@@ -424,7 +518,7 @@ cinnamon_app_system_initial_search (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);</pre>
 <p>Search through applications for the given search terms.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.12.5"></a><h4>Parameters</h4>
+<a name="id-1.4.2.7.14.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -446,7 +540,7 @@ cinnamon_app_system_initial_search (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.12.6"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.14.6"></a><h4>Returns</h4>
 <p> List of applications. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> CinnamonApp]</span></p>
 </div>
@@ -464,7 +558,7 @@ js/ui/search.js.  Note the value of <em class="parameter"><code>prefs</code></em
 the same as passed to <a class="link" href="CinnamonAppSystem.html#cinnamon-app-system-initial-search" title="cinnamon_app_system_initial_search ()"><code class="function">cinnamon_app_system_initial_search()</code></a>.  Note that returned
 strings are only valid until a return to the main loop.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.13.5"></a><h4>Parameters</h4>
+<a name="id-1.4.2.7.15.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -491,7 +585,7 @@ strings are only valid until a return to the main loop.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.13.6"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.15.6"></a><h4>Returns</h4>
 <p> List of application identifiers. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> CinnamonApp]</span></p>
 </div>
@@ -502,7 +596,7 @@ strings are only valid until a return to the main loop.</p>
 <pre class="programlisting"><span class="returnvalue">GMenuTree</span> *
 cinnamon_app_system_get_settings_tree (<em class="parameter"><code><a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a> *system</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.4.2.7.14.4"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.16.4"></a><h4>Returns</h4>
 <p> The <span class="type">GMenuTree</span> for apps
 OBSOLETE - ONLY LEFT IN FOR COMPATIBILITY
 RETURNS EMPTY GMenuTree. </p>
@@ -517,7 +611,7 @@ cinnamon_app_system_search_settings (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><span class="type">GSList</span> *terms</code></em>);</pre>
 <p>Search through settings for the given search terms.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.15.5"></a><h4>Parameters</h4>
+<a name="id-1.4.2.7.17.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -539,7 +633,7 @@ cinnamon_app_system_search_settings (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.15.6"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.17.6"></a><h4>Returns</h4>
 <p> List of setting applications. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> CinnamonApp]</span></p>
 </div>
@@ -551,7 +645,7 @@ cinnamon_app_system_search_settings (<em class="parameter"><code><a class="link"
 cinnamon_app_system_lookup_setting (<em class="parameter"><code><a class="link" href="CinnamonAppSystem.html" title="CinnamonAppSystem"><span class="type">CinnamonAppSystem</span></a> *system</code></em>,
                                     <em class="parameter"><code>const <span class="type">char</span> *id</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.4.2.7.16.4"></a><h4>Returns</h4>
+<a name="id-1.4.2.7.18.4"></a><h4>Returns</h4>
 <p> Application in gnomecc.menu, or <code class="literal">NULL</code> if none
 OBSOLETE - ONLY LEFT IN FOR COMPATIBILITY
 RETURNS NULL IF NOT FOUND IN STANDARD APPS. </p>
@@ -583,6 +677,7 @@ user_function (<a class="link" href="CinnamonAppSystem.html" title="CinnamonAppS
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.23.1</div>
+<hr>
+          Generated by GTK-Doc V1.21</div>
 </body>
 </html>
